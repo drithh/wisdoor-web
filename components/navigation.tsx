@@ -27,7 +27,7 @@ export function Navigation({ image, alt }: NavigationProps) {
   return (
     <div className="font-display flex justify-between items-center p-4 fixed top-0 left-0 h-20 w-screen z-[1000]">
       <div className="flex-shrink-0 h-full flex-grow">
-        <div className="w-24 h-full relative">
+        <div className="w-16 h-full relative">
           <Image
             src={defaultImage}
             fill
@@ -37,18 +37,18 @@ export function Navigation({ image, alt }: NavigationProps) {
           />
         </div>
       </div>
-      <nav className="grid gap-6 grid-flow-col text-white">
+      <nav className="grid gap-6 grid-cols-3 grid-flow-col text-white md:mr-0 mr-4">
         {links.map((link) => (
           <Link
             key={link.href}
             href={link.href}
-            className="font-text font-medium"
+            className="font-text text-center font-medium"
           >
             {link.title}
           </Link>
         ))}
       </nav>
-      <div className="flex-grow w-24" />
+      <div className="flex-grow w-16 sm:flex hidden" />
     </div>
   );
 }

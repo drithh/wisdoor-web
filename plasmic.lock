@@ -3,7 +3,10 @@
     {
       "projectId": "t5hn1zAmdmxJoKmkXG4dPV",
       "version": "latest",
-      "dependencies": {},
+      "dependencies": {
+        "q8iq2J191QypeBqVSHzb6M": "0.6.0",
+        "caTPwKxj5ZrD9LQ7DMdK4Z": "3.37.0"
+      },
       "lang": "ts",
       "fileLocks": [
         {
@@ -14,12 +17,12 @@
         {
           "type": "renderModule",
           "assetId": "qpi3-pwEc1RY",
-          "checksum": "ff41b8f11e1bbe267403ebab12b53573"
+          "checksum": "a759f5d3633d488edd027aafd14a5dc4"
         },
         {
           "type": "cssRules",
           "assetId": "qpi3-pwEc1RY",
-          "checksum": "ff41b8f11e1bbe267403ebab12b53573"
+          "checksum": "a759f5d3633d488edd027aafd14a5dc4"
         },
         {
           "type": "renderModule",
@@ -52,9 +55,61 @@
           "checksum": "69ab02ff453c7dd77689a862f61b38b2"
         },
         {
+          "type": "renderModule",
+          "assetId": "4a8DjtM_KrIy",
+          "checksum": "673c53e6e5ec5af729edb6d9be23422c"
+        },
+        {
+          "type": "cssRules",
+          "assetId": "4a8DjtM_KrIy",
+          "checksum": "673c53e6e5ec5af729edb6d9be23422c"
+        },
+        {
           "assetId": "t5hn1zAmdmxJoKmkXG4dPV",
           "type": "projectCss",
           "checksum": "0280f98c0c009620f8037c91fb75486d"
+        }
+      ],
+      "codegenVersion": "0.0.1"
+    },
+    {
+      "projectId": "vqeFwpZFQ6buChy6T9PGwQ",
+      "version": "0.9.0",
+      "dependencies": {},
+      "lang": "ts",
+      "fileLocks": [
+        {
+          "assetId": "vqeFwpZFQ6buChy6T9PGwQ",
+          "type": "projectCss",
+          "checksum": "e1ec850476829c38b0f9b6d4f7ac446a"
+        }
+      ],
+      "codegenVersion": "0.0.1"
+    },
+    {
+      "projectId": "q8iq2J191QypeBqVSHzb6M",
+      "version": "0.6.0",
+      "dependencies": {},
+      "lang": "ts",
+      "fileLocks": [
+        {
+          "assetId": "q8iq2J191QypeBqVSHzb6M",
+          "type": "projectCss",
+          "checksum": "e1ec850476829c38b0f9b6d4f7ac446a"
+        }
+      ],
+      "codegenVersion": "0.0.1"
+    },
+    {
+      "projectId": "caTPwKxj5ZrD9LQ7DMdK4Z",
+      "version": "3.37.0",
+      "dependencies": {},
+      "lang": "ts",
+      "fileLocks": [
+        {
+          "assetId": "caTPwKxj5ZrD9LQ7DMdK4Z",
+          "type": "projectCss",
+          "checksum": "e1ec850476829c38b0f9b6d4f7ac446a"
         }
       ],
       "codegenVersion": "0.0.1"

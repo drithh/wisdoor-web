@@ -10,7 +10,7 @@ interface HeroProps {
 export function Hero({ image, alt }: HeroProps) {
   const defaultImage = image || '/placeholder.svg';
   return (
-    <div className="w-screen h-screen">
+    <div className="w-full">
       <Image
         src={defaultImage}
         fill

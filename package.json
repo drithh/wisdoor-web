@@ -11,6 +11,23 @@
   "dependencies": {
     "@plasmicapp/cli": "^0.1.331",
     "@plasmicapp/react-web": "^0.2.350",
+    "@plasmicpkgs/plasmic-basic-components": "^0.0.227",
+    "@plasmicpkgs/tiptap": "^0.0.3",
+    "@tiptap/core": "^2.6.6",
+    "@tiptap/extension-bold": "^2.6.6",
+    "@tiptap/extension-code": "^2.6.6",
+    "@tiptap/extension-document": "^2.6.6",
+    "@tiptap/extension-italic": "^2.6.6",
+    "@tiptap/extension-link": "^2.6.6",
+    "@tiptap/extension-mention": "^2.6.6",
+    "@tiptap/extension-paragraph": "^2.6.6",
+    "@tiptap/extension-strike": "^2.6.6",
+    "@tiptap/extension-text": "^2.6.6",
+    "@tiptap/extension-underline": "^2.6.6",
+    "@tiptap/pm": "^2.6.6",
+    "@tiptap/react": "^2.6.6",
+    "@tiptap/starter-kit": "^2.6.6",
+    "@tiptap/suggestion": "^2.6.6",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.3.31",
@@ -20,7 +37,8 @@
     "react-dom": "^18",
     "sharp": "^0.33.5",
     "tailwind-merge": "^2.5.2",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "tippy.js": "^6.3.7"
   },
   "devDependencies": {
     "@types/node": "^20",

@@ -55,6 +55,20 @@
           "scheme": "blackbox",
           "componentType": "component",
           "plumeType": "button"
+        },
+        {
+          "id": "4a8DjtM_KrIy",
+          "name": "About",
+          "type": "managed",
+          "projectId": "t5hn1zAmdmxJoKmkXG4dPV",
+          "renderModuleFilePath": "plasmic/wisdoor_web/PlasmicAbout.tsx",
+          "importSpec": {
+            "modulePath": "../pages/about.tsx"
+          },
+          "cssFilePath": "plasmic/wisdoor_web/PlasmicAbout.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/about"
         }
       ],
       "icons": [
@@ -101,7 +115,7 @@
           "id": "UiHqtQRdZ-A_",
           "name": "Navigation",
           "displayName": "Navigation",
-          "componentImportPath": "./components/Navigation"
+          "componentImportPath": "./components/navigation"
         },
         {
           "id": "sCI3xjpbpFJQ",
@@ -119,10 +133,215 @@
           "id": "DLj-cPcbVVVA",
           "name": "Hero",
           "displayName": "Hero",
-          "componentImportPath": "./components/Hero"
+          "componentImportPath": "./components/hero"
+        },
+        {
+          "id": "O5iAxnp4_43w",
+          "name": "PulsatingButton",
+          "displayName": "PulsatingButton",
+          "componentImportPath": "./components/magicui/pulsating-button"
+        },
+        {
+          "id": "xweqF2oOB08A",
+          "name": "TiptapTextViewer",
+          "displayName": "TiptapTextViewer",
+          "componentImportPath": "./components/rich-text"
         }
       ],
       "customFunctions": []
+    },
+    {
+      "projectId": "vqeFwpZFQ6buChy6T9PGwQ",
+      "projectApiToken": "HoXrsW7thezPtv1YjHm4ylhJuxprHUDxJCCAqkbscy96N1h1mEgQ7wO2NZcpFk5lJnyvpOGcyI5XQsfu41Vg",
+      "projectName": "react-quill",
+      "version": ">0.0.0",
+      "cssFilePath": "plasmic/react_quill/plasmic.module.css",
+      "components": [],
+      "icons": [],
+      "images": [],
+      "indirect": true,
+      "globalContextsFilePath": "",
+      "splitsProviderFilePath": "",
+      "codeComponents": [
+        {
+          "id": "ttF1HVZMBGN",
+          "name": "Quill",
+          "displayName": "hostless-react-quill",
+          "componentImportPath": "@plasmicpkgs/react-quill",
+          "helper": {
+            "name": "quillHelpers",
+            "importPath": "@plasmicpkgs/react-quill"
+          }
+        }
+      ],
+      "customFunctions": [],
+      "jsBundleThemes": []
+    },
+    {
+      "projectId": "q8iq2J191QypeBqVSHzb6M",
+      "projectApiToken": "IZie2ZvFtL4oV9n5Mc14Cq86AS7zpZC0vbA5CGeU9h6Mi9YrnVTuGLd6nTz6JZTgkAb49v1rwr3xHYaY0aQ",
+      "projectName": "tiptap",
+      "version": ">0.0.0",
+      "cssFilePath": "plasmic/tiptap/plasmic.module.css",
+      "components": [],
+      "icons": [],
+      "images": [],
+      "indirect": true,
+      "globalContextsFilePath": "",
+      "splitsProviderFilePath": "",
+      "codeComponents": [
+        {
+          "id": "WhqnWjQgXjAx",
+          "name": "Bold",
+          "displayName": "hostless-tiptap-extension-bold",
+          "componentImportPath": "@plasmicpkgs/tiptap/skinny/registerBold"
+        },
+        {
+          "id": "EHC0R-wWOI0Z",
+          "name": "Code",
+          "displayName": "hostless-tiptap-extension-code",
+          "componentImportPath": "@plasmicpkgs/tiptap/skinny/registerCode"
+        },
+        {
+          "id": "Y895zND_YNth",
+          "name": "Italic",
+          "displayName": "hostless-tiptap-extension-italic",
+          "componentImportPath": "@plasmicpkgs/tiptap/skinny/registerItalic"
+        },
+        {
+          "id": "J8XPnq41IRbF",
+          "name": "Link",
+          "displayName": "hostless-tiptap-extension-link",
+          "componentImportPath": "@plasmicpkgs/tiptap/skinny/registerLink"
+        },
+        {
+          "id": "VHaYjWq_ZYUZ",
+          "name": "Mention",
+          "displayName": "hostless-tiptap-extension-mention",
+          "componentImportPath": "@plasmicpkgs/tiptap/skinny/registerMention"
+        },
+        {
+          "id": "NobWeKqsgk5L",
+          "name": "Strike",
+          "displayName": "hostless-tiptap-extension-strike",
+          "componentImportPath": "@plasmicpkgs/tiptap/skinny/registerStrike"
+        },
+        {
+          "id": "xTprkxspH4MZ",
+          "name": "TiptapWrapper",
+          "displayName": "hostless-tiptap",
+          "componentImportPath": "@plasmicpkgs/tiptap/skinny/registerTiptap"
+        },
+        {
+          "id": "CcQonxRGl6eE",
+          "name": "Underline",
+          "displayName": "hostless-tiptap-extension-underline",
+          "componentImportPath": "@plasmicpkgs/tiptap/skinny/registerUnderline"
+        },
+        {
+          "id": "VsRY3FpbhGS5",
+          "name": "ToolbarBold",
+          "displayName": "hostless-tiptap-toolbar-bold",
+          "componentImportPath": "@plasmicpkgs/tiptap/skinny/registerToolbarBold"
+        },
+        {
+          "id": "wtaTJrVCgUNe",
+          "name": "ToolbarCode",
+          "displayName": "hostless-tiptap-toolbar-code",
+          "componentImportPath": "@plasmicpkgs/tiptap/skinny/registerToolbarCode"
+        },
+        {
+          "id": "NyB3qBzCfU3j",
+          "name": "ToolbarItalic",
+          "displayName": "hostless-tiptap-toolbar-italic",
+          "componentImportPath": "@plasmicpkgs/tiptap/skinny/registerToolbarItalic"
+        },
+        {
+          "id": "-WlHZ-FR5Q-f",
+          "name": "ToolbarLink",
+          "displayName": "hostless-tiptap-toolbar-link",
+          "componentImportPath": "@plasmicpkgs/tiptap/skinny/registerToolbarLink"
+        },
+        {
+          "id": "kMpnDu2MpaMS",
+          "name": "ToolbarMention",
+          "displayName": "hostless-tiptap-toolbar-mention",
+          "componentImportPath": "@plasmicpkgs/tiptap/skinny/registerToolbarMention"
+        },
+        {
+          "id": "zNLtmNzK8sgS",
+          "name": "ToolbarStrike",
+          "displayName": "hostless-tiptap-toolbar-strike",
+          "componentImportPath": "@plasmicpkgs/tiptap/skinny/registerToolbarStrike"
+        },
+        {
+          "id": "5OrGvEJP9ty6",
+          "name": "ToolbarUnderline",
+          "displayName": "hostless-tiptap-toolbar-underline",
+          "componentImportPath": "@plasmicpkgs/tiptap/skinny/registerToolbarUnderline"
+        }
+      ],
+      "customFunctions": [],
+      "jsBundleThemes": []
+    },
+    {
+      "projectId": "caTPwKxj5ZrD9LQ7DMdK4Z",
+      "projectApiToken": "vXGGQpdi9fhcncabBdg8DcMRUbkz0iRW6HS1jzQufQR6QH0MasPwr9SX7ap4SsK3xXwwXmzZtglWGe0Rm2nw",
+      "projectName": "plasmic-basic-components",
+      "version": ">0.0.0",
+      "cssFilePath": "plasmic/plasmic_basic_components/plasmic.module.css",
+      "components": [],
+      "icons": [],
+      "images": [],
+      "indirect": true,
+      "globalContextsFilePath": "",
+      "splitsProviderFilePath": "",
+      "codeComponents": [
+        {
+          "id": "CMDBvOhaI4s",
+          "name": "Iframe",
+          "displayName": "hostless-iframe",
+          "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
+        },
+        {
+          "id": "RhitNJW5Zu-",
+          "name": "Video",
+          "displayName": "hostless-html-video",
+          "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
+        },
+        {
+          "id": "PKldDYkH42",
+          "name": "Embed",
+          "displayName": "hostless-embed",
+          "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
+        },
+        {
+          "id": "D4RbnlpRXg3",
+          "name": "DataProvider",
+          "displayName": "hostless-data-provider",
+          "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
+        },
+        {
+          "id": "zlBHsvkFlN",
+          "name": "ConditionGuard",
+          "displayName": "hostless-condition-guard",
+          "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
+        },
+        {
+          "id": "K-mWGqrHefEp",
+          "name": "SideEffect",
+          "displayName": "hostless-side-effect",
+          "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
+        },
+        {
+          "id": "SpkzmXJqg27p",
+          "name": "Timer",
+          "displayName": "hostless-timer",
+          "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
+        }
+      ],
+      "customFunctions": [],
+      "jsBundleThemes": []
     }
   ],
   "globalVariants": {

@@ -59,9 +59,10 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import { Navigation } from "../../Navigation"; // plasmic-import: UiHqtQRdZ-A_/codeComponent
-import { Hero } from "../../Hero"; // plasmic-import: DLj-cPcbVVVA/codeComponent
+import { Navigation } from "../../navigation"; // plasmic-import: UiHqtQRdZ-A_/codeComponent
+import { Hero } from "../../hero"; // plasmic-import: DLj-cPcbVVVA/codeComponent
 import { BlurFade } from "../../magicui/blur-fade"; // plasmic-import: mo0WkofSVfhk/codeComponent
+import { PulsatingButton } from "../../magicui/pulsating-button"; // plasmic-import: O5iAxnp4_43w/codeComponent
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -83,8 +84,8 @@ export type PlasmicHomepage__OverridesType = {
   root?: Flex__<"div">;
   navigation?: Flex__<typeof Navigation>;
   hero?: Flex__<typeof Hero>;
-  section?: Flex__<"section">;
   blurFade?: Flex__<typeof BlurFade>;
+  pulsatingButton?: Flex__<typeof PulsatingButton>;
 };
 
 export interface DefaultHomepageProps {}
@@ -120,7 +121,20 @@ function PlasmicHomepage__RenderFunc(props: {
 
   return (
     <React.Fragment>
-      <Head></Head>
+      <Head>
+        <meta name="twitter:card" content="summary" />
+        <title key="title">{PlasmicHomepage.pageMetadata.title}</title>
+        <meta
+          key="og:title"
+          property="og:title"
+          content={PlasmicHomepage.pageMetadata.title}
+        />
+        <meta
+          key="twitter:title"
+          name="twitter:title"
+          content={PlasmicHomepage.pageMetadata.title}
+        />
+      </Head>
 
       <style>{`
         body {
@@ -158,11 +172,7 @@ function PlasmicHomepage__RenderFunc(props: {
           image={"/plasmic/wisdoor_web/images/heroHomepage.png"}
         />
 
-        <section
-          data-plasmic-name={"section"}
-          data-plasmic-override={overrides.section}
-          className={classNames(projectcss.all, sty.section)}
-        >
+        <section className={classNames(projectcss.all, sty.section___0Md7)}>
           <BlurFade
             data-plasmic-name={"blurFade"}
             data-plasmic-override={overrides.blurFade}
@@ -207,17 +217,36 @@ function PlasmicHomepage__RenderFunc(props: {
             </div>
           </BlurFade>
         </section>
+        <section className={classNames(projectcss.all, sty.section___9Wqeb)}>
+          <PulsatingButton
+            data-plasmic-name={"pulsatingButton"}
+            data-plasmic-override={overrides.pulsatingButton}
+            className={classNames("__wab_instance", sty.pulsatingButton)}
+            duration={"1.5s"}
+            pulseColor={"#22c55e"}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__gdEut
+              )}
+            >
+              {"Order Now"}
+            </div>
+          </PulsatingButton>
+        </section>
       </div>
     </React.Fragment>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "navigation", "hero", "section", "blurFade"],
+  root: ["root", "navigation", "hero", "blurFade", "pulsatingButton"],
   navigation: ["navigation"],
   hero: ["hero"],
-  section: ["section", "blurFade"],
-  blurFade: ["blurFade"]
+  blurFade: ["blurFade"],
+  pulsatingButton: ["pulsatingButton"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -226,8 +255,8 @@ type NodeDefaultElementType = {
   root: "div";
   navigation: typeof Navigation;
   hero: typeof Hero;
-  section: "section";
   blurFade: typeof BlurFade;
+  pulsatingButton: typeof PulsatingButton;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -292,8 +321,8 @@ export const PlasmicHomepage = Object.assign(
     // Helper components rendering sub-elements
     navigation: makeNodeComponent("navigation"),
     hero: makeNodeComponent("hero"),
-    section: makeNodeComponent("section"),
     blurFade: makeNodeComponent("blurFade"),
+    pulsatingButton: makeNodeComponent("pulsatingButton"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
@@ -301,7 +330,7 @@ export const PlasmicHomepage = Object.assign(
 
     // Page metadata
     pageMetadata: {
-      title: "",
+      title: "Wisdoor",
       description: "",
       ogImageSrc: "",
       canonical: ""

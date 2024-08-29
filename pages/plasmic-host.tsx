@@ -3,10 +3,12 @@ import {
   PlasmicCanvasHost,
   registerComponent,
 } from '@plasmicapp/react-web/lib/host';
-import { Navigation } from '@/components/Navigation';
+import { Navigation } from '@/components/navigation';
 import { GradualSpacing } from '@/components/magicui/gradual-spacing';
 import { BlurFade } from '@/components/magicui/blur-fade';
-import { Hero } from '@/components/Hero';
+import { Hero } from '@/components/hero';
+import { PulsatingButton } from '@/components/magicui/pulsating-button';
+import { TiptapTextViewer } from '@/components/rich-text';
 
 // You can register any code components that you want to use here; see
 // https://docs.plasmic.app/learn/code-components-ref/
@@ -32,7 +34,7 @@ registerComponent(Navigation, {
 
   // Specify how generated Plasmic code should import this component;
   // path is relative to srcDir
-  importPath: './components/Navigation',
+  importPath: './components/navigation',
 });
 
 registerComponent(Hero, {
@@ -50,9 +52,17 @@ registerComponent(Hero, {
 
   // Specify how generated Plasmic code should import this component;
   // path is relative to srcDir
-  importPath: './components/Hero',
+  importPath: './components/hero',
 });
-
+registerComponent(TiptapTextViewer, {
+  name: 'TiptapTextViewer',
+  props: {
+    content: {
+      type: 'richText',
+    },
+  },
+  importPath: './components/rich-text',
+});
 registerComponent(GradualSpacing, {
   name: 'GradualSpacing',
   props: {
@@ -129,6 +139,30 @@ registerComponent(BlurFade, {
   // Specify how generated Plasmic code should import this component;
   // path is relative to srcDir
   importPath: './components/magicui/blur-fade',
+});
+
+registerComponent(PulsatingButton, {
+  name: 'PulsatingButton',
+  props: {
+    children: {
+      type: 'slot',
+    },
+    className: {
+      type: 'string',
+    },
+    pulseColor: {
+      type: 'string',
+      defaultValue: '#22c55e',
+    },
+    duration: {
+      type: 'string',
+      defaultValue: '1.5s',
+    },
+  },
+
+  // Specify how generated Plasmic code should import this component;
+  // path is relative to srcDir
+  importPath: './components/magicui/pulsating-button',
 });
 
 export default function PlasmicHost() {
