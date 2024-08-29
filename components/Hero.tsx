@@ -13,8 +13,8 @@ export function Hero({ image, alt }: HeroProps) {
     <div className="w-screen h-screen">
       <Image
         src={defaultImage}
-        layout="fill"
-        objectFit="cover"
+        fill
+        className="object-cover"
         alt={alt || 'Logo Wisdoor'}
         priority
       />

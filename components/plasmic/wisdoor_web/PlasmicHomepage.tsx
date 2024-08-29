@@ -60,8 +60,8 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import { Navigation } from "../../Navigation"; // plasmic-import: UiHqtQRdZ-A_/codeComponent
-import { BlurFade } from "../../magicui/blur-fade"; // plasmic-import: mo0WkofSVfhk/codeComponent
 import { Hero } from "../../Hero"; // plasmic-import: DLj-cPcbVVVA/codeComponent
+import { BlurFade } from "../../magicui/blur-fade"; // plasmic-import: mo0WkofSVfhk/codeComponent
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -82,11 +82,9 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 export type PlasmicHomepage__OverridesType = {
   root?: Flex__<"div">;
   navigation?: Flex__<typeof Navigation>;
+  hero?: Flex__<typeof Hero>;
   section?: Flex__<"section">;
   blurFade?: Flex__<typeof BlurFade>;
-  text?: Flex__<"div">;
-  h1?: Flex__<"h1">;
-  hero?: Flex__<typeof Hero>;
 };
 
 export interface DefaultHomepageProps {}
@@ -152,6 +150,14 @@ function PlasmicHomepage__RenderFunc(props: {
           image={"/plasmic/wisdoor_web/images/image.svg"}
         />
 
+        <Hero
+          data-plasmic-name={"hero"}
+          data-plasmic-override={overrides.hero}
+          alt={"Logo Wisdoor"}
+          className={classNames("__wab_instance", sty.hero)}
+          image={"/plasmic/wisdoor_web/images/heroHomepage.png"}
+        />
+
         <section
           data-plasmic-name={"section"}
           data-plasmic-override={overrides.section}
@@ -173,62 +179,45 @@ function PlasmicHomepage__RenderFunc(props: {
             yOffset={6}
           >
             <div
-              data-plasmic-name={"text"}
-              data-plasmic-override={overrides.text}
               className={classNames(
                 projectcss.all,
                 projectcss.__wab_text,
-                sty.text
+                sty.text__z850Z
               )}
             >
-              <React.Fragment>
-                <React.Fragment>{""}</React.Fragment>
-                {
-                  <h1
-                    data-plasmic-name={"h1"}
-                    data-plasmic-override={overrides.h1}
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.h1,
-                      projectcss.__wab_text,
-                      sty.h1
-                    )}
-                  >
-                    <React.Fragment>
-                      <span
-                        className={"plasmic_default__all plasmic_default__span"}
-                        style={{ color: "#FFFFFF", fontWeight: 700 }}
-                      >
-                        {"Model 3"}
-                      </span>
-                    </React.Fragment>
-                  </h1>
-                }
-                <React.Fragment>{""}</React.Fragment>
-              </React.Fragment>
+              {"Model 3"}
+            </div>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__qM8Me
+              )}
+            >
+              {"1.99% APR Financing Ending August 31"}
+            </div>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__jQSee
+              )}
+            >
+              {"From $34,9901"}
             </div>
           </BlurFade>
         </section>
-        <Hero
-          data-plasmic-name={"hero"}
-          data-plasmic-override={overrides.hero}
-          alt={"Logo Wisdoor"}
-          className={classNames("__wab_instance", sty.hero)}
-          image={"/plasmic/wisdoor_web/images/heroHomepage.png"}
-        />
       </div>
     </React.Fragment>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "navigation", "section", "blurFade", "text", "h1", "hero"],
+  root: ["root", "navigation", "hero", "section", "blurFade"],
   navigation: ["navigation"],
-  section: ["section", "blurFade", "text", "h1"],
-  blurFade: ["blurFade", "text", "h1"],
-  text: ["text", "h1"],
-  h1: ["h1"],
-  hero: ["hero"]
+  hero: ["hero"],
+  section: ["section", "blurFade"],
+  blurFade: ["blurFade"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -236,11 +225,9 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   navigation: typeof Navigation;
+  hero: typeof Hero;
   section: "section";
   blurFade: typeof BlurFade;
-  text: "div";
-  h1: "h1";
-  hero: typeof Hero;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -304,11 +291,9 @@ export const PlasmicHomepage = Object.assign(
   {
     // Helper components rendering sub-elements
     navigation: makeNodeComponent("navigation"),
+    hero: makeNodeComponent("hero"),
     section: makeNodeComponent("section"),
     blurFade: makeNodeComponent("blurFade"),
-    text: makeNodeComponent("text"),
-    h1: makeNodeComponent("h1"),
-    hero: makeNodeComponent("hero"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,

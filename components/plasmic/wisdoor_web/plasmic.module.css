@@ -16,7 +16,7 @@
 }
 
 .plasmic_default_styles {
-  --mixin-rJ7k8C63UV92_font-family: "Inter", sans-serif;
+  --mixin-rJ7k8C63UV92_font-family: 'Inter', sans-serif;
   --mixin-rJ7k8C63UV92_font-size: 16px;
   --mixin-rJ7k8C63UV92_font-weight: 400;
   --mixin-rJ7k8C63UV92_font-style: normal;
@@ -70,7 +70,7 @@
   --mixin--KsUZcAw7jm__border-bottom-right-radius: 3px;
   --mixin--KsUZcAw7jm__border-top-left-radius: 3px;
   --mixin--KsUZcAw7jm__border-top-right-radius: 3px;
-  --mixin--KsUZcAw7jm__font-family: "Inconsolata";
+  --mixin--KsUZcAw7jm__font-family: 'Inconsolata';
   --mixin--KsUZcAw7jm__padding-bottom: 1px;
   --mixin--KsUZcAw7jm__padding-left: 4px;
   --mixin--KsUZcAw7jm__padding-right: 4px;
@@ -99,7 +99,7 @@
   --mixin-m5E0sAt3_YSf_border-bottom-right-radius: 3px;
   --mixin-m5E0sAt3_YSf_border-top-left-radius: 3px;
   --mixin-m5E0sAt3_YSf_border-top-right-radius: 3px;
-  --mixin-m5E0sAt3_YSf_font-family: "Inconsolata";
+  --mixin-m5E0sAt3_YSf_font-family: 'Inconsolata';
   --mixin-m5E0sAt3_YSf_padding-bottom: 3px;
   --mixin-m5E0sAt3_YSf_padding-left: 6px;
   --mixin-m5E0sAt3_YSf_padding-right: 6px;
@@ -455,7 +455,7 @@
   white-space: normal;
 }
 :where(.root_reset) {
-  font-family: var(--mixin-rJ7k8C63UV92_font-family);
+  font-family: var(--font-universal-sans-text);
   font-size: var(--mixin-rJ7k8C63UV92_font-size);
   font-weight: var(--mixin-rJ7k8C63UV92_font-weight);
   font-style: var(--mixin-rJ7k8C63UV92_font-style);
