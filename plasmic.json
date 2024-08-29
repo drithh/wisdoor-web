@@ -101,7 +101,25 @@
           "id": "UiHqtQRdZ-A_",
           "name": "Navigation",
           "displayName": "Navigation",
-          "componentImportPath": "../components/Navigation"
+          "componentImportPath": "./components/Navigation"
+        },
+        {
+          "id": "sCI3xjpbpFJQ",
+          "name": "GradualSpacing",
+          "displayName": "GradualSpacing",
+          "componentImportPath": "./components/magicui/gradual-spacing"
+        },
+        {
+          "id": "mo0WkofSVfhk",
+          "name": "BlurFade",
+          "displayName": "BlurFade",
+          "componentImportPath": "./components/magicui/blur-fade"
+        },
+        {
+          "id": "DLj-cPcbVVVA",
+          "name": "Hero",
+          "displayName": "Hero",
+          "componentImportPath": "./components/Hero"
         }
       ],
       "customFunctions": []

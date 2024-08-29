@@ -19,9 +19,10 @@ const links = [
 
 interface NavigationProps {
   image?: string;
+  alt?: string;
 }
 
-export function Navigation({ image }: NavigationProps) {
+export function Navigation({ image, alt }: NavigationProps) {
   const defaultImage = image || '/placeholder.svg';
   return (
     <div className="flex justify-between items-center p-4 fixed top-0 left-0 h-20 w-screen z-[1000]">
@@ -31,7 +32,8 @@ export function Navigation({ image }: NavigationProps) {
             src={defaultImage}
             layout="fill"
             objectFit="contain"
-            alt={'Logo Wisdoor'}
+            alt={alt || 'Logo Wisdoor'}
+            priority
           />
         </div>
       </div>
