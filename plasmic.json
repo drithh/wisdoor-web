@@ -7,7 +7,7 @@
   },
   "style": {
     "scheme": "css-modules",
-    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.css"
+    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.module.css"
   },
   "images": {
     "scheme": "public-files",
@@ -41,10 +41,46 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/"
+        },
+        {
+          "id": "436mCM297ORO",
+          "name": "Button2",
+          "type": "managed",
+          "projectId": "t5hn1zAmdmxJoKmkXG4dPV",
+          "renderModuleFilePath": "plasmic/wisdoor_web/PlasmicButton2.tsx",
+          "importSpec": {
+            "modulePath": "Button2.tsx"
+          },
+          "cssFilePath": "plasmic/wisdoor_web/PlasmicButton2.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "button"
         }
       ],
-      "icons": [],
-      "images": [],
+      "icons": [
+        {
+          "id": "fSpcTu7bo9ev",
+          "name": "ChecksvgIcon",
+          "moduleFilePath": "plasmic/wisdoor_web/icons/PlasmicIcon__Checksvg.tsx"
+        },
+        {
+          "id": "2U5GOquf_LPw",
+          "name": "Icon38Icon",
+          "moduleFilePath": "plasmic/wisdoor_web/icons/PlasmicIcon__Icon38.tsx"
+        }
+      ],
+      "images": [
+        {
+          "id": "8KOIxfbA8EX7",
+          "name": "hero-homepage",
+          "filePath": "../public/plasmic/wisdoor_web/images/heroHomepage.png"
+        },
+        {
+          "id": "H6ywnRQWhDue",
+          "name": "image",
+          "filePath": "../public/plasmic/wisdoor_web/images/image.svg"
+        }
+      ],
       "indirect": false,
       "globalContextsFilePath": "",
       "splitsProviderFilePath": "",
@@ -60,6 +96,12 @@
           "name": "Fetcher",
           "displayName": "plasmic-data-source-fetcher",
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
+        },
+        {
+          "id": "UiHqtQRdZ-A_",
+          "name": "Navigation",
+          "displayName": "Navigation",
+          "componentImportPath": "../components/Navigation"
         }
       ],
       "customFunctions": []
@@ -76,6 +118,9 @@
     ]
   },
   "wrapPagesWithGlobalContexts": true,
+  "fontOpts": {
+    "scheme": "none"
+  },
   "nextjsConfig": {
     "pagesDir": "../pages"
   },

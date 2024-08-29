@@ -11,11 +11,11 @@
 // Plasmic Project: t5hn1zAmdmxJoKmkXG4dPV
 // Component: qpi3-pwEc1RY
 
-import * as React from "react";
+import * as React from 'react';
 
-import Head from "next/head";
-import Link, { LinkProps } from "next/link";
-import { useRouter } from "next/router";
+import Head from 'next/head';
+import Link, { LinkProps } from 'next/link';
+import { useRouter } from 'next/router';
 
 import {
   Flex as Flex__,
@@ -51,18 +51,20 @@ import {
   useDollarState,
   usePlasmicTranslator,
   useTrigger,
-  wrapWithClassName
-} from "@plasmicapp/react-web";
+  wrapWithClassName,
+} from '@plasmicapp/react-web';
 import {
   DataCtxReader as DataCtxReader__,
   useDataEnv,
-  useGlobalActions
-} from "@plasmicapp/react-web/lib/host";
+  useGlobalActions,
+} from '@plasmicapp/react-web/lib/host';
 
-import "@plasmicapp/react-web/lib/plasmic.css";
+import { Navigation } from '../../Navigation'; // plasmic-import: UiHqtQRdZ-A_/codeComponent
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: t5hn1zAmdmxJoKmkXG4dPV/projectcss
-import sty from "./PlasmicHomepage.module.css"; // plasmic-import: qpi3-pwEc1RY/css
+import '@plasmicapp/react-web/lib/plasmic.css';
+
+import projectcss from './plasmic.module.css'; // plasmic-import: t5hn1zAmdmxJoKmkXG4dPV/projectcss
+import sty from './PlasmicHomepage.module.css'; // plasmic-import: qpi3-pwEc1RY/css
 
 createPlasmicElementProxy;
 
@@ -76,10 +78,9 @@ type ArgPropType = keyof PlasmicHomepage__ArgsType;
 export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
-  root?: Flex__<"div">;
-  section?: Flex__<"section">;
-  h1?: Flex__<"h1">;
-  text?: Flex__<"div">;
+  root?: Flex__<'div'>;
+  heroHomepage?: Flex__<typeof PlasmicImg__>;
+  navigation?: Flex__<typeof Navigation>;
 };
 
 export interface DefaultHomepageProps {}
@@ -105,7 +106,7 @@ function PlasmicHomepage__RenderFunc(props: {
 
   const $props = {
     ...args,
-    ...variants
+    ...variants,
   };
 
   const __nextRouter = useNextRouter();
@@ -125,7 +126,7 @@ function PlasmicHomepage__RenderFunc(props: {
 
       <div className={projectcss.plasmic_page_wrapper}>
         <div
-          data-plasmic-name={"root"}
+          data-plasmic-name={'root'}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
@@ -138,52 +139,32 @@ function PlasmicHomepage__RenderFunc(props: {
             sty.root
           )}
         >
-          <section
-            data-plasmic-name={"section"}
-            data-plasmic-override={overrides.section}
-            className={classNames(projectcss.all, sty.section)}
-          >
-            <h1
-              data-plasmic-name={"h1"}
-              data-plasmic-override={overrides.h1}
-              className={classNames(
-                projectcss.all,
-                projectcss.h1,
-                projectcss.__wab_text,
-                sty.h1
-              )}
-            >
-              {"Welcome to your first page."}
-            </h1>
-            <div
-              data-plasmic-name={"text"}
-              data-plasmic-override={overrides.text}
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text
-              )}
-            >
-              <React.Fragment>
-                <React.Fragment>
-                  {
-                    "If you haven't already done so, go back and learn the basics by going through the Plasmic Levels tutorial.\n\nIt's always easier to start from examples! Add a new page using a template\u2014do this from the list of pages in the top toolbar.\n\nOr press the big blue + button to start inserting items into this page.\n\nIntegrate this project into your codebase\u2014press the "
-                  }
-                </React.Fragment>
-                <span
-                  className={"plasmic_default__all plasmic_default__span"}
-                  style={{ fontWeight: 700 }}
-                >
-                  {"Code"}
-                </span>
-                <React.Fragment>
-                  {
-                    " button in the top right and follow the quickstart instructions.\n\nJoin our Slack community (icon in bottom left) for help any time."
-                  }
-                </React.Fragment>
-              </React.Fragment>
-            </div>
-          </section>
+          <PlasmicImg__
+            data-plasmic-name={'heroHomepage'}
+            data-plasmic-override={overrides.heroHomepage}
+            alt={''}
+            className={classNames(sty.heroHomepage)}
+            displayHeight={'100%'}
+            displayMaxHeight={'none'}
+            displayMaxWidth={'auto'}
+            displayMinHeight={'0px'}
+            displayMinWidth={'0'}
+            displayWidth={'100%'}
+            loading={'lazy'}
+            src={{
+              src: '/plasmic/wisdoor_web/images/heroHomepage.png',
+              fullWidth: 2880,
+              fullHeight: 1704,
+              aspectRatio: undefined,
+            }}
+          />
+
+          <Navigation
+            data-plasmic-name={'navigation'}
+            data-plasmic-override={overrides.navigation}
+            className={classNames('__wab_instance', sty.navigation)}
+            image={'/plasmic/wisdoor_web/images/image.svg'}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -191,22 +172,20 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "section", "h1", "text"],
-  section: ["section", "h1", "text"],
-  h1: ["h1"],
-  text: ["text"]
+  root: ['root', 'heroHomepage', 'navigation'],
+  heroHomepage: ['heroHomepage'],
+  navigation: ['navigation'],
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
-  root: "div";
-  section: "section";
-  h1: "h1";
-  text: "div";
+  root: 'div';
+  heroHomepage: typeof PlasmicImg__;
+  navigation: typeof Navigation;
 };
 
-type ReservedPropsType = "variants" | "args" | "overrides";
+type ReservedPropsType = 'variants' | 'args' | 'overrides';
 type NodeOverridesType<T extends NodeNameType> = Pick<
   PlasmicHomepage__OverridesType,
   DescendantsType<T>
@@ -242,7 +221,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
           name: nodeName,
           descendantNames: PlasmicDescendants[nodeName],
           internalArgPropNames: PlasmicHomepage__ArgProps,
-          internalVariantPropNames: PlasmicHomepage__VariantProps
+          internalVariantPropNames: PlasmicHomepage__VariantProps,
         }),
       [props, nodeName]
     );
@@ -250,11 +229,11 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       variants,
       args,
       overrides,
-      forNode: nodeName
+      forNode: nodeName,
     });
   };
-  if (nodeName === "root") {
-    func.displayName = "PlasmicHomepage";
+  if (nodeName === 'root') {
+    func.displayName = 'PlasmicHomepage';
   } else {
     func.displayName = `PlasmicHomepage.${nodeName}`;
   }
@@ -263,12 +242,11 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
 
 export const PlasmicHomepage = Object.assign(
   // Top-level PlasmicHomepage renders the root element
-  makeNodeComponent("root"),
+  makeNodeComponent('root'),
   {
     // Helper components rendering sub-elements
-    section: makeNodeComponent("section"),
-    h1: makeNodeComponent("h1"),
-    text: makeNodeComponent("text"),
+    heroHomepage: makeNodeComponent('heroHomepage'),
+    navigation: makeNodeComponent('navigation'),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
@@ -276,11 +254,11 @@ export const PlasmicHomepage = Object.assign(
 
     // Page metadata
     pageMetadata: {
-      title: "",
-      description: "",
-      ogImageSrc: "",
-      canonical: ""
-    }
+      title: '',
+      description: '',
+      ogImageSrc: '',
+      canonical: '',
+    },
   }
 );
 

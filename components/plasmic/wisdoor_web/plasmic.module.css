@@ -1,4 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter%3Aital%2Cwght%400%2C400%3B0%2C600%3B0%2C700&family=Inconsolata%3Aital%2Cwght%400%2C400%3B0%2C600%3B0%2C700&display=swap");
+.plasmic_tokens {
+  --token-nw2sSNMP9Hby: 1px;
+  --plasmic-token-unnamed-style-token: var(--token-nw2sSNMP9Hby);
+  --token-18MITbcp1Wdh: 0px;
+  --plasmic-token-unnamed-style-token-2: var(--token-18MITbcp1Wdh);
+}
 
 .plasmic_tokens {
   --plsmc-standard-width: 800px;
