@@ -85,6 +85,16 @@
           "checksum": "d91d5ce77cf699e1018bd5b15195a0cc"
         },
         {
+          "type": "renderModule",
+          "assetId": "rd8xUc-BnZoZ",
+          "checksum": "cf62d841996e3a65d5f8eeee58c433d2"
+        },
+        {
+          "type": "cssRules",
+          "assetId": "rd8xUc-BnZoZ",
+          "checksum": "cf62d841996e3a65d5f8eeee58c433d2"
+        },
+        {
           "assetId": "t5hn1zAmdmxJoKmkXG4dPV",
           "type": "projectCss",
           "checksum": "dd1d1dcd8bd99ae85c79961f7fc1b484"

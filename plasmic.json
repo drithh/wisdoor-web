@@ -69,6 +69,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/about"
+        },
+        {
+          "id": "rd8xUc-BnZoZ",
+          "name": "Door",
+          "type": "managed",
+          "projectId": "t5hn1zAmdmxJoKmkXG4dPV",
+          "renderModuleFilePath": "plasmic/wisdoor_web/PlasmicDoor.tsx",
+          "importSpec": {
+            "modulePath": "../pages/door.tsx"
+          },
+          "cssFilePath": "plasmic/wisdoor_web/PlasmicDoor.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/door"
         }
       ],
       "icons": [
@@ -190,6 +204,18 @@
           "name": "BoxReveal",
           "displayName": "BoxReveal",
           "componentImportPath": "./components/magicui/box-reveal"
+        },
+        {
+          "id": "SH_PqjJ_I-5G",
+          "name": "DoorViewer",
+          "displayName": "DoorViewer",
+          "componentImportPath": "./components/door-viewer"
+        },
+        {
+          "id": "atQ7Iy0L6tMB",
+          "name": "DoorButton",
+          "displayName": "DoorButton",
+          "componentImportPath": "./components/door/button"
         }
       ],
       "customFunctions": []

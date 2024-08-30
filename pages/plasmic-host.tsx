@@ -13,6 +13,8 @@ import { ImageGradient } from '@/components/image-gradient';
 import { MultipleProduct } from '@/components/multiple-product';
 import { SingleProductText } from '@/components/single-product';
 import BoxReveal from '@/components/magicui/box-reveal';
+import { DoorViewer } from '@/components/door-viewer';
+import { DoorButton } from '@/components/door/button';
 
 // You can register any code components that you want to use here; see
 // https://docs.plasmic.app/learn/code-components-ref/
@@ -174,6 +176,37 @@ registerComponent(BoxReveal, {
   // Specify how generated Plasmic code should import this component;
   // path is relative to srcDir
   importPath: './components/magicui/box-reveal',
+});
+
+registerComponent(DoorViewer, {
+  name: 'DoorViewer',
+  props: {},
+
+  // Specify how generated Plasmic code should import this component;
+  // path is relative to srcDir
+  importPath: './components/door-viewer',
+});
+
+registerComponent(DoorViewer, {
+  name: 'DoorViewer',
+  props: {},
+
+  // Specify how generated Plasmic code should import this component;
+  // path is relative to srcDir
+  importPath: './components/door-viewer',
+});
+
+registerComponent(DoorButton, {
+  name: 'DoorButton',
+  props: {
+    children: {
+      type: 'slot',
+    },
+  },
+
+  // Specify how generated Plasmic code should import this component;
+  // path is relative to srcDir
+  importPath: './components/door/button',
 });
 
 registerComponent(BlurFade, {
