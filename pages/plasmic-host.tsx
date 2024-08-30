@@ -9,6 +9,10 @@ import { BlurFade } from '@/components/magicui/blur-fade';
 import { Hero } from '@/components/hero';
 import { PulsatingButton } from '@/components/magicui/pulsating-button';
 import { TiptapTextViewer } from '@/components/rich-text';
+import { ImageGradient } from '@/components/image-gradient';
+import { MultipleProduct } from '@/components/multiple-product';
+import { SingleProductText } from '@/components/single-product';
+import BoxReveal from '@/components/magicui/box-reveal';
 
 // You can register any code components that you want to use here; see
 // https://docs.plasmic.app/learn/code-components-ref/
@@ -54,6 +58,7 @@ registerComponent(Hero, {
   // path is relative to srcDir
   importPath: './components/hero',
 });
+
 registerComponent(TiptapTextViewer, {
   name: 'TiptapTextViewer',
   props: {
@@ -63,6 +68,60 @@ registerComponent(TiptapTextViewer, {
   },
   importPath: './components/rich-text',
 });
+
+registerComponent(ImageGradient, {
+  name: 'ImageGradient',
+  props: {
+    image: {
+      type: 'imageUrl',
+      defaultValue: '/placeholder.svg',
+    },
+    alt: {
+      type: 'string',
+      defaultValue: 'Logo Wisdoor',
+    },
+    gradientTopWhite: {
+      type: 'boolean',
+      defaultValue: false,
+    },
+    gradientBottomBlack: {
+      type: 'boolean',
+      defaultValue: false,
+    },
+  },
+  importPath: './components/image-gradient',
+});
+
+registerComponent(MultipleProduct, {
+  name: 'MultipleProduct',
+  props: {
+    products: {
+      type: 'array',
+      itemType: {
+        type: 'object',
+        fields: {
+          title: {
+            type: 'string',
+            defaultValue: 'Product',
+          },
+          description: {
+            type: 'string',
+            defaultValue: 'Description',
+          },
+          image: {
+            type: 'imageUrl',
+            defaultValue: '/placeholder.svg',
+          },
+        },
+      },
+    },
+    className: {
+      type: 'string',
+    },
+  },
+  importPath: './components/multiple-product',
+});
+
 registerComponent(GradualSpacing, {
   name: 'GradualSpacing',
   props: {
@@ -92,6 +151,29 @@ registerComponent(GradualSpacing, {
   // Specify how generated Plasmic code should import this component;
   // path is relative to srcDir
   importPath: './components/magicui/gradual-spacing',
+});
+
+registerComponent(BoxReveal, {
+  name: 'BoxReveal',
+  props: {
+    children: {
+      type: 'slot',
+    },
+    width: {
+      type: 'string',
+      defaultValue: 'fit-content',
+    },
+    boxColor: {
+      type: 'string',
+    },
+    duration: {
+      type: 'number',
+    },
+  },
+
+  // Specify how generated Plasmic code should import this component;
+  // path is relative to srcDir
+  importPath: './components/magicui/box-reveal',
 });
 
 registerComponent(BlurFade, {
@@ -163,6 +245,25 @@ registerComponent(PulsatingButton, {
   // Specify how generated Plasmic code should import this component;
   // path is relative to srcDir
   importPath: './components/magicui/pulsating-button',
+});
+
+registerComponent(SingleProductText, {
+  name: 'SingleProductText',
+  props: {
+    title: {
+      type: 'string',
+    },
+    description: {
+      type: 'string',
+    },
+    className: {
+      type: 'string',
+    },
+  },
+
+  // Specify how generated Plasmic code should import this component;
+  // path is relative to srcDir
+  importPath: './components/single-product',
 });
 
 export default function PlasmicHost() {

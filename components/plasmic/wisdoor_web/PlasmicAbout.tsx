@@ -63,6 +63,10 @@ import { Navigation } from "../../navigation"; // plasmic-import: UiHqtQRdZ-A_/c
 import { Hero } from "../../hero"; // plasmic-import: DLj-cPcbVVVA/codeComponent
 import { BlurFade } from "../../magicui/blur-fade"; // plasmic-import: mo0WkofSVfhk/codeComponent
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
+import { BoxReveal } from "../../magicui/box-reveal"; // plasmic-import: jgqirGASTSZT/codeComponent
+import { ImageGradient } from "../../image-gradient"; // plasmic-import: BYKZmpg0gHCS/codeComponent
+import { SingleProductText } from "../../single-product"; // plasmic-import: HyyMSog-JLpO/codeComponent
+import { MultipleProduct } from "../../multiple-product"; // plasmic-import: pE3Y9Bt6qwFd/codeComponent
 
 import { useScreenVariants as useScreenVariantsqZb5Tz3BAq8Z } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: qZB5tz3bAQ8Z/globalVariant
 
@@ -86,9 +90,9 @@ export type PlasmicAbout__OverridesType = {
   root?: Flex__<"div">;
   navigation?: Flex__<typeof Navigation>;
   hero?: Flex__<typeof Hero>;
-  blurFade?: Flex__<typeof BlurFade>;
   columns?: Flex__<"div">;
   embedHtml?: Flex__<typeof Embed>;
+  multipleProduct?: Flex__<typeof MultipleProduct>;
 };
 
 export interface DefaultAboutProps {}
@@ -171,7 +175,10 @@ function PlasmicAbout__RenderFunc(props: {
           image={"/plasmic/wisdoor_web/images/image.svg"}
         />
 
-        <section className={classNames(projectcss.all, sty.section__eYcxF)}>
+        <section
+          className={classNames(projectcss.all, sty.section__eYcxF)}
+          id={"about"}
+        >
           <Hero
             data-plasmic-name={"hero"}
             data-plasmic-override={overrides.hero}
@@ -182,10 +189,8 @@ function PlasmicAbout__RenderFunc(props: {
 
           <section className={classNames(projectcss.all, sty.section__vl52G)}>
             <BlurFade
-              data-plasmic-name={"blurFade"}
-              data-plasmic-override={overrides.blurFade}
               blur={"6px"}
-              className={classNames("__wab_instance", sty.blurFade)}
+              className={classNames("__wab_instance", sty.blurFade__yP7Tk)}
               delay={0}
               duration={0.4}
               inView={false}
@@ -223,149 +228,291 @@ function PlasmicAbout__RenderFunc(props: {
               className={classNames(projectcss.all, sty.columns)}
             >
               <div className={classNames(projectcss.all, sty.column__h5LGi)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__wxO3P
-                  )}
+                <BlurFade
+                  blur={"6px"}
+                  className={classNames("__wab_instance", sty.blurFade__wDW7)}
+                  delay={0}
+                  duration={0.4}
+                  inView={false}
+                  inViewMargin={"-50px"}
+                  variant={{
+                    hidden: { y: 6, opacity: 0, filter: "blur(6px)" },
+                    visible: { y: -6, opacity: 1, filter: "blur(0px)" }
+                  }}
+                  yOffset={6}
                 >
-                  <React.Fragment>
-                    <span
-                      className={"plasmic_default__all plasmic_default__span"}
-                      style={{ color: "#FFFFFF" }}
-                    >
-                      {"100+"}
-                    </span>
-                  </React.Fragment>
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__bAqwv
-                  )}
-                >
-                  <React.Fragment>
-                    <span
-                      className={"plasmic_default__all plasmic_default__span"}
-                      style={{ color: "#FFFFFF" }}
-                    >
-                      {"Karyawan"}
-                    </span>
-                  </React.Fragment>
-                </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__wxO3P
+                    )}
+                  >
+                    <React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ color: "#FFFFFF" }}
+                      >
+                        {"100+"}
+                      </span>
+                    </React.Fragment>
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__bAqwv
+                    )}
+                  >
+                    <React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ color: "#FFFFFF" }}
+                      >
+                        {"Karyawan"}
+                      </span>
+                    </React.Fragment>
+                  </div>
+                </BlurFade>
               </div>
               <div className={classNames(projectcss.all, sty.column__arYR)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__qOll
-                  )}
+                <BlurFade
+                  blur={"6px"}
+                  className={classNames("__wab_instance", sty.blurFade__oUO6)}
+                  delay={0}
+                  duration={0.4}
+                  inView={false}
+                  inViewMargin={"-50px"}
+                  variant={{
+                    hidden: { y: 6, opacity: 0, filter: "blur(6px)" },
+                    visible: { y: -6, opacity: 1, filter: "blur(0px)" }
+                  }}
+                  yOffset={6}
                 >
-                  <React.Fragment>
-                    <span
-                      className={"plasmic_default__all plasmic_default__span"}
-                      style={{ color: "#FFFFFF" }}
-                    >
-                      {"100+"}
-                    </span>
-                  </React.Fragment>
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__srSyb
-                  )}
-                >
-                  <React.Fragment>
-                    <span
-                      className={"plasmic_default__all plasmic_default__span"}
-                      style={{ color: "#FFFFFF" }}
-                    >
-                      {"Karyawan"}
-                    </span>
-                  </React.Fragment>
-                </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__xWzD
+                    )}
+                  >
+                    <React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ color: "#FFFFFF" }}
+                      >
+                        {"100+"}
+                      </span>
+                    </React.Fragment>
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__aRo9N
+                    )}
+                  >
+                    <React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ color: "#FFFFFF" }}
+                      >
+                        {"Karyawan"}
+                      </span>
+                    </React.Fragment>
+                  </div>
+                </BlurFade>
               </div>
               <div className={classNames(projectcss.all, sty.column__dh7Mk)}>
-                <Embed
-                  data-plasmic-name={"embedHtml"}
-                  data-plasmic-override={overrides.embedHtml}
-                  className={classNames("__wab_instance", sty.embedHtml)}
-                  code={"<div>1000 m<sup>2</sup></div>"}
-                />
-
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__oInLs
-                  )}
+                <BlurFade
+                  blur={"6px"}
+                  className={classNames("__wab_instance", sty.blurFade__borVr)}
+                  delay={0}
+                  duration={0.4}
+                  inView={false}
+                  inViewMargin={"-50px"}
+                  variant={{
+                    hidden: { y: 6, opacity: 0, filter: "blur(6px)" },
+                    visible: { y: -6, opacity: 1, filter: "blur(0px)" }
+                  }}
+                  yOffset={6}
                 >
-                  <React.Fragment>
-                    <span
-                      className={"plasmic_default__all plasmic_default__span"}
-                      style={{ color: "#FFFFFF" }}
-                    >
-                      {"Karyawan"}
-                    </span>
-                  </React.Fragment>
-                </div>
+                  <Embed
+                    data-plasmic-name={"embedHtml"}
+                    data-plasmic-override={overrides.embedHtml}
+                    className={classNames("__wab_instance", sty.embedHtml)}
+                    code={"<div>1000 m<sup>2</sup></div>"}
+                  />
+
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__jNCuA
+                    )}
+                  >
+                    <React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ color: "#FFFFFF" }}
+                      >
+                        {"Karyawan"}
+                      </span>
+                    </React.Fragment>
+                  </div>
+                </BlurFade>
               </div>
             </div>
           </section>
         </section>
-        <div
-          className={classNames(
-            projectcss.all,
-            projectcss.__wab_text,
-            sty.text__nIyMe
-          )}
+        <section
+          className={classNames(projectcss.all, sty.section__htk6)}
+          id={"product"}
         >
-          {"Gimana dah\n"}
-        </div>
-        <div
-          className={classNames(
-            projectcss.all,
-            projectcss.__wab_text,
-            sty.text__dyFf8
-          )}
+          <BoxReveal
+            className={classNames("__wab_instance", sty.boxReveal__pEv89)}
+            width={"fit-content"}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__st85T
+              )}
+            >
+              {"Commitment to suss"}
+            </div>
+          </BoxReveal>
+          <BoxReveal
+            className={classNames("__wab_instance", sty.boxReveal__u8UzA)}
+            width={"fit-content"}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__xc7T
+              )}
+            >
+              {
+                "anggung jawab Tanggung jawab Tanggung jawab Tanggung jawab Tanggung jawab Tanggung jawab Tanggung jawab Tanggung jawab Tanggung jawab"
+              }
+            </div>
+          </BoxReveal>
+        </section>
+        <section
+          className={classNames(projectcss.all, sty.section__qLw9L)}
+          id={``}
         >
-          {"Gimana dah\n"}
-        </div>
-        <div
-          className={classNames(
-            projectcss.all,
-            projectcss.__wab_text,
-            sty.text__pNMgO
-          )}
-        >
-          {"Gimana dah\n"}
-        </div>
-        <div
-          className={classNames(
-            projectcss.all,
-            projectcss.__wab_text,
-            sty.text__hdrpq
-          )}
-        >
-          {"Gimana dah\n"}
-        </div>
+          <ImageGradient
+            alt={"Logo Wisdoor"}
+            className={classNames("__wab_instance", sty.imageGradient__bwydN)}
+            gradientBottomBlack={true}
+            gradientTopWhite={true}
+            image={
+              "/plasmic/wisdoor_web/images/aboutUsPowerHeroDesktopGlobalpng.png"
+            }
+          />
+
+          <SingleProductText
+            className={classNames(
+              "__wab_instance",
+              sty.singleProductText__mFrPe
+            )}
+            description={
+              "We design sustainable systems that are massively scalable\u2014resulting in the greatest environmental benefit possible. Our energy generation and storage products work together with our electric vehicles to amplify their impact."
+            }
+            title={"Power Earth"}
+          />
+
+          <MultipleProduct
+            data-plasmic-name={"multipleProduct"}
+            data-plasmic-override={overrides.multipleProduct}
+            className={classNames("__wab_instance", sty.multipleProduct)}
+            products={(() => {
+              const __composite = [
+                { title: null, description: null, image: null },
+                { title: null, description: "Description", image: null },
+                {
+                  title: null,
+                  description: "Description",
+                  image: "/placeholder.svg"
+                }
+              ];
+              __composite["0"]["title"] = "Solar";
+              __composite["0"]["description"] =
+                "Produce solar energy for residential and commercial needs";
+              __composite["0"]["image"] =
+                "https://site-assets.plasmic.app/ac8b44f7fbf5a81c839a180920ea249c.png";
+              __composite["1"]["title"] = "Product2";
+              __composite["1"]["image"] =
+                "https://site-assets.plasmic.app/1818fb887829971355e6af8eee65fc82.png";
+              __composite["2"]["title"] = "Product3";
+              return __composite;
+            })()}
+          />
+
+          <ImageGradient
+            alt={"Logo Wisdoor"}
+            className={classNames("__wab_instance", sty.imageGradient__w3Ws)}
+            gradientBottomBlack={false}
+            gradientTopWhite={false}
+            image={
+              "/plasmic/wisdoor_web/images/aboutUsMachineDesktopGlobalpng.png"
+            }
+          />
+
+          <SingleProductText
+            className={classNames(
+              "__wab_instance",
+              sty.singleProductText__veONm
+            )}
+            description={
+              "We design sustainable systems that are massively scalable\u2014resulting in the greatest environmental benefit possible. Our energy generation and storage products work together with our electric vehicles to amplify their impact."
+            }
+            title={"Power Earth"}
+          />
+
+          <ImageGradient
+            alt={"Logo Wisdoor"}
+            className={classNames("__wab_instance", sty.imageGradient__m9A87)}
+            gradientBottomBlack={false}
+            gradientTopWhite={false}
+            image={
+              "/plasmic/wisdoor_web/images/aboutUsExceptionalDesktopGlobalpng.png"
+            }
+          />
+
+          <SingleProductText
+            className={classNames(
+              "__wab_instance",
+              sty.singleProductText__quhfr
+            )}
+            description={
+              "We design sustainable systems that are massively scalable\u2014resulting in the greatest environmental benefit possible. Our energy generation and storage products work together with our electric vehicles to amplify their impact."
+            }
+            title={"Power Earth"}
+          />
+        </section>
       </div>
     </React.Fragment>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "navigation", "hero", "blurFade", "columns", "embedHtml"],
+  root: [
+    "root",
+    "navigation",
+    "hero",
+    "columns",
+    "embedHtml",
+    "multipleProduct"
+  ],
   navigation: ["navigation"],
   hero: ["hero"],
-  blurFade: ["blurFade"],
   columns: ["columns", "embedHtml"],
-  embedHtml: ["embedHtml"]
+  embedHtml: ["embedHtml"],
+  multipleProduct: ["multipleProduct"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -374,9 +521,9 @@ type NodeDefaultElementType = {
   root: "div";
   navigation: typeof Navigation;
   hero: typeof Hero;
-  blurFade: typeof BlurFade;
   columns: "div";
   embedHtml: typeof Embed;
+  multipleProduct: typeof MultipleProduct;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -441,9 +588,9 @@ export const PlasmicAbout = Object.assign(
     // Helper components rendering sub-elements
     navigation: makeNodeComponent("navigation"),
     hero: makeNodeComponent("hero"),
-    blurFade: makeNodeComponent("blurFade"),
     columns: makeNodeComponent("columns"),
     embedHtml: makeNodeComponent("embedHtml"),
+    multipleProduct: makeNodeComponent("multipleProduct"),
 
     // Metadata about props expected for PlasmicAbout
     internalVariantProps: PlasmicAbout__VariantProps,

@@ -93,6 +93,26 @@
           "id": "H6ywnRQWhDue",
           "name": "image",
           "filePath": "../public/plasmic/wisdoor_web/images/image.svg"
+        },
+        {
+          "id": "mUIFouvDwTEr",
+          "name": "About-Us-Machine-Desktop-Global.png",
+          "filePath": "../public/plasmic/wisdoor_web/images/aboutUsMachineDesktopGlobalpng.png"
+        },
+        {
+          "id": "Hkyg_rH2lNhp",
+          "name": "About-Us-Power-Hero-Desktop-Global.png",
+          "filePath": "../public/plasmic/wisdoor_web/images/aboutUsPowerHeroDesktopGlobalpng.png"
+        },
+        {
+          "id": "LLMQv6BB-z2B",
+          "name": "About-Us-Power-Solar-Desktop-Global.png",
+          "filePath": "../public/plasmic/wisdoor_web/images/aboutUsPowerSolarDesktopGlobalpng.png"
+        },
+        {
+          "id": "-znTfwjizlwM",
+          "name": "About-Us-Exceptional-Desktop-Global.png",
+          "filePath": "../public/plasmic/wisdoor_web/images/aboutUsExceptionalDesktopGlobalpng.png"
         }
       ],
       "indirect": false,
@@ -146,6 +166,30 @@
           "name": "TiptapTextViewer",
           "displayName": "TiptapTextViewer",
           "componentImportPath": "./components/rich-text"
+        },
+        {
+          "id": "BYKZmpg0gHCS",
+          "name": "ImageGradient",
+          "displayName": "ImageGradient",
+          "componentImportPath": "./components/image-gradient"
+        },
+        {
+          "id": "pE3Y9Bt6qwFd",
+          "name": "MultipleProduct",
+          "displayName": "MultipleProduct",
+          "componentImportPath": "./components/multiple-product"
+        },
+        {
+          "id": "HyyMSog-JLpO",
+          "name": "SingleProductText",
+          "displayName": "SingleProductText",
+          "componentImportPath": "./components/single-product"
+        },
+        {
+          "id": "jgqirGASTSZT",
+          "name": "BoxReveal",
+          "displayName": "BoxReveal",
+          "componentImportPath": "./components/magicui/box-reveal"
         }
       ],
       "customFunctions": []
