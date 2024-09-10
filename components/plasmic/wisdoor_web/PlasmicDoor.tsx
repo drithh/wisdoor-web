@@ -59,6 +59,10 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { DoorViewer } from "../../door-viewer"; // plasmic-import: SH_PqjJ_I-5G/codeComponent
+import { ChooseDoor } from "../../door/choose"; // plasmic-import: LMn0cgg59gxw/codeComponent
+import { SizeDoor } from "../../door/size"; // plasmic-import: 7H1b44gqct0K/codeComponent
+
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic.module.css"; // plasmic-import: t5hn1zAmdmxJoKmkXG4dPV/projectcss
@@ -77,6 +81,10 @@ export const PlasmicDoor__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicDoor__OverridesType = {
   root?: Flex__<"div">;
+  doorViewer?: Flex__<typeof DoorViewer>;
+  section?: Flex__<"section">;
+  chooseDoor?: Flex__<typeof ChooseDoor>;
+  sizeDoor?: Flex__<typeof SizeDoor>;
 };
 
 export interface DefaultDoorProps {}
@@ -110,6 +118,24 @@ function PlasmicDoor__RenderFunc(props: {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
+  const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
+    () => [
+      {
+        path: "jenisPintu",
+        type: "private",
+        variableType: "number",
+        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+      }
+    ],
+    [$props, $ctx, $refs]
+  );
+  const $state = useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries: {},
+    $refs
+  });
+
   return (
     <React.Fragment>
       <Head></Head>
@@ -134,20 +160,140 @@ function PlasmicDoor__RenderFunc(props: {
             projectcss.plasmic_tokens,
             sty.root
           )}
-        />
+        >
+          <Stack__
+            as={"div"}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.freeBox__e2Glv)}
+          >
+            <DoorViewer
+              data-plasmic-name={"doorViewer"}
+              data-plasmic-override={overrides.doorViewer}
+              className={classNames("__wab_instance", sty.doorViewer)}
+            />
+
+            <section
+              data-plasmic-name={"section"}
+              data-plasmic-override={overrides.section}
+              className={classNames(projectcss.all, sty.section)}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__k7FLs
+                )}
+              >
+                {"Kustom Pintu"}
+              </div>
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox__lwiwG)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___0Na67
+                  )}
+                >
+                  {"Jenis Pintu"}
+                </div>
+                <ChooseDoor
+                  data-plasmic-name={"chooseDoor"}
+                  data-plasmic-override={overrides.chooseDoor}
+                  className={classNames("__wab_instance", sty.chooseDoor)}
+                  doorNames={(() => {
+                    const __composite = [
+                      { id: null, name: null },
+                      { id: null, name: null }
+                    ];
+                    __composite["0"]["id"] = "utama";
+                    __composite["0"]["name"] = "Pintu Utama";
+                    __composite["1"]["id"] = "kamar";
+                    __composite["1"]["name"] = "Pintu Kamar (Rangka 3.6)";
+                    return __composite;
+                  })()}
+                />
+              </Stack__>
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox__vjeMy)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___1DgB
+                  )}
+                >
+                  {"Ukuran Pintu"}
+                </div>
+              </Stack__>
+              <SizeDoor
+                data-plasmic-name={"sizeDoor"}
+                data-plasmic-override={overrides.sizeDoor}
+                className={classNames("__wab_instance", sty.sizeDoor)}
+                sizes={(() => {
+                  const __composite = [
+                    {
+                      idDoor: null,
+                      length: null,
+                      width: null,
+                      price: null,
+                      priceBelowDefaultWidth: null,
+                      priceAboveDefaultWidth: null
+                    },
+                    {
+                      idDoor: null,
+                      length: null,
+                      width: null,
+                      price: null,
+                      priceBelowDefaultWidth: null,
+                      priceAboveDefaultWidth: null
+                    }
+                  ];
+                  __composite["0"]["idDoor"] = "utama";
+                  __composite["0"]["length"] = 210;
+                  __composite["0"]["width"] = 83;
+                  __composite["0"]["price"] = 560000;
+                  __composite["0"]["priceBelowDefaultWidth"] = 100000;
+                  __composite["0"]["priceAboveDefaultWidth"] = 200000;
+                  __composite["1"]["idDoor"] = "kamar";
+                  __composite["1"]["length"] = 210;
+                  __composite["1"]["width"] = 83;
+                  __composite["1"]["price"] = 660000;
+                  __composite["1"]["priceBelowDefaultWidth"] = 100000;
+                  __composite["1"]["priceAboveDefaultWidth"] = 200000;
+                  return __composite;
+                })()}
+              />
+            </section>
+          </Stack__>
+        </div>
       </div>
     </React.Fragment>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root"]
+  root: ["root", "doorViewer", "section", "chooseDoor", "sizeDoor"],
+  doorViewer: ["doorViewer"],
+  section: ["section", "chooseDoor", "sizeDoor"],
+  chooseDoor: ["chooseDoor"],
+  sizeDoor: ["sizeDoor"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  doorViewer: typeof DoorViewer;
+  section: "section";
+  chooseDoor: typeof ChooseDoor;
+  sizeDoor: typeof SizeDoor;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -210,6 +356,10 @@ export const PlasmicDoor = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    doorViewer: makeNodeComponent("doorViewer"),
+    section: makeNodeComponent("section"),
+    chooseDoor: makeNodeComponent("chooseDoor"),
+    sizeDoor: makeNodeComponent("sizeDoor"),
 
     // Metadata about props expected for PlasmicDoor
     internalVariantProps: PlasmicDoor__VariantProps,

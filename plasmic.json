@@ -216,6 +216,18 @@
           "name": "DoorButton",
           "displayName": "DoorButton",
           "componentImportPath": "./components/door/button"
+        },
+        {
+          "id": "LMn0cgg59gxw",
+          "name": "ChooseDoor",
+          "displayName": "ChooseDoor",
+          "componentImportPath": "./components/door/choose"
+        },
+        {
+          "id": "7H1b44gqct0K",
+          "name": "SizeDoor",
+          "displayName": "SizeDoor",
+          "componentImportPath": "./components/door/size"
         }
       ],
       "customFunctions": []

@@ -15,6 +15,8 @@ import { SingleProductText } from '@/components/single-product';
 import BoxReveal from '@/components/magicui/box-reveal';
 import { DoorViewer } from '@/components/door-viewer';
 import { DoorButton } from '@/components/door/button';
+import { ChooseDoor } from '@/components/door/choose';
+import { SizeDoor } from '@/components/door/size';
 
 // You can register any code components that you want to use here; see
 // https://docs.plasmic.app/learn/code-components-ref/
@@ -178,37 +180,6 @@ registerComponent(BoxReveal, {
   importPath: './components/magicui/box-reveal',
 });
 
-registerComponent(DoorViewer, {
-  name: 'DoorViewer',
-  props: {},
-
-  // Specify how generated Plasmic code should import this component;
-  // path is relative to srcDir
-  importPath: './components/door-viewer',
-});
-
-registerComponent(DoorViewer, {
-  name: 'DoorViewer',
-  props: {},
-
-  // Specify how generated Plasmic code should import this component;
-  // path is relative to srcDir
-  importPath: './components/door-viewer',
-});
-
-registerComponent(DoorButton, {
-  name: 'DoorButton',
-  props: {
-    children: {
-      type: 'slot',
-    },
-  },
-
-  // Specify how generated Plasmic code should import this component;
-  // path is relative to srcDir
-  importPath: './components/door/button',
-});
-
 registerComponent(BlurFade, {
   name: 'BlurFade',
   props: {
@@ -297,6 +268,106 @@ registerComponent(SingleProductText, {
   // Specify how generated Plasmic code should import this component;
   // path is relative to srcDir
   importPath: './components/single-product',
+});
+
+registerComponent(DoorViewer, {
+  name: 'DoorViewer',
+  props: {},
+
+  // Specify how generated Plasmic code should import this component;
+  // path is relative to srcDir
+  importPath: './components/door-viewer',
+});
+
+registerComponent(DoorButton, {
+  name: 'DoorButton',
+  props: {
+    children: {
+      type: 'slot',
+    },
+    className: {
+      type: 'string',
+    },
+    onClick: {
+      type: 'eventHandler',
+      argTypes: [],
+    },
+  },
+  interactionVariants: {
+    hover: {
+      cssSelector: ':hover',
+      displayName: 'Hover',
+    },
+  },
+  // Specify how generated Plasmic code should import this component;
+  // path is relative to srcDir
+  importPath: './components/door/button',
+});
+
+registerComponent(ChooseDoor, {
+  name: 'ChooseDoor',
+  props: {
+    className: {
+      type: 'string',
+    },
+    doorNames: {
+      type: 'array',
+      itemType: {
+        type: 'object',
+        fields: {
+          id: {
+            type: 'string',
+          },
+          name: {
+            type: 'string',
+          },
+        },
+      },
+    },
+  },
+
+  // Specify how generated Plasmic code should import this component;
+  // path is relative to srcDir
+  importPath: './components/door/choose',
+});
+
+registerComponent(SizeDoor, {
+  name: 'SizeDoor',
+  props: {
+    className: {
+      type: 'string',
+    },
+    sizes: {
+      type: 'array',
+      itemType: {
+        type: 'object',
+        fields: {
+          idDoor: {
+            type: 'string',
+          },
+          length: {
+            type: 'number',
+          },
+          width: {
+            type: 'number',
+          },
+          price: {
+            type: 'number',
+          },
+          priceBelowDefaultWidth: {
+            type: 'number',
+          },
+          priceAboveDefaultWidth: {
+            type: 'number',
+          },
+        },
+      },
+    },
+  },
+
+  // Specify how generated Plasmic code should import this component;
+  // path is relative to srcDir
+  importPath: './components/door/size',
 });
 
 export default function PlasmicHost() {
