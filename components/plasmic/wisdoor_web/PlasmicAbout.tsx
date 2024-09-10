@@ -114,7 +114,16 @@ function PlasmicAbout__RenderFunc(props: {
 }) {
   const { variants, overrides, forNode } = props;
 
-  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+        Object.fromEntries(
+          Object.entries(props.args).filter(([_, v]) => v !== undefined)
+        )
+      ),
+    [props.args]
+  );
 
   const $props = {
     ...args,
@@ -410,7 +419,7 @@ function PlasmicAbout__RenderFunc(props: {
             gradientBottomBlack={true}
             gradientTopWhite={true}
             image={
-              "/plasmic/wisdoor_web/images/aboutUsPowerHeroDesktopGlobalpng.png"
+              "/plasmic/wisdoor_web/images/aboutUsPowerHeroDesktopGlobalPng.png"
             }
           />
 
@@ -458,7 +467,7 @@ function PlasmicAbout__RenderFunc(props: {
             gradientBottomBlack={false}
             gradientTopWhite={false}
             image={
-              "/plasmic/wisdoor_web/images/aboutUsMachineDesktopGlobalpng.png"
+              "/plasmic/wisdoor_web/images/aboutUsMachineDesktopGlobalPng.png"
             }
           />
 
@@ -479,7 +488,7 @@ function PlasmicAbout__RenderFunc(props: {
             gradientBottomBlack={false}
             gradientTopWhite={false}
             image={
-              "/plasmic/wisdoor_web/images/aboutUsExceptionalDesktopGlobalpng.png"
+              "/plasmic/wisdoor_web/images/aboutUsExceptionalDesktopGlobalPng.png"
             }
           />
 

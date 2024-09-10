@@ -12,8 +12,6 @@ interface TiptapTextViewerProps {
 //     editable: false, // Set to false for read-only mode
 //   });
 
-//   console.log('content', content);
-
 //   return (
 //     <div className="w-32 h-16">
 //       <EditorContent className="w-full h-full" editor={editor} />
@@ -22,7 +20,6 @@ interface TiptapTextViewerProps {
 // }
 
 export const TiptapTextViewer = ({ content }: TiptapTextViewerProps) => {
-  console.log('content', content);
   const editor = useEditor({
     editorProps: {
       attributes: {

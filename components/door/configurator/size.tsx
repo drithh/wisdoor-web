@@ -1,15 +1,16 @@
 import { useEffect, useRef, useState } from 'react';
-import { DoorButton } from './button';
-import { DoorState, useDoorStore } from './store';
+import { DoorButton } from '../components/button';
+import { DoorState, useDoorStore } from '../store';
 import {
+  Accordion,
+  AccordionContent,
   AccordionItem,
   AccordionTrigger,
-  AccordionContent,
-  Accordion,
-} from '@radix-ui/react-accordion';
-import { DoorAccordion } from './accordion';
-import { Slider } from '../ui/slider';
-import { Label } from '../ui/label';
+} from '@/components/ui/accordion';
+import { DoorAccordion } from '../components/accordion';
+import { Slider } from '@/components/ui/slider';
+import { Label } from '@/components/ui/label';
+
 interface Size {
   idDoor: string;
   length: number;
@@ -43,7 +44,7 @@ export const SizeDoor = (props: SizeDoorProps) => {
     Math.abs(customWidth.current - size.width) === 30;
 
   return (
-    <div className="flex flex-col gap-4 w-full">
+    <div className="flex font-text flex-col gap-4 w-full">
       <DoorButton
         isActive={isDefaultSize}
         onClick={() => {
@@ -65,12 +66,12 @@ export const SizeDoor = (props: SizeDoorProps) => {
         }}
       >
         <AccordionItem value="item-1" className="w-full">
-          <AccordionTrigger className="px-4 w-full h-full flex justify-start rounded-sm hover:opacity-100  hover:bg-gray-100">
+          <AccordionTrigger className="hover:no-underline text-sm px-4 py-0 w-full h-full flex justify-start rounded-sm hover:opacity-100  hover:bg-gray-100">
             Custom
             {customWidth.current !== size.width &&
               ` (${customWidthText.current} cm x ${size.length} cm)`}
           </AccordionTrigger>
-          <AccordionContent className="mt-4 px-4">
+          <AccordionContent className="mt-4 px-4 ">
             <div className="flex flex-col gap-2">
               <Label>Lebar Pintu</Label>
               <div className="flex gap-2">

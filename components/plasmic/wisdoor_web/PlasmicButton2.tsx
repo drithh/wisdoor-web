@@ -66,7 +66,7 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: t5hn1zAmdmxJoKmkXG4dPV/projectcss
 import sty from "./PlasmicButton2.module.css"; // plasmic-import: 436mCM297ORO/css
 
-import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: fSpcTu7bo9ev/icon
+import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: fSpcTu7bo9ev/icon
 import Icon38Icon from "./icons/PlasmicIcon__Icon38"; // plasmic-import: 2U5GOquf_LPw/icon
 
 createPlasmicElementProxy;
@@ -188,7 +188,16 @@ function PlasmicButton2__RenderFunc(props: {
 }) {
   const { variants, overrides, forNode } = props;
 
-  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+        Object.fromEntries(
+          Object.entries(props.args).filter(([_, v]) => v !== undefined)
+        )
+      ),
+    [props.args]
+  );
 
   const $props = {
     ...args,
@@ -354,7 +363,7 @@ function PlasmicButton2__RenderFunc(props: {
         >
           {renderPlasmicSlot({
             defaultContents: (
-              <ChecksvgIcon
+              <CheckSvgIcon
                 className={classNames(projectcss.all, sty.svg__jCzPs)}
                 role={"img"}
               />

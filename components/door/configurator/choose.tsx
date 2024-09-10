@@ -1,5 +1,5 @@
-import { DoorButton } from './button';
-import { DoorState, useDoorStore } from './store';
+import { DoorButton } from '../components/button';
+import { DoorState, useDoorStore } from '../store';
 
 interface ChooseDoorProps {
   doorNames: DoorState['door'][];

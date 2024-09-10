@@ -88,8 +88,8 @@
       "icons": [
         {
           "id": "fSpcTu7bo9ev",
-          "name": "ChecksvgIcon",
-          "moduleFilePath": "plasmic/wisdoor_web/icons/PlasmicIcon__Checksvg.tsx"
+          "name": "CheckSvgIcon",
+          "moduleFilePath": "plasmic/wisdoor_web/icons/PlasmicIcon__CheckSvg.tsx"
         },
         {
           "id": "2U5GOquf_LPw",
@@ -111,22 +111,37 @@
         {
           "id": "mUIFouvDwTEr",
           "name": "About-Us-Machine-Desktop-Global.png",
-          "filePath": "../public/plasmic/wisdoor_web/images/aboutUsMachineDesktopGlobalpng.png"
+          "filePath": "../public/plasmic/wisdoor_web/images/aboutUsMachineDesktopGlobalPng.png"
         },
         {
           "id": "Hkyg_rH2lNhp",
           "name": "About-Us-Power-Hero-Desktop-Global.png",
-          "filePath": "../public/plasmic/wisdoor_web/images/aboutUsPowerHeroDesktopGlobalpng.png"
+          "filePath": "../public/plasmic/wisdoor_web/images/aboutUsPowerHeroDesktopGlobalPng.png"
         },
         {
           "id": "LLMQv6BB-z2B",
           "name": "About-Us-Power-Solar-Desktop-Global.png",
-          "filePath": "../public/plasmic/wisdoor_web/images/aboutUsPowerSolarDesktopGlobalpng.png"
+          "filePath": "../public/plasmic/wisdoor_web/images/aboutUsPowerSolarDesktopGlobalPng.png"
         },
         {
           "id": "-znTfwjizlwM",
           "name": "About-Us-Exceptional-Desktop-Global.png",
-          "filePath": "../public/plasmic/wisdoor_web/images/aboutUsExceptionalDesktopGlobalpng.png"
+          "filePath": "../public/plasmic/wisdoor_web/images/aboutUsExceptionalDesktopGlobalPng.png"
+        },
+        {
+          "id": "SWuuj29LiIuH",
+          "name": "hmr.jpeg",
+          "filePath": "../public/plasmic/wisdoor_web/images/hmrJpeg.jpg"
+        },
+        {
+          "id": "3fPG9fOHGO6n",
+          "name": "hmr.jpeg 2",
+          "filePath": "../public/plasmic/wisdoor_web/images/hmrJpeg2.jpg"
+        },
+        {
+          "id": "aFDOj2rq_Aw9",
+          "name": "plywood.jpg",
+          "filePath": "../public/plasmic/wisdoor_web/images/plywoodJpg.jpg"
         }
       ],
       "indirect": false,
@@ -215,19 +230,25 @@
           "id": "atQ7Iy0L6tMB",
           "name": "DoorButton",
           "displayName": "DoorButton",
-          "componentImportPath": "./components/door/button"
+          "componentImportPath": "./components/door/components/button"
         },
         {
           "id": "LMn0cgg59gxw",
           "name": "ChooseDoor",
           "displayName": "ChooseDoor",
-          "componentImportPath": "./components/door/choose"
+          "componentImportPath": "./components/door/configurator/choose"
         },
         {
           "id": "7H1b44gqct0K",
           "name": "SizeDoor",
           "displayName": "SizeDoor",
-          "componentImportPath": "./components/door/size"
+          "componentImportPath": "./components/door/configurator/size"
+        },
+        {
+          "id": "CKXkj02X-GEJ",
+          "name": "TypeDoor",
+          "displayName": "TypeDoor",
+          "componentImportPath": "./components/door/configurator/type"
         }
       ],
       "customFunctions": []

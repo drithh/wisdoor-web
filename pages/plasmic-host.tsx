@@ -14,9 +14,10 @@ import { MultipleProduct } from '@/components/multiple-product';
 import { SingleProductText } from '@/components/single-product';
 import BoxReveal from '@/components/magicui/box-reveal';
 import { DoorViewer } from '@/components/door-viewer';
-import { DoorButton } from '@/components/door/button';
-import { ChooseDoor } from '@/components/door/choose';
-import { SizeDoor } from '@/components/door/size';
+import { DoorButton } from '@/components/door/components/button';
+import { ChooseDoor } from '@/components/door/configurator/choose';
+import { SizeDoor } from '@/components/door/configurator/size';
+import { TypeDoor } from '@/components/door/configurator/type';
 
 // You can register any code components that you want to use here; see
 // https://docs.plasmic.app/learn/code-components-ref/
@@ -301,7 +302,7 @@ registerComponent(DoorButton, {
   },
   // Specify how generated Plasmic code should import this component;
   // path is relative to srcDir
-  importPath: './components/door/button',
+  importPath: './components/door/components/button',
 });
 
 registerComponent(ChooseDoor, {
@@ -328,7 +329,7 @@ registerComponent(ChooseDoor, {
 
   // Specify how generated Plasmic code should import this component;
   // path is relative to srcDir
-  importPath: './components/door/choose',
+  importPath: './components/door/configurator/choose',
 });
 
 registerComponent(SizeDoor, {
@@ -367,7 +368,37 @@ registerComponent(SizeDoor, {
 
   // Specify how generated Plasmic code should import this component;
   // path is relative to srcDir
-  importPath: './components/door/size',
+  importPath: './components/door/configurator/size',
+});
+
+registerComponent(TypeDoor, {
+  name: 'TypeDoor',
+  props: {
+    className: {
+      type: 'string',
+    },
+    types: {
+      type: 'array',
+      itemType: {
+        type: 'object',
+        fields: {
+          type: {
+            type: 'string',
+          },
+          image: {
+            type: 'imageUrl',
+          },
+          price: {
+            type: 'number',
+          },
+        },
+      },
+    },
+  },
+
+  // Specify how generated Plasmic code should import this component;
+  // path is relative to srcDir
+  importPath: './components/door/configurator/type',
 });
 
 export default function PlasmicHost() {
