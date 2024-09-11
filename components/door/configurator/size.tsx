@@ -12,7 +12,7 @@ import { Slider } from '@/components/ui/slider';
 import { Label } from '@/components/ui/label';
 
 interface Size {
-  idDoor: string;
+  doorId: string;
   length: number;
   width: number;
   price: number;
@@ -35,7 +35,7 @@ export const SizeDoor = (props: SizeDoorProps) => {
   const [isDefaultSize, setIsDefaultSize] = useState(false);
 
   const size =
-    props.sizes.find((size) => size.idDoor === storage.id) || props.sizes[0];
+    props.sizes.find((size) => size.doorId === storage.id) || props.sizes[0];
 
   const customWidth = useRef<number>(size.width);
   const customWidthText = useRef<string>(customWidth.current.toString());

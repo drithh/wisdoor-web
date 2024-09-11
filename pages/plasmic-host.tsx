@@ -18,6 +18,8 @@ import { DoorButton } from '@/components/door/components/button';
 import { ChooseDoor } from '@/components/door/configurator/choose';
 import { SizeDoor } from '@/components/door/configurator/size';
 import { TypeDoor } from '@/components/door/configurator/type';
+import { FinishingDoor } from '@/components/door/configurator/finishing';
+import { AddonDoor } from '@/components/door/configurator/addon';
 
 // You can register any code components that you want to use here; see
 // https://docs.plasmic.app/learn/code-components-ref/
@@ -343,7 +345,7 @@ registerComponent(SizeDoor, {
       itemType: {
         type: 'object',
         fields: {
-          idDoor: {
+          doorId: {
             type: 'string',
           },
           length: {
@@ -399,6 +401,76 @@ registerComponent(TypeDoor, {
   // Specify how generated Plasmic code should import this component;
   // path is relative to srcDir
   importPath: './components/door/configurator/type',
+});
+
+registerComponent(FinishingDoor, {
+  name: 'FinishingDoor',
+  props: {
+    className: {
+      type: 'string',
+    },
+    finishings: {
+      type: 'array',
+      itemType: {
+        type: 'object',
+        fields: {
+          doorId: {
+            type: 'string',
+          },
+          name: {
+            type: 'string',
+          },
+          price: {
+            type: 'number',
+          },
+        },
+      },
+    },
+  },
+
+  // Specify how generated Plasmic code should import this component;
+  // path is relative to srcDir
+  importPath: './components/door/configurator/finishing',
+});
+
+registerComponent(AddonDoor, {
+  name: 'AddonDoor',
+  props: {
+    className: {
+      type: 'string',
+    },
+    addons: {
+      type: 'object',
+      fields: {
+        keyHole: {
+          type: 'object',
+          fields: {
+            text: {
+              type: 'string',
+            },
+            price: {
+              type: 'number',
+            },
+          },
+        },
+        weatherStrip: {
+          type: 'object',
+          fields: {
+            text: {
+              type: 'string',
+            },
+            price: {
+              type: 'number',
+            },
+          },
+        },
+      },
+    },
+  },
+
+  // Specify how generated Plasmic code should import this component;
+  // path is relative to srcDir
+  importPath: './components/door/configurator/addon',
 });
 
 export default function PlasmicHost() {

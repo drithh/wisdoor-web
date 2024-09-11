@@ -17,13 +17,22 @@ interface Size extends Item {
   limit?: boolean;
 }
 
+interface KeyHole {
+  isKeyHole: boolean;
+  price: number;
+}
+
+interface WeatherStrip {
+  amount: number;
+  price: number;
+}
 export interface DoorState {
   door: Door;
   size: Size;
   type: Item;
   finishing?: Item;
-  keyHole?: Item;
-  weatherStrip?: Item;
+  keyHole?: KeyHole;
+  weatherStrip?: WeatherStrip;
   frame?: Item;
   architrave?: boolean;
   frameFinishing?: Item;
@@ -34,8 +43,8 @@ export interface DoorState {
   setSize: (size: Size) => void;
   setType: (type: Item) => void;
   setFinishing: (finishing: Item) => void;
-  setKeyHole: (keyHole: Item) => void;
-  setWeatherStrip: (weatherStrip: Item) => void;
+  setKeyHole: (keyHole: KeyHole) => void;
+  setWeatherStrip: (weatherStrip: WeatherStrip) => void;
   setFrame: (frame: Item) => void;
   setArchitrave: (architrave: boolean) => void;
   setFrameFinishing: (frameFinishing: Item) => void;

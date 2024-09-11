@@ -249,6 +249,18 @@
           "name": "TypeDoor",
           "displayName": "TypeDoor",
           "componentImportPath": "./components/door/configurator/type"
+        },
+        {
+          "id": "YV413SY07lXf",
+          "name": "FinishingDoor",
+          "displayName": "FinishingDoor",
+          "componentImportPath": "./components/door/configurator/finishing"
+        },
+        {
+          "id": "g49Z5SosGCS0",
+          "name": "AddonDoor",
+          "displayName": "AddonDoor",
+          "componentImportPath": "./components/door/configurator/addon"
         }
       ],
       "customFunctions": []

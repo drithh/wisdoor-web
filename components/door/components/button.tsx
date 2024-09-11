@@ -15,9 +15,9 @@ export const DoorButton = (props: DoorButtonProps) => {
       }}
       variant="outline"
       className={cn(
-        `font-text flex justify-start rounded-sm border-opacity-50 opacity-50 hover:opacity-100 hover:text-black  border items-start w-full h-fit py-3 transition-opacity hover:bg-gray-100 duration-300`,
+        `font-text flex justify-start rounded-sm border-black/50  opacity-70  hover:opacity-100 hover:text-black  border items-start w-full h-fit py-3 transition-opacity hover:bg-gray-100 duration-300`,
         props.className,
-        { 'opacity-100 bg-gray-100': props.isActive }
+        { 'opacity-100 bg-gray-100 animate-expand': props.isActive }
       )}
     >
       {props.children}

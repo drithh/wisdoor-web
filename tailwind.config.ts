@@ -80,11 +80,16 @@ const config = {
           '0%, 100%': { boxShadow: '0 0 0 0 var(--pulse-color)' },
           '50%': { boxShadow: '0 0 0 8px var(--pulse-color)' },
         },
+        expand: {
+          '0%, 100%': { transform: 'scale(1)' },
+          '70%': { transform: 'scale(1.025)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         pulse: 'pulse var(--duration) ease-out infinite',
+        expand: 'expand 0.1s ease-in',
       },
     },
   },

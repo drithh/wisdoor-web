@@ -22,12 +22,6 @@ export const TypeDoor = (props: TypeDoorProps) => {
     setType: state.setType,
   }));
 
-  const [selectedValue, setSelectedValue] = useState(props.types[0]);
-
-  useEffect(() => {
-    console.log(selectedValue, storage.type);
-  }, [selectedValue, storage.type]);
-
   return (
     <div className="grid grid-cols-2 w-full gap-3">
       {props.types.map((type) => (
@@ -37,7 +31,6 @@ export const TypeDoor = (props: TypeDoorProps) => {
             const selectedType = props.types.find(
               (propType) => propType.type === type.type
             )!;
-            setSelectedValue(selectedType);
             storage.setType({
               name: selectedType.type,
               price: selectedType.price,
