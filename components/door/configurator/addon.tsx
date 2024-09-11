@@ -5,7 +5,6 @@ import {
 } from '@radix-ui/react-accordion';
 import { Label } from '@/components/ui/label';
 import { Slider } from '@/components/ui/slider';
-import { DoorAccordion } from '../components/accordion';
 import { useDoorStore } from '../store';
 import { Checkbox } from '@/components/door/components/checkbox';
 import { useRef, useState } from 'react';
@@ -65,7 +64,6 @@ export const AddonDoor = (props: addonDoorProps) => {
             <div
               className="flex gap-2"
               onClick={(e) => {
-                console.log('clicked');
                 e.stopPropagation();
               }}
             >
@@ -74,9 +72,7 @@ export const AddonDoor = (props: addonDoorProps) => {
                 max={9}
                 step={1}
                 defaultValue={[weatherStrip.current]}
-                onChange={(event) => {
-                  console.log(event);
-                }}
+                onChange={(event) => {}}
                 onValueChange={(value) => {
                   const currentStrip = value[0];
                   weatherStrip.current = currentStrip;

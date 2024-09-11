@@ -261,6 +261,12 @@
           "name": "AddonDoor",
           "displayName": "AddonDoor",
           "componentImportPath": "./components/door/configurator/addon"
+        },
+        {
+          "id": "CnuhOfnl-a-a",
+          "name": "FrameDoor",
+          "displayName": "FrameDoor",
+          "componentImportPath": "./components/door/configurator/frame"
         }
       ],
       "customFunctions": []

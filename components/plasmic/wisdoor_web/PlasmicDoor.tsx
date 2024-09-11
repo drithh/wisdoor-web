@@ -65,6 +65,7 @@ import { SizeDoor } from "../../door/configurator/size"; // plasmic-import: 7H1b
 import { TypeDoor } from "../../door/configurator/type"; // plasmic-import: CKXkj02X-GEJ/codeComponent
 import { FinishingDoor } from "../../door/configurator/finishing"; // plasmic-import: YV413SY07lXf/codeComponent
 import { AddonDoor } from "../../door/configurator/addon"; // plasmic-import: g49Z5SosGCS0/codeComponent
+import { FrameDoor } from "../../door/configurator/frame"; // plasmic-import: CnuhOfnl-a-a/codeComponent
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -91,6 +92,7 @@ export type PlasmicDoor__OverridesType = {
   typeDoor?: Flex__<typeof TypeDoor>;
   finishingDoor?: Flex__<typeof FinishingDoor>;
   addonDoor?: Flex__<typeof AddonDoor>;
+  frameDoor?: Flex__<typeof FrameDoor>;
 };
 
 export interface DefaultDoorProps {}
@@ -409,6 +411,65 @@ function PlasmicDoor__RenderFunc(props: {
                   className={classNames("__wab_instance", sty.addonDoor)}
                 />
               </Stack__>
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox___2HYs)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__aoB7O
+                  )}
+                >
+                  {"Kusen"}
+                </div>
+                <FrameDoor
+                  data-plasmic-name={"frameDoor"}
+                  data-plasmic-override={overrides.frameDoor}
+                  className={classNames("__wab_instance", sty.frameDoor)}
+                  frames={(() => {
+                    const __composite = [
+                      { name: null, price: null, length: null, width: null },
+                      { name: null, price: null, length: null, width: null },
+                      {
+                        name: null,
+                        price: null,
+                        length: null,
+                        width: null,
+                        architraveFrame: null
+                      },
+                      {
+                        name: null,
+                        length: null,
+                        width: null,
+                        architraveFrame: null,
+                        price: null
+                      }
+                    ];
+                    __composite["0"]["name"] = "Tanpa Kusen";
+                    __composite["0"]["price"] = 0;
+                    __composite["0"]["length"] = 0;
+                    __composite["0"]["width"] = 0;
+                    __composite["1"]["name"] = "Kecil";
+                    __composite["1"]["price"] = 150000;
+                    __composite["1"]["length"] = 4;
+                    __composite["1"]["width"] = 7;
+                    __composite["2"]["name"] = "Besar";
+                    __composite["2"]["price"] = 200000;
+                    __composite["2"]["length"] = 4;
+                    __composite["2"]["width"] = 10;
+                    __composite["2"]["architraveFrame"] = true;
+                    __composite["3"]["name"] = "Custom";
+                    __composite["3"]["length"] = 0;
+                    __composite["3"]["width"] = 0;
+                    __composite["3"]["architraveFrame"] = true;
+                    __composite["3"]["price"] = 0;
+                    return __composite;
+                  })()}
+                />
+              </Stack__>
             </section>
           </Stack__>
         </div>
@@ -426,7 +487,8 @@ const PlasmicDescendants = {
     "sizeDoor",
     "typeDoor",
     "finishingDoor",
-    "addonDoor"
+    "addonDoor",
+    "frameDoor"
   ],
   doorViewer: ["doorViewer"],
   section: [
@@ -435,13 +497,15 @@ const PlasmicDescendants = {
     "sizeDoor",
     "typeDoor",
     "finishingDoor",
-    "addonDoor"
+    "addonDoor",
+    "frameDoor"
   ],
   chooseDoor: ["chooseDoor"],
   sizeDoor: ["sizeDoor"],
   typeDoor: ["typeDoor"],
   finishingDoor: ["finishingDoor"],
-  addonDoor: ["addonDoor"]
+  addonDoor: ["addonDoor"],
+  frameDoor: ["frameDoor"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -455,6 +519,7 @@ type NodeDefaultElementType = {
   typeDoor: typeof TypeDoor;
   finishingDoor: typeof FinishingDoor;
   addonDoor: typeof AddonDoor;
+  frameDoor: typeof FrameDoor;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -524,6 +589,7 @@ export const PlasmicDoor = Object.assign(
     typeDoor: makeNodeComponent("typeDoor"),
     finishingDoor: makeNodeComponent("finishingDoor"),
     addonDoor: makeNodeComponent("addonDoor"),
+    frameDoor: makeNodeComponent("frameDoor"),
 
     // Metadata about props expected for PlasmicDoor
     internalVariantProps: PlasmicDoor__VariantProps,

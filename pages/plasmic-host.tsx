@@ -20,6 +20,7 @@ import { SizeDoor } from '@/components/door/configurator/size';
 import { TypeDoor } from '@/components/door/configurator/type';
 import { FinishingDoor } from '@/components/door/configurator/finishing';
 import { AddonDoor } from '@/components/door/configurator/addon';
+import { FrameDoor } from '@/components/door/configurator/frame';
 
 // You can register any code components that you want to use here; see
 // https://docs.plasmic.app/learn/code-components-ref/
@@ -43,8 +44,6 @@ registerComponent(Navigation, {
     },
   },
 
-  // Specify how generated Plasmic code should import this component;
-  // path is relative to srcDir
   importPath: './components/navigation',
 });
 
@@ -61,8 +60,6 @@ registerComponent(Hero, {
     },
   },
 
-  // Specify how generated Plasmic code should import this component;
-  // path is relative to srcDir
   importPath: './components/hero',
 });
 
@@ -155,8 +152,6 @@ registerComponent(GradualSpacing, {
     },
   },
 
-  // Specify how generated Plasmic code should import this component;
-  // path is relative to srcDir
   importPath: './components/magicui/gradual-spacing',
 });
 
@@ -178,8 +173,6 @@ registerComponent(BoxReveal, {
     },
   },
 
-  // Specify how generated Plasmic code should import this component;
-  // path is relative to srcDir
   importPath: './components/magicui/box-reveal',
 });
 
@@ -225,8 +218,6 @@ registerComponent(BlurFade, {
     },
   },
 
-  // Specify how generated Plasmic code should import this component;
-  // path is relative to srcDir
   importPath: './components/magicui/blur-fade',
 });
 
@@ -249,8 +240,6 @@ registerComponent(PulsatingButton, {
     },
   },
 
-  // Specify how generated Plasmic code should import this component;
-  // path is relative to srcDir
   importPath: './components/magicui/pulsating-button',
 });
 
@@ -268,8 +257,6 @@ registerComponent(SingleProductText, {
     },
   },
 
-  // Specify how generated Plasmic code should import this component;
-  // path is relative to srcDir
   importPath: './components/single-product',
 });
 
@@ -277,8 +264,6 @@ registerComponent(DoorViewer, {
   name: 'DoorViewer',
   props: {},
 
-  // Specify how generated Plasmic code should import this component;
-  // path is relative to srcDir
   importPath: './components/door-viewer',
 });
 
@@ -302,8 +287,6 @@ registerComponent(DoorButton, {
       displayName: 'Hover',
     },
   },
-  // Specify how generated Plasmic code should import this component;
-  // path is relative to srcDir
   importPath: './components/door/components/button',
 });
 
@@ -329,8 +312,6 @@ registerComponent(ChooseDoor, {
     },
   },
 
-  // Specify how generated Plasmic code should import this component;
-  // path is relative to srcDir
   importPath: './components/door/configurator/choose',
 });
 
@@ -368,8 +349,6 @@ registerComponent(SizeDoor, {
     },
   },
 
-  // Specify how generated Plasmic code should import this component;
-  // path is relative to srcDir
   importPath: './components/door/configurator/size',
 });
 
@@ -398,8 +377,6 @@ registerComponent(TypeDoor, {
     },
   },
 
-  // Specify how generated Plasmic code should import this component;
-  // path is relative to srcDir
   importPath: './components/door/configurator/type',
 });
 
@@ -428,8 +405,6 @@ registerComponent(FinishingDoor, {
     },
   },
 
-  // Specify how generated Plasmic code should import this component;
-  // path is relative to srcDir
   importPath: './components/door/configurator/finishing',
 });
 
@@ -468,9 +443,41 @@ registerComponent(AddonDoor, {
     },
   },
 
-  // Specify how generated Plasmic code should import this component;
-  // path is relative to srcDir
   importPath: './components/door/configurator/addon',
+});
+
+registerComponent(FrameDoor, {
+  name: 'FrameDoor',
+  props: {
+    className: {
+      type: 'string',
+    },
+    frames: {
+      type: 'array',
+      itemType: {
+        type: 'object',
+        fields: {
+          name: {
+            type: 'string',
+          },
+          price: {
+            type: 'number',
+          },
+          length: {
+            type: 'number',
+          },
+          width: {
+            type: 'number',
+          },
+          architraveFrame: {
+            type: 'boolean',
+          },
+        },
+      },
+    },
+  },
+
+  importPath: './components/door/configurator/frame',
 });
 
 export default function PlasmicHost() {

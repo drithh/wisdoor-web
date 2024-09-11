@@ -26,6 +26,11 @@ interface WeatherStrip {
   amount: number;
   price: number;
 }
+
+interface Frame extends Item {
+  architrave: boolean;
+}
+
 export interface DoorState {
   door: Door;
   size: Size;
@@ -33,7 +38,7 @@ export interface DoorState {
   finishing?: Item;
   keyHole?: KeyHole;
   weatherStrip?: WeatherStrip;
-  frame?: Item;
+  frame?: Frame;
   architrave?: boolean;
   frameFinishing?: Item;
   frameColor?: Item;
@@ -45,7 +50,7 @@ export interface DoorState {
   setFinishing: (finishing: Item) => void;
   setKeyHole: (keyHole: KeyHole) => void;
   setWeatherStrip: (weatherStrip: WeatherStrip) => void;
-  setFrame: (frame: Item) => void;
+  setFrame: (frame: Frame) => void;
   setArchitrave: (architrave: boolean) => void;
   setFrameFinishing: (frameFinishing: Item) => void;
   setFrameColor: (frameColor: Item) => void;

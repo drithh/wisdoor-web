@@ -7,9 +7,10 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { DoorAccordion } from '../components/accordion';
+// import { DoorAccordion } from '../components/accordion';
 import { Slider } from '@/components/ui/slider';
 import { Label } from '@/components/ui/label';
+import { DoorAccordionItem } from '../components/accordion';
 
 interface Size {
   doorId: string;
@@ -59,13 +60,15 @@ export const SizeDoor = (props: SizeDoorProps) => {
       >
         Standard ({size.width} cm x {size.length} cm)
       </DoorButton>
-      <DoorAccordion
-        isActive={!isDefaultSize}
-        onClick={() => {
-          setIsDefaultSize(false);
-        }}
-      >
-        <AccordionItem value="item-1" className="w-full">
+      <Accordion collapsible type="single">
+        <DoorAccordionItem
+          onClick={() => {
+            setIsDefaultSize(false);
+          }}
+          isActive={!isDefaultSize}
+          value="custom"
+          className="w-full"
+        >
           <AccordionTrigger className="hover:no-underline text-sm px-4 py-0 w-full h-full flex justify-start rounded-sm hover:opacity-100  hover:bg-gray-100">
             Custom
             {customWidth.current !== size.width &&
@@ -108,8 +111,8 @@ export const SizeDoor = (props: SizeDoorProps) => {
               </div>
             </div>
           </AccordionContent>
-        </AccordionItem>
-      </DoorAccordion>
+        </DoorAccordionItem>
+      </Accordion>
     </div>
   );
 };
