@@ -41,11 +41,17 @@ export const SizeDoor = (props: SizeDoorProps) => {
   const size =
     props.sizes.find((size) => size.doorId === storage.id) || props.sizes[0];
 
-  const customWidth = useRef<number>(size.width);
-  const customWidthText = useRef<string>(customWidth.current.toString());
+  const [customWidth, setCustomWidth] = useState(storage.size?.width ?? 0);
+  const [customWidthText, setCustomWidthText] = useState(
+    customWidth.toString()
+  );
 
-  const isMoreThanLimit = () =>
-    Math.abs(customWidth.current - size.width) === 30;
+  useEffect(() => {
+    setCustomWidth(storage.size?.width ?? 0);
+    setCustomWidthText(storage.size?.width.toString());
+  }, [storage.size?.width]);
+
+  const isMoreThanLimit = () => Math.abs(customWidth - size.width) === 30;
 
   return (
     <div className="flex font-text flex-col gap-4 w-full">
@@ -73,7 +79,7 @@ export const SizeDoor = (props: SizeDoorProps) => {
       >
         <DoorAccordionItem
           onClick={() => {
-            const currentWidth = customWidth.current;
+            const currentWidth = customWidth;
             storage.setSize({
               name: 'custom',
               price:
@@ -91,10 +97,15 @@ export const SizeDoor = (props: SizeDoorProps) => {
         >
           <AccordionTrigger className="hover:no-underline text-sm px-4 py-3 w-full h-full flex justify-start rounded-sm hover:opacity-100  hover:bg-gray-100">
             Custom
-            {customWidth.current !== size.width &&
-              ` (${customWidthText.current} cm x ${size.length} cm)`}
+            {customWidth !== size.width &&
+              ` (${customWidthText} cm x ${size.length} cm)`}
           </AccordionTrigger>
-          <AccordionContent className="mt-4 px-4 ">
+          <AccordionContent
+            className="mt-4 px-4 "
+            onClick={(e) => {
+              e.stopPropagation();
+            }}
+          >
             <div className="flex flex-col gap-2">
               <Label>Lebar Pintu</Label>
               <div className="flex gap-2">
@@ -102,17 +113,17 @@ export const SizeDoor = (props: SizeDoorProps) => {
                   min={size.width - 30}
                   max={size.width + 30}
                   step={1}
-                  defaultValue={[customWidth.current]}
+                  defaultValue={[customWidth]}
                   onValueChange={(value) => {
                     const currentWidth = value[0];
-                    customWidth.current = currentWidth;
-
+                    setCustomWidth(currentWidth);
+                    console.log('currentWidth', currentWidth);
                     if (currentWidth === size.width - 30) {
-                      customWidthText.current = `<${currentWidth}`;
+                      setCustomWidthText(`<${currentWidth}`);
                     } else if (currentWidth === size.width + 30) {
-                      customWidthText.current = `>${currentWidth}`;
+                      setCustomWidthText(`>${currentWidth}`);
                     } else {
-                      customWidthText.current = `${currentWidth}`;
+                      setCustomWidthText(`${currentWidth}`);
                     }
                     storage.setSize({
                       name: 'custom',
@@ -125,9 +136,8 @@ export const SizeDoor = (props: SizeDoorProps) => {
                       limit: isMoreThanLimit(),
                     });
                   }}
-                  onValueCommit={(value) => {}}
                 />
-                <div className="w-20">{customWidthText.current} cm</div>
+                <div className="w-20">{customWidthText} cm</div>
               </div>
             </div>
           </AccordionContent>

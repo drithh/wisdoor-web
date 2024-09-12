@@ -7,7 +7,7 @@ import { Label } from '@/components/ui/label';
 import { Slider } from '@/components/ui/slider';
 import { useDoorStore } from '../store';
 import { Checkbox } from '@/components/door/components/checkbox';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 interface Addon {
   keyHole: {
@@ -33,7 +33,12 @@ export const AddonDoor = (props: addonDoorProps) => {
     setWeatherStrip: state.setWeatherStrip,
   }));
 
-  const weatherStrip = useRef(0);
+  const [weatherStrip, setWeatherStrip] = useState(
+    storage.weatherStrip?.amount ?? 0
+  );
+  useEffect(() => {
+    setWeatherStrip(storage.weatherStrip?.amount ?? 0);
+  }, [storage.weatherStrip?.amount]);
 
   return (
     <div className="grid grid-cols-1 w-full gap-3">
@@ -70,12 +75,10 @@ export const AddonDoor = (props: addonDoorProps) => {
                 min={0}
                 max={9}
                 step={1}
-                defaultValue={[weatherStrip.current]}
-                onChange={(event) => {}}
+                value={[weatherStrip]}
                 onValueChange={(value) => {
                   const currentStrip = value[0];
-                  weatherStrip.current = currentStrip;
-
+                  setWeatherStrip(currentStrip);
                   storage.setWeatherStrip({
                     amount: currentStrip,
                     price: currentStrip * props.addons.weatherStrip.price,
@@ -83,8 +86,7 @@ export const AddonDoor = (props: addonDoorProps) => {
                 }}
               />
               <div className="w-24">
-                {weatherStrip.current >= 9 ? '>9' : weatherStrip.current} Tali
-                Air
+                {weatherStrip >= 9 ? '>9' : weatherStrip} Tali Air
               </div>
             </div>
           </div>
