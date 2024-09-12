@@ -68,6 +68,7 @@ import { AddonDoor } from "../../door/configurator/addon"; // plasmic-import: g4
 import { FrameDoor } from "../../door/configurator/frame"; // plasmic-import: CnuhOfnl-a-a/codeComponent
 import { Wrapper } from "../../door/components/wrapper"; // plasmic-import: NTrLzVk65nhU/codeComponent
 import { FinishingFrame } from "../../door/configurator/finishing-frame"; // plasmic-import: kDU8hj27ED9Y/codeComponent
+import { HingeDoor } from "../../door/configurator/hinge"; // plasmic-import: jS-fIcPAcZ7Z/codeComponent
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -87,6 +88,7 @@ export const PlasmicDoor__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicDoor__OverridesType = {
   root?: Flex__<"div">;
+  freeBox?: Flex__<"div">;
   doorViewer?: Flex__<typeof DoorViewer>;
   section?: Flex__<"section">;
   jenisPintu?: Flex__<"div">;
@@ -102,7 +104,10 @@ export type PlasmicDoor__OverridesType = {
   kusen?: Flex__<"div">;
   frameDoor?: Flex__<typeof FrameDoor>;
   wrapper?: Flex__<typeof Wrapper>;
+  finishingKusen?: Flex__<"div">;
   finishingFrame?: Flex__<typeof FinishingFrame>;
+  engsel?: Flex__<"div">;
+  hingeDoor?: Flex__<typeof HingeDoor>;
 };
 
 export interface DefaultDoorProps {}
@@ -172,8 +177,10 @@ function PlasmicDoor__RenderFunc(props: {
         >
           <Stack__
             as={"div"}
+            data-plasmic-name={"freeBox"}
+            data-plasmic-override={overrides.freeBox}
             hasGap={true}
-            className={classNames(projectcss.all, sty.freeBox__e2Glv)}
+            className={classNames(projectcss.all, sty.freeBox)}
           >
             <DoorViewer
               data-plasmic-name={"doorViewer"}
@@ -494,65 +501,117 @@ function PlasmicDoor__RenderFunc(props: {
                 })() ? (
                   <Stack__
                     as={"div"}
+                    data-plasmic-name={"finishingKusen"}
+                    data-plasmic-override={overrides.finishingKusen}
                     hasGap={true}
-                    className={classNames(projectcss.all, sty.freeBox__tcVhv)}
+                    className={classNames(projectcss.all, sty.finishingKusen)}
                   >
-                    <Stack__
-                      as={"div"}
-                      hasGap={true}
-                      className={classNames(projectcss.all, sty.freeBox__gyX65)}
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__g4SLw
+                      )}
                     >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__g4SLw
-                        )}
-                      >
-                        {"Finishing Kusen"}
-                      </div>
-                      <FinishingFrame
-                        data-plasmic-name={"finishingFrame"}
-                        data-plasmic-override={overrides.finishingFrame}
-                        className={classNames(
-                          "__wab_instance",
-                          sty.finishingFrame
-                        )}
-                        finishings={(() => {
+                      {"Finishing Kusen"}
+                    </div>
+                    <FinishingFrame
+                      data-plasmic-name={"finishingFrame"}
+                      data-plasmic-override={overrides.finishingFrame}
+                      className={classNames(
+                        "__wab_instance",
+                        sty.finishingFrame
+                      )}
+                      finishings={(() => {
+                        const __composite = [
+                          { name: null, price: null },
+                          { name: null, price: null, color: null },
+                          { color: null, name: null, price: null }
+                        ];
+                        __composite["0"]["name"] = "Tanpa Finishing";
+                        __composite["0"]["price"] = 0;
+                        __composite["1"]["name"] = "Melamin";
+                        __composite["1"]["price"] = 150000;
+                        __composite["1"]["color"] = (() => {
                           const __composite = [
-                            { name: null, price: null },
-                            { name: null, price: null, color: null },
-                            { color: null, name: null, price: null }
+                            { name: null, colorClass: null },
+                            { name: null, colorClass: null }
                           ];
-                          __composite["0"]["name"] = "Tanpa Finishing";
-                          __composite["0"]["price"] = 0;
-                          __composite["1"]["name"] = "Melamin";
-                          __composite["1"]["price"] = 150000;
-                          __composite["1"]["color"] = (() => {
-                            const __composite = [
-                              { name: null, colorClass: null },
-                              { name: null, colorClass: null }
-                            ];
-                            __composite["0"]["name"] = "Coklat";
-                            __composite["0"]["colorClass"] = "bg-[#855E42]";
-                            __composite["1"]["name"] = "Hitam";
-                            __composite["1"]["colorClass"] = "bg-black";
-                            return __composite;
-                          })();
-                          __composite["2"]["color"] = (() => {
-                            const __composite = [
-                              { colorClass: null, name: null }
-                            ];
-                            __composite["0"]["colorClass"] = "bg-[#855E42]";
-                            __composite["0"]["name"] = "Coklat";
-                            return __composite;
-                          })();
-                          __composite["2"]["name"] = "Duco";
-                          __composite["2"]["price"] = 150000;
+                          __composite["0"]["name"] = "Coklat";
+                          __composite["0"]["colorClass"] = "bg-[#855E42]";
+                          __composite["1"]["name"] = "Hitam";
+                          __composite["1"]["colorClass"] = "bg-black";
                           return __composite;
-                        })()}
-                      />
-                    </Stack__>
+                        })();
+                        __composite["2"]["color"] = (() => {
+                          const __composite = [
+                            { colorClass: null, name: null }
+                          ];
+                          __composite["0"]["colorClass"] = "bg-[#855E42]";
+                          __composite["0"]["name"] = "Coklat";
+                          return __composite;
+                        })();
+                        __composite["2"]["name"] = "Duco";
+                        __composite["2"]["price"] = 150000;
+                        return __composite;
+                      })()}
+                    />
+                  </Stack__>
+                ) : null}
+                {(() => {
+                  try {
+                    return true;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
+                  }
+                })() ? (
+                  <Stack__
+                    as={"div"}
+                    data-plasmic-name={"engsel"}
+                    data-plasmic-override={overrides.engsel}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.engsel)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___4OjVi
+                      )}
+                    >
+                      {"Engsel"}
+                    </div>
+                    <HingeDoor
+                      data-plasmic-name={"hingeDoor"}
+                      data-plasmic-override={overrides.hingeDoor}
+                      className={classNames("__wab_instance", sty.hingeDoor)}
+                      hinges={(() => {
+                        const __composite = [
+                          { name: null, price: null },
+                          { name: null, price: null },
+                          { name: null, price: null },
+                          { name: null, price: null },
+                          { name: null, price: null }
+                        ];
+                        __composite["0"]["name"] = "Tanpa Engsel";
+                        __composite["0"]["price"] = 0;
+                        __composite["1"]["name"] = "1 Engsel";
+                        __composite["1"]["price"] = 25000;
+                        __composite["2"]["name"] = "2 Engsel";
+                        __composite["2"]["price"] = 50000;
+                        __composite["3"]["name"] = "3 Engsel";
+                        __composite["3"]["price"] = 75000;
+                        __composite["4"]["name"] = "4 Engsel";
+                        __composite["4"]["price"] = 80000;
+                        return __composite;
+                      })()}
+                    />
                   </Stack__>
                 ) : null}
               </Wrapper>
@@ -567,6 +626,7 @@ function PlasmicDoor__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
+    "freeBox",
     "doorViewer",
     "section",
     "jenisPintu",
@@ -582,7 +642,32 @@ const PlasmicDescendants = {
     "kusen",
     "frameDoor",
     "wrapper",
-    "finishingFrame"
+    "finishingKusen",
+    "finishingFrame",
+    "engsel",
+    "hingeDoor"
+  ],
+  freeBox: [
+    "freeBox",
+    "doorViewer",
+    "section",
+    "jenisPintu",
+    "chooseDoor",
+    "ukuranPintu",
+    "sizeDoor",
+    "bahanPintu",
+    "typeDoor",
+    "finishingPintu",
+    "finishingDoor",
+    "tambahan",
+    "addonDoor",
+    "kusen",
+    "frameDoor",
+    "wrapper",
+    "finishingKusen",
+    "finishingFrame",
+    "engsel",
+    "hingeDoor"
   ],
   doorViewer: ["doorViewer"],
   section: [
@@ -600,7 +685,10 @@ const PlasmicDescendants = {
     "kusen",
     "frameDoor",
     "wrapper",
-    "finishingFrame"
+    "finishingKusen",
+    "finishingFrame",
+    "engsel",
+    "hingeDoor"
   ],
   jenisPintu: ["jenisPintu", "chooseDoor"],
   chooseDoor: ["chooseDoor"],
@@ -614,14 +702,24 @@ const PlasmicDescendants = {
   addonDoor: ["addonDoor"],
   kusen: ["kusen", "frameDoor"],
   frameDoor: ["frameDoor"],
-  wrapper: ["wrapper", "finishingFrame"],
-  finishingFrame: ["finishingFrame"]
+  wrapper: [
+    "wrapper",
+    "finishingKusen",
+    "finishingFrame",
+    "engsel",
+    "hingeDoor"
+  ],
+  finishingKusen: ["finishingKusen", "finishingFrame"],
+  finishingFrame: ["finishingFrame"],
+  engsel: ["engsel", "hingeDoor"],
+  hingeDoor: ["hingeDoor"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  freeBox: "div";
   doorViewer: typeof DoorViewer;
   section: "section";
   jenisPintu: "div";
@@ -637,7 +735,10 @@ type NodeDefaultElementType = {
   kusen: "div";
   frameDoor: typeof FrameDoor;
   wrapper: typeof Wrapper;
+  finishingKusen: "div";
   finishingFrame: typeof FinishingFrame;
+  engsel: "div";
+  hingeDoor: typeof HingeDoor;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -700,6 +801,7 @@ export const PlasmicDoor = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    freeBox: makeNodeComponent("freeBox"),
     doorViewer: makeNodeComponent("doorViewer"),
     section: makeNodeComponent("section"),
     jenisPintu: makeNodeComponent("jenisPintu"),
@@ -715,7 +817,10 @@ export const PlasmicDoor = Object.assign(
     kusen: makeNodeComponent("kusen"),
     frameDoor: makeNodeComponent("frameDoor"),
     wrapper: makeNodeComponent("wrapper"),
+    finishingKusen: makeNodeComponent("finishingKusen"),
     finishingFrame: makeNodeComponent("finishingFrame"),
+    engsel: makeNodeComponent("engsel"),
+    hingeDoor: makeNodeComponent("hingeDoor"),
 
     // Metadata about props expected for PlasmicDoor
     internalVariantProps: PlasmicDoor__VariantProps,
