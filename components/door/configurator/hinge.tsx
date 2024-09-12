@@ -4,6 +4,7 @@ import { DoorState, useDoorStore } from '../store';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
 import Image from 'next/image';
+import { priceFormatPerThousand } from '@/lib/price-format';
 
 interface Hinge {
   name: string;
@@ -38,9 +39,16 @@ export const HingeDoor = (props: HingeDoorProps) => {
           isActive={hinge.name === storage.hinge?.name}
           className="flex h-full gap-2 flex-col px-4 items-center cursor-pointer"
         >
-          <p className="whitespace-pre-wrap text-sm text-center transition-colors">
-            {hinge.name}
-          </p>
+          <div className="flex flex-col gap-2 w-full h-full items-center place-items-center">
+            <p className="whitespace-pre-wrap flex flex-1 text-sm text-center items-center transition-colors">
+              {hinge.name}
+            </p>
+            {hinge.price !== 0 && (
+              <Label className="text-sm text-emerald-700">
+                {priceFormatPerThousand(hinge.price)}
+              </Label>
+            )}
+          </div>
         </DoorButton>
       ))}
     </div>

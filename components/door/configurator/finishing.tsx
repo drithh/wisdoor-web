@@ -4,6 +4,7 @@ import { DoorState, useDoorStore } from '../store';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
 import Image from 'next/image';
+import { priceFormatPerThousand } from '@/lib/price-format';
 
 interface Finishing {
   doorId: string;
@@ -44,9 +45,14 @@ export const FinishingDoor = (props: finishingDoorProps) => {
           isActive={finishing.name === storage.finishing?.name}
           className="flex h-full gap-2 flex-col px-4 items-center cursor-pointer"
         >
-          <p className="whitespace-pre-wrap text-sm text-center transition-colors">
-            {finishing.name}
-          </p>
+          <div className="flex flex-col gap-2 w-full h-full place-content-between">
+            <p className="whitespace-pre-wrap flex-1 text-sm text-center transition-colors">
+              {finishing.name}
+            </p>
+            <p className="text-sm text-emerald-700">
+              {priceFormatPerThousand(finishing.price)}
+            </p>
+          </div>
         </DoorButton>
       ))}
     </div>

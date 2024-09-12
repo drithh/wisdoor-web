@@ -8,6 +8,7 @@ import { Slider } from '@/components/ui/slider';
 import { useDoorStore } from '../store';
 import { Checkbox } from '@/components/door/components/checkbox';
 import { useEffect, useRef, useState } from 'react';
+import { priceFormatPerThousand } from '@/lib/price-format';
 
 interface Addon {
   keyHole: {
@@ -51,7 +52,12 @@ export const AddonDoor = (props: addonDoorProps) => {
           })
         }
       >
-        {props.addons.keyHole.text}
+        <div className="flex w-full place-content-between">
+          <p>{props.addons.keyHole.text}</p>
+          <p className="text-sm text-emerald-700">
+            {priceFormatPerThousand(props.addons.keyHole.price)}
+          </p>
+        </div>
       </Checkbox>
       <Checkbox
         checked={(storage.weatherStrip?.amount ?? 0) > 0}
@@ -63,7 +69,14 @@ export const AddonDoor = (props: addonDoorProps) => {
         }
       >
         <div className="w-full flex flex-col gap-2">
-          <p>Tali Air</p>
+          <div className="flex w-full place-content-between">
+            <p>Tali Air</p>
+            <p className="text-sm text-emerald-700">
+              {priceFormatPerThousand(
+                props.addons.weatherStrip.price * weatherStrip
+              )}
+            </p>
+          </div>
           <div className="flex flex-col gap-2">
             <div
               className="flex gap-2"

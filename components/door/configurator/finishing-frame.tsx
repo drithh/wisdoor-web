@@ -12,6 +12,7 @@ import {
 import { Checkbox } from '@/components/ui/checkbox';
 import { DoorAccordionItem } from '../components/accordion';
 import { cn } from '@/lib/utils';
+import { priceFormatPerThousand } from '@/lib/price-format';
 
 interface Color {
   name: string;
@@ -70,7 +71,14 @@ export const FinishingFrame = (props: finishingFrameProps) => {
             }}
           >
             <AccordionTrigger className="hover:no-underline text-sm px-4 py-3 w-full h-full flex justify-start rounded-sm hover:opacity-100  hover:bg-gray-100">
-              {finishing.name}
+              <div className="flex w-full place-content-between">
+                <p>{finishing.name}</p>
+                {finishing.price !== 0 && (
+                  <p className="text-sm text-emerald-700">
+                    {priceFormatPerThousand(finishing.price)}
+                  </p>
+                )}
+              </div>
             </AccordionTrigger>
             <AccordionContent className="grid grid-cols-2 gap-4 px-4 ">
               {finishing.color.map((color) => (

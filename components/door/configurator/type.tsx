@@ -4,6 +4,7 @@ import { DoorState, useDoorStore } from '../store';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
 import Image from 'next/image';
+import { priceFormatPerThousand } from '@/lib/price-format';
 
 interface Type {
   type: string;
@@ -39,7 +40,7 @@ export const TypeDoor = (props: TypeDoorProps) => {
           isActive={type.type === storage.type.name}
           className="flex h-full gap-2 flex-col px-4 items-center cursor-pointer"
         >
-          <div className="w-12 h-12 rounded-full  border-2  border-gray-300 flex items-center justify-center overflow-hidden peer-aria-checked:border-primary transition-colors">
+          <div className="w-12 min-h-12 rounded-full  border-2  border-gray-300 flex items-center justify-center overflow-hidden peer-aria-checked:border-primary transition-colors">
             <Image
               src={type.image}
               alt={type.type}
@@ -48,9 +49,14 @@ export const TypeDoor = (props: TypeDoorProps) => {
               className=""
             />
           </div>
-          <p className="whitespace-pre-wrap text-sm text-center transition-colors">
-            {type.type}
-          </p>
+          <div className="flex flex-col gap-2 w-full h-full place-content-between">
+            <p className="whitespace-pre-wrap flex-1 text-sm text-center transition-colors">
+              {type.type}
+            </p>
+            <p className="text-sm text-emerald-700">
+              {priceFormatPerThousand(type.price)}
+            </p>
+          </div>
         </DoorButton>
       ))}
     </div>

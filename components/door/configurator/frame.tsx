@@ -14,6 +14,7 @@ import { Slider } from '@/components/ui/slider';
 import { Label } from '@/components/ui/label';
 import { Checkbox } from '../components/checkbox';
 import { useDollarState } from '@plasmicapp/react-web';
+import { priceFormatPerThousand } from '@/lib/price-format';
 
 interface Frame {
   name: string;
@@ -65,8 +66,18 @@ export const FrameDoor = (props: FrameDoorProps) => {
             }}
           >
             <AccordionTrigger className="hover:no-underline text-sm px-4 py-3 w-full h-full flex justify-start rounded-sm hover:opacity-100  hover:bg-gray-100">
-              {frame.name}{' '}
-              {frame.width !== 0 && `(${frame.width} cm x ${frame.length} cm)`}
+              <div className="flex w-full place-content-between">
+                <p>
+                  {frame.name}{' '}
+                  {frame.width !== 0 &&
+                    `(${frame.width} cm x ${frame.length} cm)`}
+                </p>
+                {frame.price !== 0 && (
+                  <p className="text-sm text-emerald-700">
+                    {priceFormatPerThousand(frame.price)}
+                  </p>
+                )}
+              </div>
             </AccordionTrigger>
             <AccordionContent className="mt-4 px-4 ">
               <div className="flex flex-col gap-2">
@@ -102,8 +113,18 @@ export const FrameDoor = (props: FrameDoorProps) => {
             }}
             isActive={frame.name === storage.frame?.name}
           >
-            {frame.name}{' '}
-            {frame.width !== 0 && `(${frame.width} cm x ${frame.length} cm)`}
+            <div className="flex w-full place-content-between">
+              <p>
+                {frame.name}{' '}
+                {frame.width !== 0 &&
+                  `(${frame.width} cm x ${frame.length} cm)`}
+              </p>
+              {frame.price !== 0 && (
+                <p className="text-sm text-emerald-700">
+                  {priceFormatPerThousand(frame.price)}
+                </p>
+              )}
+            </div>
           </DoorButton>
         )
       )}

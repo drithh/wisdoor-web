@@ -11,6 +11,7 @@ import {
 import { Slider } from '@/components/ui/slider';
 import { Label } from '@/components/ui/label';
 import { DoorAccordionItem } from '../components/accordion';
+import { priceFormatPerThousand } from '@/lib/price-format';
 
 interface Size {
   doorId: string;
@@ -47,8 +48,15 @@ export const SizeDoor = (props: SizeDoorProps) => {
   );
 
   useEffect(() => {
-    setCustomWidth(storage.size?.width ?? 0);
-    setCustomWidthText(storage.size?.width.toString());
+    const currentWidth = storage.size?.width ?? 0;
+    setCustomWidth(currentWidth);
+    if (currentWidth === size.width - 30) {
+      setCustomWidthText(`<${currentWidth}`);
+    } else if (currentWidth === size.width + 30) {
+      setCustomWidthText(`>${currentWidth}`);
+    } else {
+      setCustomWidthText(`${currentWidth}`);
+    }
   }, [storage.size?.width]);
 
   const isMoreThanLimit = () => Math.abs(customWidth - size.width) === 30;
@@ -67,7 +75,14 @@ export const SizeDoor = (props: SizeDoorProps) => {
           });
         }}
       >
-        Standard ({size.width} cm x {size.length} cm)
+        <div className="flex w-full place-content-between">
+          <p>
+            Standard ({size.width} cm x {size.length} cm)
+          </p>
+          <p className="text-sm text-emerald-700">
+            {priceFormatPerThousand(size.price)}
+          </p>
+        </div>
       </DoorButton>
       <Accordion
         collapsible
@@ -96,9 +111,20 @@ export const SizeDoor = (props: SizeDoorProps) => {
           className="w-full"
         >
           <AccordionTrigger className="hover:no-underline text-sm px-4 py-3 w-full h-full flex justify-start rounded-sm hover:opacity-100  hover:bg-gray-100">
-            Custom
-            {customWidth !== size.width &&
-              ` (${customWidthText} cm x ${size.length} cm)`}
+            <div className="flex w-full place-content-between">
+              <p>
+                Custom
+                {customWidth !== size.width &&
+                  ` (${customWidthText} cm x ${size.length} cm)`}
+              </p>
+              <p className="text-sm text-emerald-600">
+                {priceFormatPerThousand(
+                  customWidth < size.width
+                    ? size.price + size.priceBelowDefaultWidth
+                    : size.price + size.priceAboveDefaultWidth
+                )}
+              </p>
+            </div>
           </AccordionTrigger>
           <AccordionContent
             className="mt-4 px-4 "
@@ -117,14 +143,6 @@ export const SizeDoor = (props: SizeDoorProps) => {
                   onValueChange={(value) => {
                     const currentWidth = value[0];
                     setCustomWidth(currentWidth);
-                    console.log('currentWidth', currentWidth);
-                    if (currentWidth === size.width - 30) {
-                      setCustomWidthText(`<${currentWidth}`);
-                    } else if (currentWidth === size.width + 30) {
-                      setCustomWidthText(`>${currentWidth}`);
-                    } else {
-                      setCustomWidthText(`${currentWidth}`);
-                    }
                     storage.setSize({
                       name: 'custom',
                       price:
