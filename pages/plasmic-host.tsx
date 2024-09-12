@@ -21,6 +21,8 @@ import { TypeDoor } from '@/components/door/configurator/type';
 import { FinishingDoor } from '@/components/door/configurator/finishing';
 import { AddonDoor } from '@/components/door/configurator/addon';
 import { FrameDoor } from '@/components/door/configurator/frame';
+import { Wrapper } from '@/components/door/components/wrapper';
+import { FinishingFrame } from '@/components/door/configurator/finishing-frame';
 
 // You can register any code components that you want to use here; see
 // https://docs.plasmic.app/learn/code-components-ref/
@@ -478,6 +480,59 @@ registerComponent(FrameDoor, {
   },
 
   importPath: './components/door/configurator/frame',
+});
+
+registerComponent(Wrapper, {
+  name: 'Wrapper',
+  props: {
+    className: {
+      type: 'string',
+    },
+    children: {
+      type: 'slot',
+    },
+  },
+
+  importPath: './components/door/components/wrapper',
+});
+
+registerComponent(FinishingFrame, {
+  name: 'FinishingFrame',
+  props: {
+    className: {
+      type: 'string',
+    },
+    finishings: {
+      type: 'array',
+      itemType: {
+        type: 'object',
+        fields: {
+          name: {
+            type: 'string',
+          },
+          price: {
+            type: 'number',
+          },
+          color: {
+            type: 'array',
+            itemType: {
+              type: 'object',
+              fields: {
+                name: {
+                  type: 'string',
+                },
+                colorClass: {
+                  type: 'string',
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  },
+
+  importPath: './components/door/configurator/finishing-frame',
 });
 
 export default function PlasmicHost() {

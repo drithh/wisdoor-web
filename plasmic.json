@@ -267,6 +267,18 @@
           "name": "FrameDoor",
           "displayName": "FrameDoor",
           "componentImportPath": "./components/door/configurator/frame"
+        },
+        {
+          "id": "NTrLzVk65nhU",
+          "name": "Wrapper",
+          "displayName": "Wrapper",
+          "componentImportPath": "./components/door/components/wrapper"
+        },
+        {
+          "id": "kDU8hj27ED9Y",
+          "name": "FinishingFrame",
+          "displayName": "FinishingFrame",
+          "componentImportPath": "./components/door/configurator/finishing-frame"
         }
       ],
       "customFunctions": []

@@ -32,8 +32,11 @@ export const SizeDoor = (props: SizeDoorProps) => {
     size: state.size,
     setSize: state.setSize,
   }));
+  const [accordionValue, setAccordionValue] = useState(storage.size.name);
 
-  const [isDefaultSize, setIsDefaultSize] = useState(false);
+  useEffect(() => {
+    setAccordionValue(storage.size.name);
+  }, [storage.size.name]);
 
   const size =
     props.sizes.find((size) => size.doorId === storage.id) || props.sizes[0];
@@ -47,9 +50,9 @@ export const SizeDoor = (props: SizeDoorProps) => {
   return (
     <div className="flex font-text flex-col gap-4 w-full">
       <DoorButton
-        isActive={isDefaultSize}
+        isActive={storage.size.name === 'standard'}
         onClick={() => {
-          setIsDefaultSize(true);
+          setAccordionValue('');
           storage.setSize({
             name: 'standard',
             price: size.price,
@@ -60,16 +63,33 @@ export const SizeDoor = (props: SizeDoorProps) => {
       >
         Standard ({size.width} cm x {size.length} cm)
       </DoorButton>
-      <Accordion collapsible type="single">
+      <Accordion
+        collapsible
+        type="single"
+        value={accordionValue}
+        onValueChange={(value) => {
+          setAccordionValue(value);
+        }}
+      >
         <DoorAccordionItem
           onClick={() => {
-            setIsDefaultSize(false);
+            const currentWidth = customWidth.current;
+            storage.setSize({
+              name: 'custom',
+              price:
+                currentWidth < size.width
+                  ? size.price + size.priceBelowDefaultWidth
+                  : size.price + size.priceAboveDefaultWidth,
+              length: size.length,
+              width: size.width,
+              limit: isMoreThanLimit(),
+            });
           }}
-          isActive={!isDefaultSize}
+          isActive={storage.size.name === 'custom'}
           value="custom"
           className="w-full"
         >
-          <AccordionTrigger className="hover:no-underline text-sm px-4 py-0 w-full h-full flex justify-start rounded-sm hover:opacity-100  hover:bg-gray-100">
+          <AccordionTrigger className="hover:no-underline text-sm px-4 py-3 w-full h-full flex justify-start rounded-sm hover:opacity-100  hover:bg-gray-100">
             Custom
             {customWidth.current !== size.width &&
               ` (${customWidthText.current} cm x ${size.length} cm)`}

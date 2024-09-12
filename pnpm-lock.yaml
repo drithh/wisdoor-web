@@ -107,6 +107,9 @@ importers:
       next:
         specifier: 14.2.7
         version: 14.2.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      persist-and-sync:
+        specifier: ^1.2.1
+        version: 1.2.1(zustand@4.5.5(@types/react@18.3.4)(react@18.3.1))
       react:
         specifier: ^18
         version: 18.3.1
@@ -3500,6 +3503,11 @@ packages:
 
   pend@1.2.0:
     resolution: {integrity: sha512-F3asv42UuXchdzt+xXqfW1OGlVBe+mxa2mqI0pg5yAHZPvFmY3Y6drSf/GQ1A86WgWEN9Kzh/WrgKa6iGcHXLg==}
+
+  persist-and-sync@1.2.1:
+    resolution: {integrity: sha512-McPXNsMKYnMJGFuAEy//EezrKFuI1sq4TjcSNKbDegkA0mG1RzgVcRzI1qyFgPC+Qao8eHlH65Ck7Awp9u2dUg==}
+    peerDependencies:
+      zustand: ^3 || ^4
 
   picocolors@1.0.0:
     resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
@@ -8343,6 +8351,10 @@ snapshots:
   pcre-to-regexp@1.1.0: {}
 
   pend@1.2.0: {}
+
+  persist-and-sync@1.2.1(zustand@4.5.5(@types/react@18.3.4)(react@18.3.1)):
+    dependencies:
+      zustand: 4.5.5(@types/react@18.3.4)(react@18.3.1)
 
   picocolors@1.0.0: {}
 

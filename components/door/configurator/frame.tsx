@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useRef, useState } from 'react';
 import { DoorButton } from '../components/button';
 import { DoorState, useDoorStore } from '../store';
@@ -11,6 +13,7 @@ import { DoorAccordionItem } from '../components/accordion';
 import { Slider } from '@/components/ui/slider';
 import { Label } from '@/components/ui/label';
 import { Checkbox } from '../components/checkbox';
+import { useDollarState } from '@plasmicapp/react-web';
 
 interface Frame {
   name: string;
@@ -31,11 +34,19 @@ export const FrameDoor = (props: FrameDoorProps) => {
     setFrame: state.setFrame,
   }));
 
+  const [accordionValue, setAccordionValue] = useState(storage.frame?.name);
+  useEffect(() => {
+    setAccordionValue(storage.frame?.name);
+  }, [storage.frame?.name]);
   return (
     <Accordion
       collapsible
       type="single"
       className="flex font-text flex-col gap-4 w-full"
+      value={accordionValue}
+      onValueChange={(value) => {
+        setAccordionValue(value);
+      }}
     >
       {props.frames?.map((frame) =>
         frame.architraveFrame ? (
@@ -53,7 +64,7 @@ export const FrameDoor = (props: FrameDoorProps) => {
               }
             }}
           >
-            <AccordionTrigger className="hover:no-underline text-sm px-4 py-0 w-full h-full flex justify-start rounded-sm hover:opacity-100  hover:bg-gray-100">
+            <AccordionTrigger className="hover:no-underline text-sm px-4 py-3 w-full h-full flex justify-start rounded-sm hover:opacity-100  hover:bg-gray-100">
               {frame.name}{' '}
               {frame.width !== 0 && `(${frame.width} cm x ${frame.length} cm)`}
             </AccordionTrigger>
@@ -82,6 +93,7 @@ export const FrameDoor = (props: FrameDoorProps) => {
           <DoorButton
             key={frame.name}
             onClick={() => {
+              setAccordionValue('');
               storage.setFrame({
                 name: frame.name,
                 price: frame.price,
@@ -94,7 +106,7 @@ export const FrameDoor = (props: FrameDoorProps) => {
             {frame.width !== 0 && `(${frame.width} cm x ${frame.length} cm)`}
           </DoorButton>
         )
-      )}{' '}
+      )}
     </Accordion>
   );
 };

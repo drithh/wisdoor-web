@@ -34,7 +34,6 @@ export const AddonDoor = (props: addonDoorProps) => {
   }));
 
   const weatherStrip = useRef(0);
-  // const [weatherStrip, setWeatherStrip] = useState(0);
 
   return (
     <div className="grid grid-cols-1 w-full gap-3">
@@ -58,9 +57,9 @@ export const AddonDoor = (props: addonDoorProps) => {
           })
         }
       >
-        <div className="w-full">
+        <div className="w-full flex flex-col gap-2">
           <p>Tali Air</p>
-          <div className="flex flex-col gap-2 ">
+          <div className="flex flex-col gap-2">
             <div
               className="flex gap-2"
               onClick={(e) => {
@@ -83,8 +82,8 @@ export const AddonDoor = (props: addonDoorProps) => {
                   });
                 }}
               />
-              <div className="w-20">
-                {weatherStrip.current > 9 ? '>9' : weatherStrip.current} Tali
+              <div className="w-24">
+                {weatherStrip.current >= 9 ? '>9' : weatherStrip.current} Tali
                 Air
               </div>
             </div>

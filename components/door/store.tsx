@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-
+import { persistNSync } from 'persist-and-sync';
 interface Item {
   name: string;
   price: number;
@@ -31,6 +31,10 @@ interface Frame extends Item {
   architrave: boolean;
 }
 
+interface FrameFinishing extends Item {
+  color: string;
+}
+
 export interface DoorState {
   door: Door;
   size: Size;
@@ -39,8 +43,7 @@ export interface DoorState {
   keyHole?: KeyHole;
   weatherStrip?: WeatherStrip;
   frame?: Frame;
-  architrave?: boolean;
-  frameFinishing?: Item;
+  frameFinishing?: FrameFinishing;
   frameColor?: Item;
   hinge?: Item;
 
@@ -51,8 +54,7 @@ export interface DoorState {
   setKeyHole: (keyHole: KeyHole) => void;
   setWeatherStrip: (weatherStrip: WeatherStrip) => void;
   setFrame: (frame: Frame) => void;
-  setArchitrave: (architrave: boolean) => void;
-  setFrameFinishing: (frameFinishing: Item) => void;
+  setFrameFinishing: (frameFinishing: FrameFinishing) => void;
   setFrameColor: (frameColor: Item) => void;
   setHinge: (hinge: Item) => void;
 }
@@ -67,7 +69,6 @@ export const useDoorStore = create(
       keyHole: undefined,
       weatherStrip: undefined,
       frame: undefined,
-      architrave: false,
       frameFinishing: undefined,
       frameColor: undefined,
       hinge: undefined,
@@ -78,13 +79,16 @@ export const useDoorStore = create(
       setKeyHole: (keyHole) => set({ keyHole }),
       setWeatherStrip: (weatherStrip) => set({ weatherStrip }),
       setFrame: (frame) => set({ frame }),
-      setArchitrave: (architrave) => set({ architrave }),
       setFrameFinishing: (frameFinishing) => set({ frameFinishing }),
       setFrameColor: (frameColor) => set({ frameColor }),
       setHinge: (hinge) => set({ hinge }),
     }),
     {
       name: 'door-configuration',
+      merge: (persistedState, currentState) => ({
+        ...currentState,
+        ...(persistedState as DoorState),
+      }),
     }
   )
 );

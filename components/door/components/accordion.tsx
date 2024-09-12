@@ -17,7 +17,7 @@ export const DoorAccordionItem = (props: DoorButtonProps) => {
         props.onClick?.(evt);
       }}
       className={cn(
-        `w-full rounded-sm border-black border-opacity-50 opacity-50 hover:opacity-100 hover:text-black  border py-3 transition-opacity hover:bg-gray-100 duration-300`,
+        `w-full rounded-sm border-black border-opacity-50 opacity-50 hover:opacity-100 hover:text-black  border transition-opacity hover:bg-gray-100 duration-300 overflow-visible`,
         props.className,
         { 'opacity-100 bg-gray-100 border-black': props.isActive }
       )}
