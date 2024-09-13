@@ -25,7 +25,7 @@ interface NavigationProps {
 export function Navigation({ image, alt }: NavigationProps) {
   const defaultImage = image || '/placeholder.svg';
   return (
-    <div className="font-display flex justify-between items-center p-4 absolute top-0 left-0 h-20 w-full z-[1000]">
+    <div className="font-display flex justify-between items-center p-4 absolute top-0 left-0 h-20 w-full z-50">
       <div className="flex-shrink-0 h-full flex-grow">
         <div className="w-16 h-full relative">
           <Image

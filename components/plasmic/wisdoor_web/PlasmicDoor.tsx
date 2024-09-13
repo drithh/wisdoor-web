@@ -226,13 +226,17 @@ function PlasmicDoor__RenderFunc(props: {
                   className={classNames("__wab_instance", sty.chooseDoor)}
                   doorNames={(() => {
                     const __composite = [
-                      { id: null, name: null },
-                      { id: null, name: null }
+                      { id: null, name: null, modal: null },
+                      { id: null, name: null, modal: null }
                     ];
                     __composite["0"]["id"] = "utama";
                     __composite["0"]["name"] = "Pintu Utama";
+                    __composite["0"]["modal"] =
+                      "<p>Pintu utama menggunakan kayu yang lebih berat, memberikan rasa kokoh dan daya tahan yang tinggi. Material ini dirancang untuk menahan beban dan memberikan perlindungan ekstra, menjadikannya ideal untuk pintu depan yang membutuhkan keamanan dan keawetan.</p>";
                     __composite["1"]["id"] = "kamar";
                     __composite["1"]["name"] = "Pintu Kamar (Rangka 3.6)";
+                    __composite["1"]["modal"] =
+                      "<p>Pintu kamar menggunakan kayu yang lebih ringan, lebih mudah dibuka dan dipasang. Material ini cocok untuk penggunaan interior, memberikan kenyamanan dan fungsionalitas tanpa mengorbankan estetika atau daya tahan yang sesuai untuk ruangan dalam rumah.</p>";
                     return __composite;
                   })()}
                 />

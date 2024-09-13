@@ -311,6 +311,9 @@ registerComponent(ChooseDoor, {
           name: {
             type: 'string',
           },
+          modal: {
+            type: 'richText',
+          },
         },
       },
     },
