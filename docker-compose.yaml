@@ -1,0 +1,31 @@
+services:
+  # Node.js application service
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: wisdoor_web
+    restart: always
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=production
+    networks:
+      - monitoring
+
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - '9090:9090'
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    networks:
+      - monitoring
+
+networks:
+  monitoring:
+    driver: bridge

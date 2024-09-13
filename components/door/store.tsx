@@ -1,6 +1,5 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { persistNSync } from 'persist-and-sync';
 interface Item {
   name: string;
   price: number;
