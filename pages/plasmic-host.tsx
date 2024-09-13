@@ -242,6 +242,10 @@ registerComponent(PulsatingButton, {
       type: 'string',
       defaultValue: '1.5s',
     },
+    onClick: {
+      type: 'eventHandler',
+      argTypes: [],
+    },
   },
 
   importPath: './components/magicui/pulsating-button',
@@ -575,6 +579,9 @@ registerComponent(DetailPrice, {
   name: 'DetailPrice',
   props: {
     className: {
+      type: 'string',
+    },
+    phone: {
       type: 'string',
     },
   },

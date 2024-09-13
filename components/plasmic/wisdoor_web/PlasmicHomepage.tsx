@@ -232,6 +232,34 @@ function PlasmicHomepage__RenderFunc(props: {
             data-plasmic-override={overrides.pulsatingButton}
             className={classNames("__wab_instance", sty.pulsatingButton)}
             duration={"1.5s"}
+            onClick={async () => {
+              const $steps = {};
+
+              $steps["goToDoor"] = true
+                ? (() => {
+                    const actionArgs = { destination: `/door` };
+                    return (({ destination }) => {
+                      if (
+                        typeof destination === "string" &&
+                        destination.startsWith("#")
+                      ) {
+                        document
+                          .getElementById(destination.substr(1))
+                          .scrollIntoView({ behavior: "smooth" });
+                      } else {
+                        __nextRouter?.push(destination);
+                      }
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["goToDoor"] != null &&
+                typeof $steps["goToDoor"] === "object" &&
+                typeof $steps["goToDoor"].then === "function"
+              ) {
+                $steps["goToDoor"] = await $steps["goToDoor"];
+              }
+            }}
             pulseColor={"#22c55e"}
           >
             <div

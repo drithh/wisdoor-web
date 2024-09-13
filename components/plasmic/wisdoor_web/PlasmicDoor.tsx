@@ -655,6 +655,7 @@ function PlasmicDoor__RenderFunc(props: {
                 data-plasmic-name={"detailPrice"}
                 data-plasmic-override={overrides.detailPrice}
                 className={classNames("__wab_instance", sty.detailPrice)}
+                phone={"6281293586210"}
               />
             </section>
           </Stack__>

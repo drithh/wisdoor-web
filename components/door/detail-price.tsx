@@ -4,8 +4,13 @@ import { Button } from '../ui/button';
 import { Card, CardContent } from '../ui/card';
 import { FloatingNav } from '../ui/floating-navbar';
 import { useRef } from 'react';
+import Link from 'next/link';
 
-export const DetailPrice = () => {
+interface DetailPriceProps {
+  phone: string;
+}
+
+export const DetailPrice = (props: DetailPriceProps) => {
   const storage = useDoorStore((state) => ({
     door: state.door,
     size: state.size,
@@ -28,12 +33,60 @@ export const DetailPrice = () => {
     (storage.frameFinishing?.price ?? 0) +
     (storage.hinge?.price ?? 0);
 
+  const generateWhatsappLink = () => {
+    const message = `Halo, saya ingin memesan pintu dengan detail: 
+
+  - Model Pintu: ${storage.door.name}
+
+  - Detail Pintu: 
+    - Ukuran: ${storage.size.name} (${storage.size.length} cm x ${
+      storage.size.width
+    } cm) - ${priceFormat(storage.size.price)}
+    - Bahan: ${storage.type.name} - ${priceFormat(storage.type.price)}
+    - Finishing: ${storage.finishing?.name} ${
+      storage.finishing?.name !== 'Tanpa Finishing' &&
+      `- ${priceFormat(storage.finishing?.price ?? 0)}`
+    }
+    ${
+      storage.keyHole &&
+      `- Lubang Kunci - ${priceFormat(storage.keyHole.price)}`
+    }
+    ${
+      storage.weatherStrip &&
+      storage.weatherStrip.amount !== 0 &&
+      `- Tali Air - ${storage.weatherStrip.amount}x - ${priceFormat(
+        storage.weatherStrip.price
+      )}`
+    }
+  ${
+    storage.frame?.name !== 'Tanpa Frame' &&
+    `
+  - Detail Kusen: 
+    - Kusen: ${storage.frame?.name} ${
+      storage.frame?.architrave && 'Architrave'
+    } ${
+      storage.frame?.price === 0
+        ? '(Pending)'
+        : ` - ${priceFormat(storage.frame?.price ?? 0)}`
+    }  
+    - Finishing: ${storage.frameFinishing?.name} (${
+      storage.frameFinishing?.color
+    }) - ${priceFormat(storage.frameFinishing?.price ?? 0)}
+    - Engsel: ${storage.hinge?.name} - ${priceFormat(storage.hinge?.price ?? 0)}
+    `
+  }
+    - Total: ${priceFormat(totalPrice)}
+    `;
+
+    return `https://wa.me/${props.phone}?text=${encodeURIComponent(message)}`;
+  };
+
   const detailPrice = useRef<HTMLDivElement>(null);
 
   return (
     <div
       ref={detailPrice}
-      className="flex relative flex-col gap-6 font-text md:mb-[20vh] mt-8 w-full text-black"
+      className="flex relative flex-col gap-6 font-text md:mt-[10vh] md:mb-[20vh] mt-8 w-full text-black"
     >
       {/* card order now */}
 
@@ -128,9 +181,11 @@ export const DetailPrice = () => {
           {priceFormat(totalPrice)}
         </p>
       </div>
-      <Button variant="outline" className="h-12 my-4 w-full">
-        Pesan Sekarang
-      </Button>
+      <Link href={generateWhatsappLink()} target="_blank">
+        <Button variant="outline" className="h-12 my-4 w-full">
+          Pesan Sekarang
+        </Button>
+      </Link>
       <FloatingNav targetRef={detailPrice} price={totalPrice} />
       {/* <Card className="sticky bottom-[2rem] left-[50%] -translate-x-1/2 bg-red-300">
         <CardContent>wd</CardContent>
