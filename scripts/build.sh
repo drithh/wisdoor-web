@@ -15,7 +15,7 @@ build_project() {
   cd "$project_path" || { echo "Directory not found: $project_path"; exit 1; }
 
   echo "Building $project_path..."
-  pnpm run github:build || { echo "Build failed for $project_path"; exit 1; }
+  pnpm run build || { echo "Build failed for $project_path"; exit 1; }
 
   # Navigate back to the root directory
   cd "$ROOT_DIR" || exit
