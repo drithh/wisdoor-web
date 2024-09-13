@@ -2,6 +2,8 @@ import { priceFormat, priceFormatPerThousand } from '@/lib/price-format';
 import { useDoorStore } from './store';
 import { Button } from '../ui/button';
 import { Card, CardContent } from '../ui/card';
+import { FloatingNav } from '../ui/floating-navbar';
+import { useRef } from 'react';
 
 export const DetailPrice = () => {
   const storage = useDoorStore((state) => ({
@@ -26,12 +28,15 @@ export const DetailPrice = () => {
     (storage.frameFinishing?.price ?? 0) +
     (storage.hinge?.price ?? 0);
 
+  const detailPrice = useRef<HTMLDivElement>(null);
+
   return (
-    <div className="flex relative translate-x-[0] flex-col gap-6 font-text md:mb-[20vh] mt-8 w-full text-black">
+    <div
+      ref={detailPrice}
+      className="flex relative flex-col gap-6 font-text md:mb-[20vh] mt-8 w-full text-black"
+    >
       {/* card order now */}
-      <Card className=" fixed left-[50%] bottom-0 -translate-x-1/2 bg-red-300">
-        <CardContent>test</CardContent>
-      </Card>
+
       <div className="flex flex-col items-center">
         <p className="font-display text-2xl font-medium">Model Pintumu</p>
         <p className="text-gray-500 text-lg">{storage.door.name}</p>
@@ -126,6 +131,10 @@ export const DetailPrice = () => {
       <Button variant="outline" className="h-12 my-4 w-full">
         Pesan Sekarang
       </Button>
+      <FloatingNav targetRef={detailPrice} price={totalPrice} />
+      {/* <Card className="sticky bottom-[2rem] left-[50%] -translate-x-1/2 bg-red-300">
+        <CardContent>wd</CardContent>
+      </Card> */}
     </div>
   );
 };
