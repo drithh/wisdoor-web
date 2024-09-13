@@ -285,6 +285,12 @@
           "name": "HingeDoor",
           "displayName": "HingeDoor",
           "componentImportPath": "./components/door/configurator/hinge"
+        },
+        {
+          "id": "iWTWpwjwUI2f",
+          "name": "DetailPrice",
+          "displayName": "DetailPrice",
+          "componentImportPath": "./components/door/detail-price"
         }
       ],
       "customFunctions": []

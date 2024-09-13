@@ -69,6 +69,7 @@ import { FrameDoor } from "../../door/configurator/frame"; // plasmic-import: Cn
 import { Wrapper } from "../../door/components/wrapper"; // plasmic-import: NTrLzVk65nhU/codeComponent
 import { FinishingFrame } from "../../door/configurator/finishing-frame"; // plasmic-import: kDU8hj27ED9Y/codeComponent
 import { HingeDoor } from "../../door/configurator/hinge"; // plasmic-import: jS-fIcPAcZ7Z/codeComponent
+import { DetailPrice } from "../../door/detail-price"; // plasmic-import: iWTWpwjwUI2f/codeComponent
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -108,6 +109,7 @@ export type PlasmicDoor__OverridesType = {
   finishingFrame?: Flex__<typeof FinishingFrame>;
   engsel?: Flex__<"div">;
   hingeDoor?: Flex__<typeof HingeDoor>;
+  detailPrice?: Flex__<typeof DetailPrice>;
 };
 
 export interface DefaultDoorProps {}
@@ -615,6 +617,11 @@ function PlasmicDoor__RenderFunc(props: {
                   </Stack__>
                 ) : null}
               </Wrapper>
+              <DetailPrice
+                data-plasmic-name={"detailPrice"}
+                data-plasmic-override={overrides.detailPrice}
+                className={classNames("__wab_instance", sty.detailPrice)}
+              />
             </section>
           </Stack__>
         </div>
@@ -645,7 +652,8 @@ const PlasmicDescendants = {
     "finishingKusen",
     "finishingFrame",
     "engsel",
-    "hingeDoor"
+    "hingeDoor",
+    "detailPrice"
   ],
   freeBox: [
     "freeBox",
@@ -667,7 +675,8 @@ const PlasmicDescendants = {
     "finishingKusen",
     "finishingFrame",
     "engsel",
-    "hingeDoor"
+    "hingeDoor",
+    "detailPrice"
   ],
   doorViewer: ["doorViewer"],
   section: [
@@ -688,7 +697,8 @@ const PlasmicDescendants = {
     "finishingKusen",
     "finishingFrame",
     "engsel",
-    "hingeDoor"
+    "hingeDoor",
+    "detailPrice"
   ],
   jenisPintu: ["jenisPintu", "chooseDoor"],
   chooseDoor: ["chooseDoor"],
@@ -712,7 +722,8 @@ const PlasmicDescendants = {
   finishingKusen: ["finishingKusen", "finishingFrame"],
   finishingFrame: ["finishingFrame"],
   engsel: ["engsel", "hingeDoor"],
-  hingeDoor: ["hingeDoor"]
+  hingeDoor: ["hingeDoor"],
+  detailPrice: ["detailPrice"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -739,6 +750,7 @@ type NodeDefaultElementType = {
   finishingFrame: typeof FinishingFrame;
   engsel: "div";
   hingeDoor: typeof HingeDoor;
+  detailPrice: typeof DetailPrice;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -821,6 +833,7 @@ export const PlasmicDoor = Object.assign(
     finishingFrame: makeNodeComponent("finishingFrame"),
     engsel: makeNodeComponent("engsel"),
     hingeDoor: makeNodeComponent("hingeDoor"),
+    detailPrice: makeNodeComponent("detailPrice"),
 
     // Metadata about props expected for PlasmicDoor
     internalVariantProps: PlasmicDoor__VariantProps,

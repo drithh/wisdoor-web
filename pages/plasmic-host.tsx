@@ -24,6 +24,7 @@ import { FrameDoor } from '@/components/door/configurator/frame';
 import { Wrapper } from '@/components/door/components/wrapper';
 import { FinishingFrame } from '@/components/door/configurator/finishing-frame';
 import { HingeDoor } from '@/components/door/configurator/hinge';
+import { DetailPrice } from '@/components/door/detail-price';
 
 // You can register any code components that you want to use here; see
 // https://docs.plasmic.app/learn/code-components-ref/
@@ -559,6 +560,17 @@ registerComponent(HingeDoor, {
   },
 
   importPath: './components/door/configurator/hinge',
+});
+
+registerComponent(DetailPrice, {
+  name: 'DetailPrice',
+  props: {
+    className: {
+      type: 'string',
+    },
+  },
+
+  importPath: './components/door/detail-price',
 });
 
 export default function PlasmicHost() {
