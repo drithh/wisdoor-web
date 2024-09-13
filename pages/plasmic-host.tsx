@@ -379,6 +379,9 @@ registerComponent(TypeDoor, {
           price: {
             type: 'number',
           },
+          modal: {
+            type: 'richText',
+          },
         },
       },
     },
@@ -406,6 +409,9 @@ registerComponent(FinishingDoor, {
           },
           price: {
             type: 'number',
+          },
+          modal: {
+            type: 'richText',
           },
         },
       },

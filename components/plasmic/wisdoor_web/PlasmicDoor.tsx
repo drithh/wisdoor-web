@@ -234,7 +234,7 @@ function PlasmicDoor__RenderFunc(props: {
                     __composite["0"]["modal"] =
                       "<p>Pintu utama menggunakan kayu yang lebih berat, memberikan rasa kokoh dan daya tahan yang tinggi. Material ini dirancang untuk menahan beban dan memberikan perlindungan ekstra, menjadikannya ideal untuk pintu depan yang membutuhkan keamanan dan keawetan.</p>";
                     __composite["1"]["id"] = "kamar";
-                    __composite["1"]["name"] = "Pintu Kamar (Rangka 3.6)";
+                    __composite["1"]["name"] = "Pintu Kamar";
                     __composite["1"]["modal"] =
                       "<p>Pintu kamar menggunakan kayu yang lebih ringan, lebih mudah dibuka dan dipasang. Material ini cocok untuk penggunaan interior, memberikan kenyamanan dan fungsionalitas tanpa mengorbankan estetika atau daya tahan yang sesuai untuk ruangan dalam rumah.</p>";
                     return __composite;
@@ -322,17 +322,21 @@ function PlasmicDoor__RenderFunc(props: {
                   className={classNames("__wab_instance", sty.typeDoor)}
                   types={(() => {
                     const __composite = [
-                      { image: null, type: null, price: null },
-                      { type: null, image: null, price: null }
+                      { image: null, type: null, price: null, modal: null },
+                      { type: null, image: null, price: null, modal: null }
                     ];
                     __composite["0"]["image"] =
                       "https://site-assets.plasmic.app/ec7615efd9eec59506460977dde021a8.jpg";
                     __composite["0"]["type"] = "HMR (3mm)";
                     __composite["0"]["price"] = 240000;
+                    __composite["0"]["modal"] =
+                      '<p dir="ltr">HMR adalah material tahan lembab yang ideal untuk bagian dalam pintu, terutama di area dengan kelembapan tinggi. Prosesnya melibatkan pemotongan dan penyusunan HMR menjadi kerangka pintu, kemudian permukaan dapat dilapisi dengan cat atau laminasi sesuai kebutuhan.</p>\n<p dir="ltr">&nbsp;</p>\n<p dir="ltr"><strong>Keunggulan:</strong></p>\n<ul>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Tahan terhadap kelembapan, cocok untuk area basah.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Stabilitas dimensi yang baik, tidak mudah melengkung.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Permukaan halus, mudah untuk dilapisi atau dicat.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Berat, memberikan rasa kokoh pada pintu.</p>\n</li>\n</ul>\n<p>&nbsp;</p>';
                     __composite["1"]["type"] = "Plywood Meranti (3mm)";
                     __composite["1"]["image"] =
                       "https://site-assets.plasmic.app/843daac37ed39e5c0fd4392b69506628.jpg";
                     __composite["1"]["price"] = 240000;
+                    __composite["1"]["modal"] =
+                      '<p dir="ltr">Plywood adalah material serbaguna untuk bagian dalam pintu yang kuat dan tahan lama. Prosesnya melibatkan pemotongan lembaran plywood dan menyusunnya menjadi kerangka pintu. Plywood dapat difinishing secara natural dengan melamine, menonjolkan keindahan serat kayu.</p>\n<p dir="ltr">&nbsp;</p>\n<p dir="ltr"><strong>Keunggulan:</strong></p>\n<ul>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Kekuatan struktural tinggi dan tahan lama.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Lebih ringan dibandingkan HMR, memudahkan pemasangan.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Bisa difinishing secara natural dengan melamine, menonjolkan serat kayu.</p>\n</li>\n</ul>\n<p>&nbsp;</p>';
                     return __composite;
                   })()}
                 />
@@ -360,11 +364,14 @@ function PlasmicDoor__RenderFunc(props: {
                   finishings={(() => {
                     const __composite = [
                       { doorId: null, name: null, price: null },
+                      { doorId: null, name: null, price: null, modal: null },
+                      { doorId: null, name: null, price: null, modal: null },
+                      { doorId: null, name: null, price: null, modal: null },
                       { doorId: null, name: null, price: null },
-                      { doorId: null, name: null, price: null },
-                      { doorId: null, name: null, price: null },
-                      { doorId: null, name: null, price: null },
-                      { doorId: null, name: null, price: null }
+                      { doorId: null, name: null, price: null, modal: null },
+                      { doorId: null, name: null, price: null, modal: null },
+                      { doorId: null, name: null, price: null, modal: null },
+                      { doorId: null, name: null, price: null, modal: null }
                     ];
                     __composite["0"]["doorId"] = "kamar";
                     __composite["0"]["name"] = "Tidak Finishing";
@@ -372,18 +379,41 @@ function PlasmicDoor__RenderFunc(props: {
                     __composite["1"]["doorId"] = "kamar";
                     __composite["1"]["name"] = "Duco Putih";
                     __composite["1"]["price"] = 370000;
+                    __composite["1"]["modal"] =
+                      '<p dir="ltr">Duco putih memberikan hasil akhir elegan melalui proses pengamplasan, aplikasi cat dasar, dan beberapa lapisan cat duco, yang dihaluskan di antara tiap lapisan. Finishing akhir menambah kilau dan perlindungan.</p>\n<p dir="ltr">&nbsp;</p>\n<p dir="ltr"><strong>Keunggulan:</strong></p>\n<ul>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Tampilan elegan dan bersih.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Permukaan sangat halus.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Warna putih seragam.</p>\n</li>\n</ul>\n<p>&nbsp;</p>';
                     __composite["2"]["doorId"] = "kamar";
-                    __composite["2"]["name"] = "TACO Sheet";
+                    __composite["2"]["name"] = "PVC Sheet";
                     __composite["2"]["price"] = 700000;
+                    __composite["2"]["modal"] =
+                      '<p dir="ltr">PVC sheet adalah finishing praktis yang tahan lama. Prosesnya melibatkan pemasangan lembaran PVC di atas pintu yang telah dilapisi lem, kemudian dipanaskan dan ditekan agar merekat sempurna.</p>\n<p dir="ltr">&nbsp;</p>\n<p dir="ltr"><strong>Keunggulan:</strong></p>\n<ul>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Tahan air, kelembapan, dan goresan.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Mudah dibersihkan.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Beragam warna dan tekstur.</p>\n</li>\n</ul>\n<p>&nbsp;</p>';
                     __composite["3"]["doorId"] = "kamar";
                     __composite["3"]["name"] = "HPL Std";
                     __composite["3"]["price"] = 850000;
+                    __composite["3"]["modal"] =
+                      '<p dir="ltr">HPL menawarkan daya tahan tinggi dan variasi desain. Lembaran HPL ditempelkan pada pintu yang telah diberi lem, kemudian ditekan dan dipangkas untuk hasil rapi dan kuat.</p>\n<p dir="ltr">&nbsp;</p>\n<p dir="ltr"><strong>Keunggulan:</strong></p>\n<ul>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Tahan Air</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Tahan goresan, panas, dan bahan kimia.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Banyak pilihan desain.</p>\n</li>\n</ul>\n<p>&nbsp;</p>';
                     __composite["4"]["doorId"] = "utama";
                     __composite["4"]["name"] = "Tidak Finishing";
                     __composite["4"]["price"] = 0;
                     __composite["5"]["doorId"] = "utama";
                     __composite["5"]["name"] = "Duco Putih";
                     __composite["5"]["price"] = 370000;
+                    __composite["5"]["modal"] =
+                      '<p dir="ltr">Duco putih memberikan hasil akhir elegan melalui proses pengamplasan, aplikasi cat dasar, dan beberapa lapisan cat duco, yang dihaluskan di antara tiap lapisan. Finishing akhir menambah kilau dan perlindungan.</p>\n<p dir="ltr">&nbsp;</p>\n<p dir="ltr"><strong>Keunggulan:</strong></p>\n<ul>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Tampilan elegan dan bersih.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Permukaan sangat halus.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Warna putih seragam.</p>\n</li>\n</ul>';
+                    __composite["6"]["doorId"] = "utama";
+                    __composite["6"]["name"] = "Melamine";
+                    __composite["6"]["price"] = 370000;
+                    __composite["6"]["modal"] =
+                      '<p dir="ltr">Melamine adalah finishing yang populer untuk memberikan tampilan kayu alami. Prosesnya melibatkan aplikasi beberapa lapisan melamine dengan semprotan, diikuti dengan pengeringan dan pengamplasan ringan di antara lapisan, hingga mencapai hasil yang diinginkan.</p>\n<p dir="ltr">&nbsp;</p>\n<p dir="ltr"><strong>Keunggulan:</strong></p>\n<ul>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Menonjolkan serat alami kayu.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Memberikan perlindungan terhadap goresan dan kelembapan.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Hasil akhir yang mengkilap atau matte sesuai preferensi.</p>\n</li>\n</ul>\n<p>&nbsp;</p>';
+                    __composite["7"]["doorId"] = "utama";
+                    __composite["7"]["name"] = "PVC Sheet";
+                    __composite["7"]["price"] = 700000;
+                    __composite["7"]["modal"] =
+                      '<p dir="ltr">PVC sheet adalah finishing praktis yang tahan lama. Prosesnya melibatkan pemasangan lembaran PVC di atas pintu yang telah dilapisi lem, kemudian dipanaskan dan ditekan agar merekat sempurna.</p>\n<p dir="ltr">&nbsp;</p>\n<p dir="ltr"><strong>Keunggulan:</strong></p>\n<ul>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Tahan air, kelembapan, dan goresan.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Mudah dibersihkan.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Beragam warna dan tekstur.</p>\n</li>\n</ul>\n<p>&nbsp;</p>';
+                    __composite["8"]["doorId"] = "utama";
+                    __composite["8"]["name"] = "HPL Std";
+                    __composite["8"]["price"] = 850000;
+                    __composite["8"]["modal"] =
+                      '<p dir="ltr">HPL menawarkan daya tahan tinggi dan variasi desain. Lembaran HPL ditempelkan pada pintu yang telah diberi lem, kemudian ditekan dan dipangkas untuk hasil rapi dan kuat.</p>\n<p dir="ltr">&nbsp;</p>\n<p dir="ltr"><strong>Keunggulan:</strong></p>\n<ul>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Tahan Air</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Tahan goresan, panas, dan bahan kimia.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Banyak pilihan desain.</p>\n</li>\n</ul>\n<p>&nbsp;</p>';
                     return __composite;
                   })()}
                 />

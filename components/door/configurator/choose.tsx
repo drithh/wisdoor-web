@@ -26,10 +26,16 @@ export const ChooseDoor = (props: ChooseDoorProps) => {
           isActive={door.id === storage.door.id}
           onClick={() => storage.setDoor(door)}
           key={door.id}
-          className={cn(props.className, 'flex gap-2 items-center')}
+          className={props.className}
         >
-          <div className="flex gap-2">{door.name}</div>
-          <DoorModal title={door.name} richText={door.modal} />
+          <div className="flex gap-2">
+            {door.name}
+            <DoorModal
+              title={door.name}
+              richText={door.modal}
+              className="ml-0"
+            />
+          </div>
         </DoorButton>
       ))}
     </div>

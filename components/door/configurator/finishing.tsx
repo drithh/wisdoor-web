@@ -5,11 +5,13 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
 import Image from 'next/image';
 import { priceFormatPerThousand } from '@/lib/price-format';
+import { DoorModal } from '../components/modal';
 
 interface Finishing {
   doorId: string;
   name: string;
   price: number;
+  modal: string;
 }
 
 interface finishingDoorProps {
@@ -48,6 +50,11 @@ export const FinishingDoor = (props: finishingDoorProps) => {
           <div className="flex flex-col gap-2 w-full items-center h-full place-content-between">
             <p className="whitespace-pre-wrap flex flex-1 text-sm text-center items-center transition-colors">
               {finishing.name}
+              <DoorModal
+                title={finishing.name}
+                richText={finishing.modal}
+                className="top-0"
+              />
             </p>
             {finishing.price !== 0 && (
               <p className="text-sm text-emerald-700">

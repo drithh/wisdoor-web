@@ -5,11 +5,13 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
 import Image from 'next/image';
 import { priceFormatPerThousand } from '@/lib/price-format';
+import { DoorModal } from '../components/modal';
 
 interface Type {
   type: string;
   image: string;
   price: number;
+  modal: string;
 }
 
 interface TypeDoorProps {
@@ -52,7 +54,13 @@ export const TypeDoor = (props: TypeDoorProps) => {
           <div className="flex flex-col gap-2 w-full h-full place-content-between">
             <p className="whitespace-pre-wrap flex-1 text-sm text-center transition-colors">
               {type.type}
+              <DoorModal
+                title={type.type}
+                richText={type.modal}
+                className="top-1"
+              />
             </p>
+
             <p className="text-sm text-emerald-700">
               {priceFormatPerThousand(type.price)}
             </p>

@@ -8,17 +8,24 @@ import {
 } from '@/components/ui/dialog';
 import { CircleHelp } from 'lucide-react';
 import RichTextViewer from '@/components/rich-text-viewer';
+import { cn } from '@/lib/utils';
 
 interface DoorModalProps {
   title: string;
   richText: string;
+  className?: string;
 }
 
 export const DoorModal = (props: DoorModalProps) => {
+  if (props.richText === undefined || props.richText === '') {
+    return null;
+  }
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <span>
+        <span
+          className={cn('inline-block ml-2 top-0.5 relative', props.className)}
+        >
           <CircleHelp
             size={18}
             className="hover:text-emerald-600 text-gray-500 rounded-full hover:bg-gray-100 hover:scale-110 duration-300 transition-all"
