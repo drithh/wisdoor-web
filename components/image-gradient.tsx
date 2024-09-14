@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import ExportedImage from 'next-image-export-optimizer';
 
 interface ImageGradientProps {
   image?: string;
@@ -20,7 +21,7 @@ export function ImageGradient({
   const defaultImage = image || '/placeholder.svg';
   return (
     <div className={`relative overflow-hidden ${className}`}>
-      <Image
+      <ExportedImage
         src={defaultImage}
         fill
         className="object-cover"

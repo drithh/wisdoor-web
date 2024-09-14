@@ -2,6 +2,7 @@
 
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { classNames } from '@plasmicapp/react-web';
+import ExportedImage from 'next-image-export-optimizer';
 import Image from 'next/image';
 import { createRef, RefObject, useRef } from 'react';
 
@@ -42,7 +43,7 @@ export function MultipleProduct({ products, className }: MultipleProductProps) {
       {products.map((product, index) => (
         <TabsContent key={index} value={product.title}>
           <div className="relative w-full h-96">
-            <Image
+            <ExportedImage
               src={product.image}
               fill
               className="object-cover md:rounded-md"

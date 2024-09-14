@@ -6,6 +6,7 @@ import { Label } from '@/components/ui/label';
 import Image from 'next/image';
 import { priceFormatPerThousand } from '@/lib/price-format';
 import { DoorModal } from '../components/modal';
+import ExportedImage from 'next-image-export-optimizer';
 
 interface Type {
   type: string;
@@ -43,7 +44,7 @@ export const TypeDoor = (props: TypeDoorProps) => {
           className="flex h-full gap-2 flex-col px-4 items-center cursor-pointer"
         >
           <div className="w-12 min-h-12 rounded-full  border-2  border-gray-300 flex items-center justify-center overflow-hidden peer-aria-checked:border-primary transition-colors">
-            <Image
+            <ExportedImage
               src={type.image}
               alt={type.type}
               width={48}

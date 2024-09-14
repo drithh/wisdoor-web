@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import ExportedImage from 'next-image-export-optimizer';
 
 const links = [
   {
@@ -28,7 +29,7 @@ export function Navigation({ image, alt }: NavigationProps) {
     <div className="font-display flex justify-between items-center p-4 absolute top-0 left-0 h-20 w-full z-50">
       <div className="flex-shrink-0 h-full flex-grow">
         <div className="w-16 h-full relative">
-          <Image
+          <ExportedImage
             src={defaultImage}
             fill
             className="object-contain"

@@ -51,7 +51,7 @@ echo "Copy .env file to main"
 cp "$DEST_DIR/.env" "$DEST_DIR/main/.env"
 
 # Move and reload the admin app
-extract_and_reload $ADMIN 3000
+extract_and_reload $WEB 3000
 
 echo "Removing apps directory"
 rm -rf "$DEST_DIR/apps"
