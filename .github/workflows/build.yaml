@@ -1,51 +1,51 @@
-name: Build and Deploy
+# name: Build and Deploy
 
-on:
-  push:
-    branches:
-      - main
+# on:
+#   push:
+#     branches:
+#       - main
   
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    environment: Production
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     environment: Production
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v3
 
 
-      - name: Set up SSH key
-        uses: webfactory/ssh-agent@v0.5.4
-        with:
-          ssh-private-key: ${{ secrets.SSH_KEY }}
+#       - name: Set up SSH key
+#         uses: webfactory/ssh-agent@v0.5.4
+#         with:
+#           ssh-private-key: ${{ secrets.SSH_KEY }}
 
-      - name: Set up pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
+#       - name: Set up pnpm
+#         uses: pnpm/action-setup@v2
+#         with:
+#           version: 8
 
-      - name: Install dependencies
-        run: pnpm install
+#       - name: Install dependencies
+#         run: pnpm install
 
-      - name: Ensure script is executable
-        run: chmod +x scripts/*
+#       - name: Ensure script is executable
+#         run: chmod +x scripts/*
 
-      - name: Run build script
-        run: ./scripts/build.sh
-        env:
-          SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
-          SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
-          SSH_HOST: ${{ secrets.SSH_HOST }}
+#       - name: Run build script
+#         run: ./scripts/build.sh
+#         env:
+#           SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
+#           SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
+#           SSH_HOST: ${{ secrets.SSH_HOST }}
       
-      - name: Run post-build script
-        run: ./scripts/post-build.sh
+#       - name: Run post-build script
+#         run: ./scripts/post-build.sh
 
-      - name: Copy files using SCP
-        run: |
-          scp -o StrictHostKeyChecking=no ./web.tar.gz ./scripts/deploy.sh ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/home/wisdoor
+#       - name: Copy files using SCP
+#         run: |
+#           scp -o StrictHostKeyChecking=no ./web.tar.gz ./scripts/deploy.sh ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/home/wisdoor
 
-      - name: SSH into server and run deployment script
-        run: |
-          ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} "chmod +x /home/wisdoor/deploy.sh && /home/wisdoor/deploy.sh"
+#       - name: SSH into server and run deployment script
+#         run: |
+#           ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} "chmod +x /home/wisdoor/deploy.sh && /home/wisdoor/deploy.sh"
