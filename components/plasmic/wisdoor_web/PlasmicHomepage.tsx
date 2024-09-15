@@ -11,11 +11,11 @@
 // Plasmic Project: t5hn1zAmdmxJoKmkXG4dPV
 // Component: qpi3-pwEc1RY
 
-import * as React from "react";
+import * as React from 'react';
 
-import Head from "next/head";
-import Link, { LinkProps } from "next/link";
-import { useRouter } from "next/router";
+import Head from 'next/head';
+import Link, { LinkProps } from 'next/link';
+import { useRouter } from 'next/router';
 
 import {
   Flex as Flex__,
@@ -51,23 +51,23 @@ import {
   useDollarState,
   usePlasmicTranslator,
   useTrigger,
-  wrapWithClassName
-} from "@plasmicapp/react-web";
+  wrapWithClassName,
+} from '@plasmicapp/react-web';
 import {
   DataCtxReader as DataCtxReader__,
   useDataEnv,
-  useGlobalActions
-} from "@plasmicapp/react-web/lib/host";
+  useGlobalActions,
+} from '@plasmicapp/react-web/lib/host';
 
-import { Navigation } from "../../navigation"; // plasmic-import: UiHqtQRdZ-A_/codeComponent
-import { Hero } from "../../hero"; // plasmic-import: DLj-cPcbVVVA/codeComponent
-import { BlurFade } from "../../magicui/blur-fade"; // plasmic-import: mo0WkofSVfhk/codeComponent
-import { PulsatingButton } from "../../magicui/pulsating-button"; // plasmic-import: O5iAxnp4_43w/codeComponent
+import { Navigation } from '../../navigation'; // plasmic-import: UiHqtQRdZ-A_/codeComponent
+import { Hero } from '../../../public/hero'; // plasmic-import: DLj-cPcbVVVA/codeComponent
+import { BlurFade } from '../../magicui/blur-fade'; // plasmic-import: mo0WkofSVfhk/codeComponent
+import { PulsatingButton } from '../../magicui/pulsating-button'; // plasmic-import: O5iAxnp4_43w/codeComponent
 
-import "@plasmicapp/react-web/lib/plasmic.css";
+import '@plasmicapp/react-web/lib/plasmic.css';
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: t5hn1zAmdmxJoKmkXG4dPV/projectcss
-import sty from "./PlasmicHomepage.module.css"; // plasmic-import: qpi3-pwEc1RY/css
+import projectcss from './plasmic.module.css'; // plasmic-import: t5hn1zAmdmxJoKmkXG4dPV/projectcss
+import sty from './PlasmicHomepage.module.css'; // plasmic-import: qpi3-pwEc1RY/css
 
 createPlasmicElementProxy;
 
@@ -81,7 +81,7 @@ type ArgPropType = keyof PlasmicHomepage__ArgsType;
 export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
-  root?: Flex__<"div">;
+  root?: Flex__<'div'>;
   navigation?: Flex__<typeof Navigation>;
   hero?: Flex__<typeof Hero>;
   blurFade?: Flex__<typeof BlurFade>;
@@ -120,7 +120,7 @@ function PlasmicHomepage__RenderFunc(props: {
 
   const $props = {
     ...args,
-    ...variants
+    ...variants,
   };
 
   const __nextRouter = useNextRouter();
@@ -152,7 +152,7 @@ function PlasmicHomepage__RenderFunc(props: {
       `}</style>
 
       <div
-        data-plasmic-name={"root"}
+        data-plasmic-name={'root'}
         data-plasmic-override={overrides.root}
         data-plasmic-root={true}
         data-plasmic-for-node={forNode}
@@ -166,34 +166,34 @@ function PlasmicHomepage__RenderFunc(props: {
         )}
       >
         <Navigation
-          data-plasmic-name={"navigation"}
+          data-plasmic-name={'navigation'}
           data-plasmic-override={overrides.navigation}
-          alt={"Logo Wisdoor"}
-          className={classNames("__wab_instance", sty.navigation)}
-          image={"/plasmic/wisdoor_web/images/image.svg"}
+          alt={'Logo Wisdoor'}
+          className={classNames('__wab_instance', sty.navigation)}
+          image={'/plasmic/wisdoor_web/images/image.svg'}
         />
 
         <Hero
-          data-plasmic-name={"hero"}
+          data-plasmic-name={'hero'}
           data-plasmic-override={overrides.hero}
-          alt={"Logo Wisdoor"}
-          className={classNames("__wab_instance", sty.hero)}
-          image={"/plasmic/wisdoor_web/images/heroHomepage.png"}
+          alt={'Logo Wisdoor'}
+          className={classNames('__wab_instance', sty.hero)}
+          image={'/plasmic/wisdoor_web/images/heroHomepage.png'}
         />
 
         <section className={classNames(projectcss.all, sty.section___0Md7)}>
           <BlurFade
-            data-plasmic-name={"blurFade"}
+            data-plasmic-name={'blurFade'}
             data-plasmic-override={overrides.blurFade}
-            blur={"6px"}
-            className={classNames("__wab_instance", sty.blurFade)}
+            blur={'6px'}
+            className={classNames('__wab_instance', sty.blurFade)}
             delay={0}
             duration={0.4}
             inView={false}
-            inViewMargin={"-50px"}
+            inViewMargin={'-50px'}
             variant={{
-              hidden: { y: 6, opacity: 0, filter: "blur(6px)" },
-              visible: { y: -6, opacity: 1, filter: "blur(0px)" }
+              hidden: { y: 6, opacity: 0, filter: 'blur(6px)' },
+              visible: { y: -6, opacity: 1, filter: 'blur(0px)' },
             }}
             yOffset={6}
           >
@@ -204,7 +204,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 sty.text__z850Z
               )}
             >
-              {"Model 3"}
+              {'Model 3'}
             </div>
             <div
               className={classNames(
@@ -213,7 +213,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 sty.text__qM8Me
               )}
             >
-              {"1.99% APR Financing Ending August 31"}
+              {'1.99% APR Financing Ending August 31'}
             </div>
             <div
               className={classNames(
@@ -222,30 +222,30 @@ function PlasmicHomepage__RenderFunc(props: {
                 sty.text__jQSee
               )}
             >
-              {"From $34,9901"}
+              {'From $34,9901'}
             </div>
           </BlurFade>
         </section>
         <section className={classNames(projectcss.all, sty.section___9Wqeb)}>
           <PulsatingButton
-            data-plasmic-name={"pulsatingButton"}
+            data-plasmic-name={'pulsatingButton'}
             data-plasmic-override={overrides.pulsatingButton}
-            className={classNames("__wab_instance", sty.pulsatingButton)}
-            duration={"1.5s"}
+            className={classNames('__wab_instance', sty.pulsatingButton)}
+            duration={'1.5s'}
             onClick={async () => {
               const $steps = {};
 
-              $steps["goToDoor"] = true
+              $steps['goToDoor'] = true
                 ? (() => {
                     const actionArgs = { destination: `/door` };
                     return (({ destination }) => {
                       if (
-                        typeof destination === "string" &&
-                        destination.startsWith("#")
+                        typeof destination === 'string' &&
+                        destination.startsWith('#')
                       ) {
                         document
                           .getElementById(destination.substr(1))
-                          .scrollIntoView({ behavior: "smooth" });
+                          .scrollIntoView({ behavior: 'smooth' });
                       } else {
                         __nextRouter?.push(destination);
                       }
@@ -253,14 +253,14 @@ function PlasmicHomepage__RenderFunc(props: {
                   })()
                 : undefined;
               if (
-                $steps["goToDoor"] != null &&
-                typeof $steps["goToDoor"] === "object" &&
-                typeof $steps["goToDoor"].then === "function"
+                $steps['goToDoor'] != null &&
+                typeof $steps['goToDoor'] === 'object' &&
+                typeof $steps['goToDoor'].then === 'function'
               ) {
-                $steps["goToDoor"] = await $steps["goToDoor"];
+                $steps['goToDoor'] = await $steps['goToDoor'];
               }
             }}
-            pulseColor={"#22c55e"}
+            pulseColor={'#22c55e'}
           >
             <div
               className={classNames(
@@ -269,7 +269,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 sty.text__gdEut
               )}
             >
-              {"Order Now"}
+              {'Order Now'}
             </div>
           </PulsatingButton>
         </section>
@@ -279,24 +279,24 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "navigation", "hero", "blurFade", "pulsatingButton"],
-  navigation: ["navigation"],
-  hero: ["hero"],
-  blurFade: ["blurFade"],
-  pulsatingButton: ["pulsatingButton"]
+  root: ['root', 'navigation', 'hero', 'blurFade', 'pulsatingButton'],
+  navigation: ['navigation'],
+  hero: ['hero'],
+  blurFade: ['blurFade'],
+  pulsatingButton: ['pulsatingButton'],
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
-  root: "div";
+  root: 'div';
   navigation: typeof Navigation;
   hero: typeof Hero;
   blurFade: typeof BlurFade;
   pulsatingButton: typeof PulsatingButton;
 };
 
-type ReservedPropsType = "variants" | "args" | "overrides";
+type ReservedPropsType = 'variants' | 'args' | 'overrides';
 type NodeOverridesType<T extends NodeNameType> = Pick<
   PlasmicHomepage__OverridesType,
   DescendantsType<T>
@@ -332,7 +332,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
           name: nodeName,
           descendantNames: PlasmicDescendants[nodeName],
           internalArgPropNames: PlasmicHomepage__ArgProps,
-          internalVariantPropNames: PlasmicHomepage__VariantProps
+          internalVariantPropNames: PlasmicHomepage__VariantProps,
         }),
       [props, nodeName]
     );
@@ -340,11 +340,11 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       variants,
       args,
       overrides,
-      forNode: nodeName
+      forNode: nodeName,
     });
   };
-  if (nodeName === "root") {
-    func.displayName = "PlasmicHomepage";
+  if (nodeName === 'root') {
+    func.displayName = 'PlasmicHomepage';
   } else {
     func.displayName = `PlasmicHomepage.${nodeName}`;
   }
@@ -353,13 +353,13 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
 
 export const PlasmicHomepage = Object.assign(
   // Top-level PlasmicHomepage renders the root element
-  makeNodeComponent("root"),
+  makeNodeComponent('root'),
   {
     // Helper components rendering sub-elements
-    navigation: makeNodeComponent("navigation"),
-    hero: makeNodeComponent("hero"),
-    blurFade: makeNodeComponent("blurFade"),
-    pulsatingButton: makeNodeComponent("pulsatingButton"),
+    navigation: makeNodeComponent('navigation'),
+    hero: makeNodeComponent('hero'),
+    blurFade: makeNodeComponent('blurFade'),
+    pulsatingButton: makeNodeComponent('pulsatingButton'),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
@@ -367,11 +367,11 @@ export const PlasmicHomepage = Object.assign(
 
     // Page metadata
     pageMetadata: {
-      title: "Wisdoor",
-      description: "",
-      ogImageSrc: "",
-      canonical: ""
-    }
+      title: 'Wisdoor',
+      description: '',
+      ogImageSrc: '',
+      canonical: '',
+    },
   }
 );
 

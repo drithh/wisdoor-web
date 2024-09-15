@@ -11,11 +11,11 @@
 // Plasmic Project: t5hn1zAmdmxJoKmkXG4dPV
 // Component: 4a8DjtM_KrIy
 
-import * as React from "react";
+import * as React from 'react';
 
-import Head from "next/head";
-import Link, { LinkProps } from "next/link";
-import { useRouter } from "next/router";
+import Head from 'next/head';
+import Link, { LinkProps } from 'next/link';
+import { useRouter } from 'next/router';
 
 import {
   Flex as Flex__,
@@ -51,29 +51,29 @@ import {
   useDollarState,
   usePlasmicTranslator,
   useTrigger,
-  wrapWithClassName
-} from "@plasmicapp/react-web";
+  wrapWithClassName,
+} from '@plasmicapp/react-web';
 import {
   DataCtxReader as DataCtxReader__,
   useDataEnv,
-  useGlobalActions
-} from "@plasmicapp/react-web/lib/host";
+  useGlobalActions,
+} from '@plasmicapp/react-web/lib/host';
 
-import { Navigation } from "../../navigation"; // plasmic-import: UiHqtQRdZ-A_/codeComponent
-import { Hero } from "../../hero"; // plasmic-import: DLj-cPcbVVVA/codeComponent
-import { BlurFade } from "../../magicui/blur-fade"; // plasmic-import: mo0WkofSVfhk/codeComponent
-import { Embed } from "@plasmicpkgs/plasmic-basic-components";
-import { BoxReveal } from "../../magicui/box-reveal"; // plasmic-import: jgqirGASTSZT/codeComponent
-import { ImageGradient } from "../../image-gradient"; // plasmic-import: BYKZmpg0gHCS/codeComponent
-import { SingleProductText } from "../../single-product"; // plasmic-import: HyyMSog-JLpO/codeComponent
-import { MultipleProduct } from "../../multiple-product"; // plasmic-import: pE3Y9Bt6qwFd/codeComponent
+import { Navigation } from '../../navigation'; // plasmic-import: UiHqtQRdZ-A_/codeComponent
+import { Hero } from '../../../public/hero'; // plasmic-import: DLj-cPcbVVVA/codeComponent
+import { BlurFade } from '../../magicui/blur-fade'; // plasmic-import: mo0WkofSVfhk/codeComponent
+import { Embed } from '@plasmicpkgs/plasmic-basic-components';
+import { BoxReveal } from '../../magicui/box-reveal'; // plasmic-import: jgqirGASTSZT/codeComponent
+import { ImageGradient } from '../../image-gradient'; // plasmic-import: BYKZmpg0gHCS/codeComponent
+import { SingleProductText } from '../../single-product'; // plasmic-import: HyyMSog-JLpO/codeComponent
+import { MultipleProduct } from '../../multiple-product'; // plasmic-import: pE3Y9Bt6qwFd/codeComponent
 
-import { useScreenVariants as useScreenVariantsqZb5Tz3BAq8Z } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: qZB5tz3bAQ8Z/globalVariant
+import { useScreenVariants as useScreenVariantsqZb5Tz3BAq8Z } from './PlasmicGlobalVariant__Screen'; // plasmic-import: qZB5tz3bAQ8Z/globalVariant
 
-import "@plasmicapp/react-web/lib/plasmic.css";
+import '@plasmicapp/react-web/lib/plasmic.css';
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: t5hn1zAmdmxJoKmkXG4dPV/projectcss
-import sty from "./PlasmicAbout.module.css"; // plasmic-import: 4a8DjtM_KrIy/css
+import projectcss from './plasmic.module.css'; // plasmic-import: t5hn1zAmdmxJoKmkXG4dPV/projectcss
+import sty from './PlasmicAbout.module.css'; // plasmic-import: 4a8DjtM_KrIy/css
 
 createPlasmicElementProxy;
 
@@ -87,10 +87,10 @@ type ArgPropType = keyof PlasmicAbout__ArgsType;
 export const PlasmicAbout__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicAbout__OverridesType = {
-  root?: Flex__<"div">;
+  root?: Flex__<'div'>;
   navigation?: Flex__<typeof Navigation>;
   hero?: Flex__<typeof Hero>;
-  columns?: Flex__<"div">;
+  columns?: Flex__<'div'>;
   embedHtml?: Flex__<typeof Embed>;
   multipleProduct?: Flex__<typeof MultipleProduct>;
 };
@@ -127,7 +127,7 @@ function PlasmicAbout__RenderFunc(props: {
 
   const $props = {
     ...args,
-    ...variants
+    ...variants,
   };
 
   const __nextRouter = useNextRouter();
@@ -136,7 +136,7 @@ function PlasmicAbout__RenderFunc(props: {
   const $refs = refsRef.current;
 
   const globalVariants = ensureGlobalVariants({
-    screen: useScreenVariantsqZb5Tz3BAq8Z()
+    screen: useScreenVariantsqZb5Tz3BAq8Z(),
   });
 
   return (
@@ -163,7 +163,7 @@ function PlasmicAbout__RenderFunc(props: {
       `}</style>
 
       <div
-        data-plasmic-name={"root"}
+        data-plasmic-name={'root'}
         data-plasmic-override={overrides.root}
         data-plasmic-root={true}
         data-plasmic-for-node={forNode}
@@ -177,36 +177,36 @@ function PlasmicAbout__RenderFunc(props: {
         )}
       >
         <Navigation
-          data-plasmic-name={"navigation"}
+          data-plasmic-name={'navigation'}
           data-plasmic-override={overrides.navigation}
-          alt={"Logo Wisdoor"}
-          className={classNames("__wab_instance", sty.navigation)}
-          image={"/plasmic/wisdoor_web/images/image.svg"}
+          alt={'Logo Wisdoor'}
+          className={classNames('__wab_instance', sty.navigation)}
+          image={'/plasmic/wisdoor_web/images/image.svg'}
         />
 
         <section
           className={classNames(projectcss.all, sty.section__eYcxF)}
-          id={"about"}
+          id={'about'}
         >
           <Hero
-            data-plasmic-name={"hero"}
+            data-plasmic-name={'hero'}
             data-plasmic-override={overrides.hero}
-            alt={"Logo Wisdoor"}
-            className={classNames("__wab_instance", sty.hero)}
-            image={"/plasmic/wisdoor_web/images/heroHomepage.png"}
+            alt={'Logo Wisdoor'}
+            className={classNames('__wab_instance', sty.hero)}
+            image={'/plasmic/wisdoor_web/images/heroHomepage.png'}
           />
 
           <section className={classNames(projectcss.all, sty.section__vl52G)}>
             <BlurFade
-              blur={"6px"}
-              className={classNames("__wab_instance", sty.blurFade__yP7Tk)}
+              blur={'6px'}
+              className={classNames('__wab_instance', sty.blurFade__yP7Tk)}
               delay={0}
               duration={0.4}
               inView={false}
-              inViewMargin={"-50px"}
+              inViewMargin={'-50px'}
               variant={{
-                hidden: { y: 6, opacity: 0, filter: "blur(6px)" },
-                visible: { y: -6, opacity: 1, filter: "blur(0px)" }
+                hidden: { y: 6, opacity: 0, filter: 'blur(6px)' },
+                visible: { y: -6, opacity: 1, filter: 'blur(0px)' },
               }}
               yOffset={6}
             >
@@ -217,7 +217,7 @@ function PlasmicAbout__RenderFunc(props: {
                   sty.text__m8XC
                 )}
               >
-                {"About Us"}
+                {'About Us'}
               </div>
               <div
                 className={classNames(
@@ -226,27 +226,27 @@ function PlasmicAbout__RenderFunc(props: {
                   sty.text__vkN9Q
                 )}
               >
-                {"Crafting Excellence in woods"}
+                {'Crafting Excellence in woods'}
               </div>
             </BlurFade>
           </section>
           <section className={classNames(projectcss.all, sty.section___05VAo)}>
             <div
-              data-plasmic-name={"columns"}
+              data-plasmic-name={'columns'}
               data-plasmic-override={overrides.columns}
               className={classNames(projectcss.all, sty.columns)}
             >
               <div className={classNames(projectcss.all, sty.column__h5LGi)}>
                 <BlurFade
-                  blur={"6px"}
-                  className={classNames("__wab_instance", sty.blurFade__wDW7)}
+                  blur={'6px'}
+                  className={classNames('__wab_instance', sty.blurFade__wDW7)}
                   delay={0}
                   duration={0.4}
                   inView={false}
-                  inViewMargin={"-50px"}
+                  inViewMargin={'-50px'}
                   variant={{
-                    hidden: { y: 6, opacity: 0, filter: "blur(6px)" },
-                    visible: { y: -6, opacity: 1, filter: "blur(0px)" }
+                    hidden: { y: 6, opacity: 0, filter: 'blur(6px)' },
+                    visible: { y: -6, opacity: 1, filter: 'blur(0px)' },
                   }}
                   yOffset={6}
                 >
@@ -259,10 +259,10 @@ function PlasmicAbout__RenderFunc(props: {
                   >
                     <React.Fragment>
                       <span
-                        className={"plasmic_default__all plasmic_default__span"}
-                        style={{ color: "#FFFFFF" }}
+                        className={'plasmic_default__all plasmic_default__span'}
+                        style={{ color: '#FFFFFF' }}
                       >
-                        {"100+"}
+                        {'100+'}
                       </span>
                     </React.Fragment>
                   </div>
@@ -275,10 +275,10 @@ function PlasmicAbout__RenderFunc(props: {
                   >
                     <React.Fragment>
                       <span
-                        className={"plasmic_default__all plasmic_default__span"}
-                        style={{ color: "#FFFFFF" }}
+                        className={'plasmic_default__all plasmic_default__span'}
+                        style={{ color: '#FFFFFF' }}
                       >
-                        {"Karyawan"}
+                        {'Karyawan'}
                       </span>
                     </React.Fragment>
                   </div>
@@ -286,15 +286,15 @@ function PlasmicAbout__RenderFunc(props: {
               </div>
               <div className={classNames(projectcss.all, sty.column__arYR)}>
                 <BlurFade
-                  blur={"6px"}
-                  className={classNames("__wab_instance", sty.blurFade__oUO6)}
+                  blur={'6px'}
+                  className={classNames('__wab_instance', sty.blurFade__oUO6)}
                   delay={0}
                   duration={0.4}
                   inView={false}
-                  inViewMargin={"-50px"}
+                  inViewMargin={'-50px'}
                   variant={{
-                    hidden: { y: 6, opacity: 0, filter: "blur(6px)" },
-                    visible: { y: -6, opacity: 1, filter: "blur(0px)" }
+                    hidden: { y: 6, opacity: 0, filter: 'blur(6px)' },
+                    visible: { y: -6, opacity: 1, filter: 'blur(0px)' },
                   }}
                   yOffset={6}
                 >
@@ -307,10 +307,10 @@ function PlasmicAbout__RenderFunc(props: {
                   >
                     <React.Fragment>
                       <span
-                        className={"plasmic_default__all plasmic_default__span"}
-                        style={{ color: "#FFFFFF" }}
+                        className={'plasmic_default__all plasmic_default__span'}
+                        style={{ color: '#FFFFFF' }}
                       >
-                        {"100+"}
+                        {'100+'}
                       </span>
                     </React.Fragment>
                   </div>
@@ -323,10 +323,10 @@ function PlasmicAbout__RenderFunc(props: {
                   >
                     <React.Fragment>
                       <span
-                        className={"plasmic_default__all plasmic_default__span"}
-                        style={{ color: "#FFFFFF" }}
+                        className={'plasmic_default__all plasmic_default__span'}
+                        style={{ color: '#FFFFFF' }}
                       >
-                        {"Karyawan"}
+                        {'Karyawan'}
                       </span>
                     </React.Fragment>
                   </div>
@@ -334,23 +334,23 @@ function PlasmicAbout__RenderFunc(props: {
               </div>
               <div className={classNames(projectcss.all, sty.column__dh7Mk)}>
                 <BlurFade
-                  blur={"6px"}
-                  className={classNames("__wab_instance", sty.blurFade__borVr)}
+                  blur={'6px'}
+                  className={classNames('__wab_instance', sty.blurFade__borVr)}
                   delay={0}
                   duration={0.4}
                   inView={false}
-                  inViewMargin={"-50px"}
+                  inViewMargin={'-50px'}
                   variant={{
-                    hidden: { y: 6, opacity: 0, filter: "blur(6px)" },
-                    visible: { y: -6, opacity: 1, filter: "blur(0px)" }
+                    hidden: { y: 6, opacity: 0, filter: 'blur(6px)' },
+                    visible: { y: -6, opacity: 1, filter: 'blur(0px)' },
                   }}
                   yOffset={6}
                 >
                   <Embed
-                    data-plasmic-name={"embedHtml"}
+                    data-plasmic-name={'embedHtml'}
                     data-plasmic-override={overrides.embedHtml}
-                    className={classNames("__wab_instance", sty.embedHtml)}
-                    code={"<div>1000 m<sup>2</sup></div>"}
+                    className={classNames('__wab_instance', sty.embedHtml)}
+                    code={'<div>1000 m<sup>2</sup></div>'}
                   />
 
                   <div
@@ -362,10 +362,10 @@ function PlasmicAbout__RenderFunc(props: {
                   >
                     <React.Fragment>
                       <span
-                        className={"plasmic_default__all plasmic_default__span"}
-                        style={{ color: "#FFFFFF" }}
+                        className={'plasmic_default__all plasmic_default__span'}
+                        style={{ color: '#FFFFFF' }}
                       >
-                        {"Karyawan"}
+                        {'Karyawan'}
                       </span>
                     </React.Fragment>
                   </div>
@@ -376,11 +376,11 @@ function PlasmicAbout__RenderFunc(props: {
         </section>
         <section
           className={classNames(projectcss.all, sty.section__htk6)}
-          id={"product"}
+          id={'product'}
         >
           <BoxReveal
-            className={classNames("__wab_instance", sty.boxReveal__pEv89)}
-            width={"fit-content"}
+            className={classNames('__wab_instance', sty.boxReveal__pEv89)}
+            width={'fit-content'}
           >
             <div
               className={classNames(
@@ -389,12 +389,12 @@ function PlasmicAbout__RenderFunc(props: {
                 sty.text__st85T
               )}
             >
-              {"Commitment to suss"}
+              {'Commitment to suss'}
             </div>
           </BoxReveal>
           <BoxReveal
-            className={classNames("__wab_instance", sty.boxReveal__u8UzA)}
-            width={"fit-content"}
+            className={classNames('__wab_instance', sty.boxReveal__u8UzA)}
+            width={'fit-content'}
           >
             <div
               className={classNames(
@@ -404,7 +404,7 @@ function PlasmicAbout__RenderFunc(props: {
               )}
             >
               {
-                "anggung jawab Tanggung jawab Tanggung jawab Tanggung jawab Tanggung jawab Tanggung jawab Tanggung jawab Tanggung jawab Tanggung jawab"
+                'anggung jawab Tanggung jawab Tanggung jawab Tanggung jawab Tanggung jawab Tanggung jawab Tanggung jawab Tanggung jawab Tanggung jawab'
               }
             </div>
           </BoxReveal>
@@ -414,93 +414,93 @@ function PlasmicAbout__RenderFunc(props: {
           id={``}
         >
           <ImageGradient
-            alt={"Logo Wisdoor"}
-            className={classNames("__wab_instance", sty.imageGradient__bwydN)}
+            alt={'Logo Wisdoor'}
+            className={classNames('__wab_instance', sty.imageGradient__bwydN)}
             gradientBottomBlack={true}
             gradientTopWhite={true}
             image={
-              "/plasmic/wisdoor_web/images/aboutUsPowerHeroDesktopGlobalPng.png"
+              '/plasmic/wisdoor_web/images/aboutUsPowerHeroDesktopGlobalPng.png'
             }
           />
 
           <SingleProductText
             className={classNames(
-              "__wab_instance",
+              '__wab_instance',
               sty.singleProductText__mFrPe
             )}
             description={
-              "We design sustainable systems that are massively scalable\u2014resulting in the greatest environmental benefit possible. Our energy generation and storage products work together with our electric vehicles to amplify their impact."
+              'We design sustainable systems that are massively scalable\u2014resulting in the greatest environmental benefit possible. Our energy generation and storage products work together with our electric vehicles to amplify their impact.'
             }
-            title={"Power Earth"}
+            title={'Power Earth'}
           />
 
           <MultipleProduct
-            data-plasmic-name={"multipleProduct"}
+            data-plasmic-name={'multipleProduct'}
             data-plasmic-override={overrides.multipleProduct}
-            className={classNames("__wab_instance", sty.multipleProduct)}
+            className={classNames('__wab_instance', sty.multipleProduct)}
             products={(() => {
               const __composite = [
                 { title: null, description: null, image: null },
-                { title: null, description: "Description", image: null },
+                { title: null, description: 'Description', image: null },
                 {
                   title: null,
-                  description: "Description",
-                  image: "/placeholder.svg"
-                }
+                  description: 'Description',
+                  image: '/placeholder.svg',
+                },
               ];
-              __composite["0"]["title"] = "Solar";
-              __composite["0"]["description"] =
-                "Produce solar energy for residential and commercial needs";
-              __composite["0"]["image"] =
-                "https://site-assets.plasmic.app/ac8b44f7fbf5a81c839a180920ea249c.png";
-              __composite["1"]["title"] = "Product2";
-              __composite["1"]["image"] =
-                "https://site-assets.plasmic.app/1818fb887829971355e6af8eee65fc82.png";
-              __composite["2"]["title"] = "Product3";
+              __composite['0']['title'] = 'Solar';
+              __composite['0']['description'] =
+                'Produce solar energy for residential and commercial needs';
+              __composite['0']['image'] =
+                'https://site-assets.plasmic.app/ac8b44f7fbf5a81c839a180920ea249c.png';
+              __composite['1']['title'] = 'Product2';
+              __composite['1']['image'] =
+                'https://site-assets.plasmic.app/1818fb887829971355e6af8eee65fc82.png';
+              __composite['2']['title'] = 'Product3';
               return __composite;
             })()}
           />
 
           <ImageGradient
-            alt={"Logo Wisdoor"}
-            className={classNames("__wab_instance", sty.imageGradient__w3Ws)}
+            alt={'Logo Wisdoor'}
+            className={classNames('__wab_instance', sty.imageGradient__w3Ws)}
             gradientBottomBlack={false}
             gradientTopWhite={false}
             image={
-              "/plasmic/wisdoor_web/images/aboutUsMachineDesktopGlobalPng.png"
+              '/plasmic/wisdoor_web/images/aboutUsMachineDesktopGlobalPng.png'
             }
           />
 
           <SingleProductText
             className={classNames(
-              "__wab_instance",
+              '__wab_instance',
               sty.singleProductText__veONm
             )}
             description={
-              "We design sustainable systems that are massively scalable\u2014resulting in the greatest environmental benefit possible. Our energy generation and storage products work together with our electric vehicles to amplify their impact."
+              'We design sustainable systems that are massively scalable\u2014resulting in the greatest environmental benefit possible. Our energy generation and storage products work together with our electric vehicles to amplify their impact.'
             }
-            title={"Power Earth"}
+            title={'Power Earth'}
           />
 
           <ImageGradient
-            alt={"Logo Wisdoor"}
-            className={classNames("__wab_instance", sty.imageGradient__m9A87)}
+            alt={'Logo Wisdoor'}
+            className={classNames('__wab_instance', sty.imageGradient__m9A87)}
             gradientBottomBlack={false}
             gradientTopWhite={false}
             image={
-              "/plasmic/wisdoor_web/images/aboutUsExceptionalDesktopGlobalPng.png"
+              '/plasmic/wisdoor_web/images/aboutUsExceptionalDesktopGlobalPng.png'
             }
           />
 
           <SingleProductText
             className={classNames(
-              "__wab_instance",
+              '__wab_instance',
               sty.singleProductText__quhfr
             )}
             description={
-              "We design sustainable systems that are massively scalable\u2014resulting in the greatest environmental benefit possible. Our energy generation and storage products work together with our electric vehicles to amplify their impact."
+              'We design sustainable systems that are massively scalable\u2014resulting in the greatest environmental benefit possible. Our energy generation and storage products work together with our electric vehicles to amplify their impact.'
             }
-            title={"Power Earth"}
+            title={'Power Earth'}
           />
         </section>
       </div>
@@ -510,32 +510,32 @@ function PlasmicAbout__RenderFunc(props: {
 
 const PlasmicDescendants = {
   root: [
-    "root",
-    "navigation",
-    "hero",
-    "columns",
-    "embedHtml",
-    "multipleProduct"
+    'root',
+    'navigation',
+    'hero',
+    'columns',
+    'embedHtml',
+    'multipleProduct',
   ],
-  navigation: ["navigation"],
-  hero: ["hero"],
-  columns: ["columns", "embedHtml"],
-  embedHtml: ["embedHtml"],
-  multipleProduct: ["multipleProduct"]
+  navigation: ['navigation'],
+  hero: ['hero'],
+  columns: ['columns', 'embedHtml'],
+  embedHtml: ['embedHtml'],
+  multipleProduct: ['multipleProduct'],
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
-  root: "div";
+  root: 'div';
   navigation: typeof Navigation;
   hero: typeof Hero;
-  columns: "div";
+  columns: 'div';
   embedHtml: typeof Embed;
   multipleProduct: typeof MultipleProduct;
 };
 
-type ReservedPropsType = "variants" | "args" | "overrides";
+type ReservedPropsType = 'variants' | 'args' | 'overrides';
 type NodeOverridesType<T extends NodeNameType> = Pick<
   PlasmicAbout__OverridesType,
   DescendantsType<T>
@@ -571,7 +571,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
           name: nodeName,
           descendantNames: PlasmicDescendants[nodeName],
           internalArgPropNames: PlasmicAbout__ArgProps,
-          internalVariantPropNames: PlasmicAbout__VariantProps
+          internalVariantPropNames: PlasmicAbout__VariantProps,
         }),
       [props, nodeName]
     );
@@ -579,11 +579,11 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       variants,
       args,
       overrides,
-      forNode: nodeName
+      forNode: nodeName,
     });
   };
-  if (nodeName === "root") {
-    func.displayName = "PlasmicAbout";
+  if (nodeName === 'root') {
+    func.displayName = 'PlasmicAbout';
   } else {
     func.displayName = `PlasmicAbout.${nodeName}`;
   }
@@ -592,14 +592,14 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
 
 export const PlasmicAbout = Object.assign(
   // Top-level PlasmicAbout renders the root element
-  makeNodeComponent("root"),
+  makeNodeComponent('root'),
   {
     // Helper components rendering sub-elements
-    navigation: makeNodeComponent("navigation"),
-    hero: makeNodeComponent("hero"),
-    columns: makeNodeComponent("columns"),
-    embedHtml: makeNodeComponent("embedHtml"),
-    multipleProduct: makeNodeComponent("multipleProduct"),
+    navigation: makeNodeComponent('navigation'),
+    hero: makeNodeComponent('hero'),
+    columns: makeNodeComponent('columns'),
+    embedHtml: makeNodeComponent('embedHtml'),
+    multipleProduct: makeNodeComponent('multipleProduct'),
 
     // Metadata about props expected for PlasmicAbout
     internalVariantProps: PlasmicAbout__VariantProps,
@@ -607,11 +607,11 @@ export const PlasmicAbout = Object.assign(
 
     // Page metadata
     pageMetadata: {
-      title: "About",
-      description: "",
-      ogImageSrc: "",
-      canonical: ""
-    }
+      title: 'About',
+      description: '',
+      ogImageSrc: '',
+      canonical: '',
+    },
   }
 );
 
