@@ -62,7 +62,7 @@ export const useDoorStore = create(
   persist<DoorState>(
     (set) => ({
       door: { id: '', name: '' },
-      size: { name: '', price: 0, length: 0, width: 0 },
+      size: { name: '', price: 0, length: 210, width: 83 },
       type: { name: '', price: 0 },
       finishing: undefined,
       keyHole: undefined,
