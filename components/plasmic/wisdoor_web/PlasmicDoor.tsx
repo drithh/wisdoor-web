@@ -59,7 +59,9 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { ViewerWrapper } from "../../door/components/viewer-wrapper"; // plasmic-import: 3Su-mecoGpzv/codeComponent
 import { DoorViewer } from "../../door-viewer"; // plasmic-import: SH_PqjJ_I-5G/codeComponent
+import { ConfiguratorWrapper } from "../../door/components/configurator-wrapper"; // plasmic-import: h1IjeS8_3odo/codeComponent
 import { ChooseDoor } from "../../door/configurator/choose"; // plasmic-import: LMn0cgg59gxw/codeComponent
 import { SizeDoor } from "../../door/configurator/size"; // plasmic-import: 7H1b44gqct0K/codeComponent
 import { TypeDoor } from "../../door/configurator/type"; // plasmic-import: CKXkj02X-GEJ/codeComponent
@@ -89,9 +91,9 @@ export const PlasmicDoor__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicDoor__OverridesType = {
   root?: Flex__<"div">;
-  freeBox?: Flex__<"div">;
+  viewerWrapper?: Flex__<typeof ViewerWrapper>;
   doorViewer?: Flex__<typeof DoorViewer>;
-  section?: Flex__<"section">;
+  configuratorWrapper?: Flex__<typeof ConfiguratorWrapper>;
   jenisPintu?: Flex__<"div">;
   chooseDoor?: Flex__<typeof ChooseDoor>;
   ukuranPintu?: Flex__<"div">;
@@ -177,12 +179,10 @@ function PlasmicDoor__RenderFunc(props: {
             sty.root
           )}
         >
-          <Stack__
-            as={"div"}
-            data-plasmic-name={"freeBox"}
-            data-plasmic-override={overrides.freeBox}
-            hasGap={true}
-            className={classNames(projectcss.all, sty.freeBox)}
+          <ViewerWrapper
+            data-plasmic-name={"viewerWrapper"}
+            data-plasmic-override={overrides.viewerWrapper}
+            className={classNames("__wab_instance", sty.viewerWrapper)}
           >
             <DoorViewer
               data-plasmic-name={"doorViewer"}
@@ -190,10 +190,10 @@ function PlasmicDoor__RenderFunc(props: {
               className={classNames("__wab_instance", sty.doorViewer)}
             />
 
-            <section
-              data-plasmic-name={"section"}
-              data-plasmic-override={overrides.section}
-              className={classNames(projectcss.all, sty.section)}
+            <ConfiguratorWrapper
+              data-plasmic-name={"configuratorWrapper"}
+              data-plasmic-override={overrides.configuratorWrapper}
+              className={classNames("__wab_instance", sty.configuratorWrapper)}
             >
               <div
                 className={classNames(
@@ -657,8 +657,8 @@ function PlasmicDoor__RenderFunc(props: {
                 className={classNames("__wab_instance", sty.detailPrice)}
                 phone={"6281293586210"}
               />
-            </section>
-          </Stack__>
+            </ConfiguratorWrapper>
+          </ViewerWrapper>
         </div>
       </div>
     </React.Fragment>
@@ -668,9 +668,9 @@ function PlasmicDoor__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
-    "freeBox",
+    "viewerWrapper",
     "doorViewer",
-    "section",
+    "configuratorWrapper",
     "jenisPintu",
     "chooseDoor",
     "ukuranPintu",
@@ -690,10 +690,10 @@ const PlasmicDescendants = {
     "hingeDoor",
     "detailPrice"
   ],
-  freeBox: [
-    "freeBox",
+  viewerWrapper: [
+    "viewerWrapper",
     "doorViewer",
-    "section",
+    "configuratorWrapper",
     "jenisPintu",
     "chooseDoor",
     "ukuranPintu",
@@ -714,8 +714,8 @@ const PlasmicDescendants = {
     "detailPrice"
   ],
   doorViewer: ["doorViewer"],
-  section: [
-    "section",
+  configuratorWrapper: [
+    "configuratorWrapper",
     "jenisPintu",
     "chooseDoor",
     "ukuranPintu",
@@ -765,9 +765,9 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  freeBox: "div";
+  viewerWrapper: typeof ViewerWrapper;
   doorViewer: typeof DoorViewer;
-  section: "section";
+  configuratorWrapper: typeof ConfiguratorWrapper;
   jenisPintu: "div";
   chooseDoor: typeof ChooseDoor;
   ukuranPintu: "div";
@@ -848,9 +848,9 @@ export const PlasmicDoor = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    freeBox: makeNodeComponent("freeBox"),
+    viewerWrapper: makeNodeComponent("viewerWrapper"),
     doorViewer: makeNodeComponent("doorViewer"),
-    section: makeNodeComponent("section"),
+    configuratorWrapper: makeNodeComponent("configuratorWrapper"),
     jenisPintu: makeNodeComponent("jenisPintu"),
     chooseDoor: makeNodeComponent("chooseDoor"),
     ukuranPintu: makeNodeComponent("ukuranPintu"),

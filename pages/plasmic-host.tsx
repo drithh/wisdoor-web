@@ -25,6 +25,8 @@ import { Wrapper } from '@/components/door/components/wrapper';
 import { FinishingFrame } from '@/components/door/configurator/finishing-frame';
 import { HingeDoor } from '@/components/door/configurator/hinge';
 import { DetailPrice } from '@/components/door/detail-price';
+import { ViewerWrapper } from '@/components/door/components/viewer-wrapper';
+import { ConfiguratorWrapper } from '@/components/door/components/configurator-wrapper';
 
 // You can register any code components that you want to use here; see
 // https://docs.plasmic.app/learn/code-components-ref/
@@ -509,6 +511,34 @@ registerComponent(Wrapper, {
   },
 
   importPath: './components/door/components/wrapper',
+});
+
+registerComponent(ViewerWrapper, {
+  name: 'ViewerWrapper',
+  props: {
+    className: {
+      type: 'string',
+    },
+    children: {
+      type: 'slot',
+    },
+  },
+
+  importPath: './components/door/components/viewer-wrapper',
+});
+
+registerComponent(ConfiguratorWrapper, {
+  name: 'ConfiguratorWrapper',
+  props: {
+    className: {
+      type: 'string',
+    },
+    children: {
+      type: 'slot',
+    },
+  },
+
+  importPath: './components/door/components/configurator-wrapper',
 });
 
 registerComponent(FinishingFrame, {

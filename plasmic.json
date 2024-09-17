@@ -291,6 +291,18 @@
           "name": "DetailPrice",
           "displayName": "DetailPrice",
           "componentImportPath": "./components/door/detail-price"
+        },
+        {
+          "id": "3Su-mecoGpzv",
+          "name": "ViewerWrapper",
+          "displayName": "ViewerWrapper",
+          "componentImportPath": "./components/door/components/viewer-wrapper"
+        },
+        {
+          "id": "h1IjeS8_3odo",
+          "name": "ConfiguratorWrapper",
+          "displayName": "ConfiguratorWrapper",
+          "componentImportPath": "./components/door/components/configurator-wrapper"
         }
       ],
       "customFunctions": []

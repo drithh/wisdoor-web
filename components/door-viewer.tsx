@@ -6,21 +6,21 @@ import {
   PresentationControls,
   Stage,
 } from '@react-three/drei';
-import { Model } from './door/door';
+import { Model } from './door/door-viewer/door';
 import { Suspense } from 'react';
 import { useDoorStore } from './door/store';
 
 export function DoorViewer() {
   return (
-    <div className="flex-1 sticky top-0  max-h-[1080px]">
-      <Canvas>
+    <div className="flex-1 z-[1000] sticky top-0 sm:h-screen max-h-screen">
+      <Canvas className="!h-[24rem] sm:!h-screen">
         <Suspense>
           <color attach="background" args={['#ffffff']} />
           <fog attach="fog" args={['#ffffff', 5, 15]} />
           <OrbitControls
             enableZoom={true}
-            // enableRotate={false}
-            // enablePan={false}
+            enableRotate={false}
+            enablePan={false}
             maxPolarAngle={Math.PI / 2}
             minPolarAngle={0}
           />
