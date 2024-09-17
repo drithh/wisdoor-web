@@ -28,6 +28,7 @@ interface SizeDoorProps {
 }
 
 export const SizeDoor = (props: SizeDoorProps) => {
+  const MAX_WIDTH = 10;
   const storage = useDoorStore((state) => ({
     id: state.door.id,
     size: state.size,
@@ -50,16 +51,17 @@ export const SizeDoor = (props: SizeDoorProps) => {
   useEffect(() => {
     const currentWidth = storage.size?.width ?? 0;
     setCustomWidth(currentWidth);
-    if (currentWidth === size.width - 30) {
+    if (currentWidth === size.width - MAX_WIDTH) {
       setCustomWidthText(`<${currentWidth}`);
-    } else if (currentWidth === size.width + 30) {
+    } else if (currentWidth === size.width + MAX_WIDTH) {
       setCustomWidthText(`>${currentWidth}`);
     } else {
       setCustomWidthText(`${currentWidth}`);
     }
   }, [storage.size?.width]);
 
-  const isMoreThanLimit = () => Math.abs(customWidth - size.width) === 30;
+  const isMoreThanLimit = () =>
+    Math.abs(customWidth - size.width) === MAX_WIDTH;
 
   return (
     <div className="flex font-text flex-col gap-4 w-full">
@@ -136,8 +138,8 @@ export const SizeDoor = (props: SizeDoorProps) => {
               <Label>Lebar Pintu</Label>
               <div className="flex gap-2">
                 <Slider
-                  min={size.width - 30}
-                  max={size.width + 30}
+                  min={size.width - MAX_WIDTH}
+                  max={size.width + MAX_WIDTH}
                   step={1}
                   defaultValue={[customWidth]}
                   onValueChange={(value) => {
