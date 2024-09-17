@@ -8,7 +8,7 @@
     "image": "next-image-export-optimizer",
     "start": "next start",
     "lint": "next lint",
-    "pages:build": "npx @cloudflare/next-on-pages",
+    "pages:build": "pnpm dlx @cloudflare/next-on-pages",
     "preview": "pnpm run pages:build && wrangler pages dev",
     "deploy": "pnpm run pages:build && wrangler pages deploy",
     "gltf": "pnpm dlx gltfjsx public/models/door.gltf --t --o components/door/door.tsx"
