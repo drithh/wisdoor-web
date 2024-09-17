@@ -6,7 +6,7 @@ import {
   PresentationControls,
   Stage,
 } from '@react-three/drei';
-import { Model } from './door/door-viewer/door';
+import { Model } from './door/door-viewer';
 import { Suspense } from 'react';
 import { useDoorStore } from './door/store';
 
