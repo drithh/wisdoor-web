@@ -19,9 +19,7 @@ export type GLTFResult = GLTF & {
     Handle_1: Mesh;
     Hinge: Mesh;
     Horizontal2Stripe: Mesh;
-    Horizontal3Stripe: Mesh;
     Solid: Mesh;
-    Vertical3Stripe: Mesh;
     ArchFrontLeft: Mesh;
     ArchFrontRight: Mesh;
     ArchFrontTop: Mesh;
@@ -34,6 +32,7 @@ export type GLTFResult = GLTF & {
   };
   materials: {
     cardboard: MeshStandardMaterial;
+    ['metal.007']: MeshStandardMaterial;
     chrome2: MeshPhysicalMaterial;
     chrome1: MeshStandardMaterial;
     plywood: MeshStandardMaterial;
@@ -42,7 +41,7 @@ export type GLTFResult = GLTF & {
     ducoWhite: MeshStandardMaterial;
     tacoSheet: MeshStandardMaterial;
     mdf: MeshStandardMaterial;
-    melamin: MeshStandardMaterial;
+    melamine: MeshStandardMaterial;
   };
   animations: [];
 };

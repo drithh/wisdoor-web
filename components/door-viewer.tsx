@@ -1,5 +1,7 @@
 import { Canvas } from '@react-three/fiber';
 import {
+  Bounds,
+  Center,
   MeshReflectorMaterial,
   OrbitControls,
   PerspectiveCamera,
@@ -14,29 +16,29 @@ export function DoorViewer() {
   return (
     <div className="flex-1 z-[1000] sticky top-0 sm:h-screen max-h-screen">
       <Canvas className="!h-[24rem] sm:!h-screen">
-        <Suspense>
-          <color attach="background" args={['#ffffff']} />
-          <fog attach="fog" args={['#ffffff', 5, 15]} />
+        <Suspense fallback={<Center>Loading...</Center>}>
           <OrbitControls
-            enableZoom={true}
             enableRotate={false}
-            enablePan={false}
+            enablePan={true}
+            enableZoom={true}
+            minZoom={0.5}
+            maxZoom={0.6}
             maxPolarAngle={Math.PI / 2}
             minPolarAngle={0}
           />
           <PresentationControls
             speed={1.5}
+            config={{ mass: 1, tension: 170, friction: 26 }}
             global
             polar={[-Math.PI / 4, Math.PI / 4]}
             rotation={[0, Math.PI / 4, 0]}
           >
-            <Stage environment="forest" intensity={0.4}>
-              <mesh position={[0, 2, 0]}>
+            <Stage environment={'city'} intensity={5}>
+              <mesh position={[0, 0, 0]}>
                 <Model />
-                <meshStandardMaterial roughness={0.8} metalness={0.1} />
               </mesh>
+              <ambientLight intensity={5} />
             </Stage>
-            <ambientLight intensity={0.3} />
           </PresentationControls>
         </Suspense>
       </Canvas>

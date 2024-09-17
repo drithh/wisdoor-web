@@ -17,7 +17,7 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   const FRAME_WIDTH_SCALE = storage.size.width / 83;
 
   const frameMaterials = storage.frameFinishing?.name.startsWith('Melamin')
-    ? materials.melamin
+    ? materials.melamine
     : materials.mdf;
 
   const honeyCombMaterial = storage.type?.name.toLowerCase().startsWith('hmr')
@@ -27,7 +27,7 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   const getDoorFinishingMaterial = () => {
     console.log(storage.finishing?.name);
     if (storage.finishing?.name === 'Melamine') {
-      return materials.melamin;
+      return materials.melamine;
     }
     if (storage.finishing?.name === 'Duco Putih') {
       return materials.ducoWhite;
@@ -171,6 +171,16 @@ export function Model(props: JSX.IntrinsicElements['group']) {
             geometry={nodes.Handle_1.geometry}
             material={materials.chrome1}
           />
+          <group position={[0, 0, 0.04]} rotation={[0, 0, -Math.PI]} scale={-1}>
+            <mesh
+              geometry={nodes.Handle.geometry}
+              material={materials.chrome2}
+            />
+            <mesh
+              geometry={nodes.Handle_1.geometry}
+              material={materials.chrome1}
+            />
+          </group>
         </group>
       )}
 
