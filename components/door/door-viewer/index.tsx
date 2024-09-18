@@ -24,8 +24,12 @@ export function Model(props: JSX.IntrinsicElements['group']) {
     ? materials.mdf
     : materials.plywood;
 
+  const totalHinge =
+    storage.hinge?.name !== 'Tanpa Engsel'
+      ? parseInt(storage.hinge?.name.split('')[0] ?? '0')
+      : 0;
+
   const getDoorFinishingMaterial = () => {
-    console.log(storage.finishing?.name);
     if (storage.finishing?.name === 'Melamine') {
       return materials.melamine;
     }
@@ -48,6 +52,29 @@ export function Model(props: JSX.IntrinsicElements['group']) {
 
   const rightArch = React.useRef<Group<Object3DEventMap> | null>(null);
   const topArch = React.useRef<Group<Object3DEventMap> | null>(null);
+
+  const [hinges, setHinges] = React.useState(() =>
+    Array(totalHinge)
+      .fill(null)
+      .map(() => React.createRef<Mesh>())
+  );
+
+  const updateHinges = (totalHinge: number) => {
+    if (totalHinge > hinges.length) {
+      setHinges([
+        ...hinges,
+        ...Array(totalHinge - hinges.length)
+          .fill(null)
+          .map(() => React.createRef<Mesh>()),
+      ]);
+    } else if (totalHinge < hinges.length) {
+      setHinges(hinges.slice(0, totalHinge));
+    }
+  };
+
+  useEffect(() => {
+    updateHinges(totalHinge);
+  }, [totalHinge]);
 
   useFrame(() => {
     const ANIMATION_SPEED = 0.1;
@@ -81,6 +108,27 @@ export function Model(props: JSX.IntrinsicElements['group']) {
         { x: FRAME_WIDTH_SCALE * 1.02, y: 1, z: 1 },
         ANIMATION_SPEED
       );
+    }
+    if (hinges.length === 1) {
+      const hinge = hinges[0];
+      hinge.current?.position.lerp(
+        { x: 0.809 + 0.88 * (FRAME_WIDTH_SCALE - 1), y: 2.034 / 2, z: 0 },
+        ANIMATION_SPEED
+      );
+    } else if (hinges.length > 1) {
+      const distance = 0.2;
+      const gap = (2.034 - distance * 2) / (hinges.length - 1);
+
+      hinges.forEach((hinge, index) => {
+        hinge.current?.position.lerp(
+          {
+            x: 0.809 + 0.88 * (FRAME_WIDTH_SCALE - 1),
+            y: distance + index * gap,
+            z: 0,
+          },
+          ANIMATION_SPEED
+        );
+      });
     }
   });
 
@@ -157,13 +205,15 @@ export function Model(props: JSX.IntrinsicElements['group']) {
         </group>
       </group>
 
-      {storage.hinge && (
+      {hinges.map((mesh, index) => (
         <mesh
+          key={index}
           geometry={nodes.Hinge.geometry}
           material={materials.chrome2}
+          ref={mesh}
           position={[0.809, 2.034, 0]}
         />
-      )}
+      ))}
       {storage.keyHole && storage.keyHole.isKeyHole && (
         <group>
           <mesh geometry={nodes.Handle.geometry} material={materials.chrome2} />
@@ -196,7 +246,7 @@ export function Model(props: JSX.IntrinsicElements['group']) {
             material={frameMaterials}
             position={[-0.001, -2.16, -0.06]}
           />
-          <group ref={rightArch}>
+          <group ref={rightArch} position={[-0.011, -2.16, -0.06]}>
             <mesh
               geometry={nodes.ArchFrontRight.geometry}
               material={frameMaterials}
@@ -233,6 +283,7 @@ export function Model(props: JSX.IntrinsicElements['group']) {
             geometry={nodes.FrameRight.geometry}
             material={frameMaterials}
             ref={rightFrame}
+            position={[-0.001, -2.16, -0.06]}
           />
           <mesh
             ref={topFrame}
