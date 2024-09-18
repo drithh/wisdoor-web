@@ -86,7 +86,7 @@ export function Model(props: JSX.IntrinsicElements['group']) {
     }
     if (rightFrame.current) {
       rightFrame.current.position.lerp(
-        { x: -0.021 + 0.88 * (FRAME_WIDTH_SCALE - 1), y: -2.16, z: -0.06 },
+        { x: -0.009 + 0.82 * (FRAME_WIDTH_SCALE - 1), y: -2.16, z: -0.06 },
         ANIMATION_SPEED
       );
     }
@@ -99,7 +99,7 @@ export function Model(props: JSX.IntrinsicElements['group']) {
 
     if (rightArch.current) {
       rightArch.current.position.lerp(
-        { x: -0.011 + 0.88 * (FRAME_WIDTH_SCALE - 1), y: -2.16, z: -0.06 },
+        { x: 0.0005 + 0.82 * (FRAME_WIDTH_SCALE - 1), y: -2.16, z: -0.06 },
         ANIMATION_SPEED
       );
     }
@@ -122,9 +122,9 @@ export function Model(props: JSX.IntrinsicElements['group']) {
       hinges.forEach((hinge, index) => {
         hinge.current?.position.lerp(
           {
-            x: 0.809 + 0.88 * (FRAME_WIDTH_SCALE - 1),
+            x: 0.811 + 0.81 * (FRAME_WIDTH_SCALE - 1),
             y: distance + index * gap,
-            z: 0,
+            z: -0.005,
           },
           ANIMATION_SPEED
         );

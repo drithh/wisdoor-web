@@ -19,7 +19,7 @@ export function DoorViewer() {
         <Suspense fallback={<Center>Loading...</Center>}>
           <OrbitControls
             enableRotate={false}
-            enablePan={true}
+            enablePan={false}
             enableZoom={true}
             minZoom={0.5}
             maxZoom={0.6}
@@ -33,7 +33,7 @@ export function DoorViewer() {
             polar={[-Math.PI / 4, Math.PI / 4]}
             rotation={[0, Math.PI / 4, 0]}
           >
-            <Stage environment={'city'} intensity={5}>
+            <Stage environment={'city'} intensity={5} shadows={false}>
               <mesh position={[0, 0, 0]}>
                 <Model />
               </mesh>
