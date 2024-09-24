@@ -14,23 +14,26 @@ export const DetailPrice = (props: DetailPriceProps) => {
   const storage = useDoorStore((state) => ({
     door: state.door,
     size: state.size,
-    type: state.type,
     finishing: state.finishing,
-    keyHole: state.keyHole,
-    weatherStrip: state.weatherStrip,
+    groove: state.groove,
     frame: state.frame,
-    frameFinishing: state.frameFinishing,
+
+    keyHole: state.keyHole,
+    cylinder: state.cylinder,
+    handle: state.handle,
+    key: state.key,
     hinge: state.hinge,
   }));
 
   const totalPrice =
     storage.size.price +
-    storage.type.price +
     (storage.finishing?.price ?? 0) +
-    (storage.keyHole?.price ?? 0) +
-    (storage.weatherStrip?.price ?? 0) +
+    (storage.groove?.price ?? 0) +
     (storage.frame?.price ?? 0) +
-    (storage.frameFinishing?.price ?? 0) +
+    (storage.keyHole?.price ?? 0) +
+    (storage.cylinder?.price ?? 0) +
+    (storage.handle?.price ?? 0) +
+    (storage.key?.price ?? 0) +
     (storage.hinge?.price ?? 0);
 
   const generateWhatsappLink = () => {
@@ -42,39 +45,32 @@ export const DetailPrice = (props: DetailPriceProps) => {
     - Ukuran: ${storage.size.name} (${storage.size.length} cm x ${
       storage.size.width
     } cm) - ${priceFormat(storage.size.price)}
-    - Bahan: ${storage.type.name} - ${priceFormat(storage.type.price)}
     - Finishing: ${storage.finishing?.name} ${
       storage.finishing?.name !== 'Tanpa Finishing' &&
       `- ${priceFormat(storage.finishing?.price ?? 0)}`
     }
-    ${
-      storage.keyHole &&
-      `- Lubang Kunci - ${priceFormat(storage.keyHole.price)}`
-    }
-    ${
-      storage.weatherStrip &&
-      storage.weatherStrip.amount !== 0 &&
-      `- Tali Air - ${storage.weatherStrip.amount}x - ${priceFormat(
-        storage.weatherStrip.price
-      )}`
-    }
+    - Grooving: ${storage.groove?.name} - ${priceFormat(
+      storage.groove?.price ?? 0
+    )}
   ${
     storage.frame?.name !== 'Tanpa Frame' &&
-    `
-  - Detail Kusen: 
-    - Kusen: ${storage.frame?.name} ${
+    `- Kusen: ${storage.frame?.name} ${
       storage.frame?.architrave && 'Architrave'
     } ${
       storage.frame?.price === 0
         ? '(Pending)'
         : ` - ${priceFormat(storage.frame?.price ?? 0)}`
-    }  
-    - Finishing: ${storage.frameFinishing?.name} (${
-      storage.frameFinishing?.color
-    }) - ${priceFormat(storage.frameFinishing?.price ?? 0)}
-    - Engsel: ${storage.hinge?.name} - ${priceFormat(storage.hinge?.price ?? 0)}
-    `
+    }`
   }
+    ${
+      storage.keyHole &&
+      `- Lubang Kunci - ${priceFormat(storage.keyHole.price)}`
+    }
+    ${storage.cylinder && `- Silinder - ${priceFormat(storage.cylinder.price)}`}
+    ${storage.handle && `- Handle - ${priceFormat(storage.handle.price)}`}
+    ${storage.key && `- Kunci - ${priceFormat(storage.key.price)}`}
+    ${storage.hinge && `- Engsel - ${priceFormat(storage.hinge.price)}`}
+
     - Total: ${priceFormat(totalPrice)}
     `;
 
@@ -94,6 +90,7 @@ export const DetailPrice = (props: DetailPriceProps) => {
         <p className="font-display text-2xl font-medium">Model Pintumu</p>
         <p className="text-gray-500 text-lg">{storage.door.name}</p>
       </div>
+      {/*}
       <div className="flex flex-col gap-2 mt-8">
         <p className="text-xl font-display">Detail Pintu</p>
         <div className="flex text-gray-500 flex-col gap-2 pl-3">
@@ -128,14 +125,7 @@ export const DetailPrice = (props: DetailPriceProps) => {
               </p>
             </div>
           )}
-          {storage.weatherStrip && (
-            <div className="flex place-content-between">
-              <p className="">Tali Air ({storage.weatherStrip.amount}x)</p>
-              <p className=" text-emerald-700">
-                {priceFormatPerThousand(storage.weatherStrip.price)}
-              </p>
-            </div>
-          )}
+     
         </div>
       </div>
       {storage.frame?.name !== 'Tanpa Frame' && (
@@ -180,7 +170,7 @@ export const DetailPrice = (props: DetailPriceProps) => {
         <p className="text-xl text-emerald-700 font-display">
           {priceFormat(totalPrice)}
         </p>
-      </div>
+      </div> */}
       <Link href={generateWhatsappLink()} target="_blank">
         <Button variant="outline" className="h-12 my-4 w-full">
           Pesan Sekarang

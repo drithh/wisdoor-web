@@ -15,11 +15,15 @@ import { priceFormatPerThousand } from '@/lib/price-format';
 
 interface Size {
   doorId: string;
-  length: number;
-  width: number;
-  price: number;
-  priceBelowDefaultWidth: number;
-  priceAboveDefaultWidth: number;
+  defaultLength: number;
+  maxLength: number;
+  minLength: number;
+  defaultWidth: number;
+  maxWidth: number;
+  minWidth: number;
+  defaultPrice: number;
+  addedPriceAbove: number;
+  addedPriceBelow: number;
 }
 
 interface SizeDoorProps {
@@ -28,7 +32,6 @@ interface SizeDoorProps {
 }
 
 export const SizeDoor = (props: SizeDoorProps) => {
-  const MAX_WIDTH = 10;
   const storage = useDoorStore((state) => ({
     id: state.door.id,
     size: state.size,
@@ -43,25 +46,32 @@ export const SizeDoor = (props: SizeDoorProps) => {
   const size =
     props.sizes.find((size) => size.doorId === storage.id) || props.sizes[0];
 
-  const [customWidth, setCustomWidth] = useState(storage.size?.width ?? 0);
-  const [customWidthText, setCustomWidthText] = useState(
-    customWidth.toString()
-  );
+  // const [customWidth, setCustomWidth] = useState(storage.size?.width ?? 0);
+  // const [customLength, setCustomLength] = useState(storage.size?.width ?? 0);
 
-  useEffect(() => {
-    const currentWidth = storage.size?.width ?? 0;
-    setCustomWidth(currentWidth);
-    if (currentWidth === size.width - MAX_WIDTH) {
-      setCustomWidthText(`<${currentWidth}`);
-    } else if (currentWidth === size.width + MAX_WIDTH) {
-      setCustomWidthText(`>${currentWidth}`);
+  // useEffect(() => {
+  //   const currentWidth = storage.size?.width ?? 0;
+  //   const currentLength = storage.size?.length ?? 0;
+  //   setCustomWidth(currentWidth);
+  //   setCustomLength(currentLength);
+  // }, [storage.size?.width]);
+
+  const calculatePrice = (width?: number, length?: number) => {
+    const currentWidth = width ?? storage.size.width;
+    const currentLength = length ?? storage.size.length;
+    const defaultArea = size.defaultWidth * size.defaultLength;
+    const currentArea = currentWidth * currentLength;
+    if (
+      currentWidth === size.defaultWidth &&
+      currentLength === size.defaultLength
+    ) {
+      return size.defaultPrice;
+    } else if (currentArea > defaultArea) {
+      return size.defaultPrice + size.addedPriceAbove;
     } else {
-      setCustomWidthText(`${currentWidth}`);
+      return size.defaultPrice + size.addedPriceBelow;
     }
-  }, [storage.size?.width]);
-
-  const isMoreThanLimit = () =>
-    Math.abs(customWidth - size.width) === MAX_WIDTH;
+  };
 
   return (
     <div className="flex font-text flex-col gap-4 w-full">
@@ -71,18 +81,18 @@ export const SizeDoor = (props: SizeDoorProps) => {
           setAccordionValue('');
           storage.setSize({
             name: 'standard',
-            price: size.price,
-            length: size.length,
-            width: size.width,
+            price: size.defaultPrice,
+            length: size.defaultLength,
+            width: size.defaultWidth,
           });
         }}
       >
         <div className="flex w-full place-content-between">
           <p>
-            Standard ({size.width} cm x {size.length} cm)
+            Standard ({size.defaultWidth} cm x {size.defaultLength} cm)
           </p>
           <p className="text-sm text-emerald-700">
-            {priceFormatPerThousand(size.price)}
+            {priceFormatPerThousand(size.defaultPrice)}
           </p>
         </div>
       </DoorButton>
@@ -96,16 +106,11 @@ export const SizeDoor = (props: SizeDoorProps) => {
       >
         <DoorAccordionItem
           onClick={() => {
-            const currentWidth = customWidth;
             storage.setSize({
               name: 'custom',
-              price:
-                currentWidth < size.width
-                  ? size.price + size.priceBelowDefaultWidth
-                  : size.price + size.priceAboveDefaultWidth,
-              length: size.length,
-              width: size.width,
-              limit: isMoreThanLimit(),
+              price: size.defaultPrice,
+              length: size.defaultLength,
+              width: size.defaultWidth,
             });
           }}
           isActive={storage.size.name === 'custom'}
@@ -116,15 +121,12 @@ export const SizeDoor = (props: SizeDoorProps) => {
             <div className="flex w-full place-content-between">
               <p>
                 Custom
-                {customWidth !== size.width &&
-                  ` (${customWidthText} cm x ${size.length} cm)`}
+                {storage.size.width !== size.defaultWidth &&
+                  storage.size.length !== size.defaultLength &&
+                  `(${storage.size.width} cm x ${storage.size.length}) cm`}
               </p>
               <p className="text-sm text-emerald-600">
-                {priceFormatPerThousand(
-                  customWidth < size.width
-                    ? size.price + size.priceBelowDefaultWidth
-                    : size.price + size.priceAboveDefaultWidth
-                )}
+                {priceFormatPerThousand(calculatePrice())}
               </p>
             </div>
           </AccordionTrigger>
@@ -135,29 +137,45 @@ export const SizeDoor = (props: SizeDoorProps) => {
             }}
           >
             <div className="flex flex-col gap-2">
-              <Label>Lebar Pintu</Label>
+              <Label>Panjang Pintu</Label>
               <div className="flex gap-2">
                 <Slider
-                  min={size.width - MAX_WIDTH}
-                  max={size.width + MAX_WIDTH}
+                  min={size.minLength}
+                  max={size.maxLength}
                   step={1}
-                  defaultValue={[customWidth]}
+                  defaultValue={[storage.size.length]}
                   onValueChange={(value) => {
-                    const currentWidth = value[0];
-                    setCustomWidth(currentWidth);
+                    const currentLength = value[0];
                     storage.setSize({
                       name: 'custom',
-                      price:
-                        currentWidth < size.width
-                          ? size.price + size.priceBelowDefaultWidth
-                          : size.price + size.priceAboveDefaultWidth,
-                      length: size.length,
-                      width: currentWidth,
-                      limit: isMoreThanLimit(),
+                      price: calculatePrice(currentLength),
+                      width: storage.size.width,
+                      length: currentLength,
                     });
                   }}
                 />
-                <div className="w-20">{customWidthText} cm</div>
+                <div className="w-20">{storage.size.length} cm</div>
+              </div>
+            </div>
+            <div className="flex flex-col gap-2">
+              <Label>Lebar Pintu</Label>
+              <div className="flex gap-2">
+                <Slider
+                  min={size.minWidth}
+                  max={size.maxWidth}
+                  step={1}
+                  defaultValue={[storage.size.width]}
+                  onValueChange={(value) => {
+                    const currentWidth = value[0];
+                    storage.setSize({
+                      name: 'custom',
+                      price: calculatePrice(currentWidth),
+                      length: storage.size.length,
+                      width: currentWidth,
+                    });
+                  }}
+                />
+                <div className="w-20">{storage.size.width} cm</div>
               </div>
             </div>
           </AccordionContent>

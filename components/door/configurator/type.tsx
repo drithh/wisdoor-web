@@ -21,14 +21,14 @@ interface TypeDoorProps {
 }
 
 export const TypeDoor = (props: TypeDoorProps) => {
-  const storage = useDoorStore((state) => ({
-    type: state.type,
-    setType: state.setType,
-  }));
+  // const storage = useDoorStore((state) => ({
+  //   type: state.type,
+  //   setType: state.setType,
+  // }));
 
   return (
     <div className="grid grid-cols-2 w-full gap-3">
-      {props.types.map((type) => (
+      {/* {props.types.map((type) => (
         <DoorButton
           key={type.type}
           onClick={() => {
@@ -67,7 +67,7 @@ export const TypeDoor = (props: TypeDoorProps) => {
             </p>
           </div>
         </DoorButton>
-      ))}
+      ))} */}
     </div>
   );
 };

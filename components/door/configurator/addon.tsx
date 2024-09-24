@@ -15,7 +15,19 @@ interface Addon {
     text: string;
     price: number;
   };
-  weatherStrip: {
+  cylinder: {
+    text: string;
+    price: number;
+  };
+  handle: {
+    text: string;
+    price: number;
+  };
+  key: {
+    text: string;
+    price: number;
+  };
+  hinge: {
     text: string;
     price: number;
   };
@@ -29,25 +41,24 @@ interface addonDoorProps {
 export const AddonDoor = (props: addonDoorProps) => {
   const storage = useDoorStore((state) => ({
     keyHole: state.keyHole,
-    weatherStrip: state.weatherStrip,
+    cylinder: state.cylinder,
+    handle: state.handle,
+    key: state.key,
+    hinge: state.hinge,
     setKeyHole: state.setKeyHole,
-    setWeatherStrip: state.setWeatherStrip,
+    setCylinder: state.setCylinder,
+    setHandle: state.setHandle,
+    setKey: state.setKey,
+    setHinge: state.setHinge,
   }));
-
-  const [weatherStrip, setWeatherStrip] = useState(
-    storage.weatherStrip?.amount ?? 0
-  );
-  useEffect(() => {
-    setWeatherStrip(storage.weatherStrip?.amount ?? 0);
-  }, [storage.weatherStrip?.amount]);
 
   return (
     <div className="grid grid-cols-1 w-full gap-3">
       <Checkbox
-        checked={storage.keyHole?.isKeyHole || false}
+        checked={storage.keyHole?.isAdded ?? false}
         onCheckedChange={(checked) =>
           storage.setKeyHole({
-            isKeyHole: checked,
+            isAdded: checked,
             price: checked ? props.addons.keyHole.price : 0,
           })
         }
@@ -59,50 +70,72 @@ export const AddonDoor = (props: addonDoorProps) => {
           </p>
         </div>
       </Checkbox>
+
       <Checkbox
-        checked={(storage.weatherStrip?.amount ?? 0) > 0}
+        checked={storage.cylinder?.isAdded ?? false}
         onCheckedChange={(checked) =>
-          storage.setWeatherStrip({
-            amount: checked ? 1 : 0,
-            price: checked ? props.addons.weatherStrip.price : 0,
+          storage.setCylinder({
+            isAdded: checked,
+            price: checked ? props.addons.cylinder.price : 0,
           })
         }
       >
-        <div className="w-full flex flex-col gap-2">
-          <div className="flex w-full place-content-between">
-            <p>Tali Air</p>
-            <p className="text-sm text-emerald-700">
-              {priceFormatPerThousand(
-                props.addons.weatherStrip.price * weatherStrip
-              )}
-            </p>
-          </div>
-          <div className="flex flex-col gap-2">
-            <div
-              className="flex gap-2"
-              onClick={(e) => {
-                e.stopPropagation();
-              }}
-            >
-              <Slider
-                min={0}
-                max={9}
-                step={1}
-                value={[weatherStrip]}
-                onValueChange={(value) => {
-                  const currentStrip = value[0];
-                  setWeatherStrip(currentStrip);
-                  storage.setWeatherStrip({
-                    amount: currentStrip,
-                    price: currentStrip * props.addons.weatherStrip.price,
-                  });
-                }}
-              />
-              <div className="w-24">
-                {weatherStrip >= 9 ? '>9' : weatherStrip} Tali Air
-              </div>
-            </div>
-          </div>
+        <div className="flex w-full place-content-between">
+          <p>{props.addons.cylinder.text}</p>
+          <p className="text-sm text-emerald-700">
+            {priceFormatPerThousand(props.addons.cylinder.price)}
+          </p>
+        </div>
+      </Checkbox>
+
+      <Checkbox
+        checked={storage.handle?.isAdded ?? false}
+        onCheckedChange={(checked) =>
+          storage.setHandle({
+            isAdded: checked,
+            price: checked ? props.addons.handle.price : 0,
+          })
+        }
+      >
+        <div className="flex w-full place-content-between">
+          <p>{props.addons.handle.text}</p>
+          <p className="text-sm text-emerald-700">
+            {priceFormatPerThousand(props.addons.handle.price)}
+          </p>
+        </div>
+      </Checkbox>
+
+      <Checkbox
+        checked={storage.key?.isAdded ?? false}
+        onCheckedChange={(checked) =>
+          storage.setKey({
+            isAdded: checked,
+            price: checked ? props.addons.key.price : 0,
+          })
+        }
+      >
+        <div className="flex w-full place-content-between">
+          <p>{props.addons.key.text}</p>
+          <p className="text-sm text-emerald-700">
+            {priceFormatPerThousand(props.addons.key.price)}
+          </p>
+        </div>
+      </Checkbox>
+
+      <Checkbox
+        checked={storage.hinge?.isAdded ?? false}
+        onCheckedChange={(checked) =>
+          storage.setHinge({
+            isAdded: checked,
+            price: checked ? props.addons.hinge.price : 0,
+          })
+        }
+      >
+        <div className="flex w-full place-content-between">
+          <p>{props.addons.hinge.text}</p>
+          <p className="text-sm text-emerald-700">
+            {priceFormatPerThousand(props.addons.hinge.price)}
+          </p>
         </div>
       </Checkbox>
     </div>

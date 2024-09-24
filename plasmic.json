@@ -245,12 +245,6 @@
           "componentImportPath": "./components/door/configurator/size"
         },
         {
-          "id": "CKXkj02X-GEJ",
-          "name": "TypeDoor",
-          "displayName": "TypeDoor",
-          "componentImportPath": "./components/door/configurator/type"
-        },
-        {
           "id": "YV413SY07lXf",
           "name": "FinishingDoor",
           "displayName": "FinishingDoor",
@@ -275,18 +269,6 @@
           "componentImportPath": "./components/door/components/wrapper"
         },
         {
-          "id": "kDU8hj27ED9Y",
-          "name": "FinishingFrame",
-          "displayName": "FinishingFrame",
-          "componentImportPath": "./components/door/configurator/finishing-frame"
-        },
-        {
-          "id": "jS-fIcPAcZ7Z",
-          "name": "HingeDoor",
-          "displayName": "HingeDoor",
-          "componentImportPath": "./components/door/configurator/hinge"
-        },
-        {
           "id": "iWTWpwjwUI2f",
           "name": "DetailPrice",
           "displayName": "DetailPrice",
@@ -303,6 +285,12 @@
           "name": "ConfiguratorWrapper",
           "displayName": "ConfiguratorWrapper",
           "componentImportPath": "./components/door/components/configurator-wrapper"
+        },
+        {
+          "id": "8V98shg8_J4H",
+          "name": "GrooveDoor",
+          "displayName": "GrooveDoor",
+          "componentImportPath": "./components/door/configurator/groove"
         }
       ],
       "customFunctions": []

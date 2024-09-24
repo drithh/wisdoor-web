@@ -64,13 +64,10 @@ import { DoorViewer } from "../../door-viewer"; // plasmic-import: SH_PqjJ_I-5G/
 import { ConfiguratorWrapper } from "../../door/components/configurator-wrapper"; // plasmic-import: h1IjeS8_3odo/codeComponent
 import { ChooseDoor } from "../../door/configurator/choose"; // plasmic-import: LMn0cgg59gxw/codeComponent
 import { SizeDoor } from "../../door/configurator/size"; // plasmic-import: 7H1b44gqct0K/codeComponent
-import { TypeDoor } from "../../door/configurator/type"; // plasmic-import: CKXkj02X-GEJ/codeComponent
 import { FinishingDoor } from "../../door/configurator/finishing"; // plasmic-import: YV413SY07lXf/codeComponent
+import { GrooveDoor } from "../../door/configurator/groove"; // plasmic-import: 8V98shg8_J4H/codeComponent
 import { AddonDoor } from "../../door/configurator/addon"; // plasmic-import: g49Z5SosGCS0/codeComponent
 import { FrameDoor } from "../../door/configurator/frame"; // plasmic-import: CnuhOfnl-a-a/codeComponent
-import { Wrapper } from "../../door/components/wrapper"; // plasmic-import: NTrLzVk65nhU/codeComponent
-import { FinishingFrame } from "../../door/configurator/finishing-frame"; // plasmic-import: kDU8hj27ED9Y/codeComponent
-import { HingeDoor } from "../../door/configurator/hinge"; // plasmic-import: jS-fIcPAcZ7Z/codeComponent
 import { DetailPrice } from "../../door/detail-price"; // plasmic-import: iWTWpwjwUI2f/codeComponent
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -98,19 +95,14 @@ export type PlasmicDoor__OverridesType = {
   chooseDoor?: Flex__<typeof ChooseDoor>;
   ukuranPintu?: Flex__<"div">;
   sizeDoor?: Flex__<typeof SizeDoor>;
-  bahanPintu?: Flex__<"div">;
-  typeDoor?: Flex__<typeof TypeDoor>;
   finishingPintu?: Flex__<"div">;
   finishingDoor?: Flex__<typeof FinishingDoor>;
+  groovingPintu?: Flex__<"div">;
+  grooveDoor?: Flex__<typeof GrooveDoor>;
   tambahan?: Flex__<"div">;
   addonDoor?: Flex__<typeof AddonDoor>;
   kusen?: Flex__<"div">;
   frameDoor?: Flex__<typeof FrameDoor>;
-  wrapper?: Flex__<typeof Wrapper>;
-  finishingKusen?: Flex__<"div">;
-  finishingFrame?: Flex__<typeof FinishingFrame>;
-  engsel?: Flex__<"div">;
-  hingeDoor?: Flex__<typeof HingeDoor>;
   detailPrice?: Flex__<typeof DetailPrice>;
 };
 
@@ -270,7 +262,16 @@ function PlasmicDoor__RenderFunc(props: {
                         price: null,
                         priceBelowDefaultWidth: null,
                         priceAboveDefaultWidth: null,
-                        doorId: null
+                        doorId: null,
+                        defaultLength: null,
+                        maxLength: null,
+                        minLength: null,
+                        defaultWidth: null,
+                        maxWidth: null,
+                        minWidth: null,
+                        defaultPrice: null,
+                        addedPriceAbove: null,
+                        addedPriceBelow: null
                       },
                       {
                         idDoor: null,
@@ -279,7 +280,16 @@ function PlasmicDoor__RenderFunc(props: {
                         price: null,
                         priceBelowDefaultWidth: null,
                         priceAboveDefaultWidth: null,
-                        doorId: null
+                        doorId: null,
+                        defaultLength: null,
+                        maxLength: null,
+                        minLength: null,
+                        defaultWidth: null,
+                        maxWidth: null,
+                        minWidth: null,
+                        defaultPrice: null,
+                        addedPriceAbove: null,
+                        addedPriceBelow: null
                       }
                     ];
                     __composite["0"]["idDoor"] = "utama";
@@ -289,6 +299,15 @@ function PlasmicDoor__RenderFunc(props: {
                     __composite["0"]["priceBelowDefaultWidth"] = 100000;
                     __composite["0"]["priceAboveDefaultWidth"] = 200000;
                     __composite["0"]["doorId"] = "utama";
+                    __composite["0"]["defaultLength"] = 210;
+                    __composite["0"]["maxLength"] = 180;
+                    __composite["0"]["minLength"] = 240;
+                    __composite["0"]["defaultWidth"] = 83;
+                    __composite["0"]["maxWidth"] = 118;
+                    __composite["0"]["minWidth"] = 60;
+                    __composite["0"]["defaultPrice"] = 560000;
+                    __composite["0"]["addedPriceAbove"] = 200000;
+                    __composite["0"]["addedPriceBelow"] = 100000;
                     __composite["1"]["idDoor"] = "kamar";
                     __composite["1"]["length"] = 210;
                     __composite["1"]["width"] = 83;
@@ -296,47 +315,15 @@ function PlasmicDoor__RenderFunc(props: {
                     __composite["1"]["priceBelowDefaultWidth"] = 100000;
                     __composite["1"]["priceAboveDefaultWidth"] = 200000;
                     __composite["1"]["doorId"] = "kamar";
-                    return __composite;
-                  })()}
-                />
-              </Stack__>
-              <Stack__
-                as={"div"}
-                data-plasmic-name={"bahanPintu"}
-                data-plasmic-override={overrides.bahanPintu}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.bahanPintu)}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___09NR2
-                  )}
-                >
-                  {"Bahan Pintu"}
-                </div>
-                <TypeDoor
-                  data-plasmic-name={"typeDoor"}
-                  data-plasmic-override={overrides.typeDoor}
-                  className={classNames("__wab_instance", sty.typeDoor)}
-                  types={(() => {
-                    const __composite = [
-                      { image: null, type: null, price: null, modal: null },
-                      { type: null, image: null, price: null, modal: null }
-                    ];
-                    __composite["0"]["image"] =
-                      "https://site-assets.plasmic.app/ec7615efd9eec59506460977dde021a8.jpg";
-                    __composite["0"]["type"] = "HMR (3mm)";
-                    __composite["0"]["price"] = 240000;
-                    __composite["0"]["modal"] =
-                      '<p dir="ltr">HMR adalah material tahan lembab yang ideal untuk bagian dalam pintu, terutama di area dengan kelembapan tinggi. Prosesnya melibatkan pemotongan dan penyusunan HMR menjadi kerangka pintu, kemudian permukaan dapat dilapisi dengan cat atau laminasi sesuai kebutuhan.</p>\n<p dir="ltr">&nbsp;</p>\n<p dir="ltr"><strong>Keunggulan:</strong></p>\n<ul>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Tahan terhadap kelembapan, cocok untuk area basah.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Stabilitas dimensi yang baik, tidak mudah melengkung.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Permukaan halus, mudah untuk dilapisi atau dicat.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Berat, memberikan rasa kokoh pada pintu.</p>\n</li>\n</ul>\n<p>&nbsp;</p>';
-                    __composite["1"]["type"] = "Plywood Meranti (3mm)";
-                    __composite["1"]["image"] =
-                      "https://site-assets.plasmic.app/843daac37ed39e5c0fd4392b69506628.jpg";
-                    __composite["1"]["price"] = 240000;
-                    __composite["1"]["modal"] =
-                      '<p dir="ltr">Plywood adalah material serbaguna untuk bagian dalam pintu yang kuat dan tahan lama. Prosesnya melibatkan pemotongan lembaran plywood dan menyusunnya menjadi kerangka pintu. Plywood dapat difinishing secara natural dengan melamine, menonjolkan keindahan serat kayu.</p>\n<p dir="ltr">&nbsp;</p>\n<p dir="ltr"><strong>Keunggulan:</strong></p>\n<ul>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Kekuatan struktural tinggi dan tahan lama.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Lebih ringan dibandingkan HMR, memudahkan pemasangan.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Bisa difinishing secara natural dengan melamine, menonjolkan serat kayu.</p>\n</li>\n</ul>\n<p>&nbsp;</p>';
+                    __composite["1"]["defaultLength"] = 210;
+                    __composite["1"]["maxLength"] = 240;
+                    __composite["1"]["minLength"] = 180;
+                    __composite["1"]["defaultWidth"] = 83;
+                    __composite["1"]["maxWidth"] = 118;
+                    __composite["1"]["minWidth"] = 60;
+                    __composite["1"]["defaultPrice"] = 560000;
+                    __composite["1"]["addedPriceAbove"] = 200000;
+                    __composite["1"]["addedPriceBelow"] = 100000;
                     return __composite;
                   })()}
                 />
@@ -355,7 +342,7 @@ function PlasmicDoor__RenderFunc(props: {
                     sty.text__tyLu4
                   )}
                 >
-                  {"Finishing Pintu"}
+                  {"Finishing"}
                 </div>
                 <FinishingDoor
                   data-plasmic-name={"finishingDoor"}
@@ -365,55 +352,63 @@ function PlasmicDoor__RenderFunc(props: {
                     const __composite = [
                       { doorId: null, name: null, price: null },
                       { doorId: null, name: null, price: null, modal: null },
-                      { doorId: null, name: null, price: null, modal: null },
-                      { doorId: null, name: null, price: null, modal: null },
-                      { doorId: null, name: null, price: null },
-                      { doorId: null, name: null, price: null, modal: null },
-                      { doorId: null, name: null, price: null, modal: null },
-                      { doorId: null, name: null, price: null, modal: null },
                       { doorId: null, name: null, price: null, modal: null }
                     ];
                     __composite["0"]["doorId"] = "kamar";
                     __composite["0"]["name"] = "Tidak Finishing";
                     __composite["0"]["price"] = 0;
                     __composite["1"]["doorId"] = "kamar";
-                    __composite["1"]["name"] = "Duco Putih";
-                    __composite["1"]["price"] = 370000;
+                    __composite["1"]["name"] = "PVC Sheet";
+                    __composite["1"]["price"] = 700000;
                     __composite["1"]["modal"] =
-                      '<p dir="ltr">Duco putih memberikan hasil akhir elegan melalui proses pengamplasan, aplikasi cat dasar, dan beberapa lapisan cat duco, yang dihaluskan di antara tiap lapisan. Finishing akhir menambah kilau dan perlindungan.</p>\n<p dir="ltr">&nbsp;</p>\n<p dir="ltr"><strong>Keunggulan:</strong></p>\n<ul>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Tampilan elegan dan bersih.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Permukaan sangat halus.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Warna putih seragam.</p>\n</li>\n</ul>\n<p>&nbsp;</p>';
+                      '<p dir="ltr">PVC sheet adalah finishing praktis yang tahan lama. Prosesnya melibatkan pemasangan lembaran PVC di atas pintu yang telah dilapisi lem, kemudian dipanaskan dan ditekan agar merekat sempurna.</p>\n<p dir="ltr">&nbsp;</p>\n<p dir="ltr"><strong>Keunggulan:</strong></p>\n<ul>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Tahan air, kelembapan, dan goresan.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Mudah dibersihkan.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Beragam warna dan tekstur.</p>\n</li>\n</ul>\n<p>&nbsp;</p>';
                     __composite["2"]["doorId"] = "kamar";
-                    __composite["2"]["name"] = "PVC Sheet";
-                    __composite["2"]["price"] = 700000;
+                    __composite["2"]["name"] = "HPL Std";
+                    __composite["2"]["price"] = 850000;
                     __composite["2"]["modal"] =
-                      '<p dir="ltr">PVC sheet adalah finishing praktis yang tahan lama. Prosesnya melibatkan pemasangan lembaran PVC di atas pintu yang telah dilapisi lem, kemudian dipanaskan dan ditekan agar merekat sempurna.</p>\n<p dir="ltr">&nbsp;</p>\n<p dir="ltr"><strong>Keunggulan:</strong></p>\n<ul>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Tahan air, kelembapan, dan goresan.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Mudah dibersihkan.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Beragam warna dan tekstur.</p>\n</li>\n</ul>\n<p>&nbsp;</p>';
-                    __composite["3"]["doorId"] = "kamar";
-                    __composite["3"]["name"] = "HPL Std";
-                    __composite["3"]["price"] = 850000;
-                    __composite["3"]["modal"] =
                       '<p dir="ltr">HPL menawarkan daya tahan tinggi dan variasi desain. Lembaran HPL ditempelkan pada pintu yang telah diberi lem, kemudian ditekan dan dipangkas untuk hasil rapi dan kuat.</p>\n<p dir="ltr">&nbsp;</p>\n<p dir="ltr"><strong>Keunggulan:</strong></p>\n<ul>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Tahan Air</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Tahan goresan, panas, dan bahan kimia.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Banyak pilihan desain.</p>\n</li>\n</ul>\n<p>&nbsp;</p>';
-                    __composite["4"]["doorId"] = "utama";
-                    __composite["4"]["name"] = "Tidak Finishing";
-                    __composite["4"]["price"] = 0;
-                    __composite["5"]["doorId"] = "utama";
-                    __composite["5"]["name"] = "Duco Putih";
-                    __composite["5"]["price"] = 370000;
-                    __composite["5"]["modal"] =
-                      '<p dir="ltr">Duco putih memberikan hasil akhir elegan melalui proses pengamplasan, aplikasi cat dasar, dan beberapa lapisan cat duco, yang dihaluskan di antara tiap lapisan. Finishing akhir menambah kilau dan perlindungan.</p>\n<p dir="ltr">&nbsp;</p>\n<p dir="ltr"><strong>Keunggulan:</strong></p>\n<ul>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Tampilan elegan dan bersih.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Permukaan sangat halus.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Warna putih seragam.</p>\n</li>\n</ul>';
-                    __composite["6"]["doorId"] = "utama";
-                    __composite["6"]["name"] = "Melamine";
-                    __composite["6"]["price"] = 370000;
-                    __composite["6"]["modal"] =
-                      '<p dir="ltr">Melamine adalah finishing yang populer untuk memberikan tampilan kayu alami. Prosesnya melibatkan aplikasi beberapa lapisan melamine dengan semprotan, diikuti dengan pengeringan dan pengamplasan ringan di antara lapisan, hingga mencapai hasil yang diinginkan.</p>\n<p dir="ltr">&nbsp;</p>\n<p dir="ltr"><strong>Keunggulan:</strong></p>\n<ul>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Menonjolkan serat alami kayu.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Memberikan perlindungan terhadap goresan dan kelembapan.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Hasil akhir yang mengkilap atau matte sesuai preferensi.</p>\n</li>\n</ul>\n<p>&nbsp;</p>';
-                    __composite["7"]["doorId"] = "utama";
-                    __composite["7"]["name"] = "PVC Sheet";
-                    __composite["7"]["price"] = 700000;
-                    __composite["7"]["modal"] =
-                      '<p dir="ltr">PVC sheet adalah finishing praktis yang tahan lama. Prosesnya melibatkan pemasangan lembaran PVC di atas pintu yang telah dilapisi lem, kemudian dipanaskan dan ditekan agar merekat sempurna.</p>\n<p dir="ltr">&nbsp;</p>\n<p dir="ltr"><strong>Keunggulan:</strong></p>\n<ul>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Tahan air, kelembapan, dan goresan.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Mudah dibersihkan.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Beragam warna dan tekstur.</p>\n</li>\n</ul>\n<p>&nbsp;</p>';
-                    __composite["8"]["doorId"] = "utama";
-                    __composite["8"]["name"] = "HPL Std";
-                    __composite["8"]["price"] = 850000;
-                    __composite["8"]["modal"] =
-                      '<p dir="ltr">HPL menawarkan daya tahan tinggi dan variasi desain. Lembaran HPL ditempelkan pada pintu yang telah diberi lem, kemudian ditekan dan dipangkas untuk hasil rapi dan kuat.</p>\n<p dir="ltr">&nbsp;</p>\n<p dir="ltr"><strong>Keunggulan:</strong></p>\n<ul>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Tahan Air</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Tahan goresan, panas, dan bahan kimia.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Banyak pilihan desain.</p>\n</li>\n</ul>\n<p>&nbsp;</p>';
+                    return __composite;
+                  })()}
+                />
+              </Stack__>
+              <Stack__
+                as={"div"}
+                data-plasmic-name={"groovingPintu"}
+                data-plasmic-override={overrides.groovingPintu}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.groovingPintu)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___0HCv
+                  )}
+                >
+                  {"Grooving"}
+                </div>
+                <GrooveDoor
+                  data-plasmic-name={"grooveDoor"}
+                  data-plasmic-override={overrides.grooveDoor}
+                  className={classNames("__wab_instance", sty.grooveDoor)}
+                  grooves={(() => {
+                    const __composite = [
+                      { name: null, price: null },
+                      { name: null, price: null, modal: null },
+                      { name: null, price: null, modal: null },
+                      { name: null, price: null, modal: null }
+                    ];
+                    __composite["0"]["name"] = "Tanpa Grooving";
+                    __composite["0"]["price"] = 0;
+                    __composite["1"]["name"] = "Simple";
+                    __composite["1"]["price"] = 50000;
+                    __composite["1"]["modal"] = "<p>eadad</p>";
+                    __composite["2"]["name"] = "Intermediate";
+                    __composite["2"]["price"] = 75000;
+                    __composite["2"]["modal"] = "<p>ee</p>";
+                    __composite["3"]["name"] = "Expert";
+                    __composite["3"]["price"] = 200000;
+                    __composite["3"]["modal"] = "<p>asda</p>";
                     return __composite;
                   })()}
                 />
@@ -438,7 +433,14 @@ function PlasmicDoor__RenderFunc(props: {
                   data-plasmic-name={"addonDoor"}
                   data-plasmic-override={overrides.addonDoor}
                   addons={(() => {
-                    const __composite = { keyHole: null, weatherStrip: null };
+                    const __composite = {
+                      keyHole: null,
+                      weatherStrip: null,
+                      cylinder: null,
+                      handle: null,
+                      key: null,
+                      hinge: null
+                    };
                     __composite["keyHole"] = (() => {
                       const __composite = { text: null, price: null };
                       __composite["text"] = "Lubang Kunci (Standar dekson)";
@@ -449,6 +451,30 @@ function PlasmicDoor__RenderFunc(props: {
                       const __composite = { text: null, price: null };
                       __composite["text"] = "Tali Air";
                       __composite["price"] = 25000;
+                      return __composite;
+                    })();
+                    __composite["cylinder"] = (() => {
+                      const __composite = { text: null, price: null };
+                      __composite["text"] = "Cylinder";
+                      __composite["price"] = 110000;
+                      return __composite;
+                    })();
+                    __composite["handle"] = (() => {
+                      const __composite = { text: null, price: null };
+                      __composite["text"] = "Handle";
+                      __composite["price"] = 200000;
+                      return __composite;
+                    })();
+                    __composite["key"] = (() => {
+                      const __composite = { text: null, price: null };
+                      __composite["text"] = "Kunci";
+                      __composite["price"] = 175000;
+                      return __composite;
+                    })();
+                    __composite["hinge"] = (() => {
+                      const __composite = { text: null, price: null };
+                      __composite["text"] = "Engsel (3 pc)";
+                      __composite["price"] = 140000;
                       return __composite;
                     })();
                     return __composite;
@@ -517,140 +543,6 @@ function PlasmicDoor__RenderFunc(props: {
                   })()}
                 />
               </Stack__>
-              <Wrapper
-                data-plasmic-name={"wrapper"}
-                data-plasmic-override={overrides.wrapper}
-                className={classNames("__wab_instance", sty.wrapper)}
-              >
-                {(() => {
-                  try {
-                    return true;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return true;
-                    }
-                    throw e;
-                  }
-                })() ? (
-                  <Stack__
-                    as={"div"}
-                    data-plasmic-name={"finishingKusen"}
-                    data-plasmic-override={overrides.finishingKusen}
-                    hasGap={true}
-                    className={classNames(projectcss.all, sty.finishingKusen)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__g4SLw
-                      )}
-                    >
-                      {"Finishing Kusen"}
-                    </div>
-                    <FinishingFrame
-                      data-plasmic-name={"finishingFrame"}
-                      data-plasmic-override={overrides.finishingFrame}
-                      className={classNames(
-                        "__wab_instance",
-                        sty.finishingFrame
-                      )}
-                      finishings={(() => {
-                        const __composite = [
-                          { name: null, price: null },
-                          { name: null, price: null, color: null },
-                          { color: null, name: null, price: null }
-                        ];
-                        __composite["0"]["name"] = "Tanpa Finishing";
-                        __composite["0"]["price"] = 0;
-                        __composite["1"]["name"] = "Melamin";
-                        __composite["1"]["price"] = 150000;
-                        __composite["1"]["color"] = (() => {
-                          const __composite = [
-                            { name: null, colorClass: null },
-                            { name: null, colorClass: null }
-                          ];
-                          __composite["0"]["name"] = "Coklat";
-                          __composite["0"]["colorClass"] = "bg-[#855E42]";
-                          __composite["1"]["name"] = "Hitam";
-                          __composite["1"]["colorClass"] = "bg-black";
-                          return __composite;
-                        })();
-                        __composite["2"]["color"] = (() => {
-                          const __composite = [
-                            { colorClass: null, name: null }
-                          ];
-                          __composite["0"]["colorClass"] = "bg-[#855E42]";
-                          __composite["0"]["name"] = "Coklat";
-                          return __composite;
-                        })();
-                        __composite["2"]["name"] = "Duco";
-                        __composite["2"]["price"] = 150000;
-                        return __composite;
-                      })()}
-                    />
-                  </Stack__>
-                ) : null}
-                {(() => {
-                  try {
-                    return true;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return true;
-                    }
-                    throw e;
-                  }
-                })() ? (
-                  <Stack__
-                    as={"div"}
-                    data-plasmic-name={"engsel"}
-                    data-plasmic-override={overrides.engsel}
-                    hasGap={true}
-                    className={classNames(projectcss.all, sty.engsel)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text___4OjVi
-                      )}
-                    >
-                      {"Engsel"}
-                    </div>
-                    <HingeDoor
-                      data-plasmic-name={"hingeDoor"}
-                      data-plasmic-override={overrides.hingeDoor}
-                      className={classNames("__wab_instance", sty.hingeDoor)}
-                      hinges={(() => {
-                        const __composite = [
-                          { name: null, price: null },
-                          { name: null, price: null },
-                          { name: null, price: null },
-                          { name: null, price: null },
-                          { name: null, price: null }
-                        ];
-                        __composite["0"]["name"] = "Tanpa Engsel";
-                        __composite["0"]["price"] = 0;
-                        __composite["1"]["name"] = "1 Engsel";
-                        __composite["1"]["price"] = 25000;
-                        __composite["2"]["name"] = "2 Engsel";
-                        __composite["2"]["price"] = 50000;
-                        __composite["3"]["name"] = "3 Engsel";
-                        __composite["3"]["price"] = 75000;
-                        __composite["4"]["name"] = "4 Engsel";
-                        __composite["4"]["price"] = 80000;
-                        return __composite;
-                      })()}
-                    />
-                  </Stack__>
-                ) : null}
-              </Wrapper>
               <DetailPrice
                 data-plasmic-name={"detailPrice"}
                 data-plasmic-override={overrides.detailPrice}
@@ -675,19 +567,14 @@ const PlasmicDescendants = {
     "chooseDoor",
     "ukuranPintu",
     "sizeDoor",
-    "bahanPintu",
-    "typeDoor",
     "finishingPintu",
     "finishingDoor",
+    "groovingPintu",
+    "grooveDoor",
     "tambahan",
     "addonDoor",
     "kusen",
     "frameDoor",
-    "wrapper",
-    "finishingKusen",
-    "finishingFrame",
-    "engsel",
-    "hingeDoor",
     "detailPrice"
   ],
   viewerWrapper: [
@@ -698,19 +585,14 @@ const PlasmicDescendants = {
     "chooseDoor",
     "ukuranPintu",
     "sizeDoor",
-    "bahanPintu",
-    "typeDoor",
     "finishingPintu",
     "finishingDoor",
+    "groovingPintu",
+    "grooveDoor",
     "tambahan",
     "addonDoor",
     "kusen",
     "frameDoor",
-    "wrapper",
-    "finishingKusen",
-    "finishingFrame",
-    "engsel",
-    "hingeDoor",
     "detailPrice"
   ],
   doorViewer: ["doorViewer"],
@@ -720,44 +602,28 @@ const PlasmicDescendants = {
     "chooseDoor",
     "ukuranPintu",
     "sizeDoor",
-    "bahanPintu",
-    "typeDoor",
     "finishingPintu",
     "finishingDoor",
+    "groovingPintu",
+    "grooveDoor",
     "tambahan",
     "addonDoor",
     "kusen",
     "frameDoor",
-    "wrapper",
-    "finishingKusen",
-    "finishingFrame",
-    "engsel",
-    "hingeDoor",
     "detailPrice"
   ],
   jenisPintu: ["jenisPintu", "chooseDoor"],
   chooseDoor: ["chooseDoor"],
   ukuranPintu: ["ukuranPintu", "sizeDoor"],
   sizeDoor: ["sizeDoor"],
-  bahanPintu: ["bahanPintu", "typeDoor"],
-  typeDoor: ["typeDoor"],
   finishingPintu: ["finishingPintu", "finishingDoor"],
   finishingDoor: ["finishingDoor"],
+  groovingPintu: ["groovingPintu", "grooveDoor"],
+  grooveDoor: ["grooveDoor"],
   tambahan: ["tambahan", "addonDoor"],
   addonDoor: ["addonDoor"],
   kusen: ["kusen", "frameDoor"],
   frameDoor: ["frameDoor"],
-  wrapper: [
-    "wrapper",
-    "finishingKusen",
-    "finishingFrame",
-    "engsel",
-    "hingeDoor"
-  ],
-  finishingKusen: ["finishingKusen", "finishingFrame"],
-  finishingFrame: ["finishingFrame"],
-  engsel: ["engsel", "hingeDoor"],
-  hingeDoor: ["hingeDoor"],
   detailPrice: ["detailPrice"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -772,19 +638,14 @@ type NodeDefaultElementType = {
   chooseDoor: typeof ChooseDoor;
   ukuranPintu: "div";
   sizeDoor: typeof SizeDoor;
-  bahanPintu: "div";
-  typeDoor: typeof TypeDoor;
   finishingPintu: "div";
   finishingDoor: typeof FinishingDoor;
+  groovingPintu: "div";
+  grooveDoor: typeof GrooveDoor;
   tambahan: "div";
   addonDoor: typeof AddonDoor;
   kusen: "div";
   frameDoor: typeof FrameDoor;
-  wrapper: typeof Wrapper;
-  finishingKusen: "div";
-  finishingFrame: typeof FinishingFrame;
-  engsel: "div";
-  hingeDoor: typeof HingeDoor;
   detailPrice: typeof DetailPrice;
 };
 
@@ -855,19 +716,14 @@ export const PlasmicDoor = Object.assign(
     chooseDoor: makeNodeComponent("chooseDoor"),
     ukuranPintu: makeNodeComponent("ukuranPintu"),
     sizeDoor: makeNodeComponent("sizeDoor"),
-    bahanPintu: makeNodeComponent("bahanPintu"),
-    typeDoor: makeNodeComponent("typeDoor"),
     finishingPintu: makeNodeComponent("finishingPintu"),
     finishingDoor: makeNodeComponent("finishingDoor"),
+    groovingPintu: makeNodeComponent("groovingPintu"),
+    grooveDoor: makeNodeComponent("grooveDoor"),
     tambahan: makeNodeComponent("tambahan"),
     addonDoor: makeNodeComponent("addonDoor"),
     kusen: makeNodeComponent("kusen"),
     frameDoor: makeNodeComponent("frameDoor"),
-    wrapper: makeNodeComponent("wrapper"),
-    finishingKusen: makeNodeComponent("finishingKusen"),
-    finishingFrame: makeNodeComponent("finishingFrame"),
-    engsel: makeNodeComponent("engsel"),
-    hingeDoor: makeNodeComponent("hingeDoor"),
     detailPrice: makeNodeComponent("detailPrice"),
 
     // Metadata about props expected for PlasmicDoor

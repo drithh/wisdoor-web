@@ -27,6 +27,7 @@ import { HingeDoor } from '@/components/door/configurator/hinge';
 import { DetailPrice } from '@/components/door/detail-price';
 import { ViewerWrapper } from '@/components/door/components/viewer-wrapper';
 import { ConfiguratorWrapper } from '@/components/door/components/configurator-wrapper';
+import { GrooveDoor } from '@/components/door/configurator/groove';
 
 // You can register any code components that you want to use here; see
 // https://docs.plasmic.app/learn/code-components-ref/
@@ -342,19 +343,31 @@ registerComponent(SizeDoor, {
           doorId: {
             type: 'string',
           },
-          length: {
+          defaultLength: {
             type: 'number',
           },
-          width: {
+          maxLength: {
             type: 'number',
           },
-          price: {
+          minLength: {
             type: 'number',
           },
-          priceBelowDefaultWidth: {
+          defaultWidth: {
             type: 'number',
           },
-          priceAboveDefaultWidth: {
+          maxWidth: {
+            type: 'number',
+          },
+          minWidth: {
+            type: 'number',
+          },
+          defaultPrice: {
+            type: 'number',
+          },
+          addedPriceAbove: {
+            type: 'number',
+          },
+          addedPriceBelow: {
             type: 'number',
           },
         },
@@ -365,36 +378,36 @@ registerComponent(SizeDoor, {
   importPath: './components/door/configurator/size',
 });
 
-registerComponent(TypeDoor, {
-  name: 'TypeDoor',
-  props: {
-    className: {
-      type: 'string',
-    },
-    types: {
-      type: 'array',
-      itemType: {
-        type: 'object',
-        fields: {
-          type: {
-            type: 'string',
-          },
-          image: {
-            type: 'imageUrl',
-          },
-          price: {
-            type: 'number',
-          },
-          modal: {
-            type: 'richText',
-          },
-        },
-      },
-    },
-  },
+// registerComponent(TypeDoor, {
+//   name: 'TypeDoor',
+//   props: {
+//     className: {
+//       type: 'string',
+//     },
+//     types: {
+//       type: 'array',
+//       itemType: {
+//         type: 'object',
+//         fields: {
+//           type: {
+//             type: 'string',
+//           },
+//           image: {
+//             type: 'imageUrl',
+//           },
+//           price: {
+//             type: 'number',
+//           },
+//           modal: {
+//             type: 'richText',
+//           },
+//         },
+//       },
+//     },
+//   },
 
-  importPath: './components/door/configurator/type',
-});
+//   importPath: './components/door/configurator/type',
+// });
 
 registerComponent(FinishingDoor, {
   name: 'FinishingDoor',
@@ -407,9 +420,6 @@ registerComponent(FinishingDoor, {
       itemType: {
         type: 'object',
         fields: {
-          doorId: {
-            type: 'string',
-          },
           name: {
             type: 'string',
           },
@@ -425,6 +435,34 @@ registerComponent(FinishingDoor, {
   },
 
   importPath: './components/door/configurator/finishing',
+});
+
+registerComponent(GrooveDoor, {
+  name: 'GrooveDoor',
+  props: {
+    className: {
+      type: 'string',
+    },
+    grooves: {
+      type: 'array',
+      itemType: {
+        type: 'object',
+        fields: {
+          name: {
+            type: 'string',
+          },
+          price: {
+            type: 'number',
+          },
+          modal: {
+            type: 'richText',
+          },
+        },
+      },
+    },
+  },
+
+  importPath: './components/door/configurator/groove',
 });
 
 registerComponent(AddonDoor, {
@@ -447,7 +485,40 @@ registerComponent(AddonDoor, {
             },
           },
         },
-        weatherStrip: {
+        cylinder: {
+          type: 'object',
+          fields: {
+            text: {
+              type: 'string',
+            },
+            price: {
+              type: 'number',
+            },
+          },
+        },
+        handle: {
+          type: 'object',
+          fields: {
+            text: {
+              type: 'string',
+            },
+            price: {
+              type: 'number',
+            },
+          },
+        },
+        key: {
+          type: 'object',
+          fields: {
+            text: {
+              type: 'string',
+            },
+            price: {
+              type: 'number',
+            },
+          },
+        },
+        hinge: {
           type: 'object',
           fields: {
             text: {
@@ -541,69 +612,69 @@ registerComponent(ConfiguratorWrapper, {
   importPath: './components/door/components/configurator-wrapper',
 });
 
-registerComponent(FinishingFrame, {
-  name: 'FinishingFrame',
-  props: {
-    className: {
-      type: 'string',
-    },
-    finishings: {
-      type: 'array',
-      itemType: {
-        type: 'object',
-        fields: {
-          name: {
-            type: 'string',
-          },
-          price: {
-            type: 'number',
-          },
-          color: {
-            type: 'array',
-            itemType: {
-              type: 'object',
-              fields: {
-                name: {
-                  type: 'string',
-                },
-                colorClass: {
-                  type: 'string',
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  },
+// registerComponent(FinishingFrame, {
+//   name: 'FinishingFrame',
+//   props: {
+//     className: {
+//       type: 'string',
+//     },
+//     finishings: {
+//       type: 'array',
+//       itemType: {
+//         type: 'object',
+//         fields: {
+//           name: {
+//             type: 'string',
+//           },
+//           price: {
+//             type: 'number',
+//           },
+//           color: {
+//             type: 'array',
+//             itemType: {
+//               type: 'object',
+//               fields: {
+//                 name: {
+//                   type: 'string',
+//                 },
+//                 colorClass: {
+//                   type: 'string',
+//                 },
+//               },
+//             },
+//           },
+//         },
+//       },
+//     },
+//   },
 
-  importPath: './components/door/configurator/finishing-frame',
-});
+//   importPath: './components/door/configurator/finishing-frame',
+// });
 
-registerComponent(HingeDoor, {
-  name: 'HingeDoor',
-  props: {
-    className: {
-      type: 'string',
-    },
-    hinges: {
-      type: 'array',
-      itemType: {
-        type: 'object',
-        fields: {
-          name: {
-            type: 'string',
-          },
-          price: {
-            type: 'number',
-          },
-        },
-      },
-    },
-  },
+// registerComponent(HingeDoor, {
+//   name: 'HingeDoor',
+//   props: {
+//     className: {
+//       type: 'string',
+//     },
+//     hinges: {
+//       type: 'array',
+//       itemType: {
+//         type: 'object',
+//         fields: {
+//           name: {
+//             type: 'string',
+//           },
+//           price: {
+//             type: 'number',
+//           },
+//         },
+//       },
+//     },
+//   },
 
-  importPath: './components/door/configurator/hinge',
-});
+//   importPath: './components/door/configurator/hinge',
+// });
 
 registerComponent(DetailPrice, {
   name: 'DetailPrice',

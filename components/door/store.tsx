@@ -13,16 +13,10 @@ interface Door {
 interface Size extends Item {
   width: number;
   length: number;
-  limit?: boolean;
 }
 
-interface KeyHole {
-  isKeyHole: boolean;
-  price: number;
-}
-
-interface WeatherStrip {
-  amount: number;
+interface IsAdded {
+  isAdded: boolean;
   price: number;
 }
 
@@ -30,56 +24,44 @@ interface Frame extends Item {
   architrave: boolean;
 }
 
-interface FrameFinishing extends Item {
-  color: string;
-}
-
 export interface DoorState {
   door: Door;
   size: Size;
-  type: Item;
   finishing?: Item;
-  keyHole?: KeyHole;
-  weatherStrip?: WeatherStrip;
+  groove?: Item;
   frame?: Frame;
-  frameFinishing?: FrameFinishing;
-  frameColor?: Item;
-  hinge?: Item;
+  keyHole?: IsAdded;
+  cylinder?: IsAdded;
+  handle?: IsAdded;
+  key?: IsAdded;
+  hinge?: IsAdded;
 
   setDoor: (door: Door) => void;
   setSize: (size: Size) => void;
-  setType: (type: Item) => void;
   setFinishing: (finishing: Item) => void;
-  setKeyHole: (keyHole: KeyHole) => void;
-  setWeatherStrip: (weatherStrip: WeatherStrip) => void;
+  setGroove: (groove: Item) => void;
   setFrame: (frame: Frame) => void;
-  setFrameFinishing: (frameFinishing: FrameFinishing) => void;
-  setFrameColor: (frameColor: Item) => void;
-  setHinge: (hinge: Item) => void;
+  setKeyHole: (keyHole: IsAdded) => void;
+  setCylinder: (cylinder: IsAdded) => void;
+  setHandle: (handle: IsAdded) => void;
+  setKey: (key: IsAdded) => void;
+  setHinge: (hinge: IsAdded) => void;
 }
 
 export const useDoorStore = create(
   persist<DoorState>(
     (set) => ({
       door: { id: '', name: '' },
-      size: { name: '', price: 0, length: 210, width: 83 },
-      type: { name: '', price: 0 },
-      finishing: undefined,
-      keyHole: undefined,
-      weatherStrip: undefined,
-      frame: undefined,
-      frameFinishing: undefined,
-      frameColor: undefined,
-      hinge: undefined,
+      size: { name: '', price: 0, width: 83, length: 210 },
       setDoor: (door) => set({ door }),
       setSize: (size) => set({ size }),
-      setType: (type) => set({ type }),
       setFinishing: (finishing) => set({ finishing }),
-      setKeyHole: (keyHole) => set({ keyHole }),
-      setWeatherStrip: (weatherStrip) => set({ weatherStrip }),
+      setGroove: (groove) => set({ groove }),
       setFrame: (frame) => set({ frame }),
-      setFrameFinishing: (frameFinishing) => set({ frameFinishing }),
-      setFrameColor: (frameColor) => set({ frameColor }),
+      setKeyHole: (keyHole) => set({ keyHole }),
+      setCylinder: (cylinder) => set({ cylinder }),
+      setHandle: (handle) => set({ handle }),
+      setKey: (key) => set({ key }),
       setHinge: (hinge) => set({ hinge }),
     }),
     {

@@ -7,53 +7,53 @@ import Image from 'next/image';
 import { priceFormatPerThousand } from '@/lib/price-format';
 import { DoorModal } from '../components/modal';
 
-interface Finishing {
+interface Groove {
   name: string;
   price: number;
   modal: string;
 }
 
-interface finishingDoorProps {
-  finishings: Finishing[];
+interface grooveDoorProps {
+  grooves: Groove[];
   className?: string;
 }
 
-export const FinishingDoor = (props: finishingDoorProps) => {
+export const GrooveDoor = (props: grooveDoorProps) => {
   const storage = useDoorStore((state) => ({
-    finishing: state.finishing,
-    setFinishing: state.setFinishing,
+    groove: state.groove,
+    setGroove: state.setGroove,
     door: state.door,
   }));
 
   return (
     <div className="grid grid-cols-2 w-full gap-3">
-      {props.finishings?.map((finishing) => (
+      {props.grooves?.map((groove) => (
         <DoorButton
-          key={finishing.name}
+          key={groove.name}
           onClick={() => {
-            const selectedfinishing = props.finishings.find(
-              (propfinishing) => propfinishing.name === finishing.name
+            const selectedgroove = props.grooves.find(
+              (propgroove) => propgroove.name === groove.name
             )!;
-            storage.setFinishing({
-              name: selectedfinishing.name,
-              price: selectedfinishing.price,
+            storage.setGroove({
+              name: selectedgroove.name,
+              price: selectedgroove.price,
             });
           }}
-          isActive={finishing.name === storage.finishing?.name}
+          isActive={groove.name === storage.groove?.name}
           className="flex h-full gap-2 flex-col px-4 items-center cursor-pointer"
         >
           <div className="flex flex-col gap-2 w-full items-center h-full place-content-between">
             <p className="whitespace-pre-wrap flex flex-1 text-sm text-center items-center transition-colors">
-              {finishing.name}
+              {groove.name}
               <DoorModal
-                title={finishing.name}
-                richText={finishing.modal}
+                title={groove.name}
+                richText={groove.modal}
                 className="top-0"
               />
             </p>
-            {finishing.price !== 0 && (
+            {groove.price !== 0 && (
               <p className="text-sm text-emerald-700">
-                {priceFormatPerThousand(finishing.price)}
+                {priceFormatPerThousand(groove.price)}
               </p>
             )}
           </div>

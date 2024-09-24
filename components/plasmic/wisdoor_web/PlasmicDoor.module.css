@@ -133,47 +133,6 @@
   max-width: 100%;
   object-fit: cover;
 }
-.bahanPintu {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  justify-self: flex-start;
-  min-width: 0;
-  padding: 0px;
-}
-.bahanPintu > :global(.__wab_flex-container) {
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  min-width: 0;
-  margin-top: calc(0px - 12px);
-  height: calc(100% + 12px);
-}
-.bahanPintu > :global(.__wab_flex-container) > *,
-.bahanPintu > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
-.bahanPintu > :global(.__wab_flex-container) > picture > img,
-.bahanPintu
-  > :global(.__wab_flex-container)
-  > :global(.__wab_slot)
-  > picture
-  > img {
-  margin-top: 12px;
-}
-.text___09NR2 {
-  position: relative;
-  height: auto;
-  font-family: var(--font-universal-sans-text);
-  font-weight: 400;
-  font-size: 20px;
-  color: #000000;
-}
-.typeDoor:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
 .finishingPintu {
   display: flex;
   flex-direction: column;
@@ -212,6 +171,48 @@
   position: relative;
 }
 .finishingDoor:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.groovingPintu {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-self: flex-start;
+  min-width: 0;
+  padding: 0px;
+}
+.groovingPintu > :global(.__wab_flex-container) {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  min-width: 0;
+  margin-top: calc(0px - 12px);
+  height: calc(100% + 12px);
+}
+.groovingPintu > :global(.__wab_flex-container) > *,
+.groovingPintu > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.groovingPintu > :global(.__wab_flex-container) > picture > img,
+.groovingPintu
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-top: 12px;
+}
+.text___0HCv {
+  position: relative;
+  height: auto;
+  font-family: var(--font-universal-sans-text);
+  font-weight: 400;
+  font-size: 20px;
+  color: #000000;
+  padding-bottom: 0px;
+}
+.grooveDoor:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
 }
@@ -290,88 +291,6 @@
   position: relative;
 }
 .frameDoor:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.wrapper:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.finishingKusen {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  justify-self: flex-start;
-  padding: 0px;
-}
-.finishingKusen > :global(.__wab_flex-container) {
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  margin-top: calc(0px - 12px);
-  height: calc(100% + 12px);
-}
-.finishingKusen > :global(.__wab_flex-container) > *,
-.finishingKusen > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
-.finishingKusen > :global(.__wab_flex-container) > picture > img,
-.finishingKusen
-  > :global(.__wab_flex-container)
-  > :global(.__wab_slot)
-  > picture
-  > img {
-  margin-top: 12px;
-}
-.text__g4SLw {
-  height: auto;
-  font-family: var(--font-universal-sans-text);
-  font-weight: 400;
-  font-size: 20px;
-  color: #000000;
-  position: relative;
-}
-.finishingFrame:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.engsel {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  justify-self: flex-start;
-  padding: 0px;
-}
-.engsel > :global(.__wab_flex-container) {
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  margin-top: calc(0px - 12px);
-  height: calc(100% + 12px);
-}
-.engsel > :global(.__wab_flex-container) > *,
-.engsel > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
-.engsel > :global(.__wab_flex-container) > picture > img,
-.engsel
-  > :global(.__wab_flex-container)
-  > :global(.__wab_slot)
-  > picture
-  > img {
-  margin-top: 12px;
-}
-.text___4OjVi {
-  height: auto;
-  font-family: var(--font-universal-sans-text);
-  font-weight: 400;
-  font-size: 20px;
-  color: #000000;
-  position: relative;
-}
-.hingeDoor:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
 }
