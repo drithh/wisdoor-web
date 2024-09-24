@@ -46,16 +46,6 @@ export const SizeDoor = (props: SizeDoorProps) => {
   const size =
     props.sizes.find((size) => size.doorId === storage.id) || props.sizes[0];
 
-  // const [customWidth, setCustomWidth] = useState(storage.size?.width ?? 0);
-  // const [customLength, setCustomLength] = useState(storage.size?.width ?? 0);
-
-  // useEffect(() => {
-  //   const currentWidth = storage.size?.width ?? 0;
-  //   const currentLength = storage.size?.length ?? 0;
-  //   setCustomWidth(currentWidth);
-  //   setCustomLength(currentLength);
-  // }, [storage.size?.width]);
-
   const calculatePrice = (width?: number, length?: number) => {
     const currentWidth = width ?? storage.size.width;
     const currentLength = length ?? storage.size.length;
@@ -120,10 +110,11 @@ export const SizeDoor = (props: SizeDoorProps) => {
           <AccordionTrigger className="hover:no-underline text-sm px-4 py-3 w-full h-full flex justify-start rounded-sm hover:opacity-100  hover:bg-gray-100">
             <div className="flex w-full place-content-between">
               <p>
-                Custom
-                {storage.size.width !== size.defaultWidth &&
-                  storage.size.length !== size.defaultLength &&
-                  `(${storage.size.width} cm x ${storage.size.length}) cm`}
+                Custom{' '}
+                {storage.size.width !== size.defaultWidth ||
+                storage.size.length !== size.defaultLength
+                  ? `(${storage.size.width} cm x ${storage.size.length}) cm`
+                  : ''}
               </p>
               <p className="text-sm text-emerald-600">
                 {priceFormatPerThousand(calculatePrice())}
@@ -136,46 +127,48 @@ export const SizeDoor = (props: SizeDoorProps) => {
               e.stopPropagation();
             }}
           >
-            <div className="flex flex-col gap-2">
-              <Label>Panjang Pintu</Label>
-              <div className="flex gap-2">
-                <Slider
-                  min={size.minLength}
-                  max={size.maxLength}
-                  step={1}
-                  defaultValue={[storage.size.length]}
-                  onValueChange={(value) => {
-                    const currentLength = value[0];
-                    storage.setSize({
-                      name: 'custom',
-                      price: calculatePrice(currentLength),
-                      width: storage.size.width,
-                      length: currentLength,
-                    });
-                  }}
-                />
-                <div className="w-20">{storage.size.length} cm</div>
+            <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-2">
+                <Label>Lebar Pintu</Label>
+                <div className="flex gap-2">
+                  <Slider
+                    min={size.minWidth}
+                    max={size.maxWidth}
+                    step={1}
+                    defaultValue={[storage.size.width]}
+                    onValueChange={(value) => {
+                      const currentWidth = value[0];
+                      storage.setSize({
+                        name: 'custom',
+                        price: calculatePrice(currentWidth),
+                        length: storage.size.length,
+                        width: currentWidth,
+                      });
+                    }}
+                  />
+                  <div className="w-20">{storage.size.width} cm</div>
+                </div>
               </div>
-            </div>
-            <div className="flex flex-col gap-2">
-              <Label>Lebar Pintu</Label>
-              <div className="flex gap-2">
-                <Slider
-                  min={size.minWidth}
-                  max={size.maxWidth}
-                  step={1}
-                  defaultValue={[storage.size.width]}
-                  onValueChange={(value) => {
-                    const currentWidth = value[0];
-                    storage.setSize({
-                      name: 'custom',
-                      price: calculatePrice(currentWidth),
-                      length: storage.size.length,
-                      width: currentWidth,
-                    });
-                  }}
-                />
-                <div className="w-20">{storage.size.width} cm</div>
+              <div className="flex flex-col gap-2">
+                <Label>Panjang Pintu</Label>
+                <div className="flex gap-2">
+                  <Slider
+                    min={size.minLength}
+                    max={size.maxLength}
+                    step={1}
+                    defaultValue={[storage.size.length]}
+                    onValueChange={(value) => {
+                      const currentLength = value[0];
+                      storage.setSize({
+                        name: 'custom',
+                        price: calculatePrice(currentLength),
+                        width: storage.size.width,
+                        length: currentLength,
+                      });
+                    }}
+                  />
+                  <div className="w-20">{storage.size.length} cm</div>
+                </div>
               </div>
             </div>
           </AccordionContent>

@@ -25,54 +25,68 @@ export const DetailPrice = (props: DetailPriceProps) => {
     hinge: state.hinge,
   }));
 
-  const totalPrice =
+  const doorPrice =
     storage.size.price +
     (storage.finishing?.price ?? 0) +
-    (storage.groove?.price ?? 0) +
-    (storage.frame?.price ?? 0) +
+    (storage.groove?.price ?? 0);
+  const framePrice = storage.frame?.price ?? 0;
+  const additionalPrice =
     (storage.keyHole?.price ?? 0) +
     (storage.cylinder?.price ?? 0) +
     (storage.handle?.price ?? 0) +
     (storage.key?.price ?? 0) +
     (storage.hinge?.price ?? 0);
-
-  const generateWhatsappLink = () => {
-    const message = `Halo, saya ingin memesan pintu dengan detail: 
-
+  const totalPrice = doorPrice + framePrice + additionalPrice;
+  const detailDoorMessage = `
   - Model Pintu: ${storage.door.name}
-
   - Detail Pintu: 
     - Ukuran: ${storage.size.name} (${storage.size.length} cm x ${
-      storage.size.width
-    } cm) - ${priceFormat(storage.size.price)}
-    - Finishing: ${storage.finishing?.name} ${
-      storage.finishing?.name !== 'Tanpa Finishing' &&
-      `- ${priceFormat(storage.finishing?.price ?? 0)}`
-    }
-    - Grooving: ${storage.groove?.name} - ${priceFormat(
-      storage.groove?.price ?? 0
-    )}
-  ${
-    storage.frame?.name !== 'Tanpa Frame' &&
-    `- Kusen: ${storage.frame?.name} ${
-      storage.frame?.architrave && 'Architrave'
-    } ${
-      storage.frame?.price === 0
-        ? '(Pending)'
-        : ` - ${priceFormat(storage.frame?.price ?? 0)}`
-    }`
+    storage.size.width
+  } cm) - ${priceFormat(storage.size.price)}
+    - Finishing: ${storage.finishing?.name ?? 'Tanpa Finishing'} ${
+    storage.finishing?.price && storage.finishing.price !== 0
+      ? `- ${priceFormat(storage.finishing.price)}`
+      : ''
   }
-    ${
-      storage.keyHole &&
-      `- Lubang Kunci - ${priceFormat(storage.keyHole.price)}`
-    }
-    ${storage.cylinder && `- Silinder - ${priceFormat(storage.cylinder.price)}`}
-    ${storage.handle && `- Handle - ${priceFormat(storage.handle.price)}`}
-    ${storage.key && `- Kunci - ${priceFormat(storage.key.price)}`}
-    ${storage.hinge && `- Engsel - ${priceFormat(storage.hinge.price)}`}
+    - Grooving: ${storage.groove?.name ?? 'Tanpa Grooving'} ${
+    storage.groove?.price && storage.groove.price !== 0
+      ? `- ${priceFormat(storage.groove.price)}`
+      : ''
+  }`;
 
-    - Total: ${priceFormat(totalPrice)}
-    `;
+  const detailFrameMessage = `
+  - Kusen: ${storage.frame?.name} ${
+    storage.frame?.architrave && 'Architrave'
+  } ${
+    storage.frame?.price === 0
+      ? '(Pending)'
+      : ` - ${priceFormat(storage.frame?.price ?? 0)}`
+  }
+  `;
+  console.log(
+    storage.finishing?.price !== undefined && storage.finishing.price !== 0
+  );
+
+  const detailAdditionalMessage = `
+  ${storage.keyHole && `- Lubang Kunci - ${priceFormat(storage.keyHole.price)}`}
+  ${storage.cylinder && `- Silinder - ${priceFormat(storage.cylinder.price)}`}
+  ${storage.handle && `- Handle - ${priceFormat(storage.handle.price)}`}
+  ${storage.key && `- Kunci - ${priceFormat(storage.key.price)}`}
+  ${storage.hinge && `- Engsel - ${priceFormat(storage.hinge.price)}`}
+  `;
+
+  const generateWhatsappLink = () => {
+    let message = `Halo, saya ingin memesan pintu dengan detail`;
+    if (doorPrice !== 0) {
+      message += detailDoorMessage;
+    }
+    if (framePrice !== 0) {
+      message += detailFrameMessage;
+    }
+    if (additionalPrice !== 0) {
+      message += detailAdditionalMessage;
+    }
+    message += `\n- Total: ${priceFormat(totalPrice)}`;
 
     return `https://wa.me/${props.phone}?text=${encodeURIComponent(message)}`;
   };
@@ -90,45 +104,40 @@ export const DetailPrice = (props: DetailPriceProps) => {
         <p className="font-display text-2xl font-medium">Model Pintumu</p>
         <p className="text-gray-500 text-lg">{storage.door.name}</p>
       </div>
-      {/*}
-      <div className="flex flex-col gap-2 mt-8">
-        <p className="text-xl font-display">Detail Pintu</p>
-        <div className="flex text-gray-500 flex-col gap-2 pl-3">
-          <div className="flex place-content-between">
-            <p className="">
-              <span className="capitalize">{storage.size.name}</span> (
-              {storage.size.length} cm x {storage.size.width} cm)
-            </p>
-            <p className=" text-emerald-700">
-              {priceFormatPerThousand(storage.size.price)}
-            </p>
-          </div>
-          <div className="flex place-content-between">
-            <p className="">{storage.type.name}</p>
-            <p className=" text-emerald-700">
-              {priceFormatPerThousand(storage.type.price)}
-            </p>
-          </div>
-          <div className="flex place-content-between">
-            <p className="">{storage.finishing?.name}</p>
-            <p className=" text-emerald-700">
-              {storage.finishing?.price !== undefined &&
-                storage.finishing?.price !== 0 &&
-                priceFormatPerThousand(storage.finishing?.price)}
-            </p>
-          </div>
-          {storage.keyHole && (
+
+      {doorPrice !== 0 && (
+        <div className="flex flex-col gap-2 mt-8">
+          <p className="text-xl font-display">Detail Pintu</p>
+          <div className="flex text-gray-500 flex-col gap-2 pl-3">
             <div className="flex place-content-between">
-              <p className="">Lubang Kunci</p>
+              <p className="">
+                <span className="capitalize">{storage.size.name}</span> (
+                {storage.size.width} cm x {storage.size.length} cm)
+              </p>
               <p className=" text-emerald-700">
-                {priceFormatPerThousand(storage.keyHole.price)}
+                {priceFormatPerThousand(storage.size.price)}
               </p>
             </div>
-          )}
-     
+            <div className="flex place-content-between">
+              <p className="">{storage.finishing?.name}</p>
+              <p className=" text-emerald-700">
+                {storage.finishing?.price !== undefined &&
+                  storage.finishing?.price !== 0 &&
+                  priceFormatPerThousand(storage.finishing?.price)}
+              </p>
+            </div>
+            <div className="flex place-content-between">
+              <p className="">{storage.groove?.name}</p>
+              <p className=" text-emerald-700">
+                {storage.groove?.price !== undefined &&
+                  storage.groove?.price !== 0 &&
+                  priceFormatPerThousand(storage.groove?.price)}
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
-      {storage.frame?.name !== 'Tanpa Frame' && (
+      )}
+      {framePrice !== 0 && (
         <div className="flex flex-col gap-2">
           <p className="text-xl font-display">Detail Kusen</p>
           <div className="flex text-gray-500 flex-col gap-2 pl-3">
@@ -143,43 +152,70 @@ export const DetailPrice = (props: DetailPriceProps) => {
                   : priceFormatPerThousand(storage.frame?.price ?? 0)}
               </p>
             </div>
-            {storage.frameFinishing?.price !== 0 && (
+          </div>
+        </div>
+      )}
+
+      {additionalPrice !== 0 && (
+        <div className="flex flex-col gap-2 mb-8">
+          <p className="text-xl font-display">Tambahan</p>
+          <div className="flex text-gray-500 flex-col gap-2 pl-3">
+            {storage.keyHole && storage.keyHole.isAdded && (
               <div className="flex place-content-between">
-                <p className="">
-                  {storage.frameFinishing?.name} (
-                  {storage.frameFinishing?.color})
-                </p>
+                <p className="">Lubang Kunci</p>
                 <p className=" text-emerald-700">
-                  {priceFormatPerThousand(storage.frameFinishing?.price ?? 0)}
+                  {priceFormatPerThousand(storage.keyHole.price)}
                 </p>
               </div>
             )}
-            {storage.hinge?.price !== 0 && (
+            {storage.cylinder && storage.cylinder.isAdded && (
               <div className="flex place-content-between">
-                <p className="">{storage.hinge?.name}</p>
+                <p className="">Silinder</p>
                 <p className=" text-emerald-700">
-                  {priceFormatPerThousand(storage.hinge?.price ?? 0)}
+                  {priceFormatPerThousand(storage.cylinder.price)}
+                </p>
+              </div>
+            )}
+            {storage.handle && storage.handle.isAdded && (
+              <div className="flex place-content-between">
+                <p className="">Handle</p>
+                <p className=" text-emerald-700">
+                  {priceFormatPerThousand(storage.handle.price)}
+                </p>
+              </div>
+            )}
+            {storage.key && storage.key.isAdded && (
+              <div className="flex place-content-between">
+                <p className="">Kunci</p>
+                <p className=" text-emerald-700">
+                  {priceFormatPerThousand(storage.key.price)}
+                </p>
+              </div>
+            )}
+            {storage.hinge && storage.hinge.isAdded && (
+              <div className="flex place-content-between">
+                <p className="">Engsel</p>
+                <p className=" text-emerald-700">
+                  {priceFormatPerThousand(storage.hinge.price)}
                 </p>
               </div>
             )}
           </div>
         </div>
       )}
+
       <div className="flex place-content-between">
         <p className="text-xl font-display">Total</p>
         <p className="text-xl text-emerald-700 font-display">
           {priceFormat(totalPrice)}
         </p>
-      </div> */}
+      </div>
       <Link href={generateWhatsappLink()} target="_blank">
         <Button variant="outline" className="h-12 my-4 w-full">
           Pesan Sekarang
         </Button>
       </Link>
       <FloatingNav targetRef={detailPrice} price={totalPrice} />
-      {/* <Card className="sticky bottom-[2rem] left-[50%] -translate-x-1/2 bg-red-300">
-        <CardContent>wd</CardContent>
-      </Card> */}
     </div>
   );
 };

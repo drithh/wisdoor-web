@@ -51,7 +51,7 @@ export interface DoorState {
 export const useDoorStore = create(
   persist<DoorState>(
     (set) => ({
-      door: { id: '', name: '' },
+      door: { id: 'utama', name: 'Pintu Utama' },
       size: { name: '', price: 0, width: 83, length: 210 },
       setDoor: (door) => set({ door }),
       setSize: (size) => set({ size }),
