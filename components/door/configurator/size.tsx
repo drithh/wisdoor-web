@@ -15,9 +15,9 @@ import { priceFormatPerThousand } from '@/lib/price-format';
 
 interface Size {
   doorId: string;
-  defaultLength: number;
-  maxLength: number;
-  minLength: number;
+  defaultHeight: number;
+  maxHeight: number;
+  minHeight: number;
   defaultWidth: number;
   maxWidth: number;
   minWidth: number;
@@ -46,14 +46,14 @@ export const SizeDoor = (props: SizeDoorProps) => {
   const size =
     props.sizes.find((size) => size.doorId === storage.id) || props.sizes[0];
 
-  const calculatePrice = (width?: number, length?: number) => {
+  const calculatePrice = (width?: number, height?: number) => {
     const currentWidth = width ?? storage.size.width;
-    const currentLength = length ?? storage.size.length;
-    const defaultArea = size.defaultWidth * size.defaultLength;
-    const currentArea = currentWidth * currentLength;
+    const currentHeight = height ?? storage.size.height;
+    const defaultArea = size.defaultWidth * size.defaultHeight;
+    const currentArea = currentWidth * currentHeight;
     if (
       currentWidth === size.defaultWidth &&
-      currentLength === size.defaultLength
+      currentHeight === size.defaultHeight
     ) {
       return size.defaultPrice;
     } else if (currentArea > defaultArea) {
@@ -72,14 +72,14 @@ export const SizeDoor = (props: SizeDoorProps) => {
           storage.setSize({
             name: 'standard',
             price: size.defaultPrice,
-            length: size.defaultLength,
+            height: size.defaultHeight,
             width: size.defaultWidth,
           });
         }}
       >
         <div className="flex w-full place-content-between">
           <p>
-            Standard ({size.defaultWidth} cm x {size.defaultLength} cm)
+            Standard ({size.defaultWidth} cm x {size.defaultHeight} cm)
           </p>
           <p className="text-sm text-emerald-700">
             {priceFormatPerThousand(size.defaultPrice)}
@@ -99,7 +99,7 @@ export const SizeDoor = (props: SizeDoorProps) => {
             storage.setSize({
               name: 'custom',
               price: size.defaultPrice,
-              length: size.defaultLength,
+              height: size.defaultHeight,
               width: size.defaultWidth,
             });
           }}
@@ -112,8 +112,8 @@ export const SizeDoor = (props: SizeDoorProps) => {
               <p>
                 Custom{' '}
                 {storage.size.width !== size.defaultWidth ||
-                storage.size.length !== size.defaultLength
-                  ? `(${storage.size.width} cm x ${storage.size.length}) cm`
+                storage.size.height !== size.defaultHeight
+                  ? `(${storage.size.width} cm x ${storage.size.height}) cm`
                   : ''}
               </p>
               <p className="text-sm text-emerald-600">
@@ -141,7 +141,7 @@ export const SizeDoor = (props: SizeDoorProps) => {
                       storage.setSize({
                         name: 'custom',
                         price: calculatePrice(currentWidth),
-                        length: storage.size.length,
+                        height: storage.size.height,
                         width: currentWidth,
                       });
                     }}
@@ -150,24 +150,24 @@ export const SizeDoor = (props: SizeDoorProps) => {
                 </div>
               </div>
               <div className="flex flex-col gap-2">
-                <Label>Panjang Pintu</Label>
+                <Label>Tinggi Pintu</Label>
                 <div className="flex gap-2">
                   <Slider
-                    min={size.minLength}
-                    max={size.maxLength}
+                    min={size.minHeight}
+                    max={size.maxHeight}
                     step={1}
-                    defaultValue={[storage.size.length]}
+                    defaultValue={[storage.size.height]}
                     onValueChange={(value) => {
-                      const currentLength = value[0];
+                      const currentHeight = value[0];
                       storage.setSize({
                         name: 'custom',
-                        price: calculatePrice(currentLength),
+                        price: calculatePrice(currentHeight),
                         width: storage.size.width,
-                        length: currentLength,
+                        height: currentHeight,
                       });
                     }}
                   />
-                  <div className="w-20">{storage.size.length} cm</div>
+                  <div className="w-20">{storage.size.height} cm</div>
                 </div>
               </div>
             </div>

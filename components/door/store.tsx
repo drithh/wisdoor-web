@@ -12,7 +12,7 @@ interface Door {
 
 interface Size extends Item {
   width: number;
-  length: number;
+  height: number;
 }
 
 interface IsAdded {
@@ -52,7 +52,7 @@ export const useDoorStore = create(
   persist<DoorState>(
     (set) => ({
       door: { id: 'utama', name: 'Pintu Utama' },
-      size: { name: '', price: 0, width: 83, length: 210 },
+      size: { name: '', price: 0, width: 83, height: 210 },
       setDoor: (door) => set({ door }),
       setSize: (size) => set({ size }),
       setFinishing: (finishing) => set({ finishing }),

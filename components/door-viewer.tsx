@@ -34,7 +34,9 @@ export function DoorViewer() {
             rotation={[0, Math.PI / 4, 0]}
           >
             <Stage environment={'city'} intensity={5} shadows={false}>
-              <mesh position={[0, 0, 0]}>{/* <Model /> */}</mesh>
+              <mesh position={[0, 0, 0]}>
+                <Model />
+              </mesh>
               <ambientLight intensity={5} />
             </Stage>
           </PresentationControls>

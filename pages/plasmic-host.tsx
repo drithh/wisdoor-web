@@ -343,13 +343,13 @@ registerComponent(SizeDoor, {
           doorId: {
             type: 'string',
           },
-          defaultLength: {
+          defaultHeight: {
             type: 'number',
           },
-          maxLength: {
+          maxHeight: {
             type: 'number',
           },
-          minLength: {
+          minHeight: {
             type: 'number',
           },
           defaultWidth: {

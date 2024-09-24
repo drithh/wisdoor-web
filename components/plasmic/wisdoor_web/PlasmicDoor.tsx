@@ -271,7 +271,10 @@ function PlasmicDoor__RenderFunc(props: {
                         minWidth: null,
                         defaultPrice: null,
                         addedPriceAbove: null,
-                        addedPriceBelow: null
+                        addedPriceBelow: null,
+                        defaultHeight: null,
+                        maxHeight: null,
+                        minHeight: null
                       },
                       {
                         idDoor: null,
@@ -289,7 +292,10 @@ function PlasmicDoor__RenderFunc(props: {
                         minWidth: null,
                         defaultPrice: null,
                         addedPriceAbove: null,
-                        addedPriceBelow: null
+                        addedPriceBelow: null,
+                        minHeight: null,
+                        defaultHeight: null,
+                        maxHeight: null
                       }
                     ];
                     __composite["0"]["idDoor"] = "utama";
@@ -308,6 +314,9 @@ function PlasmicDoor__RenderFunc(props: {
                     __composite["0"]["defaultPrice"] = 560000;
                     __composite["0"]["addedPriceAbove"] = 200000;
                     __composite["0"]["addedPriceBelow"] = 100000;
+                    __composite["0"]["defaultHeight"] = 210;
+                    __composite["0"]["maxHeight"] = 240;
+                    __composite["0"]["minHeight"] = 180;
                     __composite["1"]["idDoor"] = "kamar";
                     __composite["1"]["length"] = 210;
                     __composite["1"]["width"] = 83;
@@ -324,6 +333,9 @@ function PlasmicDoor__RenderFunc(props: {
                     __composite["1"]["defaultPrice"] = 560000;
                     __composite["1"]["addedPriceAbove"] = 200000;
                     __composite["1"]["addedPriceBelow"] = 100000;
+                    __composite["1"]["minHeight"] = 180;
+                    __composite["1"]["defaultHeight"] = 210;
+                    __composite["1"]["maxHeight"] = 240;
                     return __composite;
                   })()}
                 />

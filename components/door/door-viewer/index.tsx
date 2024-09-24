@@ -9,292 +9,218 @@ import { GLTFResult } from './type';
 import { useDoorStore } from '../store';
 import { Group, Mesh, Object3DEventMap } from 'three';
 import { useFrame } from '@react-three/fiber';
+import { HoneyComb } from './honeycomb';
+import { DoorLeaf } from './door-leaf';
 
 export function Model(props: JSX.IntrinsicElements['group']) {
   const result = useGLTF('/models/door.gltf') as GLTFResult;
   const { nodes, materials } = result;
   const storage = useDoorStore();
   const FRAME_WIDTH_SCALE = storage.size.width / 83;
+  const FRAME_HEIGHT_SCALE = storage.size.height / 210;
 
-  // const frameMaterials = storage.frameFinishing?.name.startsWith('Melamin')
-  //   ? materials.melamine
-  //   : materials.mdf;
+  const honeyCombMaterial = materials.mdf;
 
-  // const honeyCombMaterial = storage.type?.name.toLowerCase().startsWith('hmr')
-  //   ? materials.mdf
-  //   : materials.plywood;
+  const totalHinge = 3;
+  const getDoorFinishingMaterial = () => {
+    if (storage.finishing?.name === 'HPL Std') {
+      return materials.tacoSheet;
+    }
+    if (storage.finishing?.name === 'PVC Sheet') {
+      return materials.tacoHpl;
+    }
+    return honeyCombMaterial;
+  };
+  const doorFinishingMaterial = getDoorFinishingMaterial();
 
-  // const totalHinge =
-  //   storage.hinge?.name !== 'Tanpa Engsel'
-  //     ? parseInt(storage.hinge?.name.split('')[0] ?? '0')
-  //     : 0;
+  const doorGroupRef = React.useRef<Group<Object3DEventMap> | null>(null);
+  const rightFrame = React.useRef<Mesh | null>(null);
+  const topFrame = React.useRef<Mesh | null>(null);
 
-  // const getDoorFinishingMaterial = () => {
-  //   if (storage.finishing?.name === 'Melamine') {
-  //     return materials.melamine;
-  //   }
-  //   if (storage.finishing?.name === 'Duco Putih') {
-  //     return materials.ducoWhite;
-  //   }
-  //   if (storage.finishing?.name === 'HPL Std') {
-  //     return materials.tacoSheet;
-  //   }
-  //   if (storage.finishing?.name === 'PVC Sheet') {
-  //     return materials.tacoHpl;
-  //   }
-  //   return honeyCombMaterial;
-  // };
-  // const doorFinishingMaterial = getDoorFinishingMaterial();
+  const rightArch = React.useRef<Group<Object3DEventMap> | null>(null);
+  const topArch = React.useRef<Group<Object3DEventMap> | null>(null);
 
-  // const doorGroupRef = React.useRef<Group<Object3DEventMap> | null>(null);
-  // const rightFrame = React.useRef<Mesh | null>(null);
-  // const topFrame = React.useRef<Mesh | null>(null);
+  const [hinges, setHinges] = React.useState(() =>
+    Array(totalHinge)
+      .fill(null)
+      .map(() => React.createRef<Mesh>())
+  );
 
-  // const rightArch = React.useRef<Group<Object3DEventMap> | null>(null);
-  // const topArch = React.useRef<Group<Object3DEventMap> | null>(null);
+  const updateHinges = (totalHinge: number) => {
+    if (totalHinge > hinges.length) {
+      setHinges([
+        ...hinges,
+        ...Array(totalHinge - hinges.length)
+          .fill(null)
+          .map(() => React.createRef<Mesh>()),
+      ]);
+    } else if (totalHinge < hinges.length) {
+      setHinges(hinges.slice(0, totalHinge));
+    }
+  };
 
-  // const [hinges, setHinges] = React.useState(() =>
-  //   Array(totalHinge)
-  //     .fill(null)
-  //     .map(() => React.createRef<Mesh>())
-  // );
+  useEffect(() => {
+    updateHinges(totalHinge);
+  }, [totalHinge]);
 
-  // const updateHinges = (totalHinge: number) => {
-  //   if (totalHinge > hinges.length) {
-  //     setHinges([
-  //       ...hinges,
-  //       ...Array(totalHinge - hinges.length)
-  //         .fill(null)
-  //         .map(() => React.createRef<Mesh>()),
-  //     ]);
-  //   } else if (totalHinge < hinges.length) {
-  //     setHinges(hinges.slice(0, totalHinge));
-  //   }
-  // };
+  useFrame(() => {
+    const ANIMATION_SPEED = 0.1;
+    if (doorGroupRef.current) {
+      doorGroupRef.current.scale.lerp(
+        { x: FRAME_WIDTH_SCALE, y: FRAME_HEIGHT_SCALE, z: 1 },
+        ANIMATION_SPEED
+      );
+    }
+    // if (rightFrame.current) {
+    //   rightFrame.current.position.lerp(
+    //     { x: -0.009 + 0.82 * (FRAME_WIDTH_SCALE - 1), y: -2.16, z: -0.06 },
+    //     ANIMATION_SPEED
+    //   );
+    // }
+    // if (topFrame.current) {
+    //   topFrame.current.scale.lerp(
+    //     { x: FRAME_WIDTH_SCALE, y: 1, z: 1 },
+    //     ANIMATION_SPEED
+    //   );
+    // }
 
-  // useEffect(() => {
-  //   updateHinges(totalHinge);
-  // }, [totalHinge]);
+    // if (rightArch.current) {
+    //   rightArch.current.position.lerp(
+    //     { x: 0.0005 + 0.82 * (FRAME_WIDTH_SCALE - 1), y: -2.16, z: -0.06 },
+    //     ANIMATION_SPEED
+    //   );
+    // }
+    // if (topArch.current) {
+    //   topArch.current.scale.lerp(
+    //     { x: FRAME_WIDTH_SCALE * 1.02, y: 1, z: 1 },
+    //     ANIMATION_SPEED
+    //   );
+    // }
+    // if (hinges.length === 1) {
+    //   const hinge = hinges[0];
+    //   hinge.current?.position.lerp(
+    //     { x: 0.809 + 0.88 * (FRAME_WIDTH_SCALE - 1), y: 2.034 / 2, z: 0 },
+    //     ANIMATION_SPEED
+    //   );
+    // } else if (hinges.length > 1) {
+    //   const distance = 0.2;
+    //   const gap = (2.034 - distance * 2) / (hinges.length - 1);
 
-  // useFrame(() => {
-  //   const ANIMATION_SPEED = 0.1;
-  //   if (doorGroupRef.current) {
-  //     doorGroupRef.current.scale.lerp(
-  //       { x: FRAME_WIDTH_SCALE, y: 1, z: 1 },
-  //       ANIMATION_SPEED
-  //     );
-  //   }
-  //   if (rightFrame.current) {
-  //     rightFrame.current.position.lerp(
-  //       { x: -0.009 + 0.82 * (FRAME_WIDTH_SCALE - 1), y: -2.16, z: -0.06 },
-  //       ANIMATION_SPEED
-  //     );
-  //   }
-  //   if (topFrame.current) {
-  //     topFrame.current.scale.lerp(
-  //       { x: FRAME_WIDTH_SCALE, y: 1, z: 1 },
-  //       ANIMATION_SPEED
-  //     );
-  //   }
-
-  //   if (rightArch.current) {
-  //     rightArch.current.position.lerp(
-  //       { x: 0.0005 + 0.82 * (FRAME_WIDTH_SCALE - 1), y: -2.16, z: -0.06 },
-  //       ANIMATION_SPEED
-  //     );
-  //   }
-  //   if (topArch.current) {
-  //     topArch.current.scale.lerp(
-  //       { x: FRAME_WIDTH_SCALE * 1.02, y: 1, z: 1 },
-  //       ANIMATION_SPEED
-  //     );
-  //   }
-  //   if (hinges.length === 1) {
-  //     const hinge = hinges[0];
-  //     hinge.current?.position.lerp(
-  //       { x: 0.809 + 0.88 * (FRAME_WIDTH_SCALE - 1), y: 2.034 / 2, z: 0 },
-  //       ANIMATION_SPEED
-  //     );
-  //   } else if (hinges.length > 1) {
-  //     const distance = 0.2;
-  //     const gap = (2.034 - distance * 2) / (hinges.length - 1);
-
-  //     hinges.forEach((hinge, index) => {
-  //       hinge.current?.position.lerp(
-  //         {
-  //           x: 0.811 + 0.81 * (FRAME_WIDTH_SCALE - 1),
-  //           y: distance + index * gap,
-  //           z: -0.005,
-  //         },
-  //         ANIMATION_SPEED
-  //       );
-  //     });
-  //   }
-  // });
+    //   hinges.forEach((hinge, index) => {
+    //     hinge.current?.position.lerp(
+    //       {
+    //         x: 0.811 + 0.81 * (FRAME_WIDTH_SCALE - 1),
+    //         y: distance + index * gap,
+    //         z: -0.005,
+    //       },
+    //       ANIMATION_SPEED
+    //     );
+    //   });
+    // }
+  });
 
   return (
-    <div></div>
-    // <group {...props} dispose={null}>
-    //   <group ref={doorGroupRef}>
-    //     {storage.finishing && (
-    //       <mesh
-    //         geometry={
-    //           storage.weatherStrip && storage.weatherStrip?.amount !== 0
-    //             ? nodes.Horizontal2Stripe.geometry
-    //             : nodes.Solid.geometry
-    //         }
-    //         material={doorFinishingMaterial}
-    //         position={[-0.01, 0, 0.03]}
-    //       />
-    //     )}
-    //     <group>
-    //       <mesh
-    //         geometry={nodes.Paper1.geometry}
-    //         material={materials.cardboard}
-    //         position={[0, -1.669, 0]}
-    //       />
-    //       <mesh
-    //         geometry={nodes.Paper2.geometry}
-    //         material={materials.cardboard}
-    //         position={[0, -1.431, 0]}
-    //       />
-    //       <mesh
-    //         geometry={nodes.Paper3.geometry}
-    //         material={materials.cardboard}
-    //         position={[0, -1.192, 0]}
-    //       />
-    //       <mesh
-    //         geometry={nodes.Paper4.geometry}
-    //         material={materials.cardboard}
-    //         position={[0, -0.954, 0]}
-    //       />
-    //       <mesh
-    //         geometry={nodes.Paper5.geometry}
-    //         material={materials.cardboard}
-    //         position={[0, -0.715, 0]}
-    //       />
-    //       <mesh
-    //         geometry={nodes.Paper6.geometry}
-    //         material={materials.cardboard}
-    //         position={[0, -0.477, 0]}
-    //       />
-    //       <mesh
-    //         geometry={nodes.Paper7.geometry}
-    //         material={materials.cardboard}
-    //         position={[0, -0.238, 0]}
-    //       />
-    //       <mesh
-    //         geometry={nodes.Paper8.geometry}
-    //         material={materials.cardboard}
-    //       />
-    //       <mesh
-    //         geometry={nodes.Cube004.geometry}
-    //         material={honeyCombMaterial}
-    //       />
-    //       <mesh
-    //         geometry={nodes.Cube004_1.geometry}
-    //         material={honeyCombMaterial}
-    //       />
-    //       <mesh
-    //         geometry={nodes.Cube004_2.geometry}
-    //         material={honeyCombMaterial}
-    //       />
-    //       <mesh
-    //         geometry={nodes.Cube004_3.geometry}
-    //         material={honeyCombMaterial}
-    //       />
-    //     </group>
-    //   </group>
+    <group {...props} dispose={null}>
+      <group ref={doorGroupRef}>
+        {storage.finishing && (
+          <DoorLeaf
+            gltfResult={result}
+            name={storage.finishing.name}
+            material={doorFinishingMaterial}
+          />
+        )}
+        <HoneyComb gltfResult={result} material={honeyCombMaterial} />
+      </group>
 
-    //   {hinges.map((mesh, index) => (
-    //     <mesh
-    //       key={index}
-    //       geometry={nodes.Hinge.geometry}
-    //       material={materials.chrome2}
-    //       ref={mesh}
-    //       position={[0.809, 2.034, 0]}
-    //     />
-    //   ))}
-    //   {storage.keyHole && storage.keyHole.isKeyHole && (
-    //     <group>
-    //       <mesh geometry={nodes.Handle.geometry} material={materials.chrome2} />
-    //       <mesh
-    //         geometry={nodes.Handle_1.geometry}
-    //         material={materials.chrome1}
-    //       />
-    //       <group position={[0, 0, 0.04]} rotation={[0, 0, -Math.PI]} scale={-1}>
-    //         <mesh
-    //           geometry={nodes.Handle.geometry}
-    //           material={materials.chrome2}
-    //         />
-    //         <mesh
-    //           geometry={nodes.Handle_1.geometry}
-    //           material={materials.chrome1}
-    //         />
-    //       </group>
-    //     </group>
-    //   )}
+      {/* {hinges.map((mesh, index) => (
+        <mesh
+          key={index}
+          geometry={nodes.Hinge.geometry}
+          material={materials.chrome2}
+          ref={mesh}
+          position={[0.809, 2.034, 0]}
+        />
+      ))}
+      {storage.keyHole && storage.keyHole.isKeyHole && (
+        <group>
+          <mesh geometry={nodes.Handle.geometry} material={materials.chrome2} />
+          <mesh
+            geometry={nodes.Handle_1.geometry}
+            material={materials.chrome1}
+          />
+          <group position={[0, 0, 0.04]} rotation={[0, 0, -Math.PI]} scale={-1}>
+            <mesh
+              geometry={nodes.Handle.geometry}
+              material={materials.chrome2}
+            />
+            <mesh
+              geometry={nodes.Handle_1.geometry}
+              material={materials.chrome1}
+            />
+          </group>
+        </group>
+      )} */}
 
-    //   {storage.frame?.architrave && (
-    //     <group position={[0.001, 2.16, 0.06]}>
-    //       <mesh
-    //         geometry={nodes.ArchFrontLeft.geometry}
-    //         material={frameMaterials}
-    //         position={[-0.001, -2.16, -0.06]}
-    //       />
-    //       <mesh
-    //         geometry={nodes.ArchBackLeft.geometry}
-    //         material={frameMaterials}
-    //         position={[-0.001, -2.16, -0.06]}
-    //       />
-    //       <group ref={rightArch} position={[-0.011, -2.16, -0.06]}>
-    //         <mesh
-    //           geometry={nodes.ArchFrontRight.geometry}
-    //           material={frameMaterials}
-    //         />
-    //         <mesh
-    //           geometry={nodes.ArchBackRight.geometry}
-    //           material={frameMaterials}
-    //         />
-    //       </group>
+      {/* {storage.frame?.architrave && (
+        <group position={[0.001, 2.16, 0.06]}>
+          <mesh
+            geometry={nodes.ArchFrontLeft.geometry}
+            material={frameMaterials}
+            position={[-0.001, -2.16, -0.06]}
+          />
+          <mesh
+            geometry={nodes.ArchBackLeft.geometry}
+            material={frameMaterials}
+            position={[-0.001, -2.16, -0.06]}
+          />
+          <group ref={rightArch} position={[-0.011, -2.16, -0.06]}>
+            <mesh
+              geometry={nodes.ArchFrontRight.geometry}
+              material={frameMaterials}
+            />
+            <mesh
+              geometry={nodes.ArchBackRight.geometry}
+              material={frameMaterials}
+            />
+          </group>
 
-    //       <group ref={topArch}>
-    //         <mesh
-    //           geometry={nodes.ArchFrontTop.geometry}
-    //           material={frameMaterials}
-    //           position={[-0.001, -2.16, -0.06]}
-    //         />
+          <group ref={topArch}>
+            <mesh
+              geometry={nodes.ArchFrontTop.geometry}
+              material={frameMaterials}
+              position={[-0.001, -2.16, -0.06]}
+            />
 
-    //         <mesh
-    //           geometry={nodes.ArchBackTop.geometry}
-    //           material={frameMaterials}
-    //           position={[-0.001, -2.16, -0.06]}
-    //         />
-    //       </group>
-    //     </group>
-    //   )}
-    //   {storage.frame !== undefined && storage.frame.name !== 'Tanpa Kusen' && (
-    //     <group position={[0.001, 2.16, 0.06]}>
-    //       <mesh
-    //         geometry={nodes.FrameLeft.geometry}
-    //         material={frameMaterials}
-    //         position={[-0.001, -2.16, -0.06]}
-    //       />
-    //       <mesh
-    //         geometry={nodes.FrameRight.geometry}
-    //         material={frameMaterials}
-    //         ref={rightFrame}
-    //         position={[-0.001, -2.16, -0.06]}
-    //       />
-    //       <mesh
-    //         ref={topFrame}
-    //         geometry={nodes.FrameTop.geometry}
-    //         material={frameMaterials}
-    //         position={[-0.001, -2.16, -0.06]}
-    //       />
-    //     </group>
-    //   )}
-    // </group>
+            <mesh
+              geometry={nodes.ArchBackTop.geometry}
+              material={frameMaterials}
+              position={[-0.001, -2.16, -0.06]}
+            />
+          </group>
+        </group>
+      )}
+      {storage.frame !== undefined && storage.frame.name !== 'Tanpa Kusen' && (
+        <group position={[0.001, 2.16, 0.06]}>
+          <mesh
+            geometry={nodes.FrameLeft.geometry}
+            material={frameMaterials}
+            position={[-0.001, -2.16, -0.06]}
+          />
+          <mesh
+            geometry={nodes.FrameRight.geometry}
+            material={frameMaterials}
+            ref={rightFrame}
+            position={[-0.001, -2.16, -0.06]}
+          />
+          <mesh
+            ref={topFrame}
+            geometry={nodes.FrameTop.geometry}
+            material={frameMaterials}
+            position={[-0.001, -2.16, -0.06]}
+          />
+        </group>
+      )} */}
+    </group>
   );
 }
 
