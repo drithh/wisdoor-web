@@ -40,7 +40,7 @@ export const DetailPrice = (props: DetailPriceProps) => {
   const detailDoorMessage = `
   - Model Pintu: ${storage.door.name}
   - Detail Pintu: 
-    - Ukuran: ${storage.size.name} (${storage.size.length} cm x ${
+    - Ukuran: ${storage.size.name} (${storage.size.height} cm x ${
     storage.size.width
   } cm) - ${priceFormat(storage.size.price)}
     - Finishing: ${storage.finishing?.name ?? 'Tanpa Finishing'} ${
@@ -63,9 +63,6 @@ export const DetailPrice = (props: DetailPriceProps) => {
       : ` - ${priceFormat(storage.frame?.price ?? 0)}`
   }
   `;
-  console.log(
-    storage.finishing?.price !== undefined && storage.finishing.price !== 0
-  );
 
   const detailAdditionalMessage = `
   ${storage.keyHole && `- Lubang Kunci - ${priceFormat(storage.keyHole.price)}`}
@@ -112,7 +109,7 @@ export const DetailPrice = (props: DetailPriceProps) => {
             <div className="flex place-content-between">
               <p className="">
                 <span className="capitalize">{storage.size.name}</span> (
-                {storage.size.width} cm x {storage.size.length} cm)
+                {storage.size.width} cm x {storage.size.height} cm)
               </p>
               <p className=" text-emerald-700">
                 {priceFormatPerThousand(storage.size.price)}

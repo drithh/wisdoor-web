@@ -13,6 +13,7 @@ import { HoneyComb } from './honeycomb';
 import { DoorLeaf } from './door-leaf';
 import { Hinge } from './hinge';
 import { Frame } from './frame';
+import { Architrave } from './architrave';
 // import { Scale } from 'lucide-react';
 
 export function Model(props: JSX.IntrinsicElements['group']) {
@@ -70,86 +71,14 @@ export function Model(props: JSX.IntrinsicElements['group']) {
         material={doorFinishingMaterial}
         DOOR_SCALE={DOOR_SCALE}
       />
-      {/*
-      {storage.keyHole && storage.keyHole.isKeyHole && (
-        <group>
-          <mesh geometry={nodes.Handle.geometry} material={materials.chrome2} />
-          <mesh
-            geometry={nodes.Handle_1.geometry}
-            material={materials.chrome1}
-          />
-          <group position={[0, 0, 0.04]} rotation={[0, 0, -Math.PI]} scale={-1}>
-            <mesh
-              geometry={nodes.Handle.geometry}
-              material={materials.chrome2}
-            />
-            <mesh
-              geometry={nodes.Handle_1.geometry}
-              material={materials.chrome1}
-            />
-          </group>
-        </group>
-      )} */}
-
-      {/* {storage.frame?.architrave && (
-        <group position={[0.001, 2.16, 0.06]}>
-          <mesh
-            geometry={nodes.ArchFrontLeft.geometry}
-            material={frameMaterials}
-            position={[-0.001, -2.16, -0.06]}
-          />
-          <mesh
-            geometry={nodes.ArchBackLeft.geometry}
-            material={frameMaterials}
-            position={[-0.001, -2.16, -0.06]}
-          />
-          <group ref={rightArch} position={[-0.011, -2.16, -0.06]}>
-            <mesh
-              geometry={nodes.ArchFrontRight.geometry}
-              material={frameMaterials}
-            />
-            <mesh
-              geometry={nodes.ArchBackRight.geometry}
-              material={frameMaterials}
-            />
-          </group>
-
-          <group ref={topArch}>
-            <mesh
-              geometry={nodes.ArchFrontTop.geometry}
-              material={frameMaterials}
-              position={[-0.001, -2.16, -0.06]}
-            />
-
-            <mesh
-              geometry={nodes.ArchBackTop.geometry}
-              material={frameMaterials}
-              position={[-0.001, -2.16, -0.06]}
-            />
-          </group>
-        </group>
+      <Architrave
+        gltfResult={result}
+        material={doorFinishingMaterial}
+        DOOR_SCALE={DOOR_SCALE}
+      />
+      {storage.keyHole?.isAdded && (
+        <mesh geometry={nodes.Hole.geometry} visible={false} />
       )}
-      {storage.frame !== undefined && storage.frame.name !== 'Tanpa Kusen' && (
-        <group position={[0.001, 2.16, 0.06]}>
-          <mesh
-            geometry={nodes.FrameLeft.geometry}
-            material={frameMaterials}
-            position={[-0.001, -2.16, -0.06]}
-          />
-          <mesh
-            geometry={nodes.FrameRight.geometry}
-            material={frameMaterials}
-            ref={rightFrame}
-            position={[-0.001, -2.16, -0.06]}
-          />
-          <mesh
-            ref={topFrame}
-            geometry={nodes.FrameTop.geometry}
-            material={frameMaterials}
-            position={[-0.001, -2.16, -0.06]}
-          />
-        </group>
-      )} */}
     </group>
   );
 }
