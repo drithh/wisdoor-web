@@ -10,7 +10,10 @@ interface WrapperProps {
 export function ViewerWrapper({ className, children }: WrapperProps) {
   return (
     <div
-      className={cn(`flex relative sm:flex-row flex-col w-screen`, className)}
+      className={cn(
+        `flex relative sm:flex-row flex-col overflow-hidden max-h-screen w-screen`,
+        className
+      )}
     >
       {children}
     </div>
