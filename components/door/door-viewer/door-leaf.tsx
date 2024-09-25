@@ -14,7 +14,7 @@ export function DoorLeaf({ gltfResult, name, material }: DoorLeafProps) {
   const getGeometry = () => {
     switch (name.toLowerCase()) {
       case 'simple':
-        return [nodes.Solid.geometry, nodes.SolidHole.geometry];
+        return [nodes.Easy.geometry, nodes.EasyHole.geometry];
       case 'intermediate':
         return [nodes.Medium.geometry, nodes.MediumHole.geometry];
       case 'expert':

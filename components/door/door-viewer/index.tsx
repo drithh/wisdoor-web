@@ -76,7 +76,9 @@ export function Model(props: JSX.IntrinsicElements['group']) {
           <HoneyComb gltfResult={result} material={honeyCombMaterial} />
         )}
       </group>
-      <Hinge gltfResult={result} DOOR_SCALE={DOOR_SCALE} />
+      {storage.hinge?.isAdded && (
+        <Hinge gltfResult={result} DOOR_SCALE={DOOR_SCALE} />
+      )}
       <Frame
         gltfResult={result}
         material={doorFinishingMaterial}
