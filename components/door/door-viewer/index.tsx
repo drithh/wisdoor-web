@@ -39,6 +39,7 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   const doorFinishingMaterial = getDoorFinishingMaterial();
 
   const doorGroupRef = React.useRef<Group<Object3DEventMap> | null>(null);
+  const handleRef = React.useRef<Group<Object3DEventMap> | null>(null);
 
   useFrame(() => {
     if (doorGroupRef.current) {
@@ -47,6 +48,16 @@ export function Model(props: JSX.IntrinsicElements['group']) {
 
       doorGroupRef.current.scale.lerp(
         { x: DOOR_SCALE.width, y: y, z: 1 },
+        ANIMATION_SPEED
+      );
+    }
+    if (handleRef.current) {
+      handleRef.current.position.lerp(
+        {
+          x: -0.019 * (DOOR_SCALE.width - 1),
+          y: 1.1 * (DOOR_SCALE.height - 1),
+          z: 0,
+        },
         ANIMATION_SPEED
       );
     }
@@ -76,9 +87,26 @@ export function Model(props: JSX.IntrinsicElements['group']) {
         material={doorFinishingMaterial}
         DOOR_SCALE={DOOR_SCALE}
       />
-      {storage.keyHole?.isAdded && (
-        <mesh geometry={nodes.Hole.geometry} visible={false} />
-      )}
+      <group ref={handleRef}>
+        {storage.key?.isAdded && (
+          <mesh
+            geometry={nodes.DoorKey.geometry}
+            material={materials.chrome2}
+          />
+        )}
+        {storage.handle?.isAdded && (
+          <mesh
+            geometry={nodes.DoorHandle.geometry}
+            material={materials.chrome2}
+          />
+        )}
+        {storage.cylinder?.isAdded && (
+          <mesh
+            geometry={nodes.DoorLock.geometry}
+            material={materials.chrome2}
+          />
+        )}
+      </group>
     </group>
   );
 }

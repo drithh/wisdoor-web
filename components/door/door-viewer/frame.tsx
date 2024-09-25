@@ -68,7 +68,7 @@ export function Frame({ gltfResult, material, DOOR_SCALE }: FrameProps) {
   }
   return (
     <group>
-      <group position={[0, 2.1, 0.04]} ref={topFrameRef}>
+      <group scale={[-1, 1, 1]} position={[0, 2.1, 0.04]} ref={topFrameRef}>
         <mesh
           geometry={nodes.BackTopFrame.geometry}
           material={material}

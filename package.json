@@ -11,7 +11,7 @@
     "pages:build": "pnpm dlx @cloudflare/next-on-pages",
     "preview": "pnpm run pages:build && wrangler pages dev",
     "deploy": "pnpm run pages:build && wrangler pages deploy",
-    "gltf": "pnpm dlx gltfjsx public/models/door.gltf --t --o components/door/door.tsx"
+    "gltf": "pnpm dlx gltfjsx public/models/door.gltf --t --K --o components/door/door.tsx"
   },
   "packageManager": "pnpm@9.7.0",
   "dependencies": {

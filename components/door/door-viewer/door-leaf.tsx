@@ -1,5 +1,6 @@
 import { Material } from 'three';
 import { GLTFResult } from './type';
+import { useDoorStore } from '../store';
 
 interface DoorLeafProps {
   gltfResult: GLTFResult;
@@ -9,20 +10,26 @@ interface DoorLeafProps {
 
 export function DoorLeaf({ gltfResult, name, material }: DoorLeafProps) {
   const { nodes } = gltfResult;
-  switch (name.toLowerCase()) {
-    case 'simple':
-      return <mesh geometry={nodes.Easy.geometry} material={material} />;
-    case 'intermediate':
-      return (
-        <group>
-          <mesh geometry={nodes.MediumLeft.geometry} material={material} />
-          <mesh geometry={nodes.MediumMid.geometry} material={material} />
-          <mesh geometry={nodes.MediumRight.geometry} material={material} />
-        </group>
-      );
-    case 'expert':
-      return <mesh geometry={nodes.Hard.geometry} material={material} />;
-    default:
-      return <mesh geometry={nodes.Solid.geometry} material={material} />;
-  }
+  const { keyHole } = useDoorStore();
+  const getGeometry = () => {
+    switch (name.toLowerCase()) {
+      case 'simple':
+        return [nodes.Solid.geometry, nodes.SolidHole.geometry];
+      case 'intermediate':
+        return [nodes.Medium.geometry, nodes.MediumHole.geometry];
+      case 'expert':
+        return [nodes.Hard.geometry, nodes.HardHole.geometry];
+      default:
+        return [nodes.Solid.geometry, nodes.SolidHole.geometry];
+    }
+  };
+  const [doorGeometry, holeGeometry] = getGeometry();
+  return (
+    <group>
+      <mesh geometry={doorGeometry} material={material} />
+      {keyHole?.isAdded === true ? null : (
+        <mesh geometry={holeGeometry} material={material} />
+      )}
+    </group>
+  );
 }

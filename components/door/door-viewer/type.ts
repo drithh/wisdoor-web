@@ -10,12 +10,14 @@ export interface Scale {
 
 export type GLTFResult = GLTF & {
   nodes: {
-    MediumLeft: Mesh;
-    MediumMid: Mesh;
-    MediumRight: Mesh;
     Easy: Mesh;
+    EasyHole: Mesh;
     Hard: Mesh;
+    HardHole: Mesh;
+    Medium: Mesh;
+    MediumHole: Mesh;
     Solid: Mesh;
+    SolidHole: Mesh;
     Paper1: Mesh;
     Paper2: Mesh;
     Paper3: Mesh;
@@ -25,23 +27,22 @@ export type GLTFResult = GLTF & {
     Paper7: Mesh;
     Paper8: Mesh;
     HoneyCombFrame: Mesh;
-    BackLeftFrame: Mesh;
-    BackRightFrame: Mesh;
     BackTopFrame: Mesh;
-    BackLeftArch: Mesh;
-    BackRightArch: Mesh;
-    BackTopArch: Mesh;
-    FrontLeftFrame: Mesh;
-    FrontRightFrame: Mesh;
     FrontTopFrame: Mesh;
-    FrontLeftArch: Mesh;
-    FrontRightArch: Mesh;
-    FrontTopArch: Mesh;
+    BackLeftFrame: Mesh;
+    FrontLeftFrame: Mesh;
     DoorHandle: Mesh;
     DoorKey: Mesh;
     DoorLock: Mesh;
+    BackRightFrame: Mesh;
+    FrontRightFrame: Mesh;
+    BackLeftArch: Mesh;
+    FrontLeftArch: Mesh;
+    BackRightArch: Mesh;
+    FrontRightArch: Mesh;
+    BackTopArch: Mesh;
+    FrontTopArch: Mesh;
     Hinge: Mesh;
-    Hole: Mesh;
   };
   materials: {
     melamine: MeshStandardMaterial;

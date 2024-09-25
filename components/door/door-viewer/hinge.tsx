@@ -20,9 +20,9 @@ export function Hinge({ gltfResult, DOOR_SCALE }: HingeProps) {
     if (ref.current) {
       ref.current?.position.lerp(
         {
-          x: 0.821 + 0.82 * (DOOR_SCALE.width - 1),
+          x: 0.81 + 0.81 * (DOOR_SCALE.width - 1),
           y: 1 * (DOOR_SCALE.height - 1),
-          z: 0.005,
+          z: 0.001,
         },
         ANIMATION_SPEED
       );

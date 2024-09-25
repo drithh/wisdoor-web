@@ -18,28 +18,28 @@ export function DoorViewer() {
       <Canvas className="!h-[24rem] sm:!h-screen">
         <Suspense fallback={<Center>Loading...</Center>}>
           <OrbitControls
-            enableRotate={true}
-            enablePan={true}
+            enableRotate={false}
+            enablePan={false}
             enableZoom={true}
             minZoom={0.5}
             maxZoom={0.6}
             maxPolarAngle={Math.PI}
             minPolarAngle={0}
           />
-          {/* <PresentationControls
+          <PresentationControls
             speed={1.5}
             config={{ mass: 1, tension: 170, friction: 26 }}
             global
             polar={[-Math.PI / 4, Math.PI / 4]}
             rotation={[0, Math.PI / 4, 0]}
-          > */}
-          <Stage environment={'city'} intensity={5} shadows={false}>
-            <mesh position={[0, 0, 0]}>
-              <Model />
-            </mesh>
-            <ambientLight intensity={5} />
-          </Stage>
-          {/* </PresentationControls> */}
+          >
+            <Stage environment={'city'} intensity={5} shadows={false}>
+              <mesh position={[0, 0, 0]}>
+                <Model />
+              </mesh>
+              <ambientLight intensity={5} />
+            </Stage>
+          </PresentationControls>
         </Suspense>
       </Canvas>
     </div>
