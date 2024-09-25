@@ -1,6 +1,13 @@
 import { Mesh, MeshPhysicalMaterial, MeshStandardMaterial } from 'three';
 import { GLTF } from 'three-stdlib';
 
+export const ANIMATION_SPEED = 0.1;
+
+export interface Scale {
+  width: number;
+  height: number;
+}
+
 export type GLTFResult = GLTF & {
   nodes: {
     MediumLeft: Mesh;

@@ -9,7 +9,8 @@ interface DoorLeafProps {
 
 export function DoorLeaf({ gltfResult, name, material }: DoorLeafProps) {
   const { nodes } = gltfResult;
-  switch (name) {
+  console.log(name);
+  switch (name.toLowerCase()) {
     case 'simple':
       return <mesh geometry={nodes.Easy.geometry} material={material} />;
     case 'intermediate':

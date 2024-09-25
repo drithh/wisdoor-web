@@ -5,23 +5,27 @@ Command: npx gltfjsx@6.5.0 public/models/models/door.gltf --t --o components/doo
 
 import React, { useEffect } from 'react';
 import { useGLTF } from '@react-three/drei';
-import { GLTFResult } from './type';
+import { ANIMATION_SPEED, GLTFResult, Scale } from './type';
 import { useDoorStore } from '../store';
 import { Group, Mesh, Object3DEventMap } from 'three';
 import { useFrame } from '@react-three/fiber';
 import { HoneyComb } from './honeycomb';
 import { DoorLeaf } from './door-leaf';
+import { Hinge } from './hinge';
+import { Frame } from './frame';
+// import { Scale } from 'lucide-react';
 
 export function Model(props: JSX.IntrinsicElements['group']) {
   const result = useGLTF('/models/door.gltf') as GLTFResult;
   const { nodes, materials } = result;
   const storage = useDoorStore();
-  const FRAME_WIDTH_SCALE = storage.size.width / 83;
-  const FRAME_HEIGHT_SCALE = storage.size.height / 210;
+  const DOOR_SCALE: Scale = {
+    width: storage.size.width / 83,
+    height: storage.size.height / 210,
+  };
 
   const honeyCombMaterial = materials.mdf;
 
-  const totalHinge = 3;
   const getDoorFinishingMaterial = () => {
     if (storage.finishing?.name === 'HPL Std') {
       return materials.tacoSheet;
@@ -34,113 +38,39 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   const doorFinishingMaterial = getDoorFinishingMaterial();
 
   const doorGroupRef = React.useRef<Group<Object3DEventMap> | null>(null);
-  const rightFrame = React.useRef<Mesh | null>(null);
-  const topFrame = React.useRef<Mesh | null>(null);
-
-  const rightArch = React.useRef<Group<Object3DEventMap> | null>(null);
-  const topArch = React.useRef<Group<Object3DEventMap> | null>(null);
-
-  const [hinges, setHinges] = React.useState(() =>
-    Array(totalHinge)
-      .fill(null)
-      .map(() => React.createRef<Mesh>())
-  );
-
-  const updateHinges = (totalHinge: number) => {
-    if (totalHinge > hinges.length) {
-      setHinges([
-        ...hinges,
-        ...Array(totalHinge - hinges.length)
-          .fill(null)
-          .map(() => React.createRef<Mesh>()),
-      ]);
-    } else if (totalHinge < hinges.length) {
-      setHinges(hinges.slice(0, totalHinge));
-    }
-  };
-
-  useEffect(() => {
-    updateHinges(totalHinge);
-  }, [totalHinge]);
 
   useFrame(() => {
-    const ANIMATION_SPEED = 0.1;
     if (doorGroupRef.current) {
+      const y =
+        DOOR_SCALE.height < 1 ? DOOR_SCALE.height : DOOR_SCALE.height * 1.005;
+
       doorGroupRef.current.scale.lerp(
-        { x: FRAME_WIDTH_SCALE, y: FRAME_HEIGHT_SCALE, z: 1 },
+        { x: DOOR_SCALE.width, y: y, z: 1 },
         ANIMATION_SPEED
       );
     }
-    // if (rightFrame.current) {
-    //   rightFrame.current.position.lerp(
-    //     { x: -0.009 + 0.82 * (FRAME_WIDTH_SCALE - 1), y: -2.16, z: -0.06 },
-    //     ANIMATION_SPEED
-    //   );
-    // }
-    // if (topFrame.current) {
-    //   topFrame.current.scale.lerp(
-    //     { x: FRAME_WIDTH_SCALE, y: 1, z: 1 },
-    //     ANIMATION_SPEED
-    //   );
-    // }
-
-    // if (rightArch.current) {
-    //   rightArch.current.position.lerp(
-    //     { x: 0.0005 + 0.82 * (FRAME_WIDTH_SCALE - 1), y: -2.16, z: -0.06 },
-    //     ANIMATION_SPEED
-    //   );
-    // }
-    // if (topArch.current) {
-    //   topArch.current.scale.lerp(
-    //     { x: FRAME_WIDTH_SCALE * 1.02, y: 1, z: 1 },
-    //     ANIMATION_SPEED
-    //   );
-    // }
-    // if (hinges.length === 1) {
-    //   const hinge = hinges[0];
-    //   hinge.current?.position.lerp(
-    //     { x: 0.809 + 0.88 * (FRAME_WIDTH_SCALE - 1), y: 2.034 / 2, z: 0 },
-    //     ANIMATION_SPEED
-    //   );
-    // } else if (hinges.length > 1) {
-    //   const distance = 0.2;
-    //   const gap = (2.034 - distance * 2) / (hinges.length - 1);
-
-    //   hinges.forEach((hinge, index) => {
-    //     hinge.current?.position.lerp(
-    //       {
-    //         x: 0.811 + 0.81 * (FRAME_WIDTH_SCALE - 1),
-    //         y: distance + index * gap,
-    //         z: -0.005,
-    //       },
-    //       ANIMATION_SPEED
-    //     );
-    //   });
-    // }
   });
 
   return (
     <group {...props} dispose={null}>
       <group ref={doorGroupRef}>
-        {storage.finishing && (
+        {storage.finishing ? (
           <DoorLeaf
             gltfResult={result}
-            name={storage.finishing.name}
+            name={storage.groove?.name ?? ''}
             material={doorFinishingMaterial}
           />
+        ) : (
+          <HoneyComb gltfResult={result} material={honeyCombMaterial} />
         )}
-        <HoneyComb gltfResult={result} material={honeyCombMaterial} />
       </group>
-
-      {/* {hinges.map((mesh, index) => (
-        <mesh
-          key={index}
-          geometry={nodes.Hinge.geometry}
-          material={materials.chrome2}
-          ref={mesh}
-          position={[0.809, 2.034, 0]}
-        />
-      ))}
+      <Hinge gltfResult={result} DOOR_SCALE={DOOR_SCALE} />
+      <Frame
+        gltfResult={result}
+        material={doorFinishingMaterial}
+        DOOR_SCALE={DOOR_SCALE}
+      />
+      {/*
       {storage.keyHole && storage.keyHole.isKeyHole && (
         <group>
           <mesh geometry={nodes.Handle.geometry} material={materials.chrome2} />
