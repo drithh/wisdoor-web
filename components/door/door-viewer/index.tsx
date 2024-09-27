@@ -39,7 +39,8 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   const doorFinishingMaterial = getDoorFinishingMaterial();
 
   const doorGroupRef = React.useRef<Group<Object3DEventMap> | null>(null);
-  const handleRef = React.useRef<Group<Object3DEventMap> | null>(null);
+  const handleRef = React.useRef<Mesh | null>(null);
+  const keyRef = React.useRef<Mesh | null>(null);
   const doorLockRef = React.useRef<Mesh | null>(null);
 
   useFrame(() => {
@@ -65,8 +66,18 @@ export function Model(props: JSX.IntrinsicElements['group']) {
     if (handleRef.current) {
       handleRef.current.position.lerp(
         {
-          x: -0.019 * (DOOR_SCALE.width - 1),
+          x: 0.027 * (DOOR_SCALE.width - 1),
           y: 1.1 * (DOOR_SCALE.height - 1),
+          z: 0,
+        },
+        ANIMATION_SPEED
+      );
+    }
+    if (keyRef.current) {
+      keyRef.current.position.lerp(
+        {
+          x: 0.027 * (DOOR_SCALE.width - 1),
+          y: 1 * (DOOR_SCALE.height - 1),
           z: 0,
         },
         ANIMATION_SPEED
@@ -100,26 +111,20 @@ export function Model(props: JSX.IntrinsicElements['group']) {
         material={doorFinishingMaterial}
         DOOR_SCALE={DOOR_SCALE}
       />
-      <group ref={handleRef}>
-        {storage.key?.isAdded && (
-          <mesh
-            geometry={nodes.DoorKey.geometry}
-            material={materials.chrome2}
-          />
-        )}
-        {storage.handle?.isAdded && (
-          <mesh
-            geometry={nodes.DoorHandle.geometry}
-            material={materials.chrome2}
-          />
-        )}
-        {storage.cylinder?.isAdded && (
-          <mesh
-            geometry={nodes.DoorLock.geometry}
-            material={materials.chrome2}
-          />
-        )}
-      </group>
+      {storage.key?.isAdded && (
+        <mesh
+          geometry={nodes.DoorKey.geometry}
+          material={materials.chrome2}
+          ref={keyRef}
+        />
+      )}
+      {storage.handle?.isAdded && (
+        <mesh
+          geometry={nodes.DoorHandle.geometry}
+          material={materials.chrome2}
+          ref={handleRef}
+        />
+      )}
       {storage.cylinder?.isAdded && (
         <mesh
           geometry={nodes.DoorLock.geometry}

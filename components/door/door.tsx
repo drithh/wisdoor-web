@@ -46,6 +46,7 @@ type GLTFResult = GLTF & {
     BackTopArch: THREE.Mesh;
     FrontTopArch: THREE.Mesh;
     Hinge: THREE.Mesh;
+    Hole: THREE.Mesh;
   };
   materials: {
     melamine: THREE.MeshStandardMaterial;
@@ -55,6 +56,7 @@ type GLTFResult = GLTF & {
     tacoHpl: THREE.MeshStandardMaterial;
     chrome2: THREE.MeshPhysicalMaterial;
     tacoSheet: THREE.MeshStandardMaterial;
+    Material: THREE.MeshStandardMaterial;
   };
   animations: [];
 };
@@ -82,11 +84,11 @@ export function Model(props: JSX.IntrinsicElements['group']) {
           <group>
             <mesh
               geometry={nodes.Hard_1.geometry}
-              material={materials.ducoBlack}
+              material={materials.melamine}
             />
             <mesh
               geometry={nodes.Hard_2.geometry}
-              material={materials.melamine}
+              material={materials.ducoBlack}
             />
           </group>
           <mesh
@@ -245,6 +247,7 @@ export function Model(props: JSX.IntrinsicElements['group']) {
           material={materials.chrome2}
           position={[0.809, 2.034, 0]}
         />
+        <mesh geometry={nodes.Hole.geometry} material={materials.Material} />
       </group>
     </group>
   );

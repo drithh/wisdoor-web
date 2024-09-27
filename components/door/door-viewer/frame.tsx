@@ -63,7 +63,7 @@ export function Frame({ gltfResult, material, DOOR_SCALE }: FrameProps) {
       );
     }
   });
-  if (frameName === 'Tanpa Kusen') {
+  if (frameName === 'Tanpa Kusen' || frameName === undefined) {
     return null;
   }
   return (

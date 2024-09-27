@@ -55,7 +55,10 @@ export function Architrave({
       );
     }
   });
-  if (storage.frame?.architrave !== undefined && !storage.frame?.architrave) {
+  if (
+    storage.frame?.architrave === undefined ||
+    storage.frame?.architrave === false
+  ) {
     return null;
   }
   return (
