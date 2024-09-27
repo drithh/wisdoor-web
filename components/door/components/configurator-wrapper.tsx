@@ -16,7 +16,7 @@ export function ConfiguratorWrapper({ className, children }: WrapperProps) {
       )}
     >
       {children}
-      <div className="sm:hidden fixed top-[22rem] m-0 inset-0 w-full h-40 bg-gradient-to-t from-transparent to-white" />
+      <div className="sm:hidden fixed top-[24rem] m-0 inset-0 w-full h-20 bg-gradient-to-t from-transparent to-white pointer-events-none" />
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import { Material } from 'three';
+import { BufferGeometry, Material, NormalBufferAttributes } from 'three';
 import { GLTFResult } from './type';
 import { useDoorStore } from '../store';
 
@@ -9,24 +9,43 @@ interface DoorLeafProps {
 }
 
 export function DoorLeaf({ gltfResult, name, material }: DoorLeafProps) {
-  const { nodes } = gltfResult;
+  const { nodes, materials } = gltfResult;
   const { keyHole } = useDoorStore();
-  const getGeometry = () => {
+  const getGeometry = (): [
+    BufferGeometry<NormalBufferAttributes>,
+    BufferGeometry<NormalBufferAttributes> | null,
+    BufferGeometry<NormalBufferAttributes>
+  ] => {
     switch (name.toLowerCase()) {
       case 'simple':
-        return [nodes.Easy.geometry, nodes.EasyHole.geometry];
+        return [
+          nodes.Easy_1.geometry,
+          nodes.Easy_2.geometry,
+          nodes.EasyHole.geometry,
+        ];
       case 'intermediate':
-        return [nodes.Medium.geometry, nodes.MediumHole.geometry];
+        return [
+          nodes.Medium_1.geometry,
+          nodes.Medium_2.geometry,
+          nodes.MediumHole.geometry,
+        ];
       case 'expert':
-        return [nodes.Hard.geometry, nodes.HardHole.geometry];
+        return [
+          nodes.Hard_1.geometry,
+          nodes.Hard_2.geometry,
+          nodes.HardHole.geometry,
+        ];
       default:
-        return [nodes.Solid.geometry, nodes.SolidHole.geometry];
+        return [nodes.Solid.geometry, null, nodes.SolidHole.geometry];
     }
   };
-  const [doorGeometry, holeGeometry] = getGeometry();
+  const [door1Geometry, door2Geometry, holeGeometry] = getGeometry();
   return (
     <group>
-      <mesh geometry={doorGeometry} material={material} />
+      <mesh geometry={door1Geometry} material={material} />
+      {door2Geometry !== null ? (
+        <mesh geometry={door2Geometry} material={materials.ducoBlack} />
+      ) : null}
       {keyHole?.isAdded === true ? null : (
         <mesh geometry={holeGeometry} material={material} />
       )}

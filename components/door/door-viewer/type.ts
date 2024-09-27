@@ -10,11 +10,14 @@ export interface Scale {
 
 export type GLTFResult = GLTF & {
   nodes: {
-    Easy: Mesh;
+    Easy_1: Mesh;
+    Easy_2: Mesh;
     EasyHole: Mesh;
-    Hard: Mesh;
+    Hard_1: Mesh;
+    Hard_2: Mesh;
     HardHole: Mesh;
-    Medium: Mesh;
+    Medium_1: Mesh;
+    Medium_2: Mesh;
     MediumHole: Mesh;
     Solid: Mesh;
     SolidHole: Mesh;
@@ -46,12 +49,12 @@ export type GLTFResult = GLTF & {
   };
   materials: {
     melamine: MeshStandardMaterial;
+    ducoBlack: MeshStandardMaterial;
     cardboard: MeshStandardMaterial;
     mdf: MeshStandardMaterial;
     tacoHpl: MeshStandardMaterial;
-    tacoSheet: MeshStandardMaterial;
-    inox1: MeshStandardMaterial;
     chrome2: MeshPhysicalMaterial;
+    tacoSheet: MeshStandardMaterial;
   };
   animations: [];
 };

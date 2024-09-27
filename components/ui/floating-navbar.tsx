@@ -61,16 +61,18 @@ export const FloatingNav = ({
           duration: 0.2,
         }}
         className={cn(
-          'flex max-w-[25rem] fixed right-0 bottom-0 sm:right-[4rem] w-screen border border-transparent rounded-t-xl  bg-white shadow-[0_10px_50px_rgba(0,0,0,0.3)] z-50 py-4 px-8 items-center  place-content-between space-x-4',
+          'flex max-w-[25rem] fixed right-0 bottom-0 sm:right-[4rem] w-screen border border-transparent rounded-t-xl  bg-white shadow-[0_10px_50px_rgba(0,0,0,0.3)] z-50 sm:py-4 py-3 px-8 items-center  place-content-between space-x-4',
           className
         )}
       >
         <div className="flex flex-col gap-0">
-          <p className="text-base sm:text-lg text-gray-500">Total</p>
-          <p className="text-lg sm:text-xl font-medium">{priceFormat(price)}</p>
+          <p className="text-sm sm:text-lg text-gray-500">Total</p>
+          <p className="text-base sm:text-xl font-medium">
+            {priceFormat(price)}
+          </p>
         </div>
         <Button
-          className="h-10 sm:h-12 my-1 sm:my-4 text-lg sm:text-xl font-text bg-green-500 hover:bg-green-300"
+          className="h-8 sm:h-12 my-1 sm:my-4 text-base sm:text-xl font-text bg-green-500 hover:bg-green-300"
           onClick={() => {
             targetRef?.current?.scrollIntoView({
               behavior: 'smooth', // Smooth scrolling

@@ -40,6 +40,7 @@ export function Model(props: JSX.IntrinsicElements['group']) {
 
   const doorGroupRef = React.useRef<Group<Object3DEventMap> | null>(null);
   const handleRef = React.useRef<Group<Object3DEventMap> | null>(null);
+  const doorLockRef = React.useRef<Mesh | null>(null);
 
   useFrame(() => {
     if (doorGroupRef.current) {
@@ -51,10 +52,20 @@ export function Model(props: JSX.IntrinsicElements['group']) {
         ANIMATION_SPEED
       );
     }
+    if (doorLockRef.current) {
+      doorLockRef.current.position.lerp(
+        {
+          x: -0.019 * (DOOR_SCALE.width - 1),
+          y: 1.1 * (DOOR_SCALE.height - 1),
+          z: 0,
+        },
+        ANIMATION_SPEED
+      );
+    }
     if (handleRef.current) {
       handleRef.current.position.lerp(
         {
-          x: 0.025 * (DOOR_SCALE.width - 1),
+          x: -0.019 * (DOOR_SCALE.width - 1),
           y: 1.1 * (DOOR_SCALE.height - 1),
           z: 0,
         },
@@ -109,6 +120,13 @@ export function Model(props: JSX.IntrinsicElements['group']) {
           />
         )}
       </group>
+      {storage.cylinder?.isAdded && (
+        <mesh
+          geometry={nodes.DoorLock.geometry}
+          material={materials.chrome2}
+          ref={doorLockRef}
+        />
+      )}
     </group>
   );
 }

@@ -10,11 +10,14 @@ import { GLTF } from 'three-stdlib';
 
 type GLTFResult = GLTF & {
   nodes: {
-    Easy: THREE.Mesh;
+    Easy_1: THREE.Mesh;
+    Easy_2: THREE.Mesh;
     EasyHole: THREE.Mesh;
-    Hard: THREE.Mesh;
+    Hard_1: THREE.Mesh;
+    Hard_2: THREE.Mesh;
     HardHole: THREE.Mesh;
-    Medium: THREE.Mesh;
+    Medium_1: THREE.Mesh;
+    Medium_2: THREE.Mesh;
     MediumHole: THREE.Mesh;
     Solid: THREE.Mesh;
     SolidHole: THREE.Mesh;
@@ -45,14 +48,13 @@ type GLTFResult = GLTF & {
     Hinge: THREE.Mesh;
   };
   materials: {
-    ['melamine.001']: THREE.MeshStandardMaterial;
     melamine: THREE.MeshStandardMaterial;
+    ducoBlack: THREE.MeshStandardMaterial;
     cardboard: THREE.MeshStandardMaterial;
     mdf: THREE.MeshStandardMaterial;
     tacoHpl: THREE.MeshStandardMaterial;
-    inox1: THREE.MeshStandardMaterial;
-    tacoSheet: THREE.MeshStandardMaterial;
     chrome2: THREE.MeshPhysicalMaterial;
+    tacoSheet: THREE.MeshStandardMaterial;
   };
   animations: [];
 };
@@ -63,26 +65,48 @@ export function Model(props: JSX.IntrinsicElements['group']) {
     <group {...props} dispose={null}>
       <group>
         <group>
-          <mesh
-            geometry={nodes.Easy.geometry}
-            material={materials['melamine.001']}
-          />
+          <group>
+            <mesh
+              geometry={nodes.Easy_1.geometry}
+              material={materials.melamine}
+            />
+            <mesh
+              geometry={nodes.Easy_2.geometry}
+              material={materials.ducoBlack}
+            />
+          </group>
           <mesh
             geometry={nodes.EasyHole.geometry}
             material={materials.melamine}
           />
-          <mesh geometry={nodes.Hard.geometry} material={materials.melamine} />
+          <group>
+            <mesh
+              geometry={nodes.Hard_1.geometry}
+              material={materials.ducoBlack}
+            />
+            <mesh
+              geometry={nodes.Hard_2.geometry}
+              material={materials.melamine}
+            />
+          </group>
           <mesh
             geometry={nodes.HardHole.geometry}
             material={materials.melamine}
           />
-          <mesh
-            geometry={nodes.Medium.geometry}
-            material={materials.melamine}
-          />
+          <group>
+            <mesh
+              geometry={nodes.Medium_1.geometry}
+              material={materials.melamine}
+            />
+            <mesh
+              geometry={nodes.Medium_2.geometry}
+              material={materials.ducoBlack}
+            />
+          </group>
           <mesh
             geometry={nodes.MediumHole.geometry}
             material={materials.melamine}
+            position={[-0.004, 0, 0]}
           />
           <mesh geometry={nodes.Solid.geometry} material={materials.melamine} />
           <mesh
@@ -164,10 +188,16 @@ export function Model(props: JSX.IntrinsicElements['group']) {
         <group>
           <mesh
             geometry={nodes.DoorHandle.geometry}
-            material={materials.inox1}
+            material={materials.chrome2}
           />
-          <mesh geometry={nodes.DoorKey.geometry} material={materials.inox1} />
-          <mesh geometry={nodes.DoorLock.geometry} material={materials.inox1} />
+          <mesh
+            geometry={nodes.DoorKey.geometry}
+            material={materials.chrome2}
+          />
+          <mesh
+            geometry={nodes.DoorLock.geometry}
+            material={materials.chrome2}
+          />
         </group>
         <group>
           <mesh
