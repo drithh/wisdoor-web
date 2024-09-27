@@ -14,7 +14,7 @@ import { useDoorStore } from './door/store';
 
 export function DoorViewer() {
   return (
-    <div className="flex-1 z-100 top-0 sm:h-screen max-h-screen bg-white ">
+    <div className="flex-1 z-100 top-0 sm:sticky max-h-screen bg-white ">
       <Canvas className="!h-[24rem] sm:!h-screen">
         <Suspense fallback={<Center>Loading...</Center>}>
           <OrbitControls
