@@ -13,33 +13,20 @@ export function DoorLeaf({ gltfResult, name, material }: DoorLeafProps) {
   const { keyHole } = useDoorStore();
   const getGeometry = (): [
     BufferGeometry<NormalBufferAttributes>,
-    BufferGeometry<NormalBufferAttributes> | null,
-    BufferGeometry<NormalBufferAttributes>
+    BufferGeometry<NormalBufferAttributes> | null
   ] => {
     switch (name.toLowerCase()) {
       case 'simple':
-        return [
-          nodes.Easy_1.geometry,
-          nodes.Easy_2.geometry,
-          nodes.EasyHole.geometry,
-        ];
+        return [nodes.Easy_1.geometry, nodes.Easy_2.geometry];
       case 'intermediate':
-        return [
-          nodes.Medium_1.geometry,
-          nodes.Medium_2.geometry,
-          nodes.MediumHole.geometry,
-        ];
+        return [nodes.Medium_1.geometry, nodes.Medium_2.geometry];
       case 'expert':
-        return [
-          nodes.Hard_1.geometry,
-          nodes.Hard_2.geometry,
-          nodes.HardHole.geometry,
-        ];
+        return [nodes.Hard_1.geometry, nodes.Hard_2.geometry];
       default:
-        return [nodes.Solid.geometry, null, nodes.SolidHole.geometry];
+        return [nodes.Solid.geometry, null];
     }
   };
-  const [door1Geometry, door2Geometry, holeGeometry] = getGeometry();
+  const [door1Geometry, door2Geometry] = getGeometry();
   return (
     <group>
       <mesh geometry={door1Geometry} material={material} />
@@ -47,7 +34,7 @@ export function DoorLeaf({ gltfResult, name, material }: DoorLeafProps) {
         <mesh geometry={door2Geometry} material={materials.ducoBlack} />
       ) : null}
       {keyHole?.isAdded === true ? null : (
-        <mesh geometry={holeGeometry} material={material} />
+        <mesh geometry={nodes.Hole.geometry} material={material} />
       )}
     </group>
   );

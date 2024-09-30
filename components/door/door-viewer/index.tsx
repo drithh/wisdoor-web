@@ -66,7 +66,7 @@ export function Model(props: JSX.IntrinsicElements['group']) {
     if (handleRef.current) {
       handleRef.current.position.lerp(
         {
-          x: 0.027 * (DOOR_SCALE.width - 1),
+          x: 0.065 * (DOOR_SCALE.width - 1),
           y: 1.1 * (DOOR_SCALE.height - 1),
           z: 0,
         },
@@ -76,7 +76,7 @@ export function Model(props: JSX.IntrinsicElements['group']) {
     if (keyRef.current) {
       keyRef.current.position.lerp(
         {
-          x: 0.027 * (DOOR_SCALE.width - 1),
+          x: 0.065 * (DOOR_SCALE.width - 1),
           y: 1 * (DOOR_SCALE.height - 1),
           z: 0,
         },

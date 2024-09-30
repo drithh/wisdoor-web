@@ -12,15 +12,12 @@ export type GLTFResult = GLTF & {
   nodes: {
     Easy_1: Mesh;
     Easy_2: Mesh;
-    EasyHole: Mesh;
     Hard_1: Mesh;
     Hard_2: Mesh;
-    HardHole: Mesh;
+    Hole: Mesh;
     Medium_1: Mesh;
     Medium_2: Mesh;
-    MediumHole: Mesh;
     Solid: Mesh;
-    SolidHole: Mesh;
     Paper1: Mesh;
     Paper2: Mesh;
     Paper3: Mesh;
