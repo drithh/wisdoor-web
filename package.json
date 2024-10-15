@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "dotenv -- next dev",
     "build": "next build && next-image-export-optimizer",
     "image": "next-image-export-optimizer",
     "start": "next start",
@@ -11,7 +11,8 @@
     "pages:build": "pnpm dlx @cloudflare/next-on-pages",
     "preview": "pnpm run pages:build && wrangler pages dev",
     "deploy": "pnpm run pages:build && wrangler pages deploy",
-    "gltf": "pnpm dlx gltfjsx public/models/door.gltf --t --K --o components/door/door.tsx"
+    "gltf": "pnpm dlx gltfjsx public/models/door.gltf --t --K --o components/door/door.tsx",
+    "upload": "dotenv -- bun scripts/upload.js"
   },
   "packageManager": "pnpm@9.7.0",
   "dependencies": {
@@ -19,6 +20,7 @@
     "@plasmicapp/cli": "^0.1.331",
     "@plasmicapp/react-web": "^0.2.350",
     "@plasmicpkgs/plasmic-basic-components": "^0.0.227",
+    "@plasmicpkgs/plasmic-cms": "^0.0.269",
     "@plasmicpkgs/tiptap": "^0.0.3",
     "@radix-ui/react-accordion": "^1.2.0",
     "@radix-ui/react-checkbox": "^1.1.1",
@@ -69,8 +71,10 @@
     "@types/react-dom": "^18",
     "@xpd/tailwind-3dtransforms": "^1.0.3",
     "autoprefixer": "^10.4.20",
+    "dotenv-cli": "^7.4.2",
     "eslint": "^8",
     "eslint-config-next": "14.2.7",
+    "form-data": "^4.0.1",
     "postcss": "^8.4.41",
     "tailwindcss": "^3.4.10",
     "typescript": "^5",

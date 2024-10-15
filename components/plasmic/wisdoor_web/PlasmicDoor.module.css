@@ -174,6 +174,47 @@
   max-width: 100%;
   object-fit: cover;
 }
+.finishingVariant {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-self: flex-start;
+  min-width: 0;
+  padding: 0px;
+}
+.finishingVariant > :global(.__wab_flex-container) {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  min-width: 0;
+  margin-top: calc(0px - 12px);
+  height: calc(100% + 12px);
+}
+.finishingVariant > :global(.__wab_flex-container) > *,
+.finishingVariant > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.finishingVariant > :global(.__wab_flex-container) > picture > img,
+.finishingVariant
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-top: 12px;
+}
+.text__vbWtE {
+  height: auto;
+  font-family: var(--font-universal-sans-text);
+  font-weight: 400;
+  font-size: 20px;
+  color: #000000;
+  position: relative;
+}
+.finishingVariant__gcuKx:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
 .groovingPintu {
   display: flex;
   flex-direction: column;

@@ -28,6 +28,7 @@ export interface DoorState {
   door: Door;
   size: Size;
   finishing?: Item;
+  finishingVariant?: Item;
   groove?: Item;
   frame?: Frame;
   keyHole?: IsAdded;
@@ -39,6 +40,7 @@ export interface DoorState {
   setDoor: (door: Door) => void;
   setSize: (size: Size) => void;
   setFinishing: (finishing: Item) => void;
+  setFinishingVariant: (finishingVariant: Item) => void;
   setGroove: (groove: Item) => void;
   setFrame: (frame: Frame) => void;
   setKeyHole: (keyHole: IsAdded) => void;
@@ -56,6 +58,7 @@ export const useDoorStore = create(
       setDoor: (door) => set({ door }),
       setSize: (size) => set({ size }),
       setFinishing: (finishing) => set({ finishing }),
+      setFinishingVariant: (finishingVariant) => set({ finishingVariant }),
       setGroove: (groove) => set({ groove }),
       setFrame: (frame) => set({ frame }),
       setKeyHole: (keyHole) => set({ keyHole }),

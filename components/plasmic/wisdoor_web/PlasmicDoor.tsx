@@ -65,6 +65,7 @@ import { ConfiguratorWrapper } from "../../door/components/configurator-wrapper"
 import { ChooseDoor } from "../../door/configurator/choose"; // plasmic-import: LMn0cgg59gxw/codeComponent
 import { SizeDoor } from "../../door/configurator/size"; // plasmic-import: 7H1b44gqct0K/codeComponent
 import { FinishingDoor } from "../../door/configurator/finishing"; // plasmic-import: YV413SY07lXf/codeComponent
+import { FinishingVariant } from "../../door/configurator/finishing-variant"; // plasmic-import: _0rE-i0b-tUt/codeComponent
 import { GrooveDoor } from "../../door/configurator/groove"; // plasmic-import: 8V98shg8_J4H/codeComponent
 import { FrameDoor } from "../../door/configurator/frame"; // plasmic-import: CnuhOfnl-a-a/codeComponent
 import { AddonDoor } from "../../door/configurator/addon"; // plasmic-import: g49Z5SosGCS0/codeComponent
@@ -97,6 +98,7 @@ export type PlasmicDoor__OverridesType = {
   sizeDoor?: Flex__<typeof SizeDoor>;
   finishingPintu?: Flex__<"div">;
   finishingDoor?: Flex__<typeof FinishingDoor>;
+  finishingVariant?: Flex__<"div">;
   groovingPintu?: Flex__<"div">;
   grooveDoor?: Flex__<typeof GrooveDoor>;
   kusen?: Flex__<"div">;
@@ -364,7 +366,8 @@ function PlasmicDoor__RenderFunc(props: {
                     const __composite = [
                       { doorId: null, name: null, price: null },
                       { doorId: null, name: null, price: null, modal: null },
-                      { doorId: null, name: null, price: null, modal: null }
+                      { doorId: null, name: null, price: null, modal: null },
+                      { name: null }
                     ];
                     __composite["0"]["doorId"] = "kamar";
                     __composite["0"]["name"] = "Tanpa Finishing";
@@ -379,8 +382,32 @@ function PlasmicDoor__RenderFunc(props: {
                     __composite["2"]["price"] = 850000;
                     __composite["2"]["modal"] =
                       '<p dir="ltr">HPL menawarkan daya tahan tinggi dan variasi desain. Lembaran HPL ditempelkan pada pintu yang telah diberi lem, kemudian ditekan dan dipangkas untuk hasil rapi dan kuat.</p>\n<p dir="ltr">&nbsp;</p>\n<p dir="ltr"><strong>Keunggulan:</strong></p>\n<ul>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Tahan Air</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Tahan goresan, panas, dan bahan kimia.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Banyak pilihan desain.</p>\n</li>\n</ul>\n<p>&nbsp;</p>';
+                    __composite["3"]["name"] = "tesst";
                     return __composite;
                   })()}
+                />
+              </Stack__>
+              <Stack__
+                as={"div"}
+                data-plasmic-name={"finishingVariant"}
+                data-plasmic-override={overrides.finishingVariant}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.finishingVariant)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__vbWtE
+                  )}
+                >
+                  {"Finishing Variant"}
+                </div>
+                <FinishingVariant
+                  className={classNames(
+                    "__wab_instance",
+                    sty.finishingVariant__gcuKx
+                  )}
                 />
               </Stack__>
               <Stack__
@@ -581,6 +608,7 @@ const PlasmicDescendants = {
     "sizeDoor",
     "finishingPintu",
     "finishingDoor",
+    "finishingVariant",
     "groovingPintu",
     "grooveDoor",
     "kusen",
@@ -599,6 +627,7 @@ const PlasmicDescendants = {
     "sizeDoor",
     "finishingPintu",
     "finishingDoor",
+    "finishingVariant",
     "groovingPintu",
     "grooveDoor",
     "kusen",
@@ -616,6 +645,7 @@ const PlasmicDescendants = {
     "sizeDoor",
     "finishingPintu",
     "finishingDoor",
+    "finishingVariant",
     "groovingPintu",
     "grooveDoor",
     "kusen",
@@ -630,6 +660,7 @@ const PlasmicDescendants = {
   sizeDoor: ["sizeDoor"],
   finishingPintu: ["finishingPintu", "finishingDoor"],
   finishingDoor: ["finishingDoor"],
+  finishingVariant: ["finishingVariant"],
   groovingPintu: ["groovingPintu", "grooveDoor"],
   grooveDoor: ["grooveDoor"],
   kusen: ["kusen", "frameDoor"],
@@ -652,6 +683,7 @@ type NodeDefaultElementType = {
   sizeDoor: typeof SizeDoor;
   finishingPintu: "div";
   finishingDoor: typeof FinishingDoor;
+  finishingVariant: "div";
   groovingPintu: "div";
   grooveDoor: typeof GrooveDoor;
   kusen: "div";
@@ -730,6 +762,7 @@ export const PlasmicDoor = Object.assign(
     sizeDoor: makeNodeComponent("sizeDoor"),
     finishingPintu: makeNodeComponent("finishingPintu"),
     finishingDoor: makeNodeComponent("finishingDoor"),
+    finishingVariant: makeNodeComponent("finishingVariant"),
     groovingPintu: makeNodeComponent("groovingPintu"),
     grooveDoor: makeNodeComponent("grooveDoor"),
     kusen: makeNodeComponent("kusen"),

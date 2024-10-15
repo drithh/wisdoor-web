@@ -17,7 +17,7 @@ import { DoorViewer } from '@/components/door-viewer';
 import { DoorButton } from '@/components/door/components/button';
 import { ChooseDoor } from '@/components/door/configurator/choose';
 import { SizeDoor } from '@/components/door/configurator/size';
-import { TypeDoor } from '@/components/door/configurator/type';
+import { FinishingVariant } from '@/components/door/configurator/finishing-variant';
 import { FinishingDoor } from '@/components/door/configurator/finishing';
 import { AddonDoor } from '@/components/door/configurator/addon';
 import { FrameDoor } from '@/components/door/configurator/frame';
@@ -378,36 +378,16 @@ registerComponent(SizeDoor, {
   importPath: './components/door/configurator/size',
 });
 
-// registerComponent(TypeDoor, {
-//   name: 'TypeDoor',
-//   props: {
-//     className: {
-//       type: 'string',
-//     },
-//     types: {
-//       type: 'array',
-//       itemType: {
-//         type: 'object',
-//         fields: {
-//           type: {
-//             type: 'string',
-//           },
-//           image: {
-//             type: 'imageUrl',
-//           },
-//           price: {
-//             type: 'number',
-//           },
-//           modal: {
-//             type: 'richText',
-//           },
-//         },
-//       },
-//     },
-//   },
+registerComponent(FinishingVariant, {
+  name: 'FinishingVariant',
+  props: {
+    className: {
+      type: 'string',
+    },
+  },
 
-//   importPath: './components/door/configurator/type',
-// });
+  importPath: './components/door/configurator/finishing-variant',
+});
 
 registerComponent(FinishingDoor, {
   name: 'FinishingDoor',
