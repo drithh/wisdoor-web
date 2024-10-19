@@ -18,8 +18,8 @@ export function DoorViewer() {
       <Canvas className="!h-[24rem] sm:!h-screen">
         <Suspense fallback={<Center>Loading...</Center>}>
           <OrbitControls
-            enableRotate={true}
-            enablePan={true}
+            enableRotate={false}
+            enablePan={false}
             enableZoom={true}
             minZoom={0.5}
             maxZoom={0.6}
