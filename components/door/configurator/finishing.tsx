@@ -23,7 +23,7 @@ export const FinishingDoor = (props: finishingDoorProps) => {
   const storage = useDoorStore((state) => ({
     finishing: state.finishing,
     setFinishing: state.setFinishing,
-    setFinishinVariant: state.setFinishingVariant,
+    setFinishingVariant: state.setFinishingVariant,
     door: state.door,
   }));
 
@@ -46,10 +46,17 @@ export const FinishingDoor = (props: finishingDoorProps) => {
               name: selectedfinishing.name,
               price: selectedfinishing.price,
             });
+            if (selectedfinishing.price === 0) {
+              storage.setFinishingVariant({
+                name: '',
+                price: 0,
+              });
+              return;
+            }
             const variant = getFirstVariant(selectedfinishing.name);
 
             if (!variant) return;
-            storage.setFinishinVariant({
+            storage.setFinishingVariant({
               name: variant?.data.code,
               price: variant?.data.price,
             });
