@@ -38,7 +38,7 @@ export function DoorViewer() {
               <mesh position={[0, 0, 0]}>
                 <Model />
               </mesh>
-              <ambientLight intensity={2} />
+              <ambientLight intensity={1.5} />
             </Stage>
           </PresentationControls>
         </Suspense>

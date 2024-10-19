@@ -366,8 +366,7 @@ function PlasmicDoor__RenderFunc(props: {
                     const __composite = [
                       { doorId: null, name: null, price: null },
                       { doorId: null, name: null, price: null, modal: null },
-                      { doorId: null, name: null, price: null, modal: null },
-                      { name: null }
+                      { doorId: null, name: null, price: null, modal: null }
                     ];
                     __composite["0"]["doorId"] = "kamar";
                     __composite["0"]["name"] = "Tanpa Finishing";
@@ -382,7 +381,6 @@ function PlasmicDoor__RenderFunc(props: {
                     __composite["2"]["price"] = 850000;
                     __composite["2"]["modal"] =
                       '<p dir="ltr">HPL menawarkan daya tahan tinggi dan variasi desain. Lembaran HPL ditempelkan pada pintu yang telah diberi lem, kemudian ditekan dan dipangkas untuk hasil rapi dan kuat.</p>\n<p dir="ltr">&nbsp;</p>\n<p dir="ltr"><strong>Keunggulan:</strong></p>\n<ul>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Tahan Air</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Tahan goresan, panas, dan bahan kimia.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Banyak pilihan desain.</p>\n</li>\n</ul>\n<p>&nbsp;</p>';
-                    __composite["3"]["name"] = "tesst";
                     return __composite;
                   })()}
                 />

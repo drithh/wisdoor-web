@@ -15,6 +15,7 @@ export const DetailPrice = (props: DetailPriceProps) => {
     door: state.door,
     size: state.size,
     finishing: state.finishing,
+    finishingVariant: state.finishingVariant,
     groove: state.groove,
     frame: state.frame,
 
@@ -28,6 +29,7 @@ export const DetailPrice = (props: DetailPriceProps) => {
   const doorPrice =
     storage.size.price +
     (storage.finishing?.price ?? 0) +
+    (storage.finishingVariant?.price ?? 0) +
     (storage.groove?.price ?? 0);
   const framePrice = storage.frame?.price ?? 0;
   const additionalPrice =
@@ -46,6 +48,11 @@ export const DetailPrice = (props: DetailPriceProps) => {
     - Finishing: ${storage.finishing?.name ?? 'Tanpa Finishing'} ${
     storage.finishing?.price && storage.finishing.price !== 0
       ? `- ${priceFormat(storage.finishing.price)}`
+      : ''
+  }
+    - Variasi Finishing: ${storage.finishingVariant?.name ?? 'Tanpa Variasi'} ${
+    storage.finishingVariant?.price && storage.finishingVariant.price !== 0
+      ? `- ${priceFormat(storage.finishingVariant.price)}`
       : ''
   }
     - Grooving: ${storage.groove?.name ?? 'Tanpa Grooving'} ${
@@ -121,6 +128,14 @@ export const DetailPrice = (props: DetailPriceProps) => {
                 {storage.finishing?.price !== undefined &&
                   storage.finishing?.price !== 0 &&
                   priceFormatPerThousand(storage.finishing?.price)}
+              </p>
+            </div>
+            <div className="flex place-content-between">
+              <p className="">{storage.finishingVariant?.name}</p>
+              <p className=" text-emerald-700">
+                {storage.finishingVariant?.price !== undefined &&
+                  storage.finishingVariant?.price !== 0 &&
+                  priceFormatPerThousand(storage.finishingVariant?.price)}
               </p>
             </div>
             <div className="flex place-content-between">
