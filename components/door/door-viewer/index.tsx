@@ -27,10 +27,10 @@ import variants from '../../../public/variants.json';
 
 interface LoadMaterialProps {
   variantCode: string;
-  defaultMaterial: MeshStandardMaterial;
+  defaultTextureUrl: string;
 }
 
-function LoadMaterial({ variantCode, defaultMaterial }: LoadMaterialProps) {
+function LoadMaterial({ variantCode, defaultTextureUrl }: LoadMaterialProps) {
   const newMeshPhysicalMaterial = (params: MeshPhysicalMaterialParameters) =>
     new MeshPhysicalMaterial({
       name: variantCode,
@@ -46,16 +46,11 @@ function LoadMaterial({ variantCode, defaultMaterial }: LoadMaterialProps) {
     (variant) => variant.data.code === variantCode
   )?.data.file.url;
 
-  if (!textureUrl) {
-    return defaultMaterial;
-  }
-
-  const texture = useLoader(TextureLoader, textureUrl);
+  const texture = useLoader(TextureLoader, textureUrl || defaultTextureUrl);
   if (texture) {
     texture.flipY = true;
     texture.colorSpace = 'srgb';
   }
-
   const material = useMemo(() => {
     const newMaterial = newMeshPhysicalMaterial({
       map: texture,
@@ -78,7 +73,7 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   const honeyCombMaterial = materials.mdf;
   const doorMaterial = LoadMaterial({
     variantCode: storage.finishingVariant?.name ?? '',
-    defaultMaterial: materials.mdf,
+    defaultTextureUrl: '/models/textures/mdf.webp',
   });
 
   const doorGroupRef = React.useRef<Group<Object3DEventMap> | null>(null);
