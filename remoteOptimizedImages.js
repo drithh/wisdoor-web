@@ -7,7 +7,7 @@ const homePage = [
 ];
 
 const fetchVariants = async () => {
-  return data.map((row) => row.data.file.url);
+  return data.filter((row) => row.data.file).map((row) => row.data.file.url);
 };
 
 module.exports = new Promise((resolve, reject) => {
