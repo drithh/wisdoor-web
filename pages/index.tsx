@@ -6,6 +6,15 @@ import { PageParamsProvider as PageParamsProvider__ } from '@plasmicapp/react-we
 import { PlasmicHomepage } from '../components/plasmic/wisdoor_web/PlasmicHomepage';
 import { useRouter } from 'next/router';
 import { useGLTF } from '@react-three/drei';
+import { extractPlasmicQueryData } from '@plasmicapp/react-web/lib/prepass';
+import { PlasmicQueryDataProvider } from '@plasmicapp/react-web/lib/query';
+
+// export async function getStaticProps() {
+//   const queryCache = await extractPlasmicQueryData(<PlasmicHomepage />);
+//   return {
+//     props: { queryCache },
+//   };
+// }
 
 function Homepage() {
   // Use PlasmicHomepage to render this component as it was
@@ -30,12 +39,14 @@ function Homepage() {
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
+      {/* <PlasmicQueryDataProvider prefetchedCache={queryCache}> */}
       <link
         rel="preload"
         href="https://raw.githack.com/pmndrs/drei-assets/456060a26bbeb8fdf79326f224b6d99b8bcce736/hdri/potsdamer_platz_1k.hdr"
         as="fetch"
       ></link>
       <PlasmicHomepage />
+      {/* </PlasmicQueryDataProvider> */}
     </PageParamsProvider__>
   );
 }

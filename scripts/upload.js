@@ -42,4 +42,3 @@ const response = await fetch(
   }
 );
 const data = await response.json();
-console.log(data.rows[0].data);

@@ -23,7 +23,7 @@ const nextConfig = {
     nextImageExportOptimizer_imageFolderPath:
       'public/plasmic/wisdoor_web/images',
     nextImageExportOptimizer_exportFolderPath: 'out',
-    nextImageExportOptimizer_quality: '75',
+    nextImageExportOptimizer_quality: '85',
     nextImageExportOptimizer_storePicturesInWEBP: 'true',
     nextImageExportOptimizer_exportFolderName: 'nextImageExportOptimizer',
     nextImageExportOptimizer_generateAndUseBlurImages: 'true',
