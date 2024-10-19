@@ -27,10 +27,10 @@ import variants from '../../../public/variants.json';
 
 interface LoadMaterialProps {
   variantCode: string;
-  defaultTextureUrl: string;
+  defaultMaterial: MeshStandardMaterial;
 }
 
-function LoadMaterial({ variantCode, defaultTextureUrl }: LoadMaterialProps) {
+function LoadMaterial({ variantCode, defaultMaterial }: LoadMaterialProps) {
   const newMeshPhysicalMaterial = (params: MeshPhysicalMaterialParameters) =>
     new MeshPhysicalMaterial({
       name: variantCode,
@@ -42,23 +42,36 @@ function LoadMaterial({ variantCode, defaultTextureUrl }: LoadMaterialProps) {
       ...params,
     });
 
-  const textureUrl = variants.find(
+  const variant = variants.find(
     (variant) => variant.data.code === variantCode
-  )?.data.file.url;
+  )?.data;
 
-  const texture = useLoader(TextureLoader, textureUrl || defaultTextureUrl);
+  if (!variant) {
+    return defaultMaterial;
+  }
+
+  if (variant.file === undefined) {
+    const material = newMeshPhysicalMaterial({
+      color: parseInt(variant.hex.replace('#', ''), 16),
+    });
+    return material;
+  }
+
+  const texture = useLoader(TextureLoader, variant.file.url);
   if (texture) {
-    texture.flipY = true;
+    texture.flipY = false;
+    texture.unpackAlignment = 4;
+    texture.wrapS = 1000;
+    texture.wrapT = 1000;
+    texture.userData = {
+      mimeType: 'image/webp',
+    };
     texture.colorSpace = 'srgb';
   }
-  const material = useMemo(() => {
-    const newMaterial = newMeshPhysicalMaterial({
-      map: texture,
-    });
-    return newMaterial;
-  }, [texture]);
 
-  return material;
+  return newMeshPhysicalMaterial({
+    map: texture,
+  });
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
@@ -73,8 +86,12 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   const honeyCombMaterial = materials.mdf;
   const doorMaterial = LoadMaterial({
     variantCode: storage.finishingVariant?.name ?? '',
-    defaultTextureUrl: '/models/textures/mdf.webp',
+    defaultMaterial: materials.mdf,
+    // defaultTextureUrl: '/models/textures/melamine.webp',
   });
+  // const doorMaterial = materials.melamine;
+  // console.log('doorMaterial', doorMaterial);
+  // console.log('honeyCombMaterial', materials.melamine);
 
   const doorGroupRef = React.useRef<Group<Object3DEventMap> | null>(null);
   const handleRef = React.useRef<Mesh | null>(null);

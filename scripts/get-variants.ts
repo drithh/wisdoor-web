@@ -17,7 +17,8 @@ const getFinshingVariants = async () => {
     type: string; // e.g., "hpl"
     code: string; // e.g., "F-7025-1"
     price: number; // Price in the specified currency
-    file: FileMetadata; // The file metadata
+    file?: FileMetadata; // The file metadata
+    hex?: string; // Optional hex color
   }
 
   // Define the main type for the object
@@ -50,7 +51,6 @@ const getFinshingVariants = async () => {
 import fs from 'fs';
 async function fetchVariants() {
   const variants = await getFinshingVariants();
-  console.log(variants);
   fs.writeFileSync('public/variants.json', JSON.stringify(variants, null, 2));
 }
 

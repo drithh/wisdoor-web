@@ -58,14 +58,21 @@ export const FinishingVariant = (props: FinishingVariantProps) => {
                 {priceFormatPerThousand(variant.data.price)}
               </p>
             </div>
-            <div className="w-full h-24 rounded-sm border-2  border-gray-300 flex items-center justify-center overflow-hidden peer-aria-checked:border-primary transition-colors">
-              <ExportedImage
-                src={variant.data.file.url}
-                alt={variant.data.code}
-                width={160}
-                height={80}
-                className=""
-              />
+            <div
+              className="w-full h-24 rounded-sm border-2  border-gray-300 flex items-center justify-center overflow-hidden peer-aria-checked:border-primary transition-colors"
+              style={{
+                background: variant.data.hex,
+              }}
+            >
+              {variant.data.file && (
+                <ExportedImage
+                  src={variant.data.file.url}
+                  alt={variant.data.code}
+                  width={160}
+                  height={80}
+                  className=""
+                />
+              )}
             </div>
           </DoorButton>
         ))}

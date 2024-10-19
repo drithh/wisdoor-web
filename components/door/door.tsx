@@ -49,9 +49,7 @@ type GLTFResult = GLTF & {
     ducoBlack: THREE.MeshStandardMaterial;
     cardboard: THREE.MeshStandardMaterial;
     mdf: THREE.MeshStandardMaterial;
-    tacoHpl: THREE.MeshStandardMaterial;
     chrome2: THREE.MeshPhysicalMaterial;
-    tacoSheet: THREE.MeshStandardMaterial;
   };
   animations: [];
 };
@@ -146,23 +144,23 @@ export function Model(props: JSX.IntrinsicElements['group']) {
         <group position={[0.8, 2.1, 0.04]}>
           <mesh
             geometry={nodes.BackTopFrame.geometry}
-            material={materials.tacoHpl}
+            material={materials.melamine}
             position={[-0.4, -2.1, -0.04]}
           />
           <mesh
             geometry={nodes.FrontTopFrame.geometry}
-            material={materials.tacoHpl}
+            material={materials.melamine}
             position={[0, 0.005, 0]}
           />
         </group>
         <group>
           <mesh
             geometry={nodes.BackLeftFrame.geometry}
-            material={materials.tacoHpl}
+            material={materials.melamine}
           />
           <mesh
             geometry={nodes.FrontLeftFrame.geometry}
-            material={materials.tacoHpl}
+            material={materials.melamine}
             position={[0, 1.05, 0.04]}
           />
         </group>
@@ -183,42 +181,42 @@ export function Model(props: JSX.IntrinsicElements['group']) {
         <group>
           <mesh
             geometry={nodes.BackRightFrame.geometry}
-            material={materials.tacoHpl}
+            material={materials.melamine}
           />
           <mesh
             geometry={nodes.FrontRightFrame.geometry}
-            material={materials.tacoHpl}
+            material={materials.melamine}
             position={[0.81, 1.055, 0.04]}
           />
         </group>
         <group>
           <mesh
             geometry={nodes.BackLeftArch.geometry}
-            material={materials.tacoSheet}
+            material={materials.melamine}
           />
           <mesh
             geometry={nodes.FrontLeftArch.geometry}
-            material={materials.tacoSheet}
+            material={materials.melamine}
           />
         </group>
         <group>
           <mesh
             geometry={nodes.BackRightArch.geometry}
-            material={materials.tacoSheet}
+            material={materials.melamine}
           />
           <mesh
             geometry={nodes.FrontRightArch.geometry}
-            material={materials.tacoSheet}
+            material={materials.melamine}
           />
         </group>
         <group position={[-0.014, 2.137, 0]}>
           <mesh
             geometry={nodes.BackTopArch.geometry}
-            material={materials.tacoSheet}
+            material={materials.melamine}
           />
           <mesh
             geometry={nodes.FrontTopArch.geometry}
-            material={materials.tacoSheet}
+            material={materials.melamine}
           />
         </group>
         <mesh
