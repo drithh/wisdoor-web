@@ -10,7 +10,10 @@ import { useDoorStore } from '../store';
 import {
   Group,
   Mesh,
+  MeshPhysicalMaterial,
+  MeshPhysicalMaterialParameters,
   MeshStandardMaterial,
+  MeshStandardMaterialParameters,
   Object3DEventMap,
   TextureLoader,
 } from 'three';
@@ -22,38 +25,43 @@ import { Frame } from './frame';
 import { Architrave } from './architrave';
 import variants from '../../../public/variants.json';
 
-// import { Scale } from 'lucide-react';
-
 interface LoadMaterialProps {
   variantCode: string;
+  defaultMaterial: MeshStandardMaterial;
 }
 
-function LoadMaterial({ variantCode }: LoadMaterialProps) {
-  const [fallbackMaterial] = useState(
-    () => new MeshStandardMaterial({ color: 'gray' })
-  );
+function LoadMaterial({ variantCode, defaultMaterial }: LoadMaterialProps) {
+  const newMeshPhysicalMaterial = (params: MeshPhysicalMaterialParameters) =>
+    new MeshPhysicalMaterial({
+      name: variantCode,
+      roughness: 0.5,
+      metalness: 0,
+      specularIntensity: 0,
+      reflectivity: 0.4591837131892669,
+      side: 2,
+      ...params,
+    });
 
   const textureUrl = variants.find(
     (variant) => variant.data.code === variantCode
   )?.data.file.url;
 
-  console.log('textureUrl', textureUrl);
+  if (!textureUrl) {
+    return defaultMaterial;
+  }
 
-  // if (!textureUrl) {
-  //   return fallbackMaterial;
-  // }
-  const texture = useLoader(
-    TextureLoader,
-    '/models/textures/taco-hpl.webp'
+  const texture = useLoader(TextureLoader, textureUrl);
+  if (texture) {
+    texture.flipY = true;
+    texture.colorSpace = 'srgb';
+  }
 
-    // '/nextImageExportOptimizer/7280703542552234-opt-3840.WEBP'
-  );
-
-  const material = useMemo(
-    () =>
-      texture ? new MeshStandardMaterial({ map: texture }) : fallbackMaterial,
-    [texture, fallbackMaterial]
-  );
+  const material = useMemo(() => {
+    const newMaterial = newMeshPhysicalMaterial({
+      map: texture,
+    });
+    return newMaterial;
+  }, [texture]);
 
   return material;
 }
@@ -68,19 +76,10 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   };
 
   const honeyCombMaterial = materials.mdf;
-  const customMaterial = LoadMaterial({
+  const doorMaterial = LoadMaterial({
     variantCode: storage.finishingVariant?.name ?? '',
+    defaultMaterial: materials.mdf,
   });
-  const getDoorFinishingMaterial = () => {
-    if (storage.finishing?.name === 'HPL Std') {
-      return materials.tacoSheet;
-    }
-    if (storage.finishing?.name === 'PVC Sheet') {
-      return materials.tacoHpl;
-    }
-    return honeyCombMaterial;
-  };
-  const doorFinishingMaterial = getDoorFinishingMaterial();
 
   const doorGroupRef = React.useRef<Group<Object3DEventMap> | null>(null);
   const handleRef = React.useRef<Mesh | null>(null);
@@ -136,7 +135,7 @@ export function Model(props: JSX.IntrinsicElements['group']) {
           <DoorLeaf
             gltfResult={result}
             name={storage.groove?.name ?? ''}
-            material={customMaterial}
+            material={doorMaterial}
           />
         ) : (
           <HoneyComb gltfResult={result} material={honeyCombMaterial} />
@@ -147,12 +146,12 @@ export function Model(props: JSX.IntrinsicElements['group']) {
       )}
       <Frame
         gltfResult={result}
-        material={doorFinishingMaterial}
+        material={doorMaterial}
         DOOR_SCALE={DOOR_SCALE}
       />
       <Architrave
         gltfResult={result}
-        material={doorFinishingMaterial}
+        material={doorMaterial}
         DOOR_SCALE={DOOR_SCALE}
       />
       {storage.key?.isAdded && (

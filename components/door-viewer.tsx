@@ -33,11 +33,11 @@ export function DoorViewer() {
             polar={[-Math.PI / 4, Math.PI / 4]}
             rotation={[0, Math.PI / 4, 0]}
           >
-            <Stage environment={'city'} intensity={5} shadows={false}>
+            <Stage shadows={false}>
               <mesh position={[0, 0, 0]}>
                 <Model />
               </mesh>
-              <ambientLight intensity={5} />
+              <ambientLight intensity={2} />
             </Stage>
           </PresentationControls>
         </Suspense>
