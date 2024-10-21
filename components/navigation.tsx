@@ -32,7 +32,7 @@ export function Navigation({ image, alt, black }: NavigationProps) {
     <div
       className={cn(
         'font-display flex justify-between items-center p-4  top-0 left-0 h-20 w-full z-50',
-        black ? 'text-black' : 'text-white'
+        black ? 'text-black' : 'text-white absolute'
       )}
     >
       <div className="flex-shrink-0 h-full flex-grow">
