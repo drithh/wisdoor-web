@@ -67,7 +67,7 @@ export const FinishingFrame = (props: finishingFrameProps) => {
   //             }
   //           }}
   //         >
-  //           <AccordionTrigger className="hover:no-underline text-sm px-4 py-3 w-full h-full flex justify-start rounded-sm hover:opacity-100  hover:bg-gray-100">
+  //           <AccordionTrigger className="hover:no-underline text-sm px-2 py-2 w-full h-full flex justify-start rounded-sm hover:opacity-100  hover:bg-gray-100">
   //             <div className="flex w-full place-content-between">
   //               <p>{finishing.name}</p>
   //               {finishing.price !== 0 && (
@@ -77,7 +77,7 @@ export const FinishingFrame = (props: finishingFrameProps) => {
   //               )}
   //             </div>
   //           </AccordionTrigger>
-  //           <AccordionContent className="grid grid-cols-2 gap-4 px-4 ">
+  //           <AccordionContent className="grid grid-cols-2 gap-4 2 ">
   //             {finishing.color.map((color) => (
   //               <DoorButton
   //                 key={color.name}
@@ -90,7 +90,7 @@ export const FinishingFrame = (props: finishingFrameProps) => {
   //                 }}
   //                 isActive={false}
   //                 className={cn(
-  //                   'flex h-full gap-2 hover:bg-gray-200 flex-col px-4 items-center cursor-pointer bg-transparent',
+  //                   'flex h-full gap-2 hover:bg-gray-200 flex-col px-2 items-center cursor-pointer bg-transparent',
   //                   {
   //                     'opacity-100 bg-gray-200 animate-expand':
   //                       color.name === storage.frameFinishing?.color,

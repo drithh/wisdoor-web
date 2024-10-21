@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import ExportedImage from 'next-image-export-optimizer';
+import { cn } from '@/lib/utils';
 
 const links = [
-  {
-    title: 'Home',
-    href: '/',
-  },
+  // {
+  //   title: 'Home',
+  //   href: '/',
+  // },
   {
     title: 'About',
     href: '/about#about',
@@ -21,24 +22,37 @@ const links = [
 interface NavigationProps {
   image?: string;
   alt?: string;
+  black?: boolean;
 }
 
-export function Navigation({ image, alt }: NavigationProps) {
+export function Navigation({ image, alt, black }: NavigationProps) {
   const defaultImage = image || '/placeholder.svg';
+
   return (
-    <div className="font-display flex justify-between items-center p-4 absolute top-0 left-0 h-20 w-full z-50">
+    <div
+      className={cn(
+        'font-display flex justify-between items-center p-4  top-0 left-0 h-20 w-full z-50',
+        black ? 'text-black' : 'text-white'
+      )}
+    >
       <div className="flex-shrink-0 h-full flex-grow">
         <div className="w-16 h-full relative">
-          <ExportedImage
-            src={defaultImage}
-            fill
-            className="object-contain"
-            alt={alt || 'Logo Wisdoor'}
-            priority
-          />
+          <Link href="/">
+            <ExportedImage
+              src={defaultImage}
+              fill
+              className="object-contain"
+              alt={alt || 'Logo Wisdoor'}
+              priority
+            />
+          </Link>
         </div>
       </div>
-      <nav className="grid gap-6 grid-cols-3 grid-flow-col text-white md:mr-0 mr-4">
+      <nav
+        className={cn(
+          'grid gap-2 md:gap-6 grid-cols-2 grid-flow-col  md:mr-0 mr-2'
+        )}
+      >
         {links.map((link) => (
           <Link
             key={link.href}

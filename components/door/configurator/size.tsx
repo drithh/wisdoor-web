@@ -107,7 +107,7 @@ export const SizeDoor = (props: SizeDoorProps) => {
           value="custom"
           className="w-full"
         >
-          <AccordionTrigger className="hover:no-underline text-sm px-4 py-3 w-full h-full flex justify-start rounded-sm hover:opacity-100  hover:bg-gray-100">
+          <AccordionTrigger className="hover:no-underline text-sm px-2 py-2 w-full h-full flex justify-start rounded-sm hover:opacity-100  hover:bg-gray-100">
             <div className="flex w-full place-content-between">
               <p>
                 Custom{' '}
@@ -122,7 +122,7 @@ export const SizeDoor = (props: SizeDoorProps) => {
             </div>
           </AccordionTrigger>
           <AccordionContent
-            className="mt-4 px-4 "
+            className="mt-4 px-2 "
             onClick={(e) => {
               e.stopPropagation();
             }}

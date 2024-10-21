@@ -372,12 +372,12 @@ function PlasmicDoor__RenderFunc(props: {
                     __composite["0"]["name"] = "Tanpa Finishing";
                     __composite["0"]["price"] = 0;
                     __composite["1"]["doorId"] = "kamar";
-                    __composite["1"]["name"] = "PVC Sheet";
+                    __composite["1"]["name"] = "PVC";
                     __composite["1"]["price"] = 700000;
                     __composite["1"]["modal"] =
                       '<p dir="ltr">PVC sheet adalah finishing praktis yang tahan lama. Prosesnya melibatkan pemasangan lembaran PVC di atas pintu yang telah dilapisi lem, kemudian dipanaskan dan ditekan agar merekat sempurna.</p>\n<p dir="ltr">&nbsp;</p>\n<p dir="ltr"><strong>Keunggulan:</strong></p>\n<ul>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Tahan air, kelembapan, dan goresan.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Mudah dibersihkan.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Beragam warna dan tekstur.</p>\n</li>\n</ul>\n<p>&nbsp;</p>';
                     __composite["2"]["doorId"] = "kamar";
-                    __composite["2"]["name"] = "HPL Std";
+                    __composite["2"]["name"] = "HPL";
                     __composite["2"]["price"] = 850000;
                     __composite["2"]["modal"] =
                       '<p dir="ltr">HPL menawarkan daya tahan tinggi dan variasi desain. Lembaran HPL ditempelkan pada pintu yang telah diberi lem, kemudian ditekan dan dipangkas untuk hasil rapi dan kuat.</p>\n<p dir="ltr">&nbsp;</p>\n<p dir="ltr"><strong>Keunggulan:</strong></p>\n<ul>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Tahan Air</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Tahan goresan, panas, dan bahan kimia.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Banyak pilihan desain.</p>\n</li>\n</ul>\n<p>&nbsp;</p>';

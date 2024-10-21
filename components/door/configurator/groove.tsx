@@ -26,7 +26,7 @@ export const GrooveDoor = (props: grooveDoorProps) => {
   }));
 
   return (
-    <div className="grid grid-cols-2 w-full gap-3">
+    <div className="grid grid-cols-1 sm:grid-cols-2 w-full gap-3">
       {props.grooves?.map((groove) => (
         <DoorButton
           key={groove.name}
@@ -40,9 +40,9 @@ export const GrooveDoor = (props: grooveDoorProps) => {
             });
           }}
           isActive={groove.name === storage.groove?.name}
-          className="flex h-full gap-2 flex-col px-4 items-center cursor-pointer"
+          className="flex h-full gap-2 flex-col  items-center cursor-pointer"
         >
-          <div className="flex flex-col gap-2 w-full items-center h-full place-content-between">
+          <div className="flex sm:flex-col  gap-2 w-full items-center h-full place-content-between">
             <p className="whitespace-pre-wrap flex flex-1 text-sm text-center items-center transition-colors">
               {groove.name}
               <DoorModal

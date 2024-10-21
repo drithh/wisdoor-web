@@ -36,7 +36,7 @@ export const HingeDoor = (props: HingeDoorProps) => {
   //           });
   //         }}
   //         isActive={hinge.name === storage.hinge?.name}
-  //         className="flex h-full gap-2 flex-col px-4 items-center cursor-pointer"
+  //         className="flex h-full gap-2 flex-col px-2 items-center cursor-pointer"
   //       >
   //         <div className="flex flex-col gap-2 w-full h-full items-center place-items-center">
   //           <p className="whitespace-pre-wrap flex flex-1 text-sm text-center items-center transition-colors">

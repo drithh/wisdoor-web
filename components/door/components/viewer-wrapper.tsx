@@ -2,6 +2,7 @@
 
 import { cn } from '@/lib/utils';
 import { useDoorStore } from '../store';
+import { Navigation } from '@/components/navigation';
 interface WrapperProps {
   className?: string;
   children?: React.ReactNode;

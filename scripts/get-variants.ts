@@ -2,7 +2,7 @@ const CMS_ID = process.env.NEXT_PUBLIC_CMS_ID;
 const CMS_PUBLIC_TOKEN = process.env.NEXT_PUBLIC_CMS_PUBLIC_TOKEN;
 const MODEL_ID = process.env.NEXT_PUBLIC_CMS_MODEL_ID;
 
-const getFinshingVariants = async () => {
+export const getFinshingVariants = async () => {
   interface FileMetadata {
     url: string;
     name: string;

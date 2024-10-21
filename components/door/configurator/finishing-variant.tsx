@@ -30,7 +30,7 @@ export const FinishingVariant = (props: FinishingVariantProps) => {
   }));
 
   return (
-    <div className="grid grid-cols-2 w-full gap-3">
+    <div className="flex sm:grid flex-wrap sm:grid-cols-6 justify-center sm:px-1 w-full gap-1 mx-auto">
       {variants
         ?.filter((variant) =>
           storage.finishing?.name
@@ -43,23 +43,23 @@ export const FinishingVariant = (props: FinishingVariantProps) => {
             onClick={() => {
               storage.setFinishingVariant({
                 name: variant.data.code,
-                price: variant.data.price,
+                price: 0,
               });
             }}
             isActive={variant.data.code === storage.finishingVariant?.name}
-            className="flex h-full gap-2 flex-col px-4 items-center cursor-pointer"
+            className="flex sm:w-15 sm:h-15 h-12 w-12 gap-2 rounded-full border-2  border-gray-300 p-0 flex-col items-center cursor-pointer"
           >
-            <div className="flex gap-2 w-full place-content-between">
-              <p className="whitespace-pre-wrap  text-sm text-center transition-colors">
+            {/* <div className="flex gap-2 w-full place-content-between"> */}
+            {/* <p className="whitespace-pre-wrap  text-sm text-center transition-colors">
                 {variant.data.code}
               </p>
 
               <p className="text-sm text-emerald-700">
                 {priceFormatPerThousand(variant.data.price)}
-              </p>
-            </div>
+              </p> */}
+            {/* </div> */}
             <div
-              className="w-full h-24 rounded-sm border-2  border-gray-300 flex items-center justify-center overflow-hidden peer-aria-checked:border-primary transition-colors"
+              className="w-full h-full rounded-full  flex items-center justify-center overflow-hidden peer-aria-checked:border-primary transition-colors"
               style={{
                 background: variant.data.hex,
               }}

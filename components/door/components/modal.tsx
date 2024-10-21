@@ -24,7 +24,7 @@ export const DoorModal = (props: DoorModalProps) => {
     <Dialog>
       <DialogTrigger asChild>
         <span
-          className={cn('inline-block ml-2 top-0.5 relative', props.className)}
+          className={cn('inline-block ml-1 top-0.5 relative', props.className)}
         >
           <CircleHelp
             size={18}
