@@ -37,6 +37,7 @@ export const FinishingVariant = (props: FinishingVariantProps) => {
             .toLocaleLowerCase()
             .includes(variant.data.type)
         )
+        .sort((a, b) => (a.data.position ?? 1) - (b.data.position ?? 1))
         .map((variant) => (
           <DoorButton
             key={variant.id}

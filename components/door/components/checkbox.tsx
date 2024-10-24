@@ -20,7 +20,7 @@ export function Checkbox({
   return (
     <div
       className={cn(
-        `cursor-pointer px-2 font-text flex justify-start rounded-sm border-black/50  opacity-70 hover:opacity-100 hover:text-black  border items-start w-full h-fit py-2 transition-opacity hover:bg-gray-100 duration-300`,
+        `cursor-pointer px-2 font-text flex justify-start rounded-sm border-black/50  opacity-70 hover:opacity-100 hover:text-black  border items-start w-full h-fit py-3 transition-opacity hover:bg-gray-100 duration-300`,
         className,
         { 'opacity-100 bg-gray-100': checked }
       )}

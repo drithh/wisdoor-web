@@ -36,18 +36,40 @@
   max-width: 100%;
   object-fit: cover;
 }
-.text__k7FLs {
+.freeBox {
+  display: flex;
+  flex-direction: column;
   position: relative;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  padding: 8px;
+}
+.text__k7FLs {
   width: auto;
   height: auto;
   max-width: 100%;
-  justify-self: center;
   font-family: var(--font-universal-sans-display);
   font-weight: 500;
   font-size: 36px;
   color: #000000;
   text-align: center;
-  padding: 0px 0px 2rem;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+.text__mwClw {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-size: 14px;
+  color: #53535399;
+  text-align: center;
+  min-width: 0;
 }
 .jenisPintu {
   display: flex;
@@ -85,6 +107,9 @@
   font-weight: 400;
   font-size: 20px;
   color: #000000;
+  text-align: center;
+  width: 100%;
+  min-width: 0;
 }
 .chooseDoor:global(.__wab_instance) {
   max-width: 100%;
@@ -128,6 +153,9 @@
   font-weight: 400;
   font-size: 20px;
   color: #000000;
+  width: 100%;
+  text-align: center;
+  min-width: 0;
 }
 .sizeDoor:global(.__wab_instance) {
   max-width: 100%;
@@ -169,6 +197,9 @@
   font-size: 20px;
   color: #000000;
   position: relative;
+  width: 100%;
+  text-align: center;
+  min-width: 0;
 }
 .finishingDoor:global(.__wab_instance) {
   max-width: 100%;
@@ -210,6 +241,9 @@
   font-size: 20px;
   color: #000000;
   position: relative;
+  width: 100%;
+  text-align: center;
+  min-width: 0;
 }
 .finishingVariant__gcuKx:global(.__wab_instance) {
   max-width: 100%;
@@ -252,6 +286,9 @@
   font-size: 20px;
   color: #000000;
   padding-bottom: 0px;
+  width: 100%;
+  text-align: center;
+  min-width: 0;
 }
 .grooveDoor:global(.__wab_instance) {
   max-width: 100%;
@@ -289,6 +326,9 @@
   font-size: 20px;
   color: #000000;
   position: relative;
+  width: 100%;
+  text-align: center;
+  min-width: 0;
 }
 .frameDoor:global(.__wab_instance) {
   max-width: 100%;
@@ -330,6 +370,9 @@
   font-size: 20px;
   color: #000000;
   position: relative;
+  width: 100%;
+  text-align: center;
+  min-width: 0;
 }
 .addonDoor:global(.__wab_instance) {
   max-width: 100%;

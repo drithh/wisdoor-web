@@ -92,6 +92,7 @@ export type PlasmicDoor__OverridesType = {
   viewerWrapper?: Flex__<typeof ViewerWrapper>;
   doorViewer?: Flex__<typeof DoorViewer>;
   configuratorWrapper?: Flex__<typeof ConfiguratorWrapper>;
+  freeBox?: Flex__<"div">;
   jenisPintu?: Flex__<"div">;
   chooseDoor?: Flex__<typeof ChooseDoor>;
   ukuranPintu?: Flex__<"div">;
@@ -190,13 +191,37 @@ function PlasmicDoor__RenderFunc(props: {
               className={classNames("__wab_instance", sty.configuratorWrapper)}
             >
               <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__k7FLs
-                )}
+                data-plasmic-name={"freeBox"}
+                data-plasmic-override={overrides.freeBox}
+                className={classNames(projectcss.all, sty.freeBox)}
               >
-                {"Kustom Pintu"}
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__k7FLs
+                  )}
+                >
+                  {"Kustom Pintu"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__mwClw
+                  )}
+                >
+                  <React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ color: "#00000099" }}
+                    >
+                      {
+                        "Ini hanya gambaran kasar. Detail desain spesifik dapat dibahas lebih lanjut dengan admin setelah pemesanan dilakukan."
+                      }
+                    </span>
+                  </React.Fragment>
+                </div>
               </div>
               <Stack__
                 as={"div"}
@@ -480,13 +505,6 @@ function PlasmicDoor__RenderFunc(props: {
                         length: null,
                         width: null,
                         architraveFrame: null
-                      },
-                      {
-                        name: null,
-                        length: null,
-                        width: null,
-                        architraveFrame: null,
-                        price: null
                       }
                     ];
                     __composite["0"]["name"] = "Tanpa Kusen";
@@ -502,11 +520,6 @@ function PlasmicDoor__RenderFunc(props: {
                     __composite["2"]["length"] = 4;
                     __composite["2"]["width"] = 10;
                     __composite["2"]["architraveFrame"] = true;
-                    __composite["3"]["name"] = "Custom";
-                    __composite["3"]["length"] = 0;
-                    __composite["3"]["width"] = 0;
-                    __composite["3"]["architraveFrame"] = true;
-                    __composite["3"]["price"] = 0;
                     return __composite;
                   })()}
                 />
@@ -600,6 +613,7 @@ const PlasmicDescendants = {
     "viewerWrapper",
     "doorViewer",
     "configuratorWrapper",
+    "freeBox",
     "jenisPintu",
     "chooseDoor",
     "ukuranPintu",
@@ -619,6 +633,7 @@ const PlasmicDescendants = {
     "viewerWrapper",
     "doorViewer",
     "configuratorWrapper",
+    "freeBox",
     "jenisPintu",
     "chooseDoor",
     "ukuranPintu",
@@ -637,6 +652,7 @@ const PlasmicDescendants = {
   doorViewer: ["doorViewer"],
   configuratorWrapper: [
     "configuratorWrapper",
+    "freeBox",
     "jenisPintu",
     "chooseDoor",
     "ukuranPintu",
@@ -652,6 +668,7 @@ const PlasmicDescendants = {
     "addonDoor",
     "detailPrice"
   ],
+  freeBox: ["freeBox"],
   jenisPintu: ["jenisPintu", "chooseDoor"],
   chooseDoor: ["chooseDoor"],
   ukuranPintu: ["ukuranPintu", "sizeDoor"],
@@ -675,6 +692,7 @@ type NodeDefaultElementType = {
   viewerWrapper: typeof ViewerWrapper;
   doorViewer: typeof DoorViewer;
   configuratorWrapper: typeof ConfiguratorWrapper;
+  freeBox: "div";
   jenisPintu: "div";
   chooseDoor: typeof ChooseDoor;
   ukuranPintu: "div";
@@ -754,6 +772,7 @@ export const PlasmicDoor = Object.assign(
     viewerWrapper: makeNodeComponent("viewerWrapper"),
     doorViewer: makeNodeComponent("doorViewer"),
     configuratorWrapper: makeNodeComponent("configuratorWrapper"),
+    freeBox: makeNodeComponent("freeBox"),
     jenisPintu: makeNodeComponent("jenisPintu"),
     chooseDoor: makeNodeComponent("chooseDoor"),
     ukuranPintu: makeNodeComponent("ukuranPintu"),

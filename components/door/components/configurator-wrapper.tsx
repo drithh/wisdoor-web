@@ -11,7 +11,7 @@ export function ConfiguratorWrapper({ className, children }: WrapperProps) {
   return (
     <div
       className={cn(
-        `relative flex flex-shrink-0 gap-6 flex-col overflow-auto sm:h-full h-[calc(100vh-16rem)] w-screen sm:p-0 p-4 z-0 sm:w-[24rem] sm:pt-[4rem] sm:ml-[0.5rem] sm:mr-[4.5rem]`,
+        `relative flex flex-shrink-0 gap-10 flex-col overflow-auto sm:h-full h-[calc(100vh-16rem)] w-screen sm:p-0 p-4 z-0 sm:w-[24rem] sm:pt-[4rem] sm:ml-[0.5rem] sm:mr-[4.5rem]`,
         className
       )}
     >
