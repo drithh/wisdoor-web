@@ -181,7 +181,7 @@ function PlasmicHomepage__RenderFunc(props: {
             alt={"Logo Wisdoor"}
             className={classNames("__wab_instance", sty.hero)}
             image={
-              "/plasmic/wisdoor_web/images/sitemapWhiteboardInGreenPurpleBasicStylePng.png"
+              "/plasmic/wisdoor_web/images/sitemapWhiteboardInGreenPurpleBasicStyle2Png.png"
             }
           />
         </section>

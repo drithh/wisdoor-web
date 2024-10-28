@@ -10,13 +10,19 @@ import {
 } from '@react-three/drei';
 import { Model } from '../door-viewer';
 // import { Model } from '@/components/door/door';
-import { Suspense } from 'react';
+import { Suspense, useRef } from 'react';
 import { useDoorStore } from '../store';
+import { FullscreenDoor } from './fullscreen-door';
 
 export function DoorWrapper() {
+  const wrapperRef = useRef<HTMLDivElement>(null);
   return (
-    <div className="flex-1 z-100 top-0 sm:sticky max-h-screen bg-white ">
-      <Canvas className="!h-[16rem] sm:!h-screen">
+    <div
+      ref={wrapperRef}
+      className="h-[16rem] z-100 max-h-screen sm:w-[calc(100vw-482px)] w-screen sm:h-screen sm:sticky top-0 fixed bg-white "
+    >
+      <FullscreenDoor wrapperRef={wrapperRef} />
+      <Canvas id="door-canvas" className=" bg-white">
         <Suspense fallback={<Center>Loading...</Center>}>
           <OrbitControls
             enableRotate={false}
