@@ -23,7 +23,7 @@ export function FullscreenDoor({ wrapperRef }: FullscreenDoorProps) {
       height.current = wrapper.clientHeight;
 
       wrapper.style.width = '100vw';
-      wrapper.style.height = '100vh';
+      wrapper.style.height = 'calc(100vh - 32px)';
 
       configuratorWrapper.style.display = 'none';
     } else {
