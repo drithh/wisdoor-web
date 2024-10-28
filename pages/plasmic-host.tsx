@@ -299,7 +299,7 @@ registerComponent(DoorWrapper, {
   name: 'DoorWrapper',
   props: {},
 
-  importPath: './components/door/door-wrapper',
+  importPath: './components/door/components/door-wrapper',
 });
 
 registerComponent(DoorButton, {

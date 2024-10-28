@@ -342,7 +342,7 @@
           "id": "MNJwDXwyFwWL",
           "name": "DoorWrapper",
           "displayName": "DoorWrapper",
-          "componentImportPath": "./components/door/door-wrapper"
+          "componentImportPath": "./components/door/components/door-wrapper"
         }
       ],
       "customFunctions": []
