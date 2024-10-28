@@ -26,7 +26,7 @@ export const GrooveDoor = (props: grooveDoorProps) => {
   }));
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 w-full gap-3">
+    <div className="flex flex-col sm:grid grid-cols-2 w-full gap-3">
       {props.grooves?.map((groove) => (
         <DoorButton
           key={groove.name}
