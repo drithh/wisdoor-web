@@ -2,34 +2,39 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Html } from '@react-three/drei';
 import { Button } from '@/components/ui/button';
 import { Vector3 } from 'three';
+import { Icon, Maximize, Minimize } from 'lucide-react';
 
 interface FullscreenDoorProps {
   wrapperRef: React.RefObject<HTMLDivElement>;
 }
 
 export function FullscreenDoor({ wrapperRef }: FullscreenDoorProps) {
-  const [text, setText] = useState('Fullscreen');
+  const [fullScreen, setFullScreen] = useState(false);
   const toggleFullscreen = () => {
     const wrapper = wrapperRef.current;
     if (!wrapper) return;
     if (wrapper.requestFullscreen) {
       if (document.fullscreenElement) {
-        setText('Fullscreen');
-        document.exitFullscreen();
+        setFullScreen(false);
+        document?.exitFullscreen();
+        // @ts-ignore
+        document?.webkitCancelFullScreen();
       } else {
-        setText('Exit');
-        wrapper.requestFullscreen();
+        setFullScreen(true);
+        wrapper?.requestFullscreen();
+        // @ts-ignore
+        wrapper?.webkitRequestFullScreen();
       }
     }
   };
 
   return (
     <Button
-      variant={'outline'}
+      variant={'ghost'}
       className="absolute z-[10000] right-2 bottom-2"
       onClick={toggleFullscreen}
     >
-      {text}
+      {fullScreen ? <Minimize /> : <Maximize />}
     </Button>
   );
 }
