@@ -19,7 +19,7 @@ export function DoorWrapper() {
   return (
     <div
       ref={wrapperRef}
-      className="h-[16rem] z-100 max-h-screen sm:w-[calc(100vw-482px)] w-screen sm:h-screen sm:sticky top-0 fixed bg-white "
+      className="h-[16rem] z-100 sm:w-[calc(100vw-482px)] w-dvw sm:h-dvh sm:sticky top-0 fixed bg-white "
     >
       <FullscreenDoor wrapperRef={wrapperRef} />
       <Canvas id="door-canvas" className=" bg-white">

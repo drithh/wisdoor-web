@@ -12,7 +12,7 @@ export function ConfiguratorWrapper({ className, children }: WrapperProps) {
     <div
       id="configurator-wrapper"
       className={cn(
-        `fixed sm:static overflow-auto bottom-0 sm:h-full h-[calc(100dvh-16rem)] w-screen sm:w-[467px] sm:min-w-[467px]`,
+        `fixed sm:static overflow-auto bottom-0 sm:h-full h-[calc(100dvh-16rem)] w-dvw sm:w-[467px] sm:min-w-[467px]`,
         className
       )}
     >

@@ -15,15 +15,17 @@ export function FullscreenDoor({ wrapperRef }: FullscreenDoorProps) {
   const toggleFullscreen = () => {
     const configuratorWrapper = document.getElementById('configurator-wrapper');
     const wrapper = wrapperRef.current;
+
     if (!configuratorWrapper) return;
     if (!wrapper) return;
+
     if (!fullScreen) {
       setFullScreen(true);
       width.current = wrapper.clientWidth;
       height.current = wrapper.clientHeight;
 
-      wrapper.style.width = '100vw';
-      wrapper.style.height = 'calc(100dvh)';
+      wrapper.style.width = '100dvw';
+      wrapper.style.height = '100dvh';
 
       configuratorWrapper.style.display = 'none';
     } else {
