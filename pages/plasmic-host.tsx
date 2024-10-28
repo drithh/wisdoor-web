@@ -49,6 +49,10 @@ registerComponent(Navigation, {
       type: 'string',
       defaultValue: 'Logo Wisdoor',
     },
+    black: {
+      type: 'boolean',
+      defaultValue: false,
+    },
   },
 
   importPath: './components/navigation',
@@ -57,6 +61,9 @@ registerComponent(Navigation, {
 registerComponent(Hero, {
   name: 'Hero',
   props: {
+    className: {
+      type: 'string',
+    },
     image: {
       type: 'imageUrl',
       defaultValue: '/placeholder.svg',

@@ -169,18 +169,22 @@ function PlasmicHomepage__RenderFunc(props: {
           data-plasmic-name={"navigation"}
           data-plasmic-override={overrides.navigation}
           alt={"Logo Wisdoor"}
+          black={true}
           className={classNames("__wab_instance", sty.navigation)}
-          image={"/plasmic/wisdoor_web/images/image.svg"}
+          image={"/plasmic/wisdoor_web/images/logoWhitePng.png"}
         />
 
-        <Hero
-          data-plasmic-name={"hero"}
-          data-plasmic-override={overrides.hero}
-          alt={"Logo Wisdoor"}
-          className={classNames("__wab_instance", sty.hero)}
-          image={"/plasmic/wisdoor_web/images/heroHomepage.png"}
-        />
-
+        <section className={classNames(projectcss.all, sty.section__mocrm)}>
+          <Hero
+            data-plasmic-name={"hero"}
+            data-plasmic-override={overrides.hero}
+            alt={"Logo Wisdoor"}
+            className={classNames("__wab_instance", sty.hero)}
+            image={
+              "/plasmic/wisdoor_web/images/sitemapWhiteboardInGreenPurpleBasicStylePng.png"
+            }
+          />
+        </section>
         <section className={classNames(projectcss.all, sty.section___0Md7)}>
           <BlurFade
             data-plasmic-name={"blurFade"}

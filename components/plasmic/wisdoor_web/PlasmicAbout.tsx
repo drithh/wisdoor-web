@@ -180,8 +180,9 @@ function PlasmicAbout__RenderFunc(props: {
           data-plasmic-name={"navigation"}
           data-plasmic-override={overrides.navigation}
           alt={"Logo Wisdoor"}
+          black={false}
           className={classNames("__wab_instance", sty.navigation)}
-          image={"/plasmic/wisdoor_web/images/image.svg"}
+          image={"/plasmic/wisdoor_web/images/logoWhiteTransPng.png"}
         />
 
         <section
@@ -193,7 +194,9 @@ function PlasmicAbout__RenderFunc(props: {
             data-plasmic-override={overrides.hero}
             alt={"Logo Wisdoor"}
             className={classNames("__wab_instance", sty.hero)}
-            image={"/plasmic/wisdoor_web/images/heroHomepage.png"}
+            image={
+              "/plasmic/wisdoor_web/images/sitemapWhiteboardInGreenPurpleBasicStyle1Png.png"
+            }
           />
 
           <section className={classNames(projectcss.all, sty.section__vl52G)}>
@@ -419,7 +422,7 @@ function PlasmicAbout__RenderFunc(props: {
             gradientBottomBlack={true}
             gradientTopWhite={true}
             image={
-              "/plasmic/wisdoor_web/images/aboutUsPowerHeroDesktopGlobalPng.png"
+              "/plasmic/wisdoor_web/images/whatsAppImage20241028At121213PmJpeg.jpg"
             }
           />
 

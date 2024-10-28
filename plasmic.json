@@ -142,6 +142,41 @@
           "id": "aFDOj2rq_Aw9",
           "name": "plywood.jpg",
           "filePath": "../public/plasmic/wisdoor_web/images/plywoodJpg.jpg"
+        },
+        {
+          "id": "jbff0HPWCQ1a",
+          "name": "fc382054-f0f3-4ec5-99e9-fe2f00931b40.jpeg",
+          "filePath": "../public/plasmic/wisdoor_web/images/fc382054F0F34Ec599E9Fe2F00931B40Jpeg.jpg"
+        },
+        {
+          "id": "YBhnKfgo2Hx4",
+          "name": "Sitemap Whiteboard in Green Purple Basic Style.png",
+          "filePath": "../public/plasmic/wisdoor_web/images/sitemapWhiteboardInGreenPurpleBasicStylePng.png"
+        },
+        {
+          "id": "QZHI2XvtOSqD",
+          "name": "Sitemap Whiteboard in Green Purple Basic Style (1).png",
+          "filePath": "../public/plasmic/wisdoor_web/images/sitemapWhiteboardInGreenPurpleBasicStyle1Png.png"
+        },
+        {
+          "id": "FnVR_-bURR8e",
+          "name": "WhatsApp Image 2024-10-28 at 12.12.13 PM.jpeg",
+          "filePath": "../public/plasmic/wisdoor_web/images/whatsAppImage20241028At121213PmJpeg.jpg"
+        },
+        {
+          "id": "JJXuBmMezQ7i",
+          "name": "logo.png",
+          "filePath": "../public/plasmic/wisdoor_web/images/logoPng.png"
+        },
+        {
+          "id": "Tzp5S1gIIir7",
+          "name": "logo-white.png",
+          "filePath": "../public/plasmic/wisdoor_web/images/logoWhitePng.png"
+        },
+        {
+          "id": "MbdPQfkhQwn9",
+          "name": "logo-white-trans.png",
+          "filePath": "../public/plasmic/wisdoor_web/images/logoWhiteTransPng.png"
         }
       ],
       "indirect": false,
@@ -565,12 +600,13 @@
     ]
   },
   "wrapPagesWithGlobalContexts": true,
+  "packageManager": "pnpm",
   "fontOpts": {
     "scheme": "none"
   },
   "nextjsConfig": {
     "pagesDir": "../pages"
   },
-  "cliVersion": "0.1.331",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.331/dist/plasmic.schema.json"
+  "cliVersion": "0.1.334",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.334/dist/plasmic.schema.json"
 }

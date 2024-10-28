@@ -31,12 +31,12 @@ export function Navigation({ image, alt, black }: NavigationProps) {
   return (
     <div
       className={cn(
-        'font-display flex justify-between items-center p-4  top-0 left-0 h-20 w-full z-50',
+        'font-display grid grid-cols-2 sm:grid-cols-3 justify-between  items-center px-4  top-0 left-0 h-16 w-full z-50',
         black ? 'text-black' : 'text-white absolute'
       )}
     >
-      <div className="flex-shrink-0 h-full flex-grow">
-        <div className="w-16 h-full relative">
+      <div className="h-full flex-grow">
+        <div className="w-24 h-full relative">
           <Link href="/">
             <ExportedImage
               src={defaultImage}
@@ -50,7 +50,7 @@ export function Navigation({ image, alt, black }: NavigationProps) {
       </div>
       <nav
         className={cn(
-          'grid gap-2 md:gap-6 grid-cols-2 grid-flow-col  md:mr-0 mr-2'
+          'grid gap-2 md:gap-6 w-fit grid-cols-2 justify-self-end sm:justify-self-center grid-flow-col  md:mr-0 mr-2'
         )}
       >
         {links.map((link) => (
@@ -63,7 +63,6 @@ export function Navigation({ image, alt, black }: NavigationProps) {
           </Link>
         ))}
       </nav>
-      <div className="flex-grow w-16 sm:flex hidden" />
     </div>
   );
 }
