@@ -50,7 +50,7 @@ export function Navigation({ image, alt, black }: NavigationProps) {
       </div>
       <nav
         className={cn(
-          'grid gap-2 md:gap-6 w-fit grid-cols-2 justify-self-end sm:justify-self-center grid-flow-col  md:mr-0 mr-2'
+          'grid gap-2 md:gap-6 mt-[10px] w-fit grid-cols-2 justify-self-end sm:justify-self-center grid-flow-col  md:mr-0 mr-2'
         )}
       >
         {links.map((link) => (
