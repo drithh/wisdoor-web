@@ -13,7 +13,7 @@ import { ImageGradient } from '@/components/image-gradient';
 import { MultipleProduct } from '@/components/multiple-product';
 import { SingleProductText } from '@/components/single-product';
 import BoxReveal from '@/components/magicui/box-reveal';
-import { DoorViewer } from '@/components/door-viewer';
+import { DoorWrapper } from '@/components/door/components/door-wrapper';
 import { DoorButton } from '@/components/door/components/button';
 import { ChooseDoor } from '@/components/door/configurator/choose';
 import { SizeDoor } from '@/components/door/configurator/size';
@@ -25,9 +25,10 @@ import { Wrapper } from '@/components/door/components/wrapper';
 import { FinishingFrame } from '@/components/door/configurator/finishing-frame';
 import { HingeDoor } from '@/components/door/configurator/hinge';
 import { DetailPrice } from '@/components/door/detail-price';
-import { ViewerWrapper } from '@/components/door/components/viewer-wrapper';
+import { RootWrapper } from '@/components/door/components/root-wrapper';
 import { ConfiguratorWrapper } from '@/components/door/components/configurator-wrapper';
 import { GrooveDoor } from '@/components/door/configurator/groove';
+import { Logo } from '@/components/logo';
 
 // You can register any code components that you want to use here; see
 // https://docs.plasmic.app/learn/code-components-ref/
@@ -56,6 +57,22 @@ registerComponent(Navigation, {
   },
 
   importPath: './components/navigation',
+});
+
+registerComponent(Logo, {
+  name: 'Logo',
+  props: {
+    image: {
+      type: 'imageUrl',
+      defaultValue: '/placeholder.svg',
+    },
+    alt: {
+      type: 'string',
+      defaultValue: 'Logo Wisdoor',
+    },
+  },
+
+  importPath: './components/logo',
 });
 
 registerComponent(Hero, {
@@ -278,11 +295,11 @@ registerComponent(SingleProductText, {
   importPath: './components/single-product',
 });
 
-registerComponent(DoorViewer, {
-  name: 'DoorViewer',
+registerComponent(DoorWrapper, {
+  name: 'DoorWrapper',
   props: {},
 
-  importPath: './components/door-viewer',
+  importPath: './components/door/door-wrapper',
 });
 
 registerComponent(DoorButton, {
@@ -571,8 +588,8 @@ registerComponent(Wrapper, {
   importPath: './components/door/components/wrapper',
 });
 
-registerComponent(ViewerWrapper, {
-  name: 'ViewerWrapper',
+registerComponent(RootWrapper, {
+  name: 'RootWrapper',
   props: {
     className: {
       type: 'string',
@@ -582,7 +599,7 @@ registerComponent(ViewerWrapper, {
     },
   },
 
-  importPath: './components/door/components/viewer-wrapper',
+  importPath: './components/door/components/root-wrapper',
 });
 
 registerComponent(ConfiguratorWrapper, {

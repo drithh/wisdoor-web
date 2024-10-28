@@ -8,12 +8,12 @@ import {
   PresentationControls,
   Stage,
 } from '@react-three/drei';
-import { Model } from './door/door-viewer';
+import { Model } from '../door-viewer';
 // import { Model } from '@/components/door/door';
 import { Suspense } from 'react';
-import { useDoorStore } from './door/store';
+import { useDoorStore } from '../store';
 
-export function DoorViewer() {
+export function DoorWrapper() {
   return (
     <div className="flex-1 z-100 top-0 sm:sticky max-h-screen bg-white ">
       <Canvas className="!h-[16rem] sm:!h-screen">

@@ -8,7 +8,7 @@ interface WrapperProps {
   children?: React.ReactNode;
 }
 
-export function ViewerWrapper({ className, children }: WrapperProps) {
+export function RootWrapper({ className, children }: WrapperProps) {
   return (
     <div
       className={cn(

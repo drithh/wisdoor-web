@@ -256,12 +256,6 @@
           "componentImportPath": "./components/magicui/box-reveal"
         },
         {
-          "id": "SH_PqjJ_I-5G",
-          "name": "DoorViewer",
-          "displayName": "DoorViewer",
-          "componentImportPath": "./components/door-viewer"
-        },
-        {
           "id": "atQ7Iy0L6tMB",
           "name": "DoorButton",
           "displayName": "DoorButton",
@@ -310,12 +304,6 @@
           "componentImportPath": "./components/door/detail-price"
         },
         {
-          "id": "3Su-mecoGpzv",
-          "name": "ViewerWrapper",
-          "displayName": "ViewerWrapper",
-          "componentImportPath": "./components/door/components/viewer-wrapper"
-        },
-        {
           "id": "h1IjeS8_3odo",
           "name": "ConfiguratorWrapper",
           "displayName": "ConfiguratorWrapper",
@@ -332,6 +320,24 @@
           "name": "FinishingVariant",
           "displayName": "FinishingVariant",
           "componentImportPath": "./components/door/configurator/finishing-variant"
+        },
+        {
+          "id": "QT_CDmgLpsS2",
+          "name": "Logo",
+          "displayName": "Logo",
+          "componentImportPath": "./components/logo"
+        },
+        {
+          "id": "DpMppaPmps2h",
+          "name": "RootWrapper",
+          "displayName": "RootWrapper",
+          "componentImportPath": "./components/door/components/root-wrapper"
+        },
+        {
+          "id": "MNJwDXwyFwWL",
+          "name": "DoorWrapper",
+          "displayName": "DoorWrapper",
+          "componentImportPath": "./components/door/door-wrapper"
         }
       ],
       "customFunctions": []
