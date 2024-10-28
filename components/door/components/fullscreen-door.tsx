@@ -10,21 +10,28 @@ interface FullscreenDoorProps {
 
 export function FullscreenDoor({ wrapperRef }: FullscreenDoorProps) {
   const [fullScreen, setFullScreen] = useState(false);
+  const width = useRef(0);
+  const height = useRef(0);
   const toggleFullscreen = () => {
+    const configuratorWrapper = document.getElementById('configurator-wrapper');
     const wrapper = wrapperRef.current;
+    if (!configuratorWrapper) return;
     if (!wrapper) return;
-    if (wrapper.requestFullscreen) {
-      if (document.fullscreenElement) {
-        setFullScreen(false);
-        document?.exitFullscreen();
-        // @ts-ignore
-        document?.webkitCancelFullScreen();
-      } else {
-        setFullScreen(true);
-        wrapper?.requestFullscreen();
-        // @ts-ignore
-        wrapper?.webkitRequestFullScreen();
-      }
+    if (!fullScreen) {
+      setFullScreen(true);
+      width.current = wrapper.clientWidth;
+      height.current = wrapper.clientHeight;
+
+      wrapper.style.width = '100vw';
+      wrapper.style.height = '100vh';
+
+      configuratorWrapper.style.display = 'none';
+    } else {
+      setFullScreen(false);
+      configuratorWrapper.style.display = 'block';
+
+      wrapper.style.width = `${width.current}px`;
+      wrapper.style.height = `${height.current}px`;
     }
   };
 

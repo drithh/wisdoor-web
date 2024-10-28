@@ -10,6 +10,7 @@ interface WrapperProps {
 export function ConfiguratorWrapper({ className, children }: WrapperProps) {
   return (
     <div
+      id="configurator-wrapper"
       className={cn(
         `fixed sm:static overflow-auto sm:top-0 top-[16rem] sm:h-full h-[calc(100vh-16rem)] w-screen sm:w-[467px] sm:min-w-[467px]`,
         className
