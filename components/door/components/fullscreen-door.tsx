@@ -25,6 +25,7 @@ export function FullscreenDoor({ wrapperRef }: FullscreenDoorProps) {
 
   return (
     <Button
+      variant={'outline'}
       className="absolute z-[10000] right-2 bottom-2"
       onClick={toggleFullscreen}
     >
