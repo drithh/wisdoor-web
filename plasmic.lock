@@ -156,6 +156,11 @@
           "checksum": "efcbca8dcabddb02cd520accef6e6ba9"
         },
         {
+          "type": "image",
+          "assetId": "7kwTVMTvagQN",
+          "checksum": "4fd048c44b41215f5e9aedac01187c99"
+        },
+        {
           "assetId": "t5hn1zAmdmxJoKmkXG4dPV",
           "type": "projectCss",
           "checksum": "dd1d1dcd8bd99ae85c79961f7fc1b484"
