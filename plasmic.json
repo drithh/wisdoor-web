@@ -29,48 +29,6 @@
       "cssFilePath": "plasmic/wisdoor_web/plasmic.module.css",
       "components": [
         {
-          "id": "qpi3-pwEc1RY",
-          "name": "Homepage",
-          "type": "managed",
-          "projectId": "t5hn1zAmdmxJoKmkXG4dPV",
-          "renderModuleFilePath": "plasmic/wisdoor_web/PlasmicHomepage.tsx",
-          "importSpec": {
-            "modulePath": "../pages/index.tsx"
-          },
-          "cssFilePath": "plasmic/wisdoor_web/PlasmicHomepage.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/"
-        },
-        {
-          "id": "436mCM297ORO",
-          "name": "Button2",
-          "type": "managed",
-          "projectId": "t5hn1zAmdmxJoKmkXG4dPV",
-          "renderModuleFilePath": "plasmic/wisdoor_web/PlasmicButton2.tsx",
-          "importSpec": {
-            "modulePath": "Button2.tsx"
-          },
-          "cssFilePath": "plasmic/wisdoor_web/PlasmicButton2.module.css",
-          "scheme": "blackbox",
-          "componentType": "component",
-          "plumeType": "button"
-        },
-        {
-          "id": "4a8DjtM_KrIy",
-          "name": "About",
-          "type": "managed",
-          "projectId": "t5hn1zAmdmxJoKmkXG4dPV",
-          "renderModuleFilePath": "plasmic/wisdoor_web/PlasmicAbout.tsx",
-          "importSpec": {
-            "modulePath": "../pages/about.tsx"
-          },
-          "cssFilePath": "plasmic/wisdoor_web/PlasmicAbout.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/about"
-        },
-        {
           "id": "rd8xUc-BnZoZ",
           "name": "Door",
           "type": "managed",
@@ -83,6 +41,47 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/door"
+        },
+        {
+          "id": "qpi3-pwEc1RY",
+          "name": "OldHome",
+          "type": "managed",
+          "projectId": "t5hn1zAmdmxJoKmkXG4dPV",
+          "renderModuleFilePath": "plasmic/wisdoor_web/PlasmicOldHome.tsx",
+          "importSpec": {
+            "modulePath": "../pages/index.tsx"
+          },
+          "cssFilePath": "plasmic/wisdoor_web/PlasmicOldHome.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "path": "/"
+        },
+        {
+          "id": "4a8DjtM_KrIy",
+          "name": "OldAbout",
+          "type": "managed",
+          "projectId": "t5hn1zAmdmxJoKmkXG4dPV",
+          "renderModuleFilePath": "plasmic/wisdoor_web/PlasmicOldAbout.tsx",
+          "importSpec": {
+            "modulePath": "OldAbout.tsx"
+          },
+          "cssFilePath": "plasmic/wisdoor_web/PlasmicOldAbout.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "-Y2zUFW6j6F1",
+          "name": "Home",
+          "type": "managed",
+          "projectId": "t5hn1zAmdmxJoKmkXG4dPV",
+          "renderModuleFilePath": "plasmic/wisdoor_web/PlasmicHome.tsx",
+          "importSpec": {
+            "modulePath": "../pages/index.tsx"
+          },
+          "cssFilePath": "plasmic/wisdoor_web/PlasmicHome.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/new-page"
         }
       ],
       "icons": [

@@ -73,20 +73,20 @@ import { useScreenVariants as useScreenVariantsqZb5Tz3BAq8Z } from "./PlasmicGlo
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic.module.css"; // plasmic-import: t5hn1zAmdmxJoKmkXG4dPV/projectcss
-import sty from "./PlasmicAbout.module.css"; // plasmic-import: 4a8DjtM_KrIy/css
+import sty from "./PlasmicOldAbout.module.css"; // plasmic-import: 4a8DjtM_KrIy/css
 
 createPlasmicElementProxy;
 
-export type PlasmicAbout__VariantMembers = {};
-export type PlasmicAbout__VariantsArgs = {};
-type VariantPropType = keyof PlasmicAbout__VariantsArgs;
-export const PlasmicAbout__VariantProps = new Array<VariantPropType>();
+export type PlasmicOldAbout__VariantMembers = {};
+export type PlasmicOldAbout__VariantsArgs = {};
+type VariantPropType = keyof PlasmicOldAbout__VariantsArgs;
+export const PlasmicOldAbout__VariantProps = new Array<VariantPropType>();
 
-export type PlasmicAbout__ArgsType = {};
-type ArgPropType = keyof PlasmicAbout__ArgsType;
-export const PlasmicAbout__ArgProps = new Array<ArgPropType>();
+export type PlasmicOldAbout__ArgsType = {};
+type ArgPropType = keyof PlasmicOldAbout__ArgsType;
+export const PlasmicOldAbout__ArgProps = new Array<ArgPropType>();
 
-export type PlasmicAbout__OverridesType = {
+export type PlasmicOldAbout__OverridesType = {
   root?: Flex__<"div">;
   navigation?: Flex__<typeof Navigation>;
   hero?: Flex__<typeof Hero>;
@@ -95,7 +95,7 @@ export type PlasmicAbout__OverridesType = {
   multipleProduct?: Flex__<typeof MultipleProduct>;
 };
 
-export interface DefaultAboutProps {
+export interface DefaultOldAboutProps {
   className?: string;
 }
 
@@ -108,10 +108,10 @@ function useNextRouter() {
   return undefined;
 }
 
-function PlasmicAbout__RenderFunc(props: {
-  variants: PlasmicAbout__VariantsArgs;
-  args: PlasmicAbout__ArgsType;
-  overrides: PlasmicAbout__OverridesType;
+function PlasmicOldAbout__RenderFunc(props: {
+  variants: PlasmicOldAbout__VariantsArgs;
+  args: PlasmicOldAbout__ArgsType;
+  overrides: PlasmicOldAbout__OverridesType;
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
@@ -510,18 +510,18 @@ type NodeDefaultElementType = {
 
 type ReservedPropsType = "variants" | "args" | "overrides";
 type NodeOverridesType<T extends NodeNameType> = Pick<
-  PlasmicAbout__OverridesType,
+  PlasmicOldAbout__OverridesType,
   DescendantsType<T>
 >;
 type NodeComponentProps<T extends NodeNameType> =
   // Explicitly specify variants, args, and overrides as objects
   {
-    variants?: PlasmicAbout__VariantsArgs;
-    args?: PlasmicAbout__ArgsType;
+    variants?: PlasmicOldAbout__VariantsArgs;
+    args?: PlasmicOldAbout__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicAbout__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } & Omit<PlasmicOldAbout__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
     /* Specify args directly as props*/ Omit<
-      PlasmicAbout__ArgsType,
+      PlasmicOldAbout__ArgsType,
       ReservedPropsType
     > &
     /* Specify overrides for each element directly as props*/ Omit<
@@ -543,12 +543,12 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
         deriveRenderOpts(props, {
           name: nodeName,
           descendantNames: PlasmicDescendants[nodeName],
-          internalArgPropNames: PlasmicAbout__ArgProps,
-          internalVariantPropNames: PlasmicAbout__VariantProps
+          internalArgPropNames: PlasmicOldAbout__ArgProps,
+          internalVariantPropNames: PlasmicOldAbout__VariantProps
         }),
       [props, nodeName]
     );
-    return PlasmicAbout__RenderFunc({
+    return PlasmicOldAbout__RenderFunc({
       variants,
       args,
       overrides,
@@ -556,15 +556,15 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
     });
   };
   if (nodeName === "root") {
-    func.displayName = "PlasmicAbout";
+    func.displayName = "PlasmicOldAbout";
   } else {
-    func.displayName = `PlasmicAbout.${nodeName}`;
+    func.displayName = `PlasmicOldAbout.${nodeName}`;
   }
   return func;
 }
 
-export const PlasmicAbout = Object.assign(
-  // Top-level PlasmicAbout renders the root element
+export const PlasmicOldAbout = Object.assign(
+  // Top-level PlasmicOldAbout renders the root element
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
@@ -574,11 +574,11 @@ export const PlasmicAbout = Object.assign(
     embedHtml: makeNodeComponent("embedHtml"),
     multipleProduct: makeNodeComponent("multipleProduct"),
 
-    // Metadata about props expected for PlasmicAbout
-    internalVariantProps: PlasmicAbout__VariantProps,
-    internalArgProps: PlasmicAbout__ArgProps
+    // Metadata about props expected for PlasmicOldAbout
+    internalVariantProps: PlasmicOldAbout__VariantProps,
+    internalArgProps: PlasmicOldAbout__ArgProps
   }
 );
 
-export default PlasmicAbout;
+export default PlasmicOldAbout;
 /* prettier-ignore-end */

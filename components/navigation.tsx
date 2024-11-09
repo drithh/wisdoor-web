@@ -3,19 +3,57 @@ import Link from 'next/link';
 import Image from 'next/image';
 import ExportedImage from 'next-image-export-optimizer';
 import { cn } from '@/lib/utils';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from './ui/navigation-menu';
 
 const links = [
-  // {
-  //   title: 'Home',
-  //   href: '/',
-  // },
+  {
+    title: 'Custom',
+    href: '/door',
+  },
   {
     title: 'About',
-    href: '/about#about',
+    component: (
+      <NavigationMenuContent>
+        <ul className="grid gap-1 p-2 sm:w-64 uppercase text-xs">
+          <NavigationMenuLink asChild>
+            <a
+              className="flex h-full w-full select-none flex-col justify-end rounded-md hover:bg-gradient-to-b from-muted/50 to-muted p-2 no-underline outline-none focus:shadow-md"
+              href="/"
+            >
+              About
+            </a>
+          </NavigationMenuLink>
+          <NavigationMenuLink asChild>
+            <a
+              className="flex h-full w-full select-none flex-col justify-end rounded-md hover:bg-gradient-to-b from-muted/50 to-muted p-2 no-underline outline-none focus:shadow-md"
+              href="/"
+            >
+              Manufacturing
+            </a>
+          </NavigationMenuLink>
+        </ul>
+      </NavigationMenuContent>
+    ),
   },
   {
     title: 'Products',
-    href: '/about#product',
+    href: '#product',
+  },
+  {
+    title: 'Projects',
+    href: '#project',
+  },
+  {
+    title: 'Products',
+    href: '#product',
   },
 ];
 
@@ -30,38 +68,50 @@ export function Navigation({ image, alt, black }: NavigationProps) {
 
   return (
     <div
-      className={cn(
-        'font-display grid grid-cols-2 sm:grid-cols-3 justify-between  items-center px-4  top-0 left-0 h-16 w-full z-50',
-        black ? 'text-black' : 'text-white absolute'
-      )}
+      className={cn('w-full font-display fixed h-[74px] p-4 z-50 text-black')}
     >
-      <div className="h-full flex-grow">
-        <div className="w-24 h-full relative">
+      <nav className={cn('flex justify-between items-center w-full h-full')}>
+        <div className="flex items-start min-w-24 h-[42px] relative">
           <Link href="/">
             <ExportedImage
               src={defaultImage}
-              fill
-              className="object-contain"
+              width={96}
+              height={42}
+              className="w-24"
               alt={alt || 'Logo Wisdoor'}
               priority
             />
           </Link>
         </div>
-      </div>
-      <nav
-        className={cn(
-          'grid gap-2 md:gap-6 mt-[10px] w-fit grid-cols-2 justify-self-end sm:justify-self-center grid-flow-col  md:mr-0 mr-2'
-        )}
-      >
-        {links.map((link) => (
-          <Link
-            key={link.href}
-            href={link.href}
-            className="font-text text-center font-medium"
-          >
-            {link.title}
-          </Link>
-        ))}
+        <div className="flex h-9 self-end  justify-around flex-grow">
+          {links.map((link) =>
+            link.href ? (
+              <NavigationMenu>
+                <Link href={link.href} legacyBehavior passHref>
+                  <NavigationMenuLink
+                    className={cn(
+                      navigationMenuTriggerStyle(),
+                      'text-xs uppercase'
+                    )}
+                  >
+                    {link.title}
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenu>
+            ) : (
+              <NavigationMenu>
+                <NavigationMenuList>
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger className="uppercase text-xs">
+                      {link.title}
+                    </NavigationMenuTrigger>
+                    {link.component}
+                  </NavigationMenuItem>
+                </NavigationMenuList>
+              </NavigationMenu>
+            )
+          )}
+        </div>
       </nav>
     </div>
   );

@@ -19,8 +19,8 @@ const config = {
     },
     extend: {
       fontFamily: {
-        text: 'var(--font-universal-sans-text)',
-        display: 'var(--font-universal-sans-display)',
+        text: 'var(--font-neue-haas-grotesk)',
+        display: 'var(--font-neue-haas-grotesk)',
       },
       fontWeight: {
         regular: '400',

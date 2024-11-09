@@ -1,0 +1,208 @@
+.root {
+  position: relative;
+  justify-items: center;
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  padding: 8px;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .root {
+    padding: 0px;
+  }
+}
+.navigation:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.section__mocrm {
+  display: grid;
+  position: absolute;
+  align-content: flex-start;
+  justify-items: center;
+  width: auto;
+  left: 20px;
+  top: 72px;
+  right: 20px;
+  height: auto;
+  bottom: 20px;
+  grid-template-columns:
+    var(--plsmc-viewport-gap) 1fr minmax(0, var(--plsmc-wide-chunk))
+    min(
+      var(--plsmc-standard-width),
+      calc(100% - var(--plsmc-viewport-gap) - var(--plsmc-viewport-gap))
+    )
+    minmax(0, var(--plsmc-wide-chunk)) 1fr var(--plsmc-viewport-gap);
+  padding: 0px;
+  margin: 0px;
+}
+.section__mocrm > * {
+  grid-column: 4;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .section__mocrm {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    top: 72px;
+  }
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .section__mocrm > * {
+    grid-column: 4;
+  }
+}
+.hero:global(.__wab_instance) {
+  object-fit: cover;
+  position: relative;
+  left: auto;
+  top: auto;
+  margin-top: 0px;
+  border-radius: 24px;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .hero:global(.__wab_instance) {
+    border-radius: 12px;
+    padding: 0px;
+    margin: 0px;
+  }
+}
+.section___0Md7 {
+  display: grid;
+  position: absolute;
+  align-content: center;
+  justify-items: center;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  left: 50%;
+  top: 30%;
+  transform: translateX(-50%) translateY(-50%) translateZ(0px);
+  height: auto;
+  min-width: 0px;
+  grid-template-columns:
+    var(--plsmc-viewport-gap) 1fr minmax(0, var(--plsmc-wide-chunk))
+    min(
+      var(--plsmc-standard-width),
+      calc(100% - var(--plsmc-viewport-gap) - var(--plsmc-viewport-gap))
+    )
+    minmax(0, var(--plsmc-wide-chunk)) 1fr var(--plsmc-viewport-gap);
+}
+.section___0Md7 > * {
+  grid-column: 4;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .section___0Md7 > * {
+    grid-column: 4;
+  }
+}
+.blurFade:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  min-width: 0px;
+}
+.text__z850Z {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  color: #ffffff;
+  font-family: var(--font-universal-sans-display);
+  font-size: 56px;
+  font-weight: 500;
+  text-align: center;
+  min-width: 0;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .text__z850Z {
+    font-size: 40px;
+  }
+}
+.text__qM8Me {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  color: #ffffff;
+  font-family: var(--font-universal-sans-display);
+  font-size: 28px;
+  font-weight: 500;
+  text-align: center;
+  text-decoration-line: underline !important;
+  min-width: 0;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .text__qM8Me {
+    font-size: 24px;
+  }
+}
+.text__jQSee {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  color: #ffffff;
+  font-family: var(--font-universal-sans-text);
+  font-size: 17px;
+  font-weight: 500;
+  text-align: center;
+  text-decoration-line: none !important;
+  min-width: 0;
+}
+.section___9Wqeb {
+  display: grid;
+  position: absolute;
+  align-content: center;
+  justify-items: center;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  left: 50%;
+  top: 90%;
+  transform: translateX(-50%) translateY(-50%) translateZ(0px);
+  height: 43px;
+  min-width: 0px;
+  grid-template-columns:
+    var(--plsmc-viewport-gap) 1fr minmax(0, var(--plsmc-wide-chunk))
+    min(
+      var(--plsmc-standard-width),
+      calc(100% - var(--plsmc-viewport-gap) - var(--plsmc-viewport-gap))
+    )
+    minmax(0, var(--plsmc-wide-chunk)) 1fr var(--plsmc-viewport-gap);
+}
+.section___9Wqeb > * {
+  grid-column: 4;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .section___9Wqeb > * {
+    grid-column: 4;
+  }
+}
+.pulsatingButton:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+  left: auto;
+  top: auto;
+  height: auto;
+  width: 16rem;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .pulsatingButton:global(.__wab_instance) {
+    left: 0px;
+    top: 0px;
+  }
+}
+.text__gdEut {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  color: #ffffff;
+  font-family: var(--font-universal-sans-text);
+  font-size: 24px;
+  font-weight: 500;
+  border-radius: 100%;
+  padding: 0px;
+}
