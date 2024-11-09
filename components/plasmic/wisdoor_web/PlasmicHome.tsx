@@ -145,28 +145,30 @@ function PlasmicHome__RenderFunc(props: {
         }
       `}</style>
 
-      <div
-        data-plasmic-name={"root"}
-        data-plasmic-override={overrides.root}
-        data-plasmic-root={true}
-        data-plasmic-for-node={forNode}
-        className={classNames(
-          projectcss.all,
-          projectcss.root_reset,
-          projectcss.plasmic_default_styles,
-          projectcss.plasmic_mixins,
-          projectcss.plasmic_tokens,
-          sty.root
-        )}
-      >
-        <Navigation
-          data-plasmic-name={"navigation"}
-          data-plasmic-override={overrides.navigation}
-          alt={"Logo Wisdoor"}
-          black={false}
-          className={classNames("__wab_instance", sty.navigation)}
-          image={"/plasmic/wisdoor_web/images/logoWhiteTransPng.png"}
-        />
+      <div className={projectcss.plasmic_page_wrapper}>
+        <div
+          data-plasmic-name={"root"}
+          data-plasmic-override={overrides.root}
+          data-plasmic-root={true}
+          data-plasmic-for-node={forNode}
+          className={classNames(
+            projectcss.all,
+            projectcss.root_reset,
+            projectcss.plasmic_default_styles,
+            projectcss.plasmic_mixins,
+            projectcss.plasmic_tokens,
+            sty.root
+          )}
+        >
+          <Navigation
+            data-plasmic-name={"navigation"}
+            data-plasmic-override={overrides.navigation}
+            alt={"Logo Wisdoor"}
+            black={false}
+            className={classNames("__wab_instance", sty.navigation)}
+            image={"/plasmic/wisdoor_web/images/logoWhiteTransPng.png"}
+          />
+        </div>
       </div>
     </React.Fragment>
   ) as React.ReactElement | null;

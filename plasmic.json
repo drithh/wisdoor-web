@@ -82,6 +82,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/new-page"
+        },
+        {
+          "id": "bKncGzoaFZyp",
+          "name": "Button",
+          "type": "managed",
+          "projectId": "t5hn1zAmdmxJoKmkXG4dPV",
+          "renderModuleFilePath": "plasmic/wisdoor_web/PlasmicButton.tsx",
+          "importSpec": {
+            "modulePath": "Button.tsx"
+          },
+          "cssFilePath": "plasmic/wisdoor_web/PlasmicButton.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "button"
         }
       ],
       "icons": [

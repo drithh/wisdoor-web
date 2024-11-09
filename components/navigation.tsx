@@ -1,3 +1,4 @@
+'use client';
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -52,8 +53,8 @@ const links = [
     href: '#project',
   },
   {
-    title: 'Products',
-    href: '#product',
+    title: 'Contacts',
+    href: '#contact',
   },
 ];
 
@@ -65,28 +66,57 @@ interface NavigationProps {
 
 export function Navigation({ image, alt, black }: NavigationProps) {
   const defaultImage = image || '/placeholder.svg';
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = document.documentElement.scrollTop || window.scrollY;
+      setScrolled(scrollTop > 20);
+    };
+
+    document.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
-    <div
-      className={cn('w-full font-display fixed h-[74px] p-4 z-50 text-black')}
-    >
-      <nav className={cn('flex justify-between items-center w-full h-full')}>
-        <div className="flex items-start min-w-24 h-[42px] relative">
+    <div className="h-[200dvh] max-h-[4000px]">
+      <nav
+        className={cn(
+          'flex justify-between items-center w-full font-display fixed z-50 text-black transition-all duration-300',
+          scrolled ? 'h-[60px] border-b border-black p-2' : 'h-[74px] p-4'
+        )}
+      >
+        <div
+          className={cn(
+            'flex items-start min-w-24 relative',
+            scrolled ? 'w-[35px]' : 'h-[42px]'
+          )}
+        >
           <Link href="/">
             <ExportedImage
               src={defaultImage}
               width={96}
               height={42}
-              className="w-24"
+              className={cn(
+                'transition-all',
+                scrolled ? 'h-[35px] w-[80px]' : 'h-[42px] w-[96px]'
+              )}
               alt={alt || 'Logo Wisdoor'}
               priority
             />
           </Link>
         </div>
-        <div className="flex h-9 self-end  justify-around flex-grow">
+        <div
+          className={cn(
+            'flex self-end justify-around flex-grow',
+            scrolled ? 'h-8' : 'h-9'
+          )}
+        >
           {links.map((link) =>
             link.href ? (
-              <NavigationMenu>
+              <NavigationMenu key={link.title}>
                 <Link href={link.href} legacyBehavior passHref>
                   <NavigationMenuLink
                     className={cn(
@@ -99,7 +129,7 @@ export function Navigation({ image, alt, black }: NavigationProps) {
                 </Link>
               </NavigationMenu>
             ) : (
-              <NavigationMenu>
+              <NavigationMenu key={link.title}>
                 <NavigationMenuList>
                   <NavigationMenuItem>
                     <NavigationMenuTrigger className="uppercase text-xs">
