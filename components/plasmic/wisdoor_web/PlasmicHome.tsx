@@ -60,11 +60,28 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import { Navigation } from "../../navigation"; // plasmic-import: UiHqtQRdZ-A_/codeComponent
+import { Hero } from "../../hero"; // plasmic-import: DLj-cPcbVVVA/codeComponent
+import { TextReveal } from "../../magicui/text-reveal"; // plasmic-import: kTWRudp-inez/codeComponent
+import { ShimmerButton } from "../../magicui/shimmer-button"; // plasmic-import: n12S44Pf_diF/codeComponent
+import { IconReveal } from "../../magicui/icon-reveal"; // plasmic-import: C_a578vM2Lk3/codeComponent
+import { Reveal } from "../../magicui/reveal"; // plasmic-import: WZl_dCgRNxa8/codeComponent
+import { Embed } from "@plasmicpkgs/plasmic-basic-components";
+import Footer from "../../Footer"; // plasmic-import: jyVfSNkVX5DJ/component
+import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
+
+import { useScreenVariants as useScreenVariantsqZb5Tz3BAq8Z } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: qZB5tz3bAQ8Z/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
+import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
+import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plasmic.module.css"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: t5hn1zAmdmxJoKmkXG4dPV/projectcss
 import sty from "./PlasmicHome.module.css"; // plasmic-import: -Y2zUFW6j6F1/css
+
+import PinSvgrepoComSvgIcon from "./icons/PlasmicIcon__PinSvgrepoComSvg"; // plasmic-import: OOrRfHur7WB6/icon
+import BagSvgrepoComSvgIcon from "./icons/PlasmicIcon__BagSvgrepoComSvg"; // plasmic-import: eu2Gp3073zmn/icon
+import DoorOpenSvgrepoComSvgIcon from "./icons/PlasmicIcon__DoorOpenSvgrepoComSvg"; // plasmic-import: 9Hn0B0fHgeN9/icon
+import ConstructionSvgIcon from "./icons/PlasmicIcon__ConstructionSvg"; // plasmic-import: YRzU1IntfWEP/icon
 
 createPlasmicElementProxy;
 
@@ -80,6 +97,13 @@ export const PlasmicHome__ArgProps = new Array<ArgPropType>();
 export type PlasmicHome__OverridesType = {
   root?: Flex__<"div">;
   navigation?: Flex__<typeof Navigation>;
+  hero?: Flex__<typeof Hero>;
+  shimmerButton?: Flex__<typeof ShimmerButton>;
+  about?: Flex__<"section">;
+  img?: Flex__<typeof PlasmicImg__>;
+  columns?: Flex__<"div">;
+  embedHtml?: Flex__<typeof Embed>;
+  footer?: Flex__<typeof Footer>;
 };
 
 export interface DefaultHomeProps {}
@@ -122,6 +146,10 @@ function PlasmicHome__RenderFunc(props: {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
+  const globalVariants = ensureGlobalVariants({
+    screen: useScreenVariantsqZb5Tz3BAq8Z()
+  });
+
   return (
     <React.Fragment>
       <Head>
@@ -157,6 +185,8 @@ function PlasmicHome__RenderFunc(props: {
             projectcss.plasmic_default_styles,
             projectcss.plasmic_mixins,
             projectcss.plasmic_tokens,
+            plasmic_antd_5_hostless_css.plasmic_tokens,
+            plasmic_plasmic_rich_components_css.plasmic_tokens,
             sty.root
           )}
         >
@@ -168,6 +198,310 @@ function PlasmicHome__RenderFunc(props: {
             className={classNames("__wab_instance", sty.navigation)}
             image={"/plasmic/wisdoor_web/images/logoWhiteTransPng.png"}
           />
+
+          <div className={classNames(projectcss.all, sty.freeBox__oPyea)}>
+            <Hero
+              data-plasmic-name={"hero"}
+              data-plasmic-override={overrides.hero}
+              alt={"Logo Wisdoor"}
+              className={classNames("__wab_instance", sty.hero)}
+              image={"/plasmic/wisdoor_web/images/heroWisdoorPng.png"}
+            >
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox___5AgZ2)}
+              >
+                <TextReveal
+                  characterClass={
+                    hasVariant(globalVariants, "screen", "mobileOnly")
+                      ? "text-[48px] font-semibold"
+                      : "text-[68px] font-semibold"
+                  }
+                  className={classNames(
+                    "__wab_instance",
+                    sty.textReveal__jYm54
+                  )}
+                  text={"ENGINEERING\\nWOODEN DOOR\\nSPECIALIST"}
+                />
+
+                <ShimmerButton
+                  data-plasmic-name={"shimmerButton"}
+                  data-plasmic-override={overrides.shimmerButton}
+                  background={"#535353"}
+                  borderRadius={"100px"}
+                  className={classNames("__wab_instance", sty.shimmerButton)}
+                  shimmerColor={"#ffffff"}
+                  shimmerDuration={"3s"}
+                  shimmerSize={"0.05em"}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__hXuq
+                    )}
+                  >
+                    {"CUSTOM YOUR DOOR"}
+                  </div>
+                </ShimmerButton>
+              </Stack__>
+            </Hero>
+            <section
+              data-plasmic-name={"about"}
+              data-plasmic-override={overrides.about}
+              className={classNames(projectcss.all, sty.about)}
+            >
+              <PlasmicImg__
+                data-plasmic-name={"img"}
+                data-plasmic-override={overrides.img}
+                alt={""}
+                className={classNames(sty.img)}
+                displayHeight={"40vh"}
+                displayMaxHeight={"60rem"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"40rem"}
+                displayMinWidth={"0"}
+                displayWidth={"100%"}
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/wisdoor_web/images/whatsAppImage20241028At121213PmJpeg.jpg",
+                  fullWidth: 4032,
+                  fullHeight: 3024,
+                  aspectRatio: undefined
+                }}
+              />
+
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox__k6GPl)}
+              >
+                <TextReveal
+                  characterDelay={0}
+                  className={classNames(
+                    "__wab_instance",
+                    sty.textReveal__aympA
+                  )}
+                  delay={0}
+                  lineDelay={0}
+                  text={"ABOUT US"}
+                />
+
+                <Stack__
+                  as={"div"}
+                  data-plasmic-name={"columns"}
+                  data-plasmic-override={overrides.columns}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.columns)}
+                >
+                  <div
+                    className={classNames(projectcss.all, sty.column__bfHUv)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__skDUw
+                      )}
+                    >
+                      {
+                        "Founded in 1994, PT. Wiratama Inti Sentosa began as a wood manufacturing company specializing in kiln drying and molding for timber furniture. We later expanded into finger joint laminating for door cores and producing our own furniture, exporting to markets such as Taiwan, Singapore, South Africa, Netherlands, and Korea."
+                      }
+                    </div>
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.column__ujNlX)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__hdtXh
+                      )}
+                    >
+                      {
+                        "Leveraging our extensive experience in exporting door cores, we've recently entered the local door industry, supplying to residential homes and small businesses like cl\u00ednics. We are committed to expanding this portfolio as fast as possible to capture new opportunities in the market."
+                      }
+                    </div>
+                  </div>
+                </Stack__>
+                <div className={classNames(projectcss.all, sty.freeBox__axdpY)}>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__qrdzC)}
+                  >
+                    <IconReveal
+                      className={classNames(
+                        "__wab_instance",
+                        sty.iconReveal__jTRr9
+                      )}
+                    >
+                      <PinSvgrepoComSvgIcon
+                        className={classNames(projectcss.all, sty.svg__k4Jdz)}
+                        role={"img"}
+                      />
+                    </IconReveal>
+                    <Reveal
+                      className={classNames(
+                        "__wab_instance",
+                        sty.reveal__pgL4C
+                      )}
+                      delay={0.25}
+                      duration={0.5}
+                    >
+                      <Embed
+                        data-plasmic-name={"embedHtml"}
+                        data-plasmic-override={overrides.embedHtml}
+                        className={classNames("__wab_instance", sty.embedHtml)}
+                        code={"3,975.32 m<sup>2</sup>"}
+                      />
+
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__iLkes
+                        )}
+                      >
+                        {"Range Area"}
+                      </div>
+                    </Reveal>
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__h9MrN)}
+                  >
+                    <IconReveal
+                      className={classNames(
+                        "__wab_instance",
+                        sty.iconReveal___08OKs
+                      )}
+                    >
+                      <BagSvgrepoComSvgIcon
+                        className={classNames(projectcss.all, sty.svg__tdwDv)}
+                        role={"img"}
+                      />
+                    </IconReveal>
+                    <Reveal
+                      className={classNames(
+                        "__wab_instance",
+                        sty.reveal__jOj3I
+                      )}
+                      delay={0.25}
+                      duration={0.5}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__tJlf
+                        )}
+                      >
+                        {"20+"}
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__utbZb
+                        )}
+                      >
+                        {"Years"}
+                      </div>
+                    </Reveal>
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__ePsfp)}
+                  >
+                    <IconReveal
+                      className={classNames(
+                        "__wab_instance",
+                        sty.iconReveal__vls6W
+                      )}
+                    >
+                      <DoorOpenSvgrepoComSvgIcon
+                        className={classNames(projectcss.all, sty.svg__myzhv)}
+                        role={"img"}
+                      />
+                    </IconReveal>
+                    <Reveal
+                      className={classNames(
+                        "__wab_instance",
+                        sty.reveal__jOijy
+                      )}
+                      delay={0.25}
+                      duration={0.5}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___03UCl
+                        )}
+                      >
+                        {"2000 Doors"}
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__b7LEr
+                        )}
+                      >
+                        {"Per Month"}
+                      </div>
+                    </Reveal>
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__q07P5)}
+                  >
+                    <IconReveal
+                      className={classNames(
+                        "__wab_instance",
+                        sty.iconReveal__bQyFu
+                      )}
+                    >
+                      <ConstructionSvgIcon
+                        className={classNames(projectcss.all, sty.svg___8RgGo)}
+                        role={"img"}
+                      />
+                    </IconReveal>
+                    <Reveal
+                      className={classNames(
+                        "__wab_instance",
+                        sty.reveal__evplK
+                      )}
+                      delay={0.25}
+                      duration={0.5}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__c7P1D
+                        )}
+                      >
+                        {"100 Door Frames"}
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__f2AeL
+                        )}
+                      >
+                        {"Per Month"}
+                      </div>
+                    </Reveal>
+                  </div>
+                </div>
+              </Stack__>
+            </section>
+            <Footer
+              data-plasmic-name={"footer"}
+              data-plasmic-override={overrides.footer}
+              className={classNames("__wab_instance", sty.footer)}
+            />
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -175,8 +509,25 @@ function PlasmicHome__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "navigation"],
-  navigation: ["navigation"]
+  root: [
+    "root",
+    "navigation",
+    "hero",
+    "shimmerButton",
+    "about",
+    "img",
+    "columns",
+    "embedHtml",
+    "footer"
+  ],
+  navigation: ["navigation"],
+  hero: ["hero", "shimmerButton"],
+  shimmerButton: ["shimmerButton"],
+  about: ["about", "img", "columns", "embedHtml"],
+  img: ["img"],
+  columns: ["columns"],
+  embedHtml: ["embedHtml"],
+  footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -184,6 +535,13 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   navigation: typeof Navigation;
+  hero: typeof Hero;
+  shimmerButton: typeof ShimmerButton;
+  about: "section";
+  img: typeof PlasmicImg__;
+  columns: "div";
+  embedHtml: typeof Embed;
+  footer: typeof Footer;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -247,6 +605,13 @@ export const PlasmicHome = Object.assign(
   {
     // Helper components rendering sub-elements
     navigation: makeNodeComponent("navigation"),
+    hero: makeNodeComponent("hero"),
+    shimmerButton: makeNodeComponent("shimmerButton"),
+    about: makeNodeComponent("about"),
+    img: makeNodeComponent("img"),
+    columns: makeNodeComponent("columns"),
+    embedHtml: makeNodeComponent("embedHtml"),
+    footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicHome
     internalVariantProps: PlasmicHome__VariantProps,

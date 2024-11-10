@@ -11,11 +11,11 @@
 // Plasmic Project: t5hn1zAmdmxJoKmkXG4dPV
 // Component: rd8xUc-BnZoZ
 
-import * as React from 'react';
+import * as React from "react";
 
-import Head from 'next/head';
-import Link, { LinkProps } from 'next/link';
-import { useRouter } from 'next/router';
+import Head from "next/head";
+import Link, { LinkProps } from "next/link";
+import { useRouter } from "next/router";
 
 import {
   Flex as Flex__,
@@ -51,31 +51,33 @@ import {
   useDollarState,
   usePlasmicTranslator,
   useTrigger,
-  wrapWithClassName,
-} from '@plasmicapp/react-web';
+  wrapWithClassName
+} from "@plasmicapp/react-web";
 import {
   DataCtxReader as DataCtxReader__,
   useDataEnv,
-  useGlobalActions,
-} from '@plasmicapp/react-web/lib/host';
+  useGlobalActions
+} from "@plasmicapp/react-web/lib/host";
 
-import { RootWrapper } from '../../door/components/root-wrapper'; // plasmic-import: DpMppaPmps2h/codeComponent
-import { Logo } from '../../logo'; // plasmic-import: QT_CDmgLpsS2/codeComponent
-import { DoorWrapper } from '../../door/components/door-wrapper'; // plasmic-import: MNJwDXwyFwWL/codeComponent
-import { ConfiguratorWrapper } from '../../door/components/configurator-wrapper'; // plasmic-import: h1IjeS8_3odo/codeComponent
-import { ChooseDoor } from '../../door/configurator/choose'; // plasmic-import: LMn0cgg59gxw/codeComponent
-import { SizeDoor } from '../../door/configurator/size'; // plasmic-import: 7H1b44gqct0K/codeComponent
-import { FinishingDoor } from '../../door/configurator/finishing'; // plasmic-import: YV413SY07lXf/codeComponent
-import { FinishingVariant } from '../../door/configurator/finishing-variant'; // plasmic-import: _0rE-i0b-tUt/codeComponent
-import { GrooveDoor } from '../../door/configurator/groove'; // plasmic-import: 8V98shg8_J4H/codeComponent
-import { FrameDoor } from '../../door/configurator/frame'; // plasmic-import: CnuhOfnl-a-a/codeComponent
-import { AddonDoor } from '../../door/configurator/addon'; // plasmic-import: g49Z5SosGCS0/codeComponent
-import { DetailPrice } from '../../door/detail-price'; // plasmic-import: iWTWpwjwUI2f/codeComponent
+import { RootWrapper } from "../../door/components/root-wrapper"; // plasmic-import: DpMppaPmps2h/codeComponent
+import { Logo } from "../../logo"; // plasmic-import: QT_CDmgLpsS2/codeComponent
+import { DoorWrapper } from "../../door/components/door-wrapper"; // plasmic-import: MNJwDXwyFwWL/codeComponent
+import { ConfiguratorWrapper } from "../../door/components/configurator-wrapper"; // plasmic-import: h1IjeS8_3odo/codeComponent
+import { ChooseDoor } from "../../door/configurator/choose"; // plasmic-import: LMn0cgg59gxw/codeComponent
+import { SizeDoor } from "../../door/configurator/size"; // plasmic-import: 7H1b44gqct0K/codeComponent
+import { FinishingDoor } from "../../door/configurator/finishing"; // plasmic-import: YV413SY07lXf/codeComponent
+import { FinishingVariant } from "../../door/configurator/finishing-variant"; // plasmic-import: _0rE-i0b-tUt/codeComponent
+import { GrooveDoor } from "../../door/configurator/groove"; // plasmic-import: 8V98shg8_J4H/codeComponent
+import { FrameDoor } from "../../door/configurator/frame"; // plasmic-import: CnuhOfnl-a-a/codeComponent
+import { AddonDoor } from "../../door/configurator/addon"; // plasmic-import: g49Z5SosGCS0/codeComponent
+import { DetailPrice } from "../../door/detail-price"; // plasmic-import: iWTWpwjwUI2f/codeComponent
 
-import '@plasmicapp/react-web/lib/plasmic.css';
+import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from './plasmic.module.css'; // plasmic-import: t5hn1zAmdmxJoKmkXG4dPV/projectcss
-import sty from './PlasmicDoor.module.css'; // plasmic-import: rd8xUc-BnZoZ/css
+import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
+import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plasmic.module.css"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/projectcss
+import projectcss from "./plasmic.module.css"; // plasmic-import: t5hn1zAmdmxJoKmkXG4dPV/projectcss
+import sty from "./PlasmicDoor.module.css"; // plasmic-import: rd8xUc-BnZoZ/css
 
 createPlasmicElementProxy;
 
@@ -89,24 +91,24 @@ type ArgPropType = keyof PlasmicDoor__ArgsType;
 export const PlasmicDoor__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicDoor__OverridesType = {
-  root?: Flex__<'div'>;
+  root?: Flex__<"div">;
   rootWrapper?: Flex__<typeof RootWrapper>;
   logo?: Flex__<typeof Logo>;
   doorWrapper?: Flex__<typeof DoorWrapper>;
   configuratorWrapper?: Flex__<typeof ConfiguratorWrapper>;
-  freeBox?: Flex__<'div'>;
-  jenisPintu?: Flex__<'div'>;
+  freeBox?: Flex__<"div">;
+  jenisPintu?: Flex__<"div">;
   chooseDoor?: Flex__<typeof ChooseDoor>;
-  ukuranPintu?: Flex__<'div'>;
+  ukuranPintu?: Flex__<"div">;
   sizeDoor?: Flex__<typeof SizeDoor>;
-  finishingPintu?: Flex__<'div'>;
+  finishingPintu?: Flex__<"div">;
   finishingDoor?: Flex__<typeof FinishingDoor>;
-  finishingVariant?: Flex__<'div'>;
-  groovingPintu?: Flex__<'div'>;
+  finishingVariant?: Flex__<"div">;
+  groovingPintu?: Flex__<"div">;
   grooveDoor?: Flex__<typeof GrooveDoor>;
-  kusen?: Flex__<'div'>;
+  kusen?: Flex__<"div">;
   frameDoor?: Flex__<typeof FrameDoor>;
-  tambahan?: Flex__<'div'>;
+  tambahan?: Flex__<"div">;
   addonDoor?: Flex__<typeof AddonDoor>;
   detailPrice?: Flex__<typeof DetailPrice>;
 };
@@ -143,7 +145,7 @@ function PlasmicDoor__RenderFunc(props: {
 
   const $props = {
     ...args,
-    ...variants,
+    ...variants
   };
 
   const __nextRouter = useNextRouter();
@@ -163,7 +165,7 @@ function PlasmicDoor__RenderFunc(props: {
 
       <div className={projectcss.plasmic_page_wrapper}>
         <div
-          data-plasmic-name={'root'}
+          data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
@@ -173,35 +175,37 @@ function PlasmicDoor__RenderFunc(props: {
             projectcss.plasmic_default_styles,
             projectcss.plasmic_mixins,
             projectcss.plasmic_tokens,
+            plasmic_antd_5_hostless_css.plasmic_tokens,
+            plasmic_plasmic_rich_components_css.plasmic_tokens,
             sty.root
           )}
         >
           <RootWrapper
-            data-plasmic-name={'rootWrapper'}
+            data-plasmic-name={"rootWrapper"}
             data-plasmic-override={overrides.rootWrapper}
-            className={classNames('__wab_instance', sty.rootWrapper)}
+            className={classNames("__wab_instance", sty.rootWrapper)}
           >
             <Logo
-              data-plasmic-name={'logo'}
+              data-plasmic-name={"logo"}
               data-plasmic-override={overrides.logo}
-              alt={'Logo Wisdoor'}
-              className={classNames('__wab_instance', sty.logo)}
-              image={'/plasmic/wisdoor_web/images/logoWhiteTransPng.png'}
+              alt={"Logo Wisdoor"}
+              className={classNames("__wab_instance", sty.logo)}
+              image={"/plasmic/wisdoor_web/images/logoWhiteTransPng.png"}
             />
 
             <DoorWrapper
-              data-plasmic-name={'doorWrapper'}
+              data-plasmic-name={"doorWrapper"}
               data-plasmic-override={overrides.doorWrapper}
-              className={classNames('__wab_instance', sty.doorWrapper)}
+              className={classNames("__wab_instance", sty.doorWrapper)}
             />
 
             <ConfiguratorWrapper
-              data-plasmic-name={'configuratorWrapper'}
+              data-plasmic-name={"configuratorWrapper"}
               data-plasmic-override={overrides.configuratorWrapper}
-              className={classNames('__wab_instance', sty.configuratorWrapper)}
+              className={classNames("__wab_instance", sty.configuratorWrapper)}
             >
               <div
-                data-plasmic-name={'freeBox'}
+                data-plasmic-name={"freeBox"}
                 data-plasmic-override={overrides.freeBox}
                 className={classNames(projectcss.all, sty.freeBox)}
               >
@@ -212,7 +216,7 @@ function PlasmicDoor__RenderFunc(props: {
                     sty.text__k7FLs
                   )}
                 >
-                  {'Kustom Pintu'}
+                  {"Kustom Pintu"}
                 </div>
                 <div
                   className={classNames(
@@ -223,19 +227,19 @@ function PlasmicDoor__RenderFunc(props: {
                 >
                   <React.Fragment>
                     <span
-                      className={'plasmic_default__all plasmic_default__span'}
-                      style={{ color: '#00000099' }}
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ color: "#00000099" }}
                     >
                       {
-                        'Ini hanya gambaran kasar. Detail desain spesifik dapat dibahas lebih lanjut dengan admin setelah pemesanan dilakukan.'
+                        "Ini hanya gambaran kasar. Detail desain spesifik dapat dibahas lebih lanjut dengan admin setelah pemesanan dilakukan."
                       }
                     </span>
                   </React.Fragment>
                 </div>
               </div>
               <Stack__
-                as={'div'}
-                data-plasmic-name={'jenisPintu'}
+                as={"div"}
+                data-plasmic-name={"jenisPintu"}
                 data-plasmic-override={overrides.jenisPintu}
                 hasGap={true}
                 className={classNames(projectcss.all, sty.jenisPintu)}
@@ -247,32 +251,32 @@ function PlasmicDoor__RenderFunc(props: {
                     sty.text___0Na67
                   )}
                 >
-                  {'Jenis Pintu'}
+                  {"Jenis Pintu"}
                 </div>
                 <ChooseDoor
-                  data-plasmic-name={'chooseDoor'}
+                  data-plasmic-name={"chooseDoor"}
                   data-plasmic-override={overrides.chooseDoor}
-                  className={classNames('__wab_instance', sty.chooseDoor)}
+                  className={classNames("__wab_instance", sty.chooseDoor)}
                   doorNames={(() => {
                     const __composite = [
                       { id: null, name: null, modal: null },
-                      { id: null, name: null, modal: null },
+                      { id: null, name: null, modal: null }
                     ];
-                    __composite['0']['id'] = 'utama';
-                    __composite['0']['name'] = 'Pintu Utama';
-                    __composite['0']['modal'] =
-                      '<p>Pintu utama menggunakan kayu yang lebih berat, memberikan rasa kokoh dan daya tahan yang tinggi. Material ini dirancang untuk menahan beban dan memberikan perlindungan ekstra, menjadikannya ideal untuk pintu depan yang membutuhkan keamanan dan keawetan.</p>';
-                    __composite['1']['id'] = 'kamar';
-                    __composite['1']['name'] = 'Pintu Kamar';
-                    __composite['1']['modal'] =
-                      '<p>Pintu kamar menggunakan kayu yang lebih ringan, lebih mudah dibuka dan dipasang. Material ini cocok untuk penggunaan interior, memberikan kenyamanan dan fungsionalitas tanpa mengorbankan estetika atau daya tahan yang sesuai untuk ruangan dalam rumah.</p>';
+                    __composite["0"]["id"] = "utama";
+                    __composite["0"]["name"] = "Pintu Utama";
+                    __composite["0"]["modal"] =
+                      "<p>Pintu utama menggunakan kayu yang lebih berat, memberikan rasa kokoh dan daya tahan yang tinggi. Material ini dirancang untuk menahan beban dan memberikan perlindungan ekstra, menjadikannya ideal untuk pintu depan yang membutuhkan keamanan dan keawetan.</p>";
+                    __composite["1"]["id"] = "kamar";
+                    __composite["1"]["name"] = "Pintu Kamar";
+                    __composite["1"]["modal"] =
+                      "<p>Pintu kamar menggunakan kayu yang lebih ringan, lebih mudah dibuka dan dipasang. Material ini cocok untuk penggunaan interior, memberikan kenyamanan dan fungsionalitas tanpa mengorbankan estetika atau daya tahan yang sesuai untuk ruangan dalam rumah.</p>";
                     return __composite;
                   })()}
                 />
               </Stack__>
               <Stack__
-                as={'div'}
-                data-plasmic-name={'ukuranPintu'}
+                as={"div"}
+                data-plasmic-name={"ukuranPintu"}
                 data-plasmic-override={overrides.ukuranPintu}
                 hasGap={true}
                 className={classNames(projectcss.all, sty.ukuranPintu)}
@@ -284,12 +288,12 @@ function PlasmicDoor__RenderFunc(props: {
                     sty.text___1DgB
                   )}
                 >
-                  {'Ukuran Pintu'}
+                  {"Ukuran Pintu"}
                 </div>
                 <SizeDoor
-                  data-plasmic-name={'sizeDoor'}
+                  data-plasmic-name={"sizeDoor"}
                   data-plasmic-override={overrides.sizeDoor}
-                  className={classNames('__wab_instance', sty.sizeDoor)}
+                  className={classNames("__wab_instance", sty.sizeDoor)}
                   sizes={(() => {
                     const __composite = [
                       {
@@ -311,7 +315,7 @@ function PlasmicDoor__RenderFunc(props: {
                         addedPriceBelow: null,
                         defaultHeight: null,
                         maxHeight: null,
-                        minHeight: null,
+                        minHeight: null
                       },
                       {
                         idDoor: null,
@@ -332,54 +336,54 @@ function PlasmicDoor__RenderFunc(props: {
                         addedPriceBelow: null,
                         minHeight: null,
                         defaultHeight: null,
-                        maxHeight: null,
-                      },
+                        maxHeight: null
+                      }
                     ];
-                    __composite['0']['idDoor'] = 'utama';
-                    __composite['0']['length'] = 210;
-                    __composite['0']['width'] = 83;
-                    __composite['0']['price'] = 560000;
-                    __composite['0']['priceBelowDefaultWidth'] = 100000;
-                    __composite['0']['priceAboveDefaultWidth'] = 200000;
-                    __composite['0']['doorId'] = 'utama';
-                    __composite['0']['defaultLength'] = 210;
-                    __composite['0']['maxLength'] = 240;
-                    __composite['0']['minLength'] = 180;
-                    __composite['0']['defaultWidth'] = 83;
-                    __composite['0']['maxWidth'] = 118;
-                    __composite['0']['minWidth'] = 60;
-                    __composite['0']['defaultPrice'] = 560000;
-                    __composite['0']['addedPriceAbove'] = 200000;
-                    __composite['0']['addedPriceBelow'] = 100000;
-                    __composite['0']['defaultHeight'] = 210;
-                    __composite['0']['maxHeight'] = 240;
-                    __composite['0']['minHeight'] = 180;
-                    __composite['1']['idDoor'] = 'kamar';
-                    __composite['1']['length'] = 210;
-                    __composite['1']['width'] = 83;
-                    __composite['1']['price'] = 660000;
-                    __composite['1']['priceBelowDefaultWidth'] = 100000;
-                    __composite['1']['priceAboveDefaultWidth'] = 200000;
-                    __composite['1']['doorId'] = 'kamar';
-                    __composite['1']['defaultLength'] = 210;
-                    __composite['1']['maxLength'] = 240;
-                    __composite['1']['minLength'] = 180;
-                    __composite['1']['defaultWidth'] = 83;
-                    __composite['1']['maxWidth'] = 118;
-                    __composite['1']['minWidth'] = 60;
-                    __composite['1']['defaultPrice'] = 560000;
-                    __composite['1']['addedPriceAbove'] = 200000;
-                    __composite['1']['addedPriceBelow'] = 100000;
-                    __composite['1']['minHeight'] = 180;
-                    __composite['1']['defaultHeight'] = 210;
-                    __composite['1']['maxHeight'] = 240;
+                    __composite["0"]["idDoor"] = "utama";
+                    __composite["0"]["length"] = 210;
+                    __composite["0"]["width"] = 83;
+                    __composite["0"]["price"] = 560000;
+                    __composite["0"]["priceBelowDefaultWidth"] = 100000;
+                    __composite["0"]["priceAboveDefaultWidth"] = 200000;
+                    __composite["0"]["doorId"] = "utama";
+                    __composite["0"]["defaultLength"] = 210;
+                    __composite["0"]["maxLength"] = 240;
+                    __composite["0"]["minLength"] = 180;
+                    __composite["0"]["defaultWidth"] = 83;
+                    __composite["0"]["maxWidth"] = 118;
+                    __composite["0"]["minWidth"] = 60;
+                    __composite["0"]["defaultPrice"] = 560000;
+                    __composite["0"]["addedPriceAbove"] = 200000;
+                    __composite["0"]["addedPriceBelow"] = 100000;
+                    __composite["0"]["defaultHeight"] = 210;
+                    __composite["0"]["maxHeight"] = 240;
+                    __composite["0"]["minHeight"] = 180;
+                    __composite["1"]["idDoor"] = "kamar";
+                    __composite["1"]["length"] = 210;
+                    __composite["1"]["width"] = 83;
+                    __composite["1"]["price"] = 660000;
+                    __composite["1"]["priceBelowDefaultWidth"] = 100000;
+                    __composite["1"]["priceAboveDefaultWidth"] = 200000;
+                    __composite["1"]["doorId"] = "kamar";
+                    __composite["1"]["defaultLength"] = 210;
+                    __composite["1"]["maxLength"] = 240;
+                    __composite["1"]["minLength"] = 180;
+                    __composite["1"]["defaultWidth"] = 83;
+                    __composite["1"]["maxWidth"] = 118;
+                    __composite["1"]["minWidth"] = 60;
+                    __composite["1"]["defaultPrice"] = 560000;
+                    __composite["1"]["addedPriceAbove"] = 200000;
+                    __composite["1"]["addedPriceBelow"] = 100000;
+                    __composite["1"]["minHeight"] = 180;
+                    __composite["1"]["defaultHeight"] = 210;
+                    __composite["1"]["maxHeight"] = 240;
                     return __composite;
                   })()}
                 />
               </Stack__>
               <Stack__
-                as={'div'}
-                data-plasmic-name={'finishingPintu'}
+                as={"div"}
+                data-plasmic-name={"finishingPintu"}
                 data-plasmic-override={overrides.finishingPintu}
                 hasGap={true}
                 className={classNames(projectcss.all, sty.finishingPintu)}
@@ -391,38 +395,38 @@ function PlasmicDoor__RenderFunc(props: {
                     sty.text__tyLu4
                   )}
                 >
-                  {'Finishing'}
+                  {"Finishing"}
                 </div>
                 <FinishingDoor
-                  data-plasmic-name={'finishingDoor'}
+                  data-plasmic-name={"finishingDoor"}
                   data-plasmic-override={overrides.finishingDoor}
-                  className={classNames('__wab_instance', sty.finishingDoor)}
+                  className={classNames("__wab_instance", sty.finishingDoor)}
                   finishings={(() => {
                     const __composite = [
                       { doorId: null, name: null, price: null },
                       { doorId: null, name: null, price: null, modal: null },
-                      { doorId: null, name: null, price: null, modal: null },
+                      { doorId: null, name: null, price: null, modal: null }
                     ];
-                    __composite['0']['doorId'] = 'kamar';
-                    __composite['0']['name'] = 'Tanpa Finishing';
-                    __composite['0']['price'] = 0;
-                    __composite['1']['doorId'] = 'kamar';
-                    __composite['1']['name'] = 'PVC';
-                    __composite['1']['price'] = 700000;
-                    __composite['1']['modal'] =
+                    __composite["0"]["doorId"] = "kamar";
+                    __composite["0"]["name"] = "Tanpa Finishing";
+                    __composite["0"]["price"] = 0;
+                    __composite["1"]["doorId"] = "kamar";
+                    __composite["1"]["name"] = "PVC";
+                    __composite["1"]["price"] = 700000;
+                    __composite["1"]["modal"] =
                       '<p dir="ltr">PVC sheet adalah finishing praktis yang tahan lama. Prosesnya melibatkan pemasangan lembaran PVC di atas pintu yang telah dilapisi lem, kemudian dipanaskan dan ditekan agar merekat sempurna.</p>\n<p dir="ltr">&nbsp;</p>\n<p dir="ltr"><strong>Keunggulan:</strong></p>\n<ul>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Tahan air, kelembapan, dan goresan.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Mudah dibersihkan.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Beragam warna dan tekstur.</p>\n</li>\n</ul>\n<p>&nbsp;</p>';
-                    __composite['2']['doorId'] = 'kamar';
-                    __composite['2']['name'] = 'HPL';
-                    __composite['2']['price'] = 850000;
-                    __composite['2']['modal'] =
+                    __composite["2"]["doorId"] = "kamar";
+                    __composite["2"]["name"] = "HPL";
+                    __composite["2"]["price"] = 850000;
+                    __composite["2"]["modal"] =
                       '<p dir="ltr">HPL menawarkan daya tahan tinggi dan variasi desain. Lembaran HPL ditempelkan pada pintu yang telah diberi lem, kemudian ditekan dan dipangkas untuk hasil rapi dan kuat.</p>\n<p dir="ltr">&nbsp;</p>\n<p dir="ltr"><strong>Keunggulan:</strong></p>\n<ul>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Tahan Air</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Tahan goresan, panas, dan bahan kimia.</p>\n</li>\n<li dir="ltr" aria-level="1">\n<p dir="ltr" role="presentation">Banyak pilihan desain.</p>\n</li>\n</ul>\n<p>&nbsp;</p>';
                     return __composite;
                   })()}
                 />
               </Stack__>
               <Stack__
-                as={'div'}
-                data-plasmic-name={'finishingVariant'}
+                as={"div"}
+                data-plasmic-name={"finishingVariant"}
                 data-plasmic-override={overrides.finishingVariant}
                 hasGap={true}
                 className={classNames(projectcss.all, sty.finishingVariant)}
@@ -434,18 +438,18 @@ function PlasmicDoor__RenderFunc(props: {
                     sty.text__vbWtE
                   )}
                 >
-                  {'Finishing Variant'}
+                  {"Finishing Variant"}
                 </div>
                 <FinishingVariant
                   className={classNames(
-                    '__wab_instance',
+                    "__wab_instance",
                     sty.finishingVariant__gcuKx
                   )}
                 />
               </Stack__>
               <Stack__
-                as={'div'}
-                data-plasmic-name={'groovingPintu'}
+                as={"div"}
+                data-plasmic-name={"groovingPintu"}
                 data-plasmic-override={overrides.groovingPintu}
                 hasGap={true}
                 className={classNames(projectcss.all, sty.groovingPintu)}
@@ -457,37 +461,37 @@ function PlasmicDoor__RenderFunc(props: {
                     sty.text___0HCv
                   )}
                 >
-                  {'Grooving'}
+                  {"Grooving"}
                 </div>
                 <GrooveDoor
-                  data-plasmic-name={'grooveDoor'}
+                  data-plasmic-name={"grooveDoor"}
                   data-plasmic-override={overrides.grooveDoor}
-                  className={classNames('__wab_instance', sty.grooveDoor)}
+                  className={classNames("__wab_instance", sty.grooveDoor)}
                   grooves={(() => {
                     const __composite = [
                       { name: null, price: null },
                       { name: null, price: null, modal: null },
                       { name: null, price: null, modal: null },
-                      { name: null, price: null, modal: null },
+                      { name: null, price: null, modal: null }
                     ];
-                    __composite['0']['name'] = 'Tanpa Grooving';
-                    __composite['0']['price'] = 0;
-                    __composite['1']['name'] = 'Simple';
-                    __composite['1']['price'] = 50000;
-                    __composite['1']['modal'] = '<p>eadad</p>';
-                    __composite['2']['name'] = 'Intermediate';
-                    __composite['2']['price'] = 75000;
-                    __composite['2']['modal'] = '<p>ee</p>';
-                    __composite['3']['name'] = 'Expert';
-                    __composite['3']['price'] = 200000;
-                    __composite['3']['modal'] = '<p>asda</p>';
+                    __composite["0"]["name"] = "Tanpa Grooving";
+                    __composite["0"]["price"] = 0;
+                    __composite["1"]["name"] = "Simple";
+                    __composite["1"]["price"] = 50000;
+                    __composite["1"]["modal"] = "<p>eadad</p>";
+                    __composite["2"]["name"] = "Intermediate";
+                    __composite["2"]["price"] = 75000;
+                    __composite["2"]["modal"] = "<p>ee</p>";
+                    __composite["3"]["name"] = "Expert";
+                    __composite["3"]["price"] = 200000;
+                    __composite["3"]["modal"] = "<p>asda</p>";
                     return __composite;
                   })()}
                 />
               </Stack__>
               <Stack__
-                as={'div'}
-                data-plasmic-name={'kusen'}
+                as={"div"}
+                data-plasmic-name={"kusen"}
                 data-plasmic-override={overrides.kusen}
                 hasGap={true}
                 className={classNames(projectcss.all, sty.kusen)}
@@ -499,12 +503,12 @@ function PlasmicDoor__RenderFunc(props: {
                     sty.text__aoB7O
                   )}
                 >
-                  {'Kusen'}
+                  {"Kusen"}
                 </div>
                 <FrameDoor
-                  data-plasmic-name={'frameDoor'}
+                  data-plasmic-name={"frameDoor"}
                   data-plasmic-override={overrides.frameDoor}
-                  className={classNames('__wab_instance', sty.frameDoor)}
+                  className={classNames("__wab_instance", sty.frameDoor)}
                   frames={(() => {
                     const __composite = [
                       { name: null, price: null, length: null, width: null },
@@ -514,29 +518,29 @@ function PlasmicDoor__RenderFunc(props: {
                         price: null,
                         length: null,
                         width: null,
-                        architraveFrame: null,
-                      },
+                        architraveFrame: null
+                      }
                     ];
-                    __composite['0']['name'] = 'Tanpa Kusen';
-                    __composite['0']['price'] = 0;
-                    __composite['0']['length'] = 0;
-                    __composite['0']['width'] = 0;
-                    __composite['1']['name'] = 'Kecil';
-                    __composite['1']['price'] = 150000;
-                    __composite['1']['length'] = 4;
-                    __composite['1']['width'] = 7;
-                    __composite['2']['name'] = 'Besar';
-                    __composite['2']['price'] = 200000;
-                    __composite['2']['length'] = 4;
-                    __composite['2']['width'] = 10;
-                    __composite['2']['architraveFrame'] = true;
+                    __composite["0"]["name"] = "Tanpa Kusen";
+                    __composite["0"]["price"] = 0;
+                    __composite["0"]["length"] = 0;
+                    __composite["0"]["width"] = 0;
+                    __composite["1"]["name"] = "Kecil";
+                    __composite["1"]["price"] = 150000;
+                    __composite["1"]["length"] = 4;
+                    __composite["1"]["width"] = 7;
+                    __composite["2"]["name"] = "Besar";
+                    __composite["2"]["price"] = 200000;
+                    __composite["2"]["length"] = 4;
+                    __composite["2"]["width"] = 10;
+                    __composite["2"]["architraveFrame"] = true;
                     return __composite;
                   })()}
                 />
               </Stack__>
               <Stack__
-                as={'div'}
-                data-plasmic-name={'tambahan'}
+                as={"div"}
+                data-plasmic-name={"tambahan"}
                 data-plasmic-override={overrides.tambahan}
                 hasGap={true}
                 className={classNames(projectcss.all, sty.tambahan)}
@@ -548,10 +552,10 @@ function PlasmicDoor__RenderFunc(props: {
                     sty.text__dD9Rb
                   )}
                 >
-                  {'Tambahan'}
+                  {"Tambahan"}
                 </div>
                 <AddonDoor
-                  data-plasmic-name={'addonDoor'}
+                  data-plasmic-name={"addonDoor"}
                   data-plasmic-override={overrides.addonDoor}
                   addons={(() => {
                     const __composite = {
@@ -560,54 +564,54 @@ function PlasmicDoor__RenderFunc(props: {
                       cylinder: null,
                       handle: null,
                       key: null,
-                      hinge: null,
+                      hinge: null
                     };
-                    __composite['keyHole'] = (() => {
+                    __composite["keyHole"] = (() => {
                       const __composite = { text: null, price: null };
-                      __composite['text'] = 'Lubang Kunci (Standar dekson)';
-                      __composite['price'] = 25000;
+                      __composite["text"] = "Lubang Kunci (Standar dekson)";
+                      __composite["price"] = 25000;
                       return __composite;
                     })();
-                    __composite['weatherStrip'] = (() => {
+                    __composite["weatherStrip"] = (() => {
                       const __composite = { text: null, price: null };
-                      __composite['text'] = 'Tali Air';
-                      __composite['price'] = 25000;
+                      __composite["text"] = "Tali Air";
+                      __composite["price"] = 25000;
                       return __composite;
                     })();
-                    __composite['cylinder'] = (() => {
+                    __composite["cylinder"] = (() => {
                       const __composite = { text: null, price: null };
-                      __composite['text'] = 'Cylinder';
-                      __composite['price'] = 110000;
+                      __composite["text"] = "Cylinder";
+                      __composite["price"] = 110000;
                       return __composite;
                     })();
-                    __composite['handle'] = (() => {
+                    __composite["handle"] = (() => {
                       const __composite = { text: null, price: null };
-                      __composite['text'] = 'Handle';
-                      __composite['price'] = 200000;
+                      __composite["text"] = "Handle";
+                      __composite["price"] = 200000;
                       return __composite;
                     })();
-                    __composite['key'] = (() => {
+                    __composite["key"] = (() => {
                       const __composite = { text: null, price: null };
-                      __composite['text'] = 'Kunci';
-                      __composite['price'] = 175000;
+                      __composite["text"] = "Kunci";
+                      __composite["price"] = 175000;
                       return __composite;
                     })();
-                    __composite['hinge'] = (() => {
+                    __composite["hinge"] = (() => {
                       const __composite = { text: null, price: null };
-                      __composite['text'] = 'Engsel (3 pc)';
-                      __composite['price'] = 140000;
+                      __composite["text"] = "Engsel (3 pc)";
+                      __composite["price"] = 140000;
                       return __composite;
                     })();
                     return __composite;
                   })()}
-                  className={classNames('__wab_instance', sty.addonDoor)}
+                  className={classNames("__wab_instance", sty.addonDoor)}
                 />
               </Stack__>
               <DetailPrice
-                data-plasmic-name={'detailPrice'}
+                data-plasmic-name={"detailPrice"}
                 data-plasmic-override={overrides.detailPrice}
-                className={classNames('__wab_instance', sty.detailPrice)}
-                phone={'6281293586210'}
+                className={classNames("__wab_instance", sty.detailPrice)}
+                phone={"6281293586210"}
               />
             </ConfiguratorWrapper>
           </RootWrapper>
@@ -619,111 +623,111 @@ function PlasmicDoor__RenderFunc(props: {
 
 const PlasmicDescendants = {
   root: [
-    'root',
-    'rootWrapper',
-    'logo',
-    'doorWrapper',
-    'configuratorWrapper',
-    'freeBox',
-    'jenisPintu',
-    'chooseDoor',
-    'ukuranPintu',
-    'sizeDoor',
-    'finishingPintu',
-    'finishingDoor',
-    'finishingVariant',
-    'groovingPintu',
-    'grooveDoor',
-    'kusen',
-    'frameDoor',
-    'tambahan',
-    'addonDoor',
-    'detailPrice',
+    "root",
+    "rootWrapper",
+    "logo",
+    "doorWrapper",
+    "configuratorWrapper",
+    "freeBox",
+    "jenisPintu",
+    "chooseDoor",
+    "ukuranPintu",
+    "sizeDoor",
+    "finishingPintu",
+    "finishingDoor",
+    "finishingVariant",
+    "groovingPintu",
+    "grooveDoor",
+    "kusen",
+    "frameDoor",
+    "tambahan",
+    "addonDoor",
+    "detailPrice"
   ],
   rootWrapper: [
-    'rootWrapper',
-    'logo',
-    'doorWrapper',
-    'configuratorWrapper',
-    'freeBox',
-    'jenisPintu',
-    'chooseDoor',
-    'ukuranPintu',
-    'sizeDoor',
-    'finishingPintu',
-    'finishingDoor',
-    'finishingVariant',
-    'groovingPintu',
-    'grooveDoor',
-    'kusen',
-    'frameDoor',
-    'tambahan',
-    'addonDoor',
-    'detailPrice',
+    "rootWrapper",
+    "logo",
+    "doorWrapper",
+    "configuratorWrapper",
+    "freeBox",
+    "jenisPintu",
+    "chooseDoor",
+    "ukuranPintu",
+    "sizeDoor",
+    "finishingPintu",
+    "finishingDoor",
+    "finishingVariant",
+    "groovingPintu",
+    "grooveDoor",
+    "kusen",
+    "frameDoor",
+    "tambahan",
+    "addonDoor",
+    "detailPrice"
   ],
-  logo: ['logo'],
-  doorWrapper: ['doorWrapper'],
+  logo: ["logo"],
+  doorWrapper: ["doorWrapper"],
   configuratorWrapper: [
-    'configuratorWrapper',
-    'freeBox',
-    'jenisPintu',
-    'chooseDoor',
-    'ukuranPintu',
-    'sizeDoor',
-    'finishingPintu',
-    'finishingDoor',
-    'finishingVariant',
-    'groovingPintu',
-    'grooveDoor',
-    'kusen',
-    'frameDoor',
-    'tambahan',
-    'addonDoor',
-    'detailPrice',
+    "configuratorWrapper",
+    "freeBox",
+    "jenisPintu",
+    "chooseDoor",
+    "ukuranPintu",
+    "sizeDoor",
+    "finishingPintu",
+    "finishingDoor",
+    "finishingVariant",
+    "groovingPintu",
+    "grooveDoor",
+    "kusen",
+    "frameDoor",
+    "tambahan",
+    "addonDoor",
+    "detailPrice"
   ],
-  freeBox: ['freeBox'],
-  jenisPintu: ['jenisPintu', 'chooseDoor'],
-  chooseDoor: ['chooseDoor'],
-  ukuranPintu: ['ukuranPintu', 'sizeDoor'],
-  sizeDoor: ['sizeDoor'],
-  finishingPintu: ['finishingPintu', 'finishingDoor'],
-  finishingDoor: ['finishingDoor'],
-  finishingVariant: ['finishingVariant'],
-  groovingPintu: ['groovingPintu', 'grooveDoor'],
-  grooveDoor: ['grooveDoor'],
-  kusen: ['kusen', 'frameDoor'],
-  frameDoor: ['frameDoor'],
-  tambahan: ['tambahan', 'addonDoor'],
-  addonDoor: ['addonDoor'],
-  detailPrice: ['detailPrice'],
+  freeBox: ["freeBox"],
+  jenisPintu: ["jenisPintu", "chooseDoor"],
+  chooseDoor: ["chooseDoor"],
+  ukuranPintu: ["ukuranPintu", "sizeDoor"],
+  sizeDoor: ["sizeDoor"],
+  finishingPintu: ["finishingPintu", "finishingDoor"],
+  finishingDoor: ["finishingDoor"],
+  finishingVariant: ["finishingVariant"],
+  groovingPintu: ["groovingPintu", "grooveDoor"],
+  grooveDoor: ["grooveDoor"],
+  kusen: ["kusen", "frameDoor"],
+  frameDoor: ["frameDoor"],
+  tambahan: ["tambahan", "addonDoor"],
+  addonDoor: ["addonDoor"],
+  detailPrice: ["detailPrice"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
-  root: 'div';
+  root: "div";
   rootWrapper: typeof RootWrapper;
   logo: typeof Logo;
   doorWrapper: typeof DoorWrapper;
   configuratorWrapper: typeof ConfiguratorWrapper;
-  freeBox: 'div';
-  jenisPintu: 'div';
+  freeBox: "div";
+  jenisPintu: "div";
   chooseDoor: typeof ChooseDoor;
-  ukuranPintu: 'div';
+  ukuranPintu: "div";
   sizeDoor: typeof SizeDoor;
-  finishingPintu: 'div';
+  finishingPintu: "div";
   finishingDoor: typeof FinishingDoor;
-  finishingVariant: 'div';
-  groovingPintu: 'div';
+  finishingVariant: "div";
+  groovingPintu: "div";
   grooveDoor: typeof GrooveDoor;
-  kusen: 'div';
+  kusen: "div";
   frameDoor: typeof FrameDoor;
-  tambahan: 'div';
+  tambahan: "div";
   addonDoor: typeof AddonDoor;
   detailPrice: typeof DetailPrice;
 };
 
-type ReservedPropsType = 'variants' | 'args' | 'overrides';
+type ReservedPropsType = "variants" | "args" | "overrides";
 type NodeOverridesType<T extends NodeNameType> = Pick<
   PlasmicDoor__OverridesType,
   DescendantsType<T>
@@ -759,7 +763,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
           name: nodeName,
           descendantNames: PlasmicDescendants[nodeName],
           internalArgPropNames: PlasmicDoor__ArgProps,
-          internalVariantPropNames: PlasmicDoor__VariantProps,
+          internalVariantPropNames: PlasmicDoor__VariantProps
         }),
       [props, nodeName]
     );
@@ -767,11 +771,11 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       variants,
       args,
       overrides,
-      forNode: nodeName,
+      forNode: nodeName
     });
   };
-  if (nodeName === 'root') {
-    func.displayName = 'PlasmicDoor';
+  if (nodeName === "root") {
+    func.displayName = "PlasmicDoor";
   } else {
     func.displayName = `PlasmicDoor.${nodeName}`;
   }
@@ -780,28 +784,28 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
 
 export const PlasmicDoor = Object.assign(
   // Top-level PlasmicDoor renders the root element
-  makeNodeComponent('root'),
+  makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    rootWrapper: makeNodeComponent('rootWrapper'),
-    logo: makeNodeComponent('logo'),
-    doorWrapper: makeNodeComponent('doorWrapper'),
-    configuratorWrapper: makeNodeComponent('configuratorWrapper'),
-    freeBox: makeNodeComponent('freeBox'),
-    jenisPintu: makeNodeComponent('jenisPintu'),
-    chooseDoor: makeNodeComponent('chooseDoor'),
-    ukuranPintu: makeNodeComponent('ukuranPintu'),
-    sizeDoor: makeNodeComponent('sizeDoor'),
-    finishingPintu: makeNodeComponent('finishingPintu'),
-    finishingDoor: makeNodeComponent('finishingDoor'),
-    finishingVariant: makeNodeComponent('finishingVariant'),
-    groovingPintu: makeNodeComponent('groovingPintu'),
-    grooveDoor: makeNodeComponent('grooveDoor'),
-    kusen: makeNodeComponent('kusen'),
-    frameDoor: makeNodeComponent('frameDoor'),
-    tambahan: makeNodeComponent('tambahan'),
-    addonDoor: makeNodeComponent('addonDoor'),
-    detailPrice: makeNodeComponent('detailPrice'),
+    rootWrapper: makeNodeComponent("rootWrapper"),
+    logo: makeNodeComponent("logo"),
+    doorWrapper: makeNodeComponent("doorWrapper"),
+    configuratorWrapper: makeNodeComponent("configuratorWrapper"),
+    freeBox: makeNodeComponent("freeBox"),
+    jenisPintu: makeNodeComponent("jenisPintu"),
+    chooseDoor: makeNodeComponent("chooseDoor"),
+    ukuranPintu: makeNodeComponent("ukuranPintu"),
+    sizeDoor: makeNodeComponent("sizeDoor"),
+    finishingPintu: makeNodeComponent("finishingPintu"),
+    finishingDoor: makeNodeComponent("finishingDoor"),
+    finishingVariant: makeNodeComponent("finishingVariant"),
+    groovingPintu: makeNodeComponent("groovingPintu"),
+    grooveDoor: makeNodeComponent("grooveDoor"),
+    kusen: makeNodeComponent("kusen"),
+    frameDoor: makeNodeComponent("frameDoor"),
+    tambahan: makeNodeComponent("tambahan"),
+    addonDoor: makeNodeComponent("addonDoor"),
+    detailPrice: makeNodeComponent("detailPrice"),
 
     // Metadata about props expected for PlasmicDoor
     internalVariantProps: PlasmicDoor__VariantProps,
@@ -809,11 +813,11 @@ export const PlasmicDoor = Object.assign(
 
     // Page metadata
     pageMetadata: {
-      title: '',
-      description: '',
-      ogImageSrc: '',
-      canonical: '',
-    },
+      title: "",
+      description: "",
+      ogImageSrc: "",
+      canonical: ""
+    }
   }
 );
 

@@ -90,8 +90,6 @@ export function Model(props: JSX.IntrinsicElements['group']) {
     // defaultTextureUrl: '/models/textures/melamine.webp',
   });
   // const doorMaterial = materials.melamine;
-  // console.log('doorMaterial', doorMaterial);
-  // console.log('honeyCombMaterial', materials.melamine);
 
   const doorGroupRef = React.useRef<Group<Object3DEventMap> | null>(null);
   const handleRef = React.useRef<Mesh | null>(null);

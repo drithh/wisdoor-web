@@ -29,6 +29,11 @@ import { RootWrapper } from '@/components/door/components/root-wrapper';
 import { ConfiguratorWrapper } from '@/components/door/components/configurator-wrapper';
 import { GrooveDoor } from '@/components/door/configurator/groove';
 import { Logo } from '@/components/logo';
+import { Footer } from '@/components/footer-component';
+import { Reveal } from '@/components/magicui/reveal';
+import { TextReveal } from '@/components/magicui/text-reveal';
+import { ShimmerButton } from '@/components/magicui/shimmer-button';
+import { IconReveal } from '@/components/magicui/icon-reveal';
 
 // You can register any code components that you want to use here; see
 // https://docs.plasmic.app/learn/code-components-ref/
@@ -75,6 +80,20 @@ registerComponent(Logo, {
   importPath: './components/logo',
 });
 
+registerComponent(Footer, {
+  name: 'Footer',
+  props: {
+    className: {
+      type: 'string',
+    },
+    children: {
+      type: 'slot',
+    },
+  },
+
+  importPath: './components/footer-component',
+});
+
 registerComponent(Hero, {
   name: 'Hero',
   props: {
@@ -88,6 +107,9 @@ registerComponent(Hero, {
     alt: {
       type: 'string',
       defaultValue: 'Logo Wisdoor',
+    },
+    children: {
+      type: 'slot',
     },
   },
 
@@ -205,6 +227,109 @@ registerComponent(BoxReveal, {
   },
 
   importPath: './components/magicui/box-reveal',
+});
+
+registerComponent(TextReveal, {
+  name: 'TextReveal',
+  props: {
+    text: {
+      type: 'string',
+    },
+    className: {
+      type: 'string',
+    },
+    duration: {
+      type: 'number',
+    },
+    delay: {
+      type: 'number',
+    },
+    characterDelay: {
+      type: 'number',
+    },
+    lineDelay: {
+      type: 'number',
+    },
+    characterClass: {
+      type: 'string',
+    },
+  },
+
+  importPath: './components/magicui/text-reveal',
+});
+
+registerComponent(IconReveal, {
+  name: 'IconReveal',
+  props: {
+    children: {
+      type: 'slot',
+    },
+    className: {
+      type: 'string',
+    },
+    duration: {
+      type: 'number',
+    },
+    delay: {
+      type: 'number',
+    },
+  },
+
+  importPath: './components/magicui/icon-reveal',
+});
+
+registerComponent(Reveal, {
+  name: 'Reveal',
+  props: {
+    children: {
+      type: 'slot',
+    },
+    className: {
+      type: 'string',
+    },
+    duration: {
+      type: 'number',
+    },
+    delay: {
+      type: 'number',
+    },
+  },
+
+  importPath: './components/magicui/reveal',
+});
+
+registerComponent(ShimmerButton, {
+  name: 'ShimmerButton',
+  props: {
+    shimmerColor: {
+      type: 'string',
+      defaultValue: '#ffffff',
+    },
+    shimmerSize: {
+      type: 'string',
+      defaultValue: '0.05em',
+    },
+    borderRadius: {
+      type: 'string',
+      defaultValue: '100px',
+    },
+    shimmerDuration: {
+      type: 'string',
+      defaultValue: '3s',
+    },
+    background: {
+      type: 'string',
+      defaultValue: 'rgba(0, 0, 0, 1)',
+    },
+    className: {
+      type: 'string',
+    },
+    children: {
+      type: 'slot',
+    },
+  },
+
+  importPath: './components/magicui/shimmer-button',
 });
 
 registerComponent(BlurFade, {

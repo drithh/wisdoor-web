@@ -81,68 +81,66 @@ export function Navigation({ image, alt, black }: NavigationProps) {
   }, []);
 
   return (
-    <div className="h-[200dvh] max-h-[4000px]">
-      <nav
+    <nav
+      className={cn(
+        'flex bg-white justify-between items-center w-full font-display p-4 fixed z-50 text-black transition-all duration-300',
+        scrolled ? 'h-[60px] border-b border-black py-2' : 'h-[74px]'
+      )}
+    >
+      <div
         className={cn(
-          'flex justify-between items-center w-full font-display fixed z-50 text-black transition-all duration-300',
-          scrolled ? 'h-[60px] border-b border-black p-2' : 'h-[74px] p-4'
+          'flex items-start min-w-24 relative',
+          scrolled ? 'w-[35px]' : 'h-[42px]'
         )}
       >
-        <div
-          className={cn(
-            'flex items-start min-w-24 relative',
-            scrolled ? 'w-[35px]' : 'h-[42px]'
-          )}
-        >
-          <Link href="/">
-            <ExportedImage
-              src={defaultImage}
-              width={96}
-              height={42}
-              className={cn(
-                'transition-all',
-                scrolled ? 'h-[35px] w-[80px]' : 'h-[42px] w-[96px]'
-              )}
-              alt={alt || 'Logo Wisdoor'}
-              priority
-            />
-          </Link>
-        </div>
-        <div
-          className={cn(
-            'flex self-end justify-around flex-grow',
-            scrolled ? 'h-8' : 'h-9'
-          )}
-        >
-          {links.map((link) =>
-            link.href ? (
-              <NavigationMenu key={link.title}>
-                <Link href={link.href} legacyBehavior passHref>
-                  <NavigationMenuLink
-                    className={cn(
-                      navigationMenuTriggerStyle(),
-                      'text-xs uppercase'
-                    )}
-                  >
+        <Link href="/">
+          <ExportedImage
+            src={defaultImage}
+            width={96}
+            height={42}
+            className={cn(
+              'transition-all',
+              scrolled ? 'h-[35px] w-[80px]' : 'h-[42px] w-[96px]'
+            )}
+            alt={alt || 'Logo Wisdoor'}
+            priority
+          />
+        </Link>
+      </div>
+      <div
+        className={cn(
+          'flex self-end justify-around flex-grow',
+          scrolled ? 'h-8' : 'h-9'
+        )}
+      >
+        {links.map((link) =>
+          link.href ? (
+            <NavigationMenu key={link.title}>
+              <Link href={link.href} legacyBehavior passHref>
+                <NavigationMenuLink
+                  className={cn(
+                    navigationMenuTriggerStyle(),
+                    'text-xs uppercase'
+                  )}
+                >
+                  {link.title}
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenu>
+          ) : (
+            <NavigationMenu key={link.title}>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="uppercase text-xs">
                     {link.title}
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenu>
-            ) : (
-              <NavigationMenu key={link.title}>
-                <NavigationMenuList>
-                  <NavigationMenuItem>
-                    <NavigationMenuTrigger className="uppercase text-xs">
-                      {link.title}
-                    </NavigationMenuTrigger>
-                    {link.component}
-                  </NavigationMenuItem>
-                </NavigationMenuList>
-              </NavigationMenu>
-            )
-          )}
-        </div>
-      </nav>
-    </div>
+                  </NavigationMenuTrigger>
+                  {link.component}
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+          )
+        )}
+      </div>
+    </nav>
   );
 }
