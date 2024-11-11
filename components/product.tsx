@@ -93,14 +93,13 @@ export function Product({ productImages, children, className }: ProductProps) {
 
   return (
     <div className="flex w-full sm:flex-row flex-col">
-      <div className="w-screen p-8 max-w-[24rem] flex flex-col h-[40rem]">
+      <div className="w-screen p-4 sm:p-8 max-w-[39rem] flex flex-col sm:h-[48rem]">
         {children}
-        <div>asda</div>
-        <div className="image flex-grow gap-4 flex flex-col justify-end">
+        <div className="image flex-grow hidden sm:flex gap-4 flex-col justify-end">
           <p className="tracking-wider font-display">
             IMAGES {imageIndex + 1} / {productImages.length}
           </p>
-          <div className="flex gap-4">
+          <div className="flex gap-4  ">
             <NavigateButton
               onClick={() => setImageIndex(Math.max(0, imageIndex - 1))}
             >
@@ -119,13 +118,13 @@ export function Product({ productImages, children, className }: ProductProps) {
         </div>
       </div>
       <div
-        className={`flex-grow py-8 px-4 overflow-x-auto flex w-full ${className}`}
+        className={`flex-grow py-4 px-2 sm:py-8 sm:px-4 overflow-x-auto flex-row flex w-full ${className}`}
       >
         {productImages.map((product, index) => (
           <span
             ref={tabRefs.current[index]}
             key={index}
-            className="relative mx-4 w-full min-w-[36rem] h-full"
+            className="relative mx-2 sm:mx-4 min-w-[24rem] sm:min-w-[44rem] h-[24rem] sm:h-full"
           >
             <ExportedImage
               src={product.image}
