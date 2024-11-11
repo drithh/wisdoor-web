@@ -449,6 +449,12 @@
           "name": "Reveal",
           "displayName": "Reveal",
           "componentImportPath": "./components/magicui/reveal"
+        },
+        {
+          "id": "tUhKBdzelJtb",
+          "name": "Product",
+          "displayName": "Product",
+          "componentImportPath": "./components/product"
         }
       ],
       "customFunctions": []

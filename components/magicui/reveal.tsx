@@ -30,21 +30,23 @@ export const Reveal: React.FC<RevealProps> = ({
   }, [isInView, mainControls]);
 
   return (
-    <motion.div
-      ref={ref}
-      className={cn('font-display', className)}
-      variants={{
-        hidden: { y: 75 },
-        visible: { y: 0 },
-      }}
-      initial="hidden"
-      animate={mainControls}
-      transition={{
-        duration: duration,
-        delay: delay,
-      }}
-    >
-      {children}
-    </motion.div>
+    <div className="overflow-hidden">
+      <motion.div
+        ref={ref}
+        className={cn('font-display ', className)}
+        variants={{
+          hidden: { y: 75 },
+          visible: { y: 0 },
+        }}
+        initial="hidden"
+        animate={mainControls}
+        transition={{
+          duration: duration,
+          delay: delay,
+        }}
+      >
+        {children}
+      </motion.div>
+    </div>
   );
 };

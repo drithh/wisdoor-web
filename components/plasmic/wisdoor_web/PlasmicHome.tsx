@@ -66,6 +66,7 @@ import { ShimmerButton } from "../../magicui/shimmer-button"; // plasmic-import:
 import { IconReveal } from "../../magicui/icon-reveal"; // plasmic-import: C_a578vM2Lk3/codeComponent
 import { Reveal } from "../../magicui/reveal"; // plasmic-import: WZl_dCgRNxa8/codeComponent
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
+import { Product } from "../../product"; // plasmic-import: tUhKBdzelJtb/codeComponent
 import Footer from "../../Footer"; // plasmic-import: jyVfSNkVX5DJ/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
@@ -98,11 +99,13 @@ export type PlasmicHome__OverridesType = {
   root?: Flex__<"div">;
   navigation?: Flex__<typeof Navigation>;
   hero?: Flex__<typeof Hero>;
+  textReveal?: Flex__<typeof TextReveal>;
   shimmerButton?: Flex__<typeof ShimmerButton>;
   about?: Flex__<"section">;
   img?: Flex__<typeof PlasmicImg__>;
   columns?: Flex__<"div">;
   embedHtml?: Flex__<typeof Embed>;
+  product?: Flex__<typeof Product>;
   footer?: Flex__<typeof Footer>;
 };
 
@@ -213,15 +216,14 @@ function PlasmicHome__RenderFunc(props: {
                 className={classNames(projectcss.all, sty.freeBox___5AgZ2)}
               >
                 <TextReveal
+                  data-plasmic-name={"textReveal"}
+                  data-plasmic-override={overrides.textReveal}
                   characterClass={
                     hasVariant(globalVariants, "screen", "mobileOnly")
                       ? "text-[48px] font-semibold"
                       : "text-[68px] font-semibold"
                   }
-                  className={classNames(
-                    "__wab_instance",
-                    sty.textReveal__jYm54
-                  )}
+                  className={classNames("__wab_instance", sty.textReveal)}
                   text={"ENGINEERING\\nWOODEN DOOR\\nSPECIALIST"}
                 />
 
@@ -277,17 +279,15 @@ function PlasmicHome__RenderFunc(props: {
                 hasGap={true}
                 className={classNames(projectcss.all, sty.freeBox__k6GPl)}
               >
-                <TextReveal
-                  characterDelay={0}
+                <div
                   className={classNames(
-                    "__wab_instance",
-                    sty.textReveal__aympA
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__pqYBy
                   )}
-                  delay={0}
-                  lineDelay={0}
-                  text={"ABOUT US"}
-                />
-
+                >
+                  {"ABOUT US"}
+                </div>
                 <Stack__
                   as={"div"}
                   data-plasmic-name={"columns"}
@@ -346,7 +346,7 @@ function PlasmicHome__RenderFunc(props: {
                         "__wab_instance",
                         sty.reveal__pgL4C
                       )}
-                      delay={0.25}
+                      delay={0.1}
                       duration={0.5}
                     >
                       <Embed
@@ -375,6 +375,8 @@ function PlasmicHome__RenderFunc(props: {
                         "__wab_instance",
                         sty.iconReveal___08OKs
                       )}
+                      delay={0.25}
+                      duration={0.25}
                     >
                       <BagSvgrepoComSvgIcon
                         className={classNames(projectcss.all, sty.svg__tdwDv)}
@@ -386,7 +388,7 @@ function PlasmicHome__RenderFunc(props: {
                         "__wab_instance",
                         sty.reveal__jOj3I
                       )}
-                      delay={0.25}
+                      delay={0.35}
                       duration={0.5}
                     >
                       <div
@@ -417,6 +419,8 @@ function PlasmicHome__RenderFunc(props: {
                         "__wab_instance",
                         sty.iconReveal__vls6W
                       )}
+                      delay={0.5}
+                      duration={0.5}
                     >
                       <DoorOpenSvgrepoComSvgIcon
                         className={classNames(projectcss.all, sty.svg__myzhv)}
@@ -428,7 +432,7 @@ function PlasmicHome__RenderFunc(props: {
                         "__wab_instance",
                         sty.reveal__jOijy
                       )}
-                      delay={0.25}
+                      delay={0.6}
                       duration={0.5}
                     >
                       <div
@@ -459,6 +463,8 @@ function PlasmicHome__RenderFunc(props: {
                         "__wab_instance",
                         sty.iconReveal__bQyFu
                       )}
+                      delay={0.75}
+                      duration={0.75}
                     >
                       <ConstructionSvgIcon
                         className={classNames(projectcss.all, sty.svg___8RgGo)}
@@ -470,7 +476,7 @@ function PlasmicHome__RenderFunc(props: {
                         "__wab_instance",
                         sty.reveal__evplK
                       )}
-                      delay={0.25}
+                      delay={0.85}
                       duration={0.5}
                     >
                       <div
@@ -480,7 +486,7 @@ function PlasmicHome__RenderFunc(props: {
                           sty.text__c7P1D
                         )}
                       >
-                        {"100 Door Frames"}
+                        {"1000 Door Frames"}
                       </div>
                       <div
                         className={classNames(
@@ -496,6 +502,25 @@ function PlasmicHome__RenderFunc(props: {
                 </div>
               </Stack__>
             </section>
+            <Product
+              data-plasmic-name={"product"}
+              data-plasmic-override={overrides.product}
+              className={classNames("__wab_instance", sty.product)}
+              productImages={(() => {
+                const __composite = [
+                  { image: null, alt: null },
+                  { image: null, alt: null }
+                ];
+                __composite["0"]["image"] =
+                  "https://cdn.sanity.io/images/lbvt8rt8/production/5721be3bbd3a5cff6eab2bed8151dcae5b6ca5c6-6000x4000.jpg?rect=1000,0,4000,4000&w=1280&h=1280&fit=min&auto=format";
+                __composite["0"]["alt"] = "Produk 1";
+                __composite["1"]["image"] =
+                  "https://cdn.sanity.io/images/lbvt8rt8/production/5721be3bbd3a5cff6eab2bed8151dcae5b6ca5c6-6000x4000.jpg?rect=1000,0,4000,4000&w=1280&h=1280&fit=min&auto=format";
+                __composite["1"]["alt"] = "Product 2";
+                return __composite;
+              })()}
+            />
+
             <Footer
               data-plasmic-name={"footer"}
               data-plasmic-override={overrides.footer}
@@ -513,20 +538,24 @@ const PlasmicDescendants = {
     "root",
     "navigation",
     "hero",
+    "textReveal",
     "shimmerButton",
     "about",
     "img",
     "columns",
     "embedHtml",
+    "product",
     "footer"
   ],
   navigation: ["navigation"],
-  hero: ["hero", "shimmerButton"],
+  hero: ["hero", "textReveal", "shimmerButton"],
+  textReveal: ["textReveal"],
   shimmerButton: ["shimmerButton"],
   about: ["about", "img", "columns", "embedHtml"],
   img: ["img"],
   columns: ["columns"],
   embedHtml: ["embedHtml"],
+  product: ["product"],
   footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -536,11 +565,13 @@ type NodeDefaultElementType = {
   root: "div";
   navigation: typeof Navigation;
   hero: typeof Hero;
+  textReveal: typeof TextReveal;
   shimmerButton: typeof ShimmerButton;
   about: "section";
   img: typeof PlasmicImg__;
   columns: "div";
   embedHtml: typeof Embed;
+  product: typeof Product;
   footer: typeof Footer;
 };
 
@@ -606,11 +637,13 @@ export const PlasmicHome = Object.assign(
     // Helper components rendering sub-elements
     navigation: makeNodeComponent("navigation"),
     hero: makeNodeComponent("hero"),
+    textReveal: makeNodeComponent("textReveal"),
     shimmerButton: makeNodeComponent("shimmerButton"),
     about: makeNodeComponent("about"),
     img: makeNodeComponent("img"),
     columns: makeNodeComponent("columns"),
     embedHtml: makeNodeComponent("embedHtml"),
+    product: makeNodeComponent("product"),
     footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicHome
