@@ -67,6 +67,7 @@ import { IconReveal } from "../../magicui/icon-reveal"; // plasmic-import: C_a57
 import { Reveal } from "../../magicui/reveal"; // plasmic-import: WZl_dCgRNxa8/codeComponent
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { Product } from "../../product"; // plasmic-import: tUhKBdzelJtb/codeComponent
+import { Project } from "../../project"; // plasmic-import: gt5pPBjlLVzP/codeComponent
 import Footer from "../../Footer"; // plasmic-import: jyVfSNkVX5DJ/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
@@ -103,12 +104,12 @@ export type PlasmicHome__OverridesType = {
   shimmerButton?: Flex__<typeof ShimmerButton>;
   about?: Flex__<"section">;
   img?: Flex__<typeof PlasmicImg__>;
-  columns?: Flex__<"div">;
   embedHtml?: Flex__<typeof Embed>;
   product?: Flex__<"div">;
   pvc?: Flex__<typeof Product>;
   hpl?: Flex__<typeof Product>;
   veener?: Flex__<typeof Product>;
+  project?: Flex__<"div">;
   footer?: Flex__<typeof Footer>;
 };
 
@@ -293,10 +294,8 @@ function PlasmicHome__RenderFunc(props: {
                 </div>
                 <Stack__
                   as={"div"}
-                  data-plasmic-name={"columns"}
-                  data-plasmic-override={overrides.columns}
                   hasGap={true}
-                  className={classNames(projectcss.all, sty.columns)}
+                  className={classNames(projectcss.all, sty.columns__xuOgE)}
                 >
                   <div
                     className={classNames(projectcss.all, sty.column__bfHUv)}
@@ -1471,6 +1470,52 @@ function PlasmicHome__RenderFunc(props: {
                 </div>
               </Product>
             </div>
+            <div
+              data-plasmic-name={"project"}
+              data-plasmic-override={overrides.project}
+              className={classNames(projectcss.all, sty.project)}
+            >
+              <div className={classNames(projectcss.all, sty.columns__dilKh)}>
+                <div className={classNames(projectcss.all, sty.column__vIntc)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__tANuX
+                    )}
+                  >
+                    {"PROJECT\nREFERENCE"}
+                  </div>
+                </div>
+                <div className={classNames(projectcss.all, sty.column__gx487)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__rYiXv
+                    )}
+                  >
+                    {
+                      "Engineered for strength, crafted with care. \nDoors that stand the test of time."
+                    }
+                  </div>
+                </div>
+              </div>
+              <Project
+                className={classNames("__wab_instance", sty.project__mEwZz)}
+                projectImages={(() => {
+                  const __composite = [
+                    { image: null, alt: "Logo Wisdoor" },
+                    { image: null, alt: "Logo Wisdoor" }
+                  ];
+                  __composite["0"]["image"] =
+                    "https://site-assets.plasmic.app/a3a4656c9e4957a78b9e1ee960b16755.png";
+                  __composite["1"]["image"] =
+                    "https://site-assets.plasmic.app/7db7bfde388ea1b49cf1d5de4916dfa9.png";
+                  return __composite;
+                })()}
+              />
+            </div>
             <Footer
               data-plasmic-name={"footer"}
               data-plasmic-override={overrides.footer}
@@ -1492,26 +1537,26 @@ const PlasmicDescendants = {
     "shimmerButton",
     "about",
     "img",
-    "columns",
     "embedHtml",
     "product",
     "pvc",
     "hpl",
     "veener",
+    "project",
     "footer"
   ],
   navigation: ["navigation"],
   hero: ["hero", "textReveal", "shimmerButton"],
   textReveal: ["textReveal"],
   shimmerButton: ["shimmerButton"],
-  about: ["about", "img", "columns", "embedHtml"],
+  about: ["about", "img", "embedHtml"],
   img: ["img"],
-  columns: ["columns"],
   embedHtml: ["embedHtml"],
   product: ["product", "pvc", "hpl", "veener"],
   pvc: ["pvc"],
   hpl: ["hpl"],
   veener: ["veener"],
+  project: ["project"],
   footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -1525,12 +1570,12 @@ type NodeDefaultElementType = {
   shimmerButton: typeof ShimmerButton;
   about: "section";
   img: typeof PlasmicImg__;
-  columns: "div";
   embedHtml: typeof Embed;
   product: "div";
   pvc: typeof Product;
   hpl: typeof Product;
   veener: typeof Product;
+  project: "div";
   footer: typeof Footer;
 };
 
@@ -1600,12 +1645,12 @@ export const PlasmicHome = Object.assign(
     shimmerButton: makeNodeComponent("shimmerButton"),
     about: makeNodeComponent("about"),
     img: makeNodeComponent("img"),
-    columns: makeNodeComponent("columns"),
     embedHtml: makeNodeComponent("embedHtml"),
     product: makeNodeComponent("product"),
     pvc: makeNodeComponent("pvc"),
     hpl: makeNodeComponent("hpl"),
     veener: makeNodeComponent("veener"),
+    project: makeNodeComponent("project"),
     footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicHome

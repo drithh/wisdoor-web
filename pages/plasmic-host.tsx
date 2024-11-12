@@ -35,6 +35,7 @@ import { TextReveal } from '@/components/magicui/text-reveal';
 import { ShimmerButton } from '@/components/magicui/shimmer-button';
 import { IconReveal } from '@/components/magicui/icon-reveal';
 import { Product } from '@/components/product';
+import { Project } from '@/components/project';
 
 // You can register any code components that you want to use here; see
 // https://docs.plasmic.app/learn/code-components-ref/
@@ -98,6 +99,34 @@ registerComponent(Product, {
 
   importPath: './components/product',
 });
+
+registerComponent(Project, {
+  name: 'Project',
+  props: {
+    projectImages: {
+      type: 'array',
+      itemType: {
+        type: 'object',
+        fields: {
+          image: {
+            type: 'imageUrl',
+            defaultValue: '/placeholder.svg',
+          },
+          alt: {
+            type: 'string',
+            defaultValue: 'Logo Wisdoor',
+          },
+        },
+      },
+    },
+    className: {
+      type: 'string',
+    },
+  },
+
+  importPath: './components/project',
+});
+
 registerComponent(Logo, {
   name: 'Logo',
   props: {

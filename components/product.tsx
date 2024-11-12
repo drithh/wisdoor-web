@@ -167,7 +167,7 @@ export function Product({
               ></motion.div>
               <ExportedImage
                 src={product.image}
-                className="object-contain z-0"
+                className="object-cover z-0"
                 fill
                 alt={product.alt}
               />

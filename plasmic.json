@@ -258,6 +258,11 @@
           "id": "lMtMmW3li0se",
           "name": "hero-wisdoor.png",
           "filePath": "../public/plasmic/wisdoor_web/images/heroWisdoorPng.png"
+        },
+        {
+          "id": "bBoQh29KGT0G",
+          "name": "wisdoor.pages.dev_about_ (1).png",
+          "filePath": "../public/plasmic/wisdoor_web/images/wisdoorPagesDevAbout1Png.png"
         }
       ],
       "indirect": false,
@@ -455,6 +460,12 @@
           "name": "Product",
           "displayName": "Product",
           "componentImportPath": "./components/product"
+        },
+        {
+          "id": "gt5pPBjlLVzP",
+          "name": "Project",
+          "displayName": "Project",
+          "componentImportPath": "./components/project"
         }
       ],
       "customFunctions": []
