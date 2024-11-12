@@ -7,8 +7,9 @@ import Image from 'next/image';
 import { createRef, RefObject, useEffect, useRef, useState } from 'react';
 import { AspectRatio } from './ui/aspect-ratio';
 import { Button } from './ui/button';
-import { Icon, LucideIcon, MoveLeft, MoveRight } from 'lucide-react';
+import { Icon, Link, LucideIcon, MoveLeft, MoveRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { LineReveal } from './magicui/line-reveal';
 
 interface ProductImage {
   image: string;
@@ -27,17 +28,17 @@ export function Product({ productImages, children, className }: ProductProps) {
     productImages.map(() => createRef<HTMLButtonElement>())
   );
 
-  useEffect(() => {
-    const ref = tabRefs.current[imageIndex].current;
-    console.log(ref);
-    if (ref) {
-      ref.scrollIntoView({
-        behavior: 'smooth',
-        block: 'nearest',
-        inline: 'center',
-      });
-    }
-  }, [imageIndex]);
+  // useEffect(() => {
+  //   const ref = tabRefs.current[imageIndex].current;
+  //   console.log(ref);
+  //   if (ref) {
+  //     ref.scrollIntoView({
+  //       behavior: 'smooth',
+  //       block: 'nearest',
+  //       inline: 'center',
+  //     });
+  //   }
+  // }, [imageIndex]);
 
   const handleTabClick = (index: number) => {
     const ref = tabRefs.current[index].current;
@@ -60,7 +61,6 @@ export function Product({ productImages, children, className }: ProductProps) {
         whileHover="hover"
         className="z-0 relative bg-transparent rounded-full overflow-hidden border border-black px-2 py-1 flex items-center justify-center"
         onClick={onClick}
-        // onClick={() => setImageIndex(Math.max(0, imageIndex - 1))}
       >
         <motion.div
           variants={{
@@ -92,60 +92,63 @@ export function Product({ productImages, children, className }: ProductProps) {
   };
 
   return (
-    <div className="flex w-full sm:flex-row flex-col">
-      <div className="w-screen p-4 sm:p-8 max-w-[39rem] flex flex-col sm:h-[48rem]">
-        {children}
-        <div className="image flex-grow hidden sm:flex gap-4 flex-col justify-end">
-          <p className="tracking-wider font-display">
-            IMAGES {imageIndex + 1} / {productImages.length}
-          </p>
-          <div className="flex gap-4  ">
-            <NavigateButton
-              onClick={() => setImageIndex(Math.max(0, imageIndex - 1))}
-            >
-              <MoveLeft className="w-8 h-5" />
-            </NavigateButton>
-            <NavigateButton
-              onClick={() =>
-                setImageIndex(
-                  Math.min(productImages.length - 1, imageIndex + 1)
-                )
-              }
-            >
-              <MoveRight className="w-8 h-5" />
-            </NavigateButton>
-          </div>
+    <div className="w-full flex flex-col">
+      <div className="flex w-full">
+        <div className="h-full w-[39rem]">
+          <LineReveal origin="right" />
+        </div>
+        <div className="flex-grow h-full">
+          <LineReveal />
         </div>
       </div>
-      <div
-        className={`flex-grow py-4 px-2 sm:py-8 sm:px-4 overflow-x-auto flex-row flex w-full ${className}`}
-      >
-        {productImages.map((product, index) => (
-          <span
-            ref={tabRefs.current[index]}
-            key={index}
-            className="relative mx-2 sm:mx-4 min-w-[24rem] sm:min-w-[44rem] h-[24rem] sm:h-full"
-          >
-            <ExportedImage
-              src={product.image}
-              className="object-contain"
-              fill
-              alt={product.alt}
-            />
-          </span>
-        ))}
-
-        {/* <TabsList className="overflow-hidden flex md:px-0 pl-4 pr-16 font-text bg-transparent  gap-4 h-40 justify-between py-8">
-        {productImages.map((product, index) => (
-          <TabsTrigger
-            key={index}
-            value={product.alt}
-            onClick={() => handleTabClick(index)}
-            ref={tabRefs.current[index]}
-            className="data-[state=active]:bg-black h-full flex-1 min-w-72 max-w-96 text-white/50 whitespace-normal border-muted-foreground border-t-2 rounded-none data-[state=active]:border-t-4 data-[state=active]:border-white data-[state=active]:text-white data-[state=active]:shadow-none"
-          ></TabsTrigger>
-        ))}
-      </TabsList> */}
+      <div className="flex w-full sm:flex-row flex-col">
+        <div className="w-screen p-4 sm:p-8 max-w-[39rem] flex flex-col sm:h-[48rem]">
+          {children}
+          <div className="image flex-grow hidden sm:flex gap-4 flex-col justify-end">
+            <p className="tracking-wider font-display">
+              IMAGES {imageIndex + 1} / {productImages.length}
+            </p>
+            <div className="flex gap-4  ">
+              <NavigateButton
+                onClick={() => {
+                  setImageIndex(Math.max(0, imageIndex - 1));
+                  handleTabClick(imageIndex - 1);
+                }}
+              >
+                <MoveLeft className="w-8 h-5" />
+              </NavigateButton>
+              <NavigateButton
+                onClick={() => {
+                  setImageIndex(
+                    Math.min(productImages.length - 1, imageIndex + 1)
+                  );
+                  handleTabClick(imageIndex + 1);
+                }}
+              >
+                <MoveRight className="w-8 h-5" />
+              </NavigateButton>
+            </div>
+          </div>
+        </div>
+        <LineReveal type="vertical" origin="top" />
+        <div
+          className={`flex-grow py-4 px-2 sm:py-8 sm:px-4 overflow-x-auto flex-row flex w-full ${className}`}
+        >
+          {productImages.map((product, index) => (
+            <span
+              ref={tabRefs.current[index]}
+              key={index}
+              className="relative mx-2 sm:mx-4 min-w-[24rem] sm:min-w-[44rem] h-[24rem] sm:h-full"
+            >
+              <ExportedImage
+                src={product.image}
+                className="object-contain"
+                fill
+                alt={product.alt}
+              />
+            </span>
+          ))}
+        </div>
       </div>
     </div>
   );
