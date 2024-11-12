@@ -8,7 +8,7 @@ import { createRef, RefObject, useEffect, useRef, useState } from 'react';
 import { AspectRatio } from './ui/aspect-ratio';
 import { Button } from './ui/button';
 import { Icon, Link, LucideIcon, MoveLeft, MoveRight } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, useAnimation, useInView } from 'framer-motion';
 import { LineReveal } from './magicui/line-reveal';
 
 interface ProductImage {
@@ -20,25 +20,31 @@ interface ProductProps {
   productImages: ProductImage[];
   children?: React.ReactNode;
   className?: string;
+  isBottom?: boolean;
 }
 
-export function Product({ productImages, children, className }: ProductProps) {
+export function Product({
+  productImages,
+  children,
+  className,
+  isBottom,
+}: ProductProps) {
+  const mainControls = useAnimation();
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true });
+
+  useEffect(() => {
+    if (isInView) {
+      mainControls.start('visible');
+    } else {
+      mainControls.start('hidden');
+    }
+  }, [isInView, mainControls]);
+
   const [imageIndex, setImageIndex] = useState(0);
   const tabRefs = useRef<Array<RefObject<HTMLButtonElement>>>(
     productImages.map(() => createRef<HTMLButtonElement>())
   );
-
-  // useEffect(() => {
-  //   const ref = tabRefs.current[imageIndex].current;
-  //   console.log(ref);
-  //   if (ref) {
-  //     ref.scrollIntoView({
-  //       behavior: 'smooth',
-  //       block: 'nearest',
-  //       inline: 'center',
-  //     });
-  //   }
-  // }, [imageIndex]);
 
   const handleTabClick = (index: number) => {
     const ref = tabRefs.current[index].current;
@@ -92,13 +98,13 @@ export function Product({ productImages, children, className }: ProductProps) {
   };
 
   return (
-    <div className="w-full flex flex-col">
+    <div className="w-full flex flex-col" ref={ref}>
       <div className="flex w-full">
         <div className="h-full w-[39rem]">
-          <LineReveal origin="right" />
+          <LineReveal origin="right" mainControls={mainControls} />
         </div>
         <div className="flex-grow h-full">
-          <LineReveal />
+          <LineReveal mainControls={mainControls} />
         </div>
       </div>
       <div className="flex w-full sm:flex-row flex-col">
@@ -130,9 +136,14 @@ export function Product({ productImages, children, className }: ProductProps) {
             </div>
           </div>
         </div>
-        <LineReveal type="vertical" origin="top" />
+        <LineReveal
+          className="hidden sm:block"
+          type="vertical"
+          origin="top"
+          mainControls={mainControls}
+        />
         <div
-          className={`flex-grow py-4 px-2 sm:py-8 sm:px-4 overflow-x-auto flex-row flex w-full ${className}`}
+          className={`flex-grow overflow-y-hidden py-4 px-2 sm:py-8 sm:px-4 overflow-x-auto flex-row flex w-full ${className}`}
         >
           {productImages.map((product, index) => (
             <span
@@ -140,9 +151,23 @@ export function Product({ productImages, children, className }: ProductProps) {
               key={index}
               className="relative mx-2 sm:mx-4 min-w-[24rem] sm:min-w-[44rem] h-[24rem] sm:h-full"
             >
+              <motion.div
+                className="absolute insert-0 z-10 w-full h-full bg-white"
+                variants={{
+                  hidden: { y: '0' },
+                  visible: { y: '100%' },
+                }}
+                initial="hidden"
+                animate={mainControls}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.5,
+                  ease: 'easeInOut',
+                }}
+              ></motion.div>
               <ExportedImage
                 src={product.image}
-                className="object-contain"
+                className="object-contain z-0"
                 fill
                 alt={product.alt}
               />
@@ -150,6 +175,17 @@ export function Product({ productImages, children, className }: ProductProps) {
           ))}
         </div>
       </div>
+
+      {isBottom && (
+        <div className="flex w-full">
+          <div className="h-full w-[39rem]">
+            <LineReveal origin="right" mainControls={mainControls} />
+          </div>
+          <div className="flex-grow h-full">
+            <LineReveal mainControls={mainControls} />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

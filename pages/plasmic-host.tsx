@@ -90,6 +90,10 @@ registerComponent(Product, {
     children: {
       type: 'slot',
     },
+    isBottom: {
+      type: 'boolean',
+      defaultValue: false,
+    },
   },
 
   importPath: './components/product',

@@ -105,7 +105,10 @@ export type PlasmicHome__OverridesType = {
   img?: Flex__<typeof PlasmicImg__>;
   columns?: Flex__<"div">;
   embedHtml?: Flex__<typeof Embed>;
-  product?: Flex__<typeof Product>;
+  product?: Flex__<"div">;
+  pvc?: Flex__<typeof Product>;
+  hpl?: Flex__<typeof Product>;
+  veener?: Flex__<typeof Product>;
   footer?: Flex__<typeof Footer>;
 };
 
@@ -502,312 +505,972 @@ function PlasmicHome__RenderFunc(props: {
                 </div>
               </Stack__>
             </section>
-            <Product
+            <div
               data-plasmic-name={"product"}
               data-plasmic-override={overrides.product}
-              className={classNames("__wab_instance", sty.product)}
-              productImages={(() => {
-                const __composite = [
-                  { image: null, alt: null },
-                  { image: null, alt: null }
-                ];
-                __composite["0"]["image"] =
-                  "https://cdn.sanity.io/images/lbvt8rt8/production/5721be3bbd3a5cff6eab2bed8151dcae5b6ca5c6-6000x4000.jpg?rect=1000,0,4000,4000&w=1280&h=1280&fit=min&auto=format";
-                __composite["0"]["alt"] = "Produk 1";
-                __composite["1"]["image"] =
-                  "https://cdn.sanity.io/images/lbvt8rt8/production/5721be3bbd3a5cff6eab2bed8151dcae5b6ca5c6-6000x4000.jpg?rect=1000,0,4000,4000&w=1280&h=1280&fit=min&auto=format";
-                __composite["1"]["alt"] = "Product 2";
-                return __composite;
-              })()}
+              className={classNames(projectcss.all, sty.product)}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__ctUv7
-                )}
+              <Product
+                data-plasmic-name={"pvc"}
+                data-plasmic-override={overrides.pvc}
+                className={classNames("__wab_instance", sty.pvc)}
+                isBottom={false}
+                productImages={(() => {
+                  const __composite = [
+                    { image: null, alt: null },
+                    { image: null, alt: null }
+                  ];
+                  __composite["0"]["image"] =
+                    "https://cdn.sanity.io/images/lbvt8rt8/production/5721be3bbd3a5cff6eab2bed8151dcae5b6ca5c6-6000x4000.jpg?rect=1000,0,4000,4000&w=1280&h=1280&fit=min&auto=format";
+                  __composite["0"]["alt"] = "Produk 1";
+                  __composite["1"]["image"] =
+                    "https://cdn.sanity.io/images/lbvt8rt8/production/5721be3bbd3a5cff6eab2bed8151dcae5b6ca5c6-6000x4000.jpg?rect=1000,0,4000,4000&w=1280&h=1280&fit=min&auto=format";
+                  __composite["1"]["alt"] = "Product 2";
+                  return __composite;
+                })()}
               >
-                {"PRODUCT"}
-              </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__uYZey
-                )}
-              >
-                {"PVC SERIES"}
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__wFZj)}>
                 <div
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__iPcy
+                    sty.text__ctUv7
                   )}
                 >
-                  {"SPECIFICATION"}
+                  {"PRODUCT"}
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__gOUt)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__uYZey
+                  )}
+                >
+                  {"PVC SERIES"}
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__wFZj)}>
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__sleYp)}
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__iPcy
+                    )}
+                  >
+                    {"SPECIFICATION"}
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__gOUt)}
                   >
                     <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__nIpjw
-                      )}
+                      className={classNames(projectcss.all, sty.freeBox__sleYp)}
                     >
-                      {"SURFACE"}
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__nIpjw
+                        )}
+                      >
+                        {"SURFACE"}
+                      </div>
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__snHTh)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___710O
+                        )}
+                      >
+                        <React.Fragment>
+                          <React.Fragment>{""}</React.Fragment>
+                          {
+                            <ul
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.ul,
+                                sty.ul__ever8
+                              )}
+                            >
+                              <li
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.li,
+                                  projectcss.__wab_text,
+                                  sty.li__lHsRi
+                                )}
+                              >
+                                {
+                                  "Entrance Door (Plywood + PVC Fin + Honeycomb)\n"
+                                }
+                              </li>
+                              <li
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.li,
+                                  projectcss.__wab_text,
+                                  sty.li__uEbso
+                                )}
+                              >
+                                {"Room Door (MDF + PVC Fin)\n"}
+                              </li>
+                              <li
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.li,
+                                  projectcss.__wab_text,
+                                  sty.li__mWu6U
+                                )}
+                              >
+                                {"Toilet Door (Plywood + PVC Fin)"}
+                              </li>
+                            </ul>
+                          }
+                          <React.Fragment>{""}</React.Fragment>
+                        </React.Fragment>
+                      </div>
                     </div>
                   </div>
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__snHTh)}
+                    className={classNames(projectcss.all, sty.freeBox__cRsQd)}
                   >
                     <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text___710O
-                      )}
+                      className={classNames(projectcss.all, sty.freeBox__r1S09)}
                     >
-                      <React.Fragment>
-                        <React.Fragment>{""}</React.Fragment>
-                        {
-                          <ul
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.ul,
-                              sty.ul__ever8
-                            )}
-                          >
-                            <li
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__e9BYn
+                        )}
+                      >
+                        {"DOOR SIZE"}
+                      </div>
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__yrVtb)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__l9WGv
+                        )}
+                      >
+                        <React.Fragment>
+                          <React.Fragment>{""}</React.Fragment>
+                          {
+                            <ul
                               className={classNames(
                                 projectcss.all,
-                                projectcss.li,
-                                projectcss.__wab_text,
-                                sty.li__lHsRi
+                                projectcss.ul,
+                                sty.ul__frS3
                               )}
                             >
-                              {
-                                "Entrance Door (Plywood + PVC Fin + Honeycomb)\n"
-                              }
-                            </li>
-                            <li
+                              <li
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.li,
+                                  projectcss.__wab_text,
+                                  sty.li__bv7Jt
+                                )}
+                              >
+                                {
+                                  "Entrance Door & Room Door (T) 36 X (L) 820 x (P) 2100"
+                                }
+                              </li>
+                              <li
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.li,
+                                  projectcss.__wab_text,
+                                  sty.li___35VGv
+                                )}
+                              >
+                                {"Toilet Door (T) 36 x (L) 720 x (P) 2100"}
+                              </li>
+                            </ul>
+                          }
+                          <React.Fragment>{""}</React.Fragment>
+                        </React.Fragment>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__qsm31)}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__yWb1)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__yH4Z
+                        )}
+                      >
+                        {"FRAME SIZE"}
+                      </div>
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__c0VVg)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__zO8Z0
+                        )}
+                      >
+                        <React.Fragment>
+                          <React.Fragment>{""}</React.Fragment>
+                          {
+                            <ul
                               className={classNames(
                                 projectcss.all,
-                                projectcss.li,
-                                projectcss.__wab_text,
-                                sty.li__uEbso
+                                projectcss.ul,
+                                sty.ul___2YSqp
                               )}
                             >
-                              {"Room Door (MDF + PVC Fin)\n"}
-                            </li>
-                            <li
+                              <li
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.li,
+                                  projectcss.__wab_text,
+                                  sty.li__peChd
+                                )}
+                              >
+                                {"Entrance Door & Room Door (L) 888 x (P) 2138"}
+                              </li>
+                              <li
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.li,
+                                  projectcss.__wab_text,
+                                  sty.li__lbHmQ
+                                )}
+                              >
+                                {"Toilet Door (L) 788 x (P) 2138"}
+                              </li>
+                            </ul>
+                          }
+                          <React.Fragment>{""}</React.Fragment>
+                        </React.Fragment>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__oS4Jv)}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox___7BTc)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__spp4D
+                        )}
+                      >
+                        {"OPENING SIZE"}
+                      </div>
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__lwldw)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__gcTas
+                        )}
+                      >
+                        <React.Fragment>
+                          <React.Fragment>{""}</React.Fragment>
+                          {
+                            <ul
                               className={classNames(
                                 projectcss.all,
-                                projectcss.li,
-                                projectcss.__wab_text,
-                                sty.li__mWu6U
+                                projectcss.ul,
+                                sty.ul__kC1L
                               )}
                             >
-                              {"Toilet Door (Plywood + PVC Fin)"}
-                            </li>
-                          </ul>
-                        }
-                        <React.Fragment>{""}</React.Fragment>
-                      </React.Fragment>
+                              <li
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.li,
+                                  projectcss.__wab_text,
+                                  sty.li__lq6Si
+                                )}
+                              >
+                                {"Entrance Door & Room Door (L) 898 x (P) 2143"}
+                              </li>
+                              <li
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.li,
+                                  projectcss.__wab_text,
+                                  sty.li__sbeHh
+                                )}
+                              >
+                                {"Toilet Door (L) 798 x (P) 2143"}
+                              </li>
+                            </ul>
+                          }
+                          <React.Fragment>{""}</React.Fragment>
+                        </React.Fragment>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__cRsQd)}>
+              </Product>
+              <Product
+                data-plasmic-name={"hpl"}
+                data-plasmic-override={overrides.hpl}
+                className={classNames("__wab_instance", sty.hpl)}
+                isBottom={false}
+                productImages={(() => {
+                  const __composite = [
+                    { image: null, alt: null },
+                    { image: null, alt: null }
+                  ];
+                  __composite["0"]["image"] =
+                    "https://cdn.sanity.io/images/lbvt8rt8/production/5721be3bbd3a5cff6eab2bed8151dcae5b6ca5c6-6000x4000.jpg?rect=1000,0,4000,4000&w=1280&h=1280&fit=min&auto=format";
+                  __composite["0"]["alt"] = "Produk 1";
+                  __composite["1"]["image"] =
+                    "https://cdn.sanity.io/images/lbvt8rt8/production/5721be3bbd3a5cff6eab2bed8151dcae5b6ca5c6-6000x4000.jpg?rect=1000,0,4000,4000&w=1280&h=1280&fit=min&auto=format";
+                  __composite["1"]["alt"] = "Product 2";
+                  return __composite;
+                })()}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__dJb4V
+                  )}
+                >
+                  {"PRODUCT"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__dtUIt
+                  )}
+                >
+                  {"HPL SERIES"}
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__doSqK)}>
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__r1S09)}
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__evbSq
+                    )}
                   >
+                    {"SPECIFICATION"}
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__n8FuJ)}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__nYsd9)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__jf4Em
+                        )}
+                      >
+                        {"SURFACE"}
+                      </div>
+                    </div>
                     <div
                       className={classNames(
                         projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__e9BYn
+                        sty.freeBox___7TpR4
                       )}
                     >
-                      {"DOOR SIZE"}
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__nl4FD
+                        )}
+                      >
+                        <React.Fragment>
+                          <React.Fragment>{""}</React.Fragment>
+                          {
+                            <ul
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.ul,
+                                sty.ul__kHfq5
+                              )}
+                            >
+                              <li
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.li,
+                                  projectcss.__wab_text,
+                                  sty.li__zu1ZU
+                                )}
+                              >
+                                {
+                                  "Entrance Door (Plywood + HPL Fin + Honeycomb)"
+                                }
+                              </li>
+                              <li
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.li,
+                                  projectcss.__wab_text,
+                                  sty.li__diarD
+                                )}
+                              >
+                                {"Room Door (MDF + HPL Fin)"}
+                              </li>
+                              <li
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.li,
+                                  projectcss.__wab_text,
+                                  sty.li__sy0Xz
+                                )}
+                              >
+                                {"Toilet Door (Plywood + HPL Fin)"}
+                              </li>
+                            </ul>
+                          }
+                          <React.Fragment>{""}</React.Fragment>
+                        </React.Fragment>
+                      </div>
                     </div>
                   </div>
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__yrVtb)}
+                    className={classNames(projectcss.all, sty.freeBox___7TGpD)}
                   >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__nXzVv)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__b8Cuz
+                        )}
+                      >
+                        {"DOOR SIZE"}
+                      </div>
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__juoW)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___5I7
+                        )}
+                      >
+                        <React.Fragment>
+                          <React.Fragment>{""}</React.Fragment>
+                          {
+                            <ul
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.ul,
+                                sty.ul__lWn5C
+                              )}
+                            >
+                              <li
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.li,
+                                  projectcss.__wab_text,
+                                  sty.li__b2NHa
+                                )}
+                              >
+                                {
+                                  "Entrance Door & Room Door (T) 36 X (L) 820 x (P) 2100\n"
+                                }
+                              </li>
+                              <li
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.li,
+                                  projectcss.__wab_text,
+                                  sty.li__wrVPe
+                                )}
+                              >
+                                {"Toilet Door (T) 36 x (L) 720 x (P) 2100"}
+                              </li>
+                            </ul>
+                          }
+                          <React.Fragment>{""}</React.Fragment>
+                        </React.Fragment>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__shyOs)}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__pwAv8)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__yhLda
+                        )}
+                      >
+                        {"FRAME SIZE"}
+                      </div>
+                    </div>
                     <div
                       className={classNames(
                         projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__l9WGv
+                        sty.freeBox___5Vu0I
                       )}
                     >
-                      <React.Fragment>
-                        <React.Fragment>{""}</React.Fragment>
-                        {
-                          <ul
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.ul,
-                              sty.ul__frS3
-                            )}
-                          >
-                            <li
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__wrbQr
+                        )}
+                      >
+                        <React.Fragment>
+                          <React.Fragment>{""}</React.Fragment>
+                          {
+                            <ul
                               className={classNames(
                                 projectcss.all,
-                                projectcss.li,
-                                projectcss.__wab_text,
-                                sty.li__bv7Jt
+                                projectcss.ul,
+                                sty.ul__o5Qcq
                               )}
                             >
-                              {
-                                "Entrance Door & Room Door (T) 36 X (L) 820 x (P) 2100"
-                              }
-                            </li>
-                            <li
+                              <li
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.li,
+                                  projectcss.__wab_text,
+                                  sty.li__mOp9J
+                                )}
+                              >
+                                {
+                                  "Entrance Door & Room Door (L) 888 x (P) 2138\n"
+                                }
+                              </li>
+                              <li
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.li,
+                                  projectcss.__wab_text,
+                                  sty.li__vn8Tb
+                                )}
+                              >
+                                {"Toilet Door (L) 788 x (P) 2138"}
+                              </li>
+                            </ul>
+                          }
+                          <React.Fragment>{""}</React.Fragment>
+                        </React.Fragment>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox___23NVa)}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__rr6RM)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__n8Pn
+                        )}
+                      >
+                        {"OPENING SIZE"}
+                      </div>
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__noW5T)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___13TJ
+                        )}
+                      >
+                        <React.Fragment>
+                          <React.Fragment>{""}</React.Fragment>
+                          {
+                            <ul
                               className={classNames(
                                 projectcss.all,
-                                projectcss.li,
-                                projectcss.__wab_text,
-                                sty.li___35VGv
+                                projectcss.ul,
+                                sty.ul__wp6Ud
                               )}
                             >
-                              {"Toilet Door (T) 36 x (L) 720 x (P) 2100"}
-                            </li>
-                          </ul>
-                        }
-                        <React.Fragment>{""}</React.Fragment>
-                      </React.Fragment>
+                              <li
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.li,
+                                  projectcss.__wab_text,
+                                  sty.li___9Mk6X
+                                )}
+                              >
+                                {
+                                  "Entrance Door & Room Door (L) 898 x (P) 2143\n"
+                                }
+                              </li>
+                              <li
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.li,
+                                  projectcss.__wab_text,
+                                  sty.li__kkEo1
+                                )}
+                              >
+                                {"Toilet Door (L) 798 x (P) 2143"}
+                              </li>
+                            </ul>
+                          }
+                          <React.Fragment>{""}</React.Fragment>
+                        </React.Fragment>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__qsm31)}>
+              </Product>
+              <Product
+                data-plasmic-name={"veener"}
+                data-plasmic-override={overrides.veener}
+                className={classNames("__wab_instance", sty.veener)}
+                isBottom={true}
+                productImages={(() => {
+                  const __composite = [
+                    { image: null, alt: null },
+                    { image: null, alt: null }
+                  ];
+                  __composite["0"]["image"] =
+                    "https://cdn.sanity.io/images/lbvt8rt8/production/5721be3bbd3a5cff6eab2bed8151dcae5b6ca5c6-6000x4000.jpg?rect=1000,0,4000,4000&w=1280&h=1280&fit=min&auto=format";
+                  __composite["0"]["alt"] = "Produk 1";
+                  __composite["1"]["image"] =
+                    "https://cdn.sanity.io/images/lbvt8rt8/production/5721be3bbd3a5cff6eab2bed8151dcae5b6ca5c6-6000x4000.jpg?rect=1000,0,4000,4000&w=1280&h=1280&fit=min&auto=format";
+                  __composite["1"]["alt"] = "Product 2";
+                  return __composite;
+                })()}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__d8Lic
+                  )}
+                >
+                  {"PRODUCT"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___5LqdG
+                  )}
+                >
+                  {"VENEER SERIES"}
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__mqIpJ)}>
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__yWb1)}
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__p5Zl
+                    )}
+                  >
+                    {"SPECIFICATION"}
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__dYyzT)}
                   >
                     <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__yH4Z
-                      )}
+                      className={classNames(projectcss.all, sty.freeBox__o4U9R)}
                     >
-                      {"FRAME SIZE"}
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__mgmHz
+                        )}
+                      >
+                        {"SURFACE"}
+                      </div>
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__wR0L2)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__sxGG
+                        )}
+                      >
+                        <React.Fragment>
+                          <React.Fragment>{""}</React.Fragment>
+                          {
+                            <ul
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.ul,
+                                sty.ul__oAIck
+                              )}
+                            >
+                              <li
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.li,
+                                  projectcss.__wab_text,
+                                  sty.li__vHs7B
+                                )}
+                              >
+                                {
+                                  "Entrance Door (Plywood + Veneer Fin + Honeycomb)"
+                                }
+                              </li>
+                              <li
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.li,
+                                  projectcss.__wab_text,
+                                  sty.li___06Dj7
+                                )}
+                              >
+                                {"Room Door (MDF + Veneer Fin)"}
+                              </li>
+                              <li
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.li,
+                                  projectcss.__wab_text,
+                                  sty.li__t5KK
+                                )}
+                              >
+                                {"Toilet Door (Plywood + Veneer Fin)"}
+                              </li>
+                            </ul>
+                          }
+                          <React.Fragment>{""}</React.Fragment>
+                        </React.Fragment>
+                      </div>
                     </div>
                   </div>
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__c0VVg)}
+                    className={classNames(projectcss.all, sty.freeBox__w0Pj)}
                   >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__uoSic)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__ytI93
+                        )}
+                      >
+                        {"DOOR SIZE"}
+                      </div>
+                    </div>
                     <div
                       className={classNames(
                         projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__zO8Z0
+                        sty.freeBox___83U2K
                       )}
                     >
-                      <React.Fragment>
-                        <React.Fragment>{""}</React.Fragment>
-                        {
-                          <ul
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.ul,
-                              sty.ul___2YSqp
-                            )}
-                          >
-                            <li
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__dq16Z
+                        )}
+                      >
+                        <React.Fragment>
+                          <React.Fragment>{""}</React.Fragment>
+                          {
+                            <ul
                               className={classNames(
                                 projectcss.all,
-                                projectcss.li,
-                                projectcss.__wab_text,
-                                sty.li__peChd
+                                projectcss.ul,
+                                sty.ul__paLkk
                               )}
                             >
-                              {"Entrance Door & Room Door (L) 888 x (P) 2138"}
-                            </li>
-                            <li
+                              <li
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.li,
+                                  projectcss.__wab_text,
+                                  sty.li___3MYp
+                                )}
+                              >
+                                {
+                                  "Entrance Door & Room Door (T) 36 X (L) 820 x (P) 2100\n"
+                                }
+                              </li>
+                              <li
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.li,
+                                  projectcss.__wab_text,
+                                  sty.li__j3ZnJ
+                                )}
+                              >
+                                {"Toilet Door (T) 36 x (L) 720 x (P) 2100"}
+                              </li>
+                            </ul>
+                          }
+                          <React.Fragment>{""}</React.Fragment>
+                        </React.Fragment>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox___83YTs)}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__tgkYy)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__pzliT
+                        )}
+                      >
+                        {"FRAME SIZE"}
+                      </div>
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__sSxjQ)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___2XBt
+                        )}
+                      >
+                        <React.Fragment>
+                          <React.Fragment>{""}</React.Fragment>
+                          {
+                            <ul
                               className={classNames(
                                 projectcss.all,
-                                projectcss.li,
-                                projectcss.__wab_text,
-                                sty.li__lbHmQ
+                                projectcss.ul,
+                                sty.ul__zj90J
                               )}
                             >
-                              {"Toilet Door (L) 788 x (P) 2138"}
-                            </li>
-                          </ul>
-                        }
-                        <React.Fragment>{""}</React.Fragment>
-                      </React.Fragment>
+                              <li
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.li,
+                                  projectcss.__wab_text,
+                                  sty.li__tUg4E
+                                )}
+                              >
+                                {
+                                  "Entrance Door & Room Door (L) 888 x (P) 2138\n"
+                                }
+                              </li>
+                              <li
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.li,
+                                  projectcss.__wab_text,
+                                  sty.li__o7O3R
+                                )}
+                              >
+                                {"Toilet Door (L) 788 x (P) 2138"}
+                              </li>
+                            </ul>
+                          }
+                          <React.Fragment>{""}</React.Fragment>
+                        </React.Fragment>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__dcAf5)}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__eFwDy)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__wq34
+                        )}
+                      >
+                        {"OPENING SIZE"}
+                      </div>
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__zaaEz)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__tL6O
+                        )}
+                      >
+                        <React.Fragment>
+                          <React.Fragment>{""}</React.Fragment>
+                          {
+                            <ul
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.ul,
+                                sty.ul__jjogC
+                              )}
+                            >
+                              <li
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.li,
+                                  projectcss.__wab_text,
+                                  sty.li__zSokN
+                                )}
+                              >
+                                {"Entrance Door & Room Door (L) 898 x (P) 2143"}
+                              </li>
+                              <li
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.li,
+                                  projectcss.__wab_text,
+                                  sty.li__iT4FB
+                                )}
+                              >
+                                {"Toilet Door (L) 798 x (P) 2143"}
+                              </li>
+                            </ul>
+                          }
+                          <React.Fragment>{""}</React.Fragment>
+                        </React.Fragment>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__oS4Jv)}>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox___7BTc)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__spp4D
-                      )}
-                    >
-                      {"OPENING SIZE"}
-                    </div>
-                  </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__lwldw)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__gcTas
-                      )}
-                    >
-                      <React.Fragment>
-                        <React.Fragment>{""}</React.Fragment>
-                        {
-                          <ul
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.ul,
-                              sty.ul__kC1L
-                            )}
-                          >
-                            <li
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.li,
-                                projectcss.__wab_text,
-                                sty.li__lq6Si
-                              )}
-                            >
-                              {"Entrance Door & Room Door (L) 898 x (P) 2143"}
-                            </li>
-                            <li
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.li,
-                                projectcss.__wab_text,
-                                sty.li__sbeHh
-                              )}
-                            >
-                              {"Toilet Door (L) 798 x (P) 2143"}
-                            </li>
-                          </ul>
-                        }
-                        <React.Fragment>{""}</React.Fragment>
-                      </React.Fragment>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </Product>
+              </Product>
+            </div>
             <Footer
               data-plasmic-name={"footer"}
               data-plasmic-override={overrides.footer}
@@ -832,6 +1495,9 @@ const PlasmicDescendants = {
     "columns",
     "embedHtml",
     "product",
+    "pvc",
+    "hpl",
+    "veener",
     "footer"
   ],
   navigation: ["navigation"],
@@ -842,7 +1508,10 @@ const PlasmicDescendants = {
   img: ["img"],
   columns: ["columns"],
   embedHtml: ["embedHtml"],
-  product: ["product"],
+  product: ["product", "pvc", "hpl", "veener"],
+  pvc: ["pvc"],
+  hpl: ["hpl"],
+  veener: ["veener"],
   footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -858,7 +1527,10 @@ type NodeDefaultElementType = {
   img: typeof PlasmicImg__;
   columns: "div";
   embedHtml: typeof Embed;
-  product: typeof Product;
+  product: "div";
+  pvc: typeof Product;
+  hpl: typeof Product;
+  veener: typeof Product;
   footer: typeof Footer;
 };
 
@@ -931,6 +1603,9 @@ export const PlasmicHome = Object.assign(
     columns: makeNodeComponent("columns"),
     embedHtml: makeNodeComponent("embedHtml"),
     product: makeNodeComponent("product"),
+    pvc: makeNodeComponent("pvc"),
+    hpl: makeNodeComponent("hpl"),
+    veener: makeNodeComponent("veener"),
     footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicHome
