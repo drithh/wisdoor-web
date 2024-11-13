@@ -257,6 +257,7 @@ function PlasmicHome__RenderFunc(props: {
               data-plasmic-name={"about"}
               data-plasmic-override={overrides.about}
               className={classNames(projectcss.all, sty.about)}
+              id={"about"}
             >
               <PlasmicImg__
                 data-plasmic-name={"img"}
@@ -508,6 +509,7 @@ function PlasmicHome__RenderFunc(props: {
               data-plasmic-name={"product"}
               data-plasmic-override={overrides.product}
               className={classNames(projectcss.all, sty.product)}
+              id={"product"}
             >
               <Product
                 data-plasmic-name={"pvc"}
@@ -520,10 +522,10 @@ function PlasmicHome__RenderFunc(props: {
                     { image: null, alt: null }
                   ];
                   __composite["0"]["image"] =
-                    "https://cdn.sanity.io/images/lbvt8rt8/production/5721be3bbd3a5cff6eab2bed8151dcae5b6ca5c6-6000x4000.jpg?rect=1000,0,4000,4000&w=1280&h=1280&fit=min&auto=format";
+                    "https://site-assets.plasmic.app/f45968fe35122b12a19d6ed639c22817.avif";
                   __composite["0"]["alt"] = "Produk 1";
                   __composite["1"]["image"] =
-                    "https://cdn.sanity.io/images/lbvt8rt8/production/5721be3bbd3a5cff6eab2bed8151dcae5b6ca5c6-6000x4000.jpg?rect=1000,0,4000,4000&w=1280&h=1280&fit=min&auto=format";
+                    "https://site-assets.plasmic.app/f45968fe35122b12a19d6ed639c22817.avif";
                   __composite["1"]["alt"] = "Product 2";
                   return __composite;
                 })()}
@@ -835,10 +837,10 @@ function PlasmicHome__RenderFunc(props: {
                     { image: null, alt: null }
                   ];
                   __composite["0"]["image"] =
-                    "https://cdn.sanity.io/images/lbvt8rt8/production/5721be3bbd3a5cff6eab2bed8151dcae5b6ca5c6-6000x4000.jpg?rect=1000,0,4000,4000&w=1280&h=1280&fit=min&auto=format";
+                    "https://site-assets.plasmic.app/f45968fe35122b12a19d6ed639c22817.avif";
                   __composite["0"]["alt"] = "Produk 1";
                   __composite["1"]["image"] =
-                    "https://cdn.sanity.io/images/lbvt8rt8/production/5721be3bbd3a5cff6eab2bed8151dcae5b6ca5c6-6000x4000.jpg?rect=1000,0,4000,4000&w=1280&h=1280&fit=min&auto=format";
+                    "https://site-assets.plasmic.app/f45968fe35122b12a19d6ed639c22817.avif";
                   __composite["1"]["alt"] = "Product 2";
                   return __composite;
                 })()}
@@ -1160,10 +1162,10 @@ function PlasmicHome__RenderFunc(props: {
                     { image: null, alt: null }
                   ];
                   __composite["0"]["image"] =
-                    "https://cdn.sanity.io/images/lbvt8rt8/production/5721be3bbd3a5cff6eab2bed8151dcae5b6ca5c6-6000x4000.jpg?rect=1000,0,4000,4000&w=1280&h=1280&fit=min&auto=format";
+                    "https://site-assets.plasmic.app/f45968fe35122b12a19d6ed639c22817.avif";
                   __composite["0"]["alt"] = "Produk 1";
                   __composite["1"]["image"] =
-                    "https://cdn.sanity.io/images/lbvt8rt8/production/5721be3bbd3a5cff6eab2bed8151dcae5b6ca5c6-6000x4000.jpg?rect=1000,0,4000,4000&w=1280&h=1280&fit=min&auto=format";
+                    "https://site-assets.plasmic.app/f45968fe35122b12a19d6ed639c22817.avif";
                   __composite["1"]["alt"] = "Product 2";
                   return __composite;
                 })()}
@@ -1474,6 +1476,7 @@ function PlasmicHome__RenderFunc(props: {
               data-plasmic-name={"project"}
               data-plasmic-override={overrides.project}
               className={classNames(projectcss.all, sty.project)}
+              id={"project"}
             >
               <div className={classNames(projectcss.all, sty.columns__dilKh)}>
                 <div className={classNames(projectcss.all, sty.column__vIntc)}>

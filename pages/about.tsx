@@ -2,6 +2,7 @@
 // This file is owned by you, feel free to edit as you see fit.
 import * as React from "react";
 import { PageParamsProvider as PageParamsProvider__ } from "@plasmicapp/react-web/lib/host";
+import GlobalContextsProvider from "../components/plasmic/wisdoor_web/PlasmicGlobalContextsProvider";
 
 import { PlasmicAbout } from "../components/plasmic/wisdoor_web/PlasmicAbout";
 import { useRouter } from "next/router";
@@ -24,13 +25,15 @@ function About() {
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
   return (
-    <PageParamsProvider__
-      route={useRouter()?.pathname}
-      params={useRouter()?.query}
-      query={useRouter()?.query}
-    >
-      <PlasmicAbout />
-    </PageParamsProvider__>
+    <GlobalContextsProvider>
+      <PageParamsProvider__
+        route={useRouter()?.pathname}
+        params={useRouter()?.query}
+        query={useRouter()?.query}
+      >
+        <PlasmicAbout />
+      </PageParamsProvider__>
+    </GlobalContextsProvider>
   );
 }
 

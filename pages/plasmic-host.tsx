@@ -36,6 +36,7 @@ import { ShimmerButton } from '@/components/magicui/shimmer-button';
 import { IconReveal } from '@/components/magicui/icon-reveal';
 import { Product } from '@/components/product';
 import { Project } from '@/components/project';
+import { CarouselWrapper } from '@/components/carousel-wrapper';
 
 // You can register any code components that you want to use here; see
 // https://docs.plasmic.app/learn/code-components-ref/
@@ -125,6 +126,33 @@ registerComponent(Project, {
   },
 
   importPath: './components/project',
+});
+
+registerComponent(CarouselWrapper, {
+  name: 'CarouselWrapper',
+  props: {
+    carousels: {
+      type: 'array',
+      itemType: {
+        type: 'object',
+        fields: {
+          image: {
+            type: 'imageUrl',
+            defaultValue: '/placeholder.svg',
+          },
+          alt: {
+            type: 'string',
+            defaultValue: 'Logo Wisdoor',
+          },
+        },
+      },
+    },
+    className: {
+      type: 'string',
+    },
+  },
+
+  importPath: './components/carousel-wrapper',
 });
 
 registerComponent(Logo, {

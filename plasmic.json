@@ -109,6 +109,20 @@
           "cssFilePath": "plasmic/wisdoor_web/PlasmicFooter.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "ZENzt5OHpEte",
+          "name": "About",
+          "type": "managed",
+          "projectId": "t5hn1zAmdmxJoKmkXG4dPV",
+          "renderModuleFilePath": "plasmic/wisdoor_web/PlasmicAbout.tsx",
+          "importSpec": {
+            "modulePath": "../pages/about.tsx"
+          },
+          "cssFilePath": "plasmic/wisdoor_web/PlasmicAbout.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/about"
         }
       ],
       "icons": [
@@ -263,6 +277,11 @@
           "id": "bBoQh29KGT0G",
           "name": "wisdoor.pages.dev_about_ (1).png",
           "filePath": "../public/plasmic/wisdoor_web/images/wisdoorPagesDevAbout1Png.png"
+        },
+        {
+          "id": "yMlVPVcvMOjg",
+          "name": "5721be3bbd3a5cff6eab2bed8151dcae5b6ca5c6-6000x4000.avif",
+          "filePath": "../public/plasmic/wisdoor_web/images/_5721Be3Bbd3A5Cff6Eab2Bed8151Dcae5B6Ca5C66000X4000Avif.avif"
         }
       ],
       "indirect": false,
@@ -466,6 +485,12 @@
           "name": "Project",
           "displayName": "Project",
           "componentImportPath": "./components/project"
+        },
+        {
+          "id": "Dic_szRsJCUd",
+          "name": "CarouselWrapper",
+          "displayName": "CarouselWrapper",
+          "componentImportPath": "./components/carousel-wrapper"
         }
       ],
       "customFunctions": []
@@ -1196,6 +1221,33 @@
           "name": "AntdBreadcrumbItem",
           "displayName": "plasmic-antd5-breadcrumb-item",
           "componentImportPath": "@plasmicpkgs/antd5/skinny/registerBreadcrumb"
+        }
+      ],
+      "customFunctions": [],
+      "jsBundleThemes": []
+    },
+    {
+      "projectId": "r3ASNrnyvLLLAtDvzUioQ",
+      "projectApiToken": "eSFGpQaYCtO9sRbPuQ2Ll9dmLOg8I4oKhx6e1PuCrsfmUIVbFbSXcy32UrPTwF9zX2HVXA0xaIKJNhCMHvA",
+      "projectName": "react-slick",
+      "version": ">0.0.0",
+      "cssFilePath": "plasmic/react_slick/plasmic.module.css",
+      "components": [],
+      "icons": [],
+      "images": [],
+      "indirect": true,
+      "globalContextsFilePath": "",
+      "splitsProviderFilePath": "",
+      "codeComponents": [
+        {
+          "id": "HOQUyOpClJ",
+          "name": "SliderWrapper",
+          "displayName": "hostless-slider",
+          "componentImportPath": "@plasmicpkgs/react-slick",
+          "helper": {
+            "name": "sliderHelpers",
+            "importPath": "@plasmicpkgs/react-slick"
+          }
         }
       ],
       "customFunctions": [],

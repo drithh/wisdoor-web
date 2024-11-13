@@ -154,6 +154,7 @@ function PlasmicFooter__RenderFunc(props: {
         data-plasmic-override={overrides.columns}
         hasGap={true}
         className={classNames(projectcss.all, sty.columns)}
+        id={"contact"}
       >
         <div className={classNames(projectcss.all, sty.column___7DcWp)}>
           <Stack__

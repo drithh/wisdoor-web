@@ -27,7 +27,7 @@ const links = [
           <NavigationMenuLink asChild>
             <a
               className="flex h-full w-full select-none flex-col justify-end rounded-md hover:bg-gradient-to-b from-muted/50 to-muted p-2 no-underline outline-none focus:shadow-md"
-              href="/"
+              href="/#about"
             >
               About
             </a>
@@ -35,7 +35,7 @@ const links = [
           <NavigationMenuLink asChild>
             <a
               className="flex h-full w-full select-none flex-col justify-end rounded-md hover:bg-gradient-to-b from-muted/50 to-muted p-2 no-underline outline-none focus:shadow-md"
-              href="/"
+              href="/about"
             >
               Manufacturing
             </a>
