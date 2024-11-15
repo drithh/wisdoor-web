@@ -20,7 +20,9 @@ export function ImageGradient({
 }: ImageGradientProps) {
   const defaultImage = image || '/placeholder.svg';
   return (
-    <div className={`relative overflow-hidden ${className}`}>
+    <div
+      className={`relative w-screen h-screen max-h-[1280px] overflow-hidden ${className}`}
+    >
       <ExportedImage
         src={defaultImage}
         fill

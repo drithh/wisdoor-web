@@ -100,7 +100,7 @@ export function Product({
   return (
     <div className="w-full flex flex-col" ref={ref}>
       <div className="flex w-full">
-        <div className="h-full w-[39rem]">
+        <div className="h-full w-[32rem]">
           <LineReveal origin="right" mainControls={mainControls} />
         </div>
         <div className="flex-grow h-full">
@@ -108,7 +108,7 @@ export function Product({
         </div>
       </div>
       <div className="flex w-full sm:flex-row flex-col">
-        <div className="w-screen p-4 sm:p-8 max-w-[39rem] flex flex-col sm:h-[48rem]">
+        <div className="w-screen p-4 sm:p-8 max-w-[32rem] flex flex-col sm:h-[48rem]">
           {children}
           <div className="image flex-grow hidden sm:flex gap-4 flex-col justify-end">
             <p className="tracking-wider font-display">
@@ -178,7 +178,7 @@ export function Product({
 
       {isBottom && (
         <div className="flex w-full">
-          <div className="h-full w-[39rem]">
+          <div className="h-full w-[32rem]">
             <LineReveal origin="right" mainControls={mainControls} />
           </div>
           <div className="flex-grow h-full">

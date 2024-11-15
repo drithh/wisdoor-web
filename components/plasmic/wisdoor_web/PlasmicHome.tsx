@@ -63,6 +63,7 @@ import { Navigation } from "../../navigation"; // plasmic-import: UiHqtQRdZ-A_/c
 import { Hero } from "../../hero"; // plasmic-import: DLj-cPcbVVVA/codeComponent
 import { TextReveal } from "../../magicui/text-reveal"; // plasmic-import: kTWRudp-inez/codeComponent
 import { ShimmerButton } from "../../magicui/shimmer-button"; // plasmic-import: n12S44Pf_diF/codeComponent
+import { ImageGradient } from "../../image-gradient"; // plasmic-import: BYKZmpg0gHCS/codeComponent
 import { IconReveal } from "../../magicui/icon-reveal"; // plasmic-import: C_a578vM2Lk3/codeComponent
 import { Reveal } from "../../magicui/reveal"; // plasmic-import: WZl_dCgRNxa8/codeComponent
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
@@ -103,7 +104,7 @@ export type PlasmicHome__OverridesType = {
   textReveal?: Flex__<typeof TextReveal>;
   shimmerButton?: Flex__<typeof ShimmerButton>;
   about?: Flex__<"section">;
-  img?: Flex__<typeof PlasmicImg__>;
+  imageGradient?: Flex__<typeof ImageGradient>;
   embedHtml?: Flex__<typeof Embed>;
   product?: Flex__<"div">;
   pvc?: Flex__<typeof Product>;
@@ -259,24 +260,25 @@ function PlasmicHome__RenderFunc(props: {
               className={classNames(projectcss.all, sty.about)}
               id={"about"}
             >
-              <PlasmicImg__
-                data-plasmic-name={"img"}
-                data-plasmic-override={overrides.img}
-                alt={""}
-                className={classNames(sty.img)}
-                displayHeight={"40vh"}
-                displayMaxHeight={"60rem"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"40rem"}
-                displayMinWidth={"0"}
-                displayWidth={"100%"}
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/wisdoor_web/images/whatsAppImage20241028At121213PmJpeg.jpg",
-                  fullWidth: 4032,
-                  fullHeight: 3024,
-                  aspectRatio: undefined
-                }}
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__icTrS
+                )}
+              >
+                {"ABOUT US"}
+              </div>
+              <ImageGradient
+                data-plasmic-name={"imageGradient"}
+                data-plasmic-override={overrides.imageGradient}
+                alt={"Logo Wisdoor"}
+                className={classNames("__wab_instance", sty.imageGradient)}
+                gradientBottomBlack={false}
+                gradientTopWhite={true}
+                image={
+                  "/plasmic/wisdoor_web/images/whatsAppImage20241028At121213PmJpeg.jpg"
+                }
               />
 
               <Stack__
@@ -1539,7 +1541,7 @@ const PlasmicDescendants = {
     "textReveal",
     "shimmerButton",
     "about",
-    "img",
+    "imageGradient",
     "embedHtml",
     "product",
     "pvc",
@@ -1552,8 +1554,8 @@ const PlasmicDescendants = {
   hero: ["hero", "textReveal", "shimmerButton"],
   textReveal: ["textReveal"],
   shimmerButton: ["shimmerButton"],
-  about: ["about", "img", "embedHtml"],
-  img: ["img"],
+  about: ["about", "imageGradient", "embedHtml"],
+  imageGradient: ["imageGradient"],
   embedHtml: ["embedHtml"],
   product: ["product", "pvc", "hpl", "veener"],
   pvc: ["pvc"],
@@ -1572,7 +1574,7 @@ type NodeDefaultElementType = {
   textReveal: typeof TextReveal;
   shimmerButton: typeof ShimmerButton;
   about: "section";
-  img: typeof PlasmicImg__;
+  imageGradient: typeof ImageGradient;
   embedHtml: typeof Embed;
   product: "div";
   pvc: typeof Product;
@@ -1647,7 +1649,7 @@ export const PlasmicHome = Object.assign(
     textReveal: makeNodeComponent("textReveal"),
     shimmerButton: makeNodeComponent("shimmerButton"),
     about: makeNodeComponent("about"),
-    img: makeNodeComponent("img"),
+    imageGradient: makeNodeComponent("imageGradient"),
     embedHtml: makeNodeComponent("embedHtml"),
     product: makeNodeComponent("product"),
     pvc: makeNodeComponent("pvc"),

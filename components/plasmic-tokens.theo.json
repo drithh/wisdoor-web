@@ -2079,6 +2079,16 @@
         "projectId": "t5hn1zAmdmxJoKmkXG4dPV",
         "id": "0Nd9r9XgI_D8"
       }
+    },
+    {
+      "name": "text-size",
+      "type": "fontsize",
+      "value": "12px",
+      "category": "fontsize",
+      "meta": {
+        "projectId": "t5hn1zAmdmxJoKmkXG4dPV",
+        "id": "XJr5oz3xVgZ-"
+      }
     }
   ],
   "global": {

@@ -7,6 +7,15 @@
   --plasmic-token-medium: var(--token-TtTObZ97XkV6);
   --token-0Nd9r9XgI_D8: 100vh;
   --plasmic-token-unnamed-style-token-3: var(--token-0Nd9r9XgI_D8);
+  --token-XJr5oz3xVgZ-: 12px;
+  --plasmic-token-text-size: var(--token-XJr5oz3xVgZ-);
+}
+
+@media (min-width: 0px) and (max-width: 768px) {
+  .plasmic_tokens {
+    --token-XJr5oz3xVgZ-: 12px;
+    --plasmic-token-text-size: var(--token-XJr5oz3xVgZ-);
+  }
 }
 
 .plasmic_tokens {

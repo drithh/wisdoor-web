@@ -36,7 +36,7 @@ export const IconReveal: React.FC<IconRevealProps> = ({
     <div
       ref={ref}
       className={cn(
-        'relative p-8 w-32 h-32 flex items-center justify-center overflow-hidden rounded-full',
+        'relative p-6 w-24 h-24 flex items-center justify-center overflow-hidden rounded-full',
         className
       )}
     >
