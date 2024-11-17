@@ -1,12 +1,7 @@
 'use client';
 
-import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
-import { classNames } from '@plasmicapp/react-web';
 import ExportedImage from 'next-image-export-optimizer';
-import Image from 'next/image';
 import { createRef, RefObject, useEffect, useRef, useState } from 'react';
-import { AspectRatio } from './ui/aspect-ratio';
-import { Button } from './ui/button';
 import { Icon, Link, LucideIcon, MoveLeft, MoveRight } from 'lucide-react';
 import { motion, useAnimation, useInView } from 'framer-motion';
 import { LineReveal } from './magicui/line-reveal';
@@ -161,7 +156,7 @@ export function Product({
                 animate={mainControls}
                 transition={{
                   duration: 0.6,
-                  delay: index * 0.5,
+                  delay: 0.4 + index * 0.5,
                   ease: 'easeInOut',
                 }}
               ></motion.div>
