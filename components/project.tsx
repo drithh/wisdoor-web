@@ -24,7 +24,10 @@ interface ProjectProps {
 export function Project({ projectImages, className }: ProjectProps) {
   const mainControls = useAnimation();
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref, {
+    margin: '-20% 0px -20% 0px',
+    once: true,
+  });
 
   useEffect(() => {
     if (isInView) {

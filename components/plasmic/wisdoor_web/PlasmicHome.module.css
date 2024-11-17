@@ -365,8 +365,8 @@
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .freeBox__axdpY {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-row-gap: 4rem;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    grid-row-gap: 2rem;
   }
 }
 .freeBox__qrdzC {
@@ -394,6 +394,11 @@
   border-width: 1px;
   border-style: none;
 }
+@media (min-width: 0px) and (max-width: 768px) {
+  .svg__k4Jdz {
+    width: 40px;
+  }
+}
 .reveal__pgL4C:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
@@ -408,7 +413,7 @@
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .embedHtml:global(.__wab_instance) {
-    font-size: 20px;
+    font-size: 16px;
   }
 }
 .text__iLkes {
@@ -424,7 +429,7 @@
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .text__iLkes {
-    font-size: 24px;
+    font-size: 20px;
   }
 }
 .freeBox__h9MrN {
@@ -452,6 +457,11 @@
   border-width: 1px;
   border-style: none;
 }
+@media (min-width: 0px) and (max-width: 768px) {
+  .svg__tdwDv {
+    width: 40px;
+  }
+}
 .reveal__jOj3I:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
@@ -469,7 +479,7 @@
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .text__tJlf {
-    font-size: 20px;
+    font-size: 16px;
   }
 }
 .text__utbZb {
@@ -484,7 +494,7 @@
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .text__utbZb {
-    font-size: 24px;
+    font-size: 20px;
   }
 }
 .freeBox__ePsfp {
@@ -512,6 +522,11 @@
   border-width: 1px;
   border-style: none;
 }
+@media (min-width: 0px) and (max-width: 768px) {
+  .svg__myzhv {
+    width: 40px;
+  }
+}
 .reveal__jOijy:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
@@ -529,7 +544,7 @@
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .text___03UCl {
-    font-size: 20px;
+    font-size: 16px;
   }
 }
 .text__b7LEr {
@@ -544,7 +559,7 @@
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .text__b7LEr {
-    font-size: 24px;
+    font-size: 20px;
   }
 }
 .freeBox__q07P5 {
@@ -572,6 +587,11 @@
   border-width: 1px;
   border-style: none;
 }
+@media (min-width: 0px) and (max-width: 768px) {
+  .svg___8RgGo {
+    width: 40px;
+  }
+}
 .reveal__evplK:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
@@ -589,7 +609,7 @@
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .text__c7P1D {
-    font-size: 20px;
+    font-size: 16px;
   }
 }
 .text__f2AeL {
@@ -604,7 +624,7 @@
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .text__f2AeL {
-    font-size: 24px;
+    font-size: 20px;
   }
 }
 .product {

@@ -26,7 +26,10 @@ export function Product({
 }: ProductProps) {
   const mainControls = useAnimation();
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref, {
+    margin: '-20% 0px -20% 0px',
+    once: true,
+  });
 
   useEffect(() => {
     if (isInView) {
@@ -95,7 +98,7 @@ export function Product({
   return (
     <div className="w-full flex flex-col">
       <div className="flex w-full">
-        <div className="h-full w-[32rem]">
+        <div className="sm:block hidden h-full w-[32rem]">
           <LineReveal origin="right" mainControls={mainControls} />
         </div>
         <div className="flex-grow h-full">
@@ -173,7 +176,7 @@ export function Product({
 
       {isBottom && (
         <div className="flex w-full">
-          <div className="h-full w-[32rem]">
+          <div className="sm:block hidden h-full w-[32rem]">
             <LineReveal origin="right" mainControls={mainControls} />
           </div>
           <div className="flex-grow h-full">
