@@ -35,7 +35,7 @@ export const Reveal: React.FC<RevealProps> = ({
         ref={ref}
         className={cn('font-display ', className)}
         variants={{
-          hidden: { y: 75 },
+          hidden: { y: '100%' },
           visible: { y: 0 },
         }}
         initial="hidden"

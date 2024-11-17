@@ -98,7 +98,7 @@ export function Product({
   };
 
   return (
-    <div className="w-full flex flex-col" ref={ref}>
+    <div className="w-full flex flex-col">
       <div className="flex w-full">
         <div className="h-full w-[32rem]">
           <LineReveal origin="right" mainControls={mainControls} />
@@ -107,7 +107,7 @@ export function Product({
           <LineReveal mainControls={mainControls} />
         </div>
       </div>
-      <div className="flex w-full sm:flex-row flex-col">
+      <div ref={ref} className="flex w-full sm:flex-row flex-col">
         <div className="w-screen p-4 sm:p-8 max-w-[32rem] flex flex-col sm:h-[48rem]">
           {children}
           <div className="image flex-grow hidden sm:flex gap-4 flex-col justify-end">

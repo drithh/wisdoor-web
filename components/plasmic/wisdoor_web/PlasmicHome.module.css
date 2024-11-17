@@ -41,7 +41,7 @@
   width: auto;
   height: auto;
   max-width: 100%;
-  left: 10%;
+  left: 6.5%;
   top: 0;
   bottom: 0;
   padding: 8px;
@@ -164,7 +164,7 @@
 @media (min-width: 0px) and (max-width: 768px) {
   .text__icTrS {
     text-align: center;
-    font-size: 64px;
+    font-size: 48px;
     padding: 2rem 1rem;
   }
 }
