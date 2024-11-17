@@ -232,9 +232,9 @@ function PlasmicAbout__RenderFunc(props: {
                       sty.text__twCzR
                     )}
                   >
-                    {
-                      "Wijaya Door: \nCrafted to Perfection,\nDelivered with Speed."
-                    }
+                    {hasVariant(globalVariants, "screen", "mobileOnly")
+                      ? "Wijaya Door: \nCrafted to Perfection, \nDelivered with Speed."
+                      : "Wijaya Door: \nCrafted to Perfection,\nDelivered with Speed."}
                   </div>
                 </div>
                 <div className={classNames(projectcss.all, sty.column__vb9Oe)}>

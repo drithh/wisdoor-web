@@ -170,7 +170,9 @@
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .text__twCzR {
-    text-align: center;
+    text-align: left;
+    font-size: 28px;
+    padding-bottom: 0px;
   }
 }
 .column__vb9Oe {
@@ -194,6 +196,11 @@
   text-align: justify;
   font-size: 20px;
   min-width: 0;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .text__v18SD {
+    font-size: 16px;
+  }
 }
 .footer:global(.__wab_instance):global(.__wab_instance) {
   position: relative;

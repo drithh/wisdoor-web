@@ -13,6 +13,8 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from './ui/navigation-menu';
+import { Menu } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const handleSmoothScroll = (
   event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
@@ -37,7 +39,7 @@ const links = [
   },
   {
     title: 'About',
-    component: (
+    desktop: (
       <NavigationMenuContent>
         <ul className="grid gap-1 p-2 sm:w-64 uppercase text-xs">
           <NavigationMenuLink asChild>
@@ -60,6 +62,16 @@ const links = [
         </ul>
       </NavigationMenuContent>
     ),
+    mobile: [
+      {
+        title: 'About',
+        href: '/#about',
+      },
+      {
+        title: 'Manufacturing',
+        href: '/about',
+      },
+    ],
   },
   {
     title: 'Products',
@@ -84,6 +96,7 @@ interface NavigationProps {
 export function Navigation({ image, alt, black }: NavigationProps) {
   const defaultImage = image || '/placeholder.svg';
   const [scrolled, setScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -128,9 +141,65 @@ export function Navigation({ image, alt, black }: NavigationProps) {
           />
         </Link>
       </div>
+      <button
+        className="block md:hidden focus:outline-none"
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+      >
+        <div className="space-y-2">
+          <Menu size={24} />
+        </div>
+      </button>
+
+      {isMenuOpen && (
+        <motion.div
+          initial={{ height: 0 }}
+          animate={{ height: 'auto' }}
+          exit={{ height: 0 }}
+          transition={{ duration: 0.3 }}
+          className={cn(
+            'absolute top-[74px] right-0 overflow-hidden bg-white w-full shadow-lg md:hidden',
+            scrolled ? 'top-[60px]' : 'top-[74px]'
+          )}
+        >
+          <ul className="flex flex-col items-center p-4 space-y-2">
+            {links.map((link) =>
+              link.href ? (
+                <li key={link.title}>
+                  <Link
+                    href={link.href}
+                    className="text-black uppercase text-sm"
+                    onClick={(event) => {
+                      handleSmoothScroll(event, link.href);
+                      setIsMenuOpen(false);
+                    }}
+                  >
+                    {link.title}
+                  </Link>
+                </li>
+              ) : (
+                link.mobile?.map((item) => (
+                  <li key={item.title}>
+                    <Link
+                      href={item.href}
+                      className="text-black uppercase text-sm"
+                      onClick={(event) => {
+                        handleSmoothScroll(event, item.href);
+                        setIsMenuOpen(false);
+                      }}
+                    >
+                      {item.title}
+                    </Link>
+                  </li>
+                ))
+              )
+            )}
+          </ul>
+        </motion.div>
+      )}
+
       <div
         className={cn(
-          'flex self-end justify-around flex-grow',
+          'hidden md:flex self-end justify-around flex-grow',
           scrolled ? 'h-8' : 'h-9'
         )}
       >
@@ -156,7 +225,7 @@ export function Navigation({ image, alt, black }: NavigationProps) {
                   <NavigationMenuTrigger className="uppercase text-xs">
                     {link.title}
                   </NavigationMenuTrigger>
-                  {link.component}
+                  {link.desktop}
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>

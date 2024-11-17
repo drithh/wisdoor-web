@@ -25,7 +25,7 @@ export function CarouselWrapper({ carousels, className }: CarouselProps) {
   return (
     <Carousel
       className={cn(
-        'w-full h-screen pt-[72px] max-h-[1280px] overflow-x-hidden',
+        'w-full h-[50vh] md:h-screen pt-[72px] md:max-h-[1280px] overflow-x-hidden',
         className
       )}
     >
