@@ -72,7 +72,7 @@ export function Project({ projectImages, className }: ProjectProps) {
               animate={mainControls}
               transition={{
                 duration: 0.6,
-                delay: index * 0.5,
+                delay: 0.4 + index * 0.5,
                 ease: 'easeInOut',
               }}
             ></motion.div>

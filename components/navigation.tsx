@@ -14,6 +14,22 @@ import {
   navigationMenuTriggerStyle,
 } from './ui/navigation-menu';
 
+const handleSmoothScroll = (
+  event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+  href: string
+) => {
+  // url path
+  const isRoot = window.location.pathname === '/';
+  if (href.startsWith('/#') && isRoot) {
+    href = href.replace('/', '');
+    event.preventDefault();
+    const targetElement = document.querySelector(href);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+};
+
 const links = [
   {
     title: 'Custom',
@@ -28,6 +44,7 @@ const links = [
             <a
               className="flex h-full w-full select-none flex-col justify-end rounded-md hover:bg-gradient-to-b from-muted/50 to-muted p-2 no-underline outline-none focus:shadow-md"
               href="/#about"
+              onClick={(event) => handleSmoothScroll(event, '/#about')}
             >
               About
             </a>
@@ -46,15 +63,15 @@ const links = [
   },
   {
     title: 'Products',
-    href: '#product',
+    href: '/#product',
   },
   {
     title: 'Projects',
-    href: '#project',
+    href: '/#project',
   },
   {
     title: 'Contacts',
-    href: '#contact',
+    href: '/#contact',
   },
 ];
 
@@ -93,7 +110,11 @@ export function Navigation({ image, alt, black }: NavigationProps) {
           scrolled ? 'w-[35px]' : 'h-[42px]'
         )}
       >
-        <Link href="/">
+        <Link
+          href="/"
+          onClick={(event) => handleSmoothScroll(event, '/#hero')}
+          passHref
+        >
           <ExportedImage
             src={defaultImage}
             width={96}
@@ -122,6 +143,7 @@ export function Navigation({ image, alt, black }: NavigationProps) {
                     navigationMenuTriggerStyle(),
                     'text-xs uppercase'
                   )}
+                  onClick={(event) => handleSmoothScroll(event, link.href)}
                 >
                   {link.title}
                 </NavigationMenuLink>
