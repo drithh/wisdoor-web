@@ -36,13 +36,13 @@ export const IconReveal: React.FC<IconRevealProps> = ({
     <div
       ref={ref}
       className={cn(
-        'relative p-6 w-24 h-24 flex items-center justify-center overflow-hidden rounded-full',
+        'relative p-6 w-16 h-16 sm:w-24 sm:h-24 flex items-center justify-center overflow-hidden rounded-full',
         className
       )}
     >
-      <motion.svg
+      <svg
         viewBox="0 0 100 100"
-        className="absolute inset-0"
+        className="absolute inset-0 w-full h-full"
         xmlns="http://www.w3.org/2000/svg"
       >
         <motion.circle
@@ -70,7 +70,7 @@ export const IconReveal: React.FC<IconRevealProps> = ({
             ease: 'easeInOut',
           }}
         />
-      </motion.svg>
+      </svg>
 
       <motion.div
         variants={{

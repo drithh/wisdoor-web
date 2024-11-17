@@ -1499,7 +1499,9 @@ function PlasmicHome__RenderFunc(props: {
                       sty.text__tANuX
                     )}
                   >
-                    {"PROJECT\nREFERENCE"}
+                    {hasVariant(globalVariants, "screen", "mobileOnly")
+                      ? "PROJECT REFERENCE"
+                      : "PROJECT\nREFERENCE"}
                   </div>
                 </div>
                 <div className={classNames(projectcss.all, sty.column__gx487)}>
