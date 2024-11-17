@@ -12,7 +12,10 @@ interface HeroProps {
 export function Hero({ image, alt, className, children }: HeroProps) {
   const defaultImage = image || '/placeholder.svg';
   return (
-    <div id="hero" className="relative h-dvh max-h-[1080px] w-full">
+    <div
+      id="hero"
+      className="relative h-[calc(100vh-70px)] top-[70px] max-h-[1080px] w-full"
+    >
       <ExportedImage
         src={defaultImage}
         fill

@@ -205,7 +205,7 @@ function PlasmicHome__RenderFunc(props: {
             alt={"Logo Wisdoor"}
             black={false}
             className={classNames("__wab_instance", sty.navigation)}
-            image={"/plasmic/wisdoor_web/images/logoWhiteTransPng.png"}
+            image={"/plasmic/wisdoor_web/images/image1Png.png"}
           />
 
           <div className={classNames(projectcss.all, sty.freeBox__oPyea)}>
@@ -214,7 +214,7 @@ function PlasmicHome__RenderFunc(props: {
               data-plasmic-override={overrides.hero}
               alt={"Logo Wisdoor"}
               className={classNames("__wab_instance", sty.hero)}
-              image={"/plasmic/wisdoor_web/images/heroWisdoorPng.png"}
+              image={"/plasmic/wisdoor_web/images/pintu4RenderFinalPng.png"}
             >
               <Stack__
                 as={"div"}
