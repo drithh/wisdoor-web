@@ -231,7 +231,7 @@ function PlasmicDoor__RenderFunc(props: {
                       style={{ color: "#00000099" }}
                     >
                       {
-                        "Desain ini merupakan gambaran kasar. Detail spesifik mengenai desain dapat didiskusikan lebih lanjut dengan tim kami setelah Anda memencet tombol 'pesan sekarang.'"
+                        "Desain ini merupakan gambaran kasar. Detail spesifik mengenai desain dapat didiskusikan lebih lanjut dengan tim kami setelah Anda memencet tombol 'order now.'"
                       }
                     </span>
                   </React.Fragment>
