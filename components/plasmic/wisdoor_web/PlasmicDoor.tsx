@@ -216,7 +216,7 @@ function PlasmicDoor__RenderFunc(props: {
                     sty.text__k7FLs
                   )}
                 >
-                  {"Kustom Pintu"}
+                  {"Custom Pintu"}
                 </div>
                 <div
                   className={classNames(
@@ -231,7 +231,7 @@ function PlasmicDoor__RenderFunc(props: {
                       style={{ color: "#00000099" }}
                     >
                       {
-                        "Ini hanya gambaran kasar. Detail desain spesifik dapat dibahas lebih lanjut dengan admin setelah pemesanan dilakukan."
+                        "Desain ini merupakan gambaran kasar. Detail spesifik mengenai desain dapat didiskusikan lebih lanjut dengan tim kami setelah Anda memencet tombol 'pesan sekarang.'"
                       }
                     </span>
                   </React.Fragment>
@@ -478,13 +478,16 @@ function PlasmicDoor__RenderFunc(props: {
                     __composite["0"]["price"] = 0;
                     __composite["1"]["name"] = "Simple";
                     __composite["1"]["price"] = 50000;
-                    __composite["1"]["modal"] = "<p>eadad</p>";
+                    __composite["1"]["modal"] =
+                      "<p>Simple grooving adalah pola alur pada permukaan pintu yang hanya menggunakan garis lurus dan terdiri dari maksimal tiga garis.</p>";
                     __composite["2"]["name"] = "Intermediate";
                     __composite["2"]["price"] = 75000;
-                    __composite["2"]["modal"] = "<p>ee</p>";
+                    __composite["2"]["modal"] =
+                      "<p>Intermediate grooving menghadirkan desain alur dengan garis-garis lurus yang lebih kompleks, terdiri dari lebih dari tiga garis lurus.</p>";
                     __composite["3"]["name"] = "Expert";
                     __composite["3"]["price"] = 200000;
-                    __composite["3"]["modal"] = "<p>asda</p>";
+                    __composite["3"]["modal"] =
+                      "<p>Expert grooving menawarkan kebebasan kreatif dengan alur berbentuk lengkungan yang dapat disesuaikan sesuai keinginan. Pola ini memungkinkan variasi desain yang lebih kompleks, tanpa batasan jumlah garis atau lengkungan.</p>";
                     return __composite;
                   })()}
                 />
@@ -611,7 +614,7 @@ function PlasmicDoor__RenderFunc(props: {
                 data-plasmic-name={"detailPrice"}
                 data-plasmic-override={overrides.detailPrice}
                 className={classNames("__wab_instance", sty.detailPrice)}
-                phone={"6281293586210"}
+                phone={"6281110001390"}
               />
             </ConfiguratorWrapper>
           </RootWrapper>

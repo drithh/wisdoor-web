@@ -102,6 +102,7 @@ export type PlasmicHome__OverridesType = {
   navigation?: Flex__<typeof Navigation>;
   hero?: Flex__<typeof Hero>;
   textReveal?: Flex__<typeof TextReveal>;
+  link?: Flex__<"a"> & Partial<LinkProps>;
   shimmerButton?: Flex__<typeof ShimmerButton>;
   about?: Flex__<"section">;
   imageGradient?: Flex__<typeof ImageGradient>;
@@ -232,26 +233,35 @@ function PlasmicHome__RenderFunc(props: {
                   text={"ENGINEERING\\nWOODEN DOOR\\nSPECIALIST"}
                 />
 
-                <ShimmerButton
-                  data-plasmic-name={"shimmerButton"}
-                  data-plasmic-override={overrides.shimmerButton}
-                  background={"#535353"}
-                  borderRadius={"100px"}
-                  className={classNames("__wab_instance", sty.shimmerButton)}
-                  shimmerColor={"#ffffff"}
-                  shimmerDuration={"3s"}
-                  shimmerSize={"0.05em"}
+                <PlasmicLink__
+                  data-plasmic-name={"link"}
+                  data-plasmic-override={overrides.link}
+                  className={classNames(projectcss.all, projectcss.a, sty.link)}
+                  component={Link}
+                  href={`/door`}
+                  platform={"nextjs"}
                 >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__hXuq
-                    )}
+                  <ShimmerButton
+                    data-plasmic-name={"shimmerButton"}
+                    data-plasmic-override={overrides.shimmerButton}
+                    background={"#535353"}
+                    borderRadius={"100px"}
+                    className={classNames("__wab_instance", sty.shimmerButton)}
+                    shimmerColor={"#ffffff"}
+                    shimmerDuration={"3s"}
+                    shimmerSize={"0.05em"}
                   >
-                    {"CUSTOM YOUR DOOR"}
-                  </div>
-                </ShimmerButton>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__hXuq
+                      )}
+                    >
+                      {"CUSTOM YOUR DOOR"}
+                    </div>
+                  </ShimmerButton>
+                </PlasmicLink__>
               </Stack__>
             </Hero>
             <section
@@ -1539,6 +1549,7 @@ const PlasmicDescendants = {
     "navigation",
     "hero",
     "textReveal",
+    "link",
     "shimmerButton",
     "about",
     "imageGradient",
@@ -1551,8 +1562,9 @@ const PlasmicDescendants = {
     "footer"
   ],
   navigation: ["navigation"],
-  hero: ["hero", "textReveal", "shimmerButton"],
+  hero: ["hero", "textReveal", "link", "shimmerButton"],
   textReveal: ["textReveal"],
+  link: ["link", "shimmerButton"],
   shimmerButton: ["shimmerButton"],
   about: ["about", "imageGradient", "embedHtml"],
   imageGradient: ["imageGradient"],
@@ -1572,6 +1584,7 @@ type NodeDefaultElementType = {
   navigation: typeof Navigation;
   hero: typeof Hero;
   textReveal: typeof TextReveal;
+  link: "a";
   shimmerButton: typeof ShimmerButton;
   about: "section";
   imageGradient: typeof ImageGradient;
@@ -1647,6 +1660,7 @@ export const PlasmicHome = Object.assign(
     navigation: makeNodeComponent("navigation"),
     hero: makeNodeComponent("hero"),
     textReveal: makeNodeComponent("textReveal"),
+    link: makeNodeComponent("link"),
     shimmerButton: makeNodeComponent("shimmerButton"),
     about: makeNodeComponent("about"),
     imageGradient: makeNodeComponent("imageGradient"),

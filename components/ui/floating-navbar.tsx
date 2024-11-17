@@ -10,6 +10,7 @@ import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { Button } from './button';
 import { priceFormat } from '@/lib/price-format';
+import { ShimmerButton } from '../magicui/shimmer-button';
 
 interface FloatingNavProps {
   className?: string;
@@ -61,7 +62,7 @@ export const FloatingNav = ({
           duration: 0.2,
         }}
         className={cn(
-          'flex sm:max-w-[25rem] fixed right-0 bottom-0 sm:right-[4rem] w-dvw border border-transparent rounded-t-xl  bg-white shadow-[0_10px_50px_rgba(0,0,0,0.3)] z-50 sm:py-4 py-2 px-8 items-center  place-content-between space-x-4',
+          'flex sm:max-w-[25rem] fixed right-0 bottom-0 sm:right-[5rem] w-dvw border border-transparent rounded-t-xl  bg-white shadow-[0_10px_50px_rgba(0,0,0,0.3)] z-50 sm:py-4 py-2 px-8 items-center  place-content-between space-x-4',
           className
         )}
       >
@@ -71,7 +72,22 @@ export const FloatingNav = ({
             {priceFormat(price)}
           </p>
         </div>
-        <Button
+        <ShimmerButton
+          shimmerColor="#ffffff"
+          shimmerSize="0.05em"
+          shimmerDuration="3s"
+          borderRadius="100px"
+          background="#535353"
+          onClick={() => {
+            targetRef?.current?.scrollIntoView({
+              behavior: 'smooth', // Smooth scrolling
+              block: 'start', // Scroll until the top of the element is at the top of the viewport
+            });
+          }}
+        >
+          Order Now
+        </ShimmerButton>
+        {/* <Button
           className="h-8 sm:h-12 my-1 sm:my-4 text-base sm:text-xl font-text bg-green-500 hover:bg-green-300"
           onClick={() => {
             targetRef?.current?.scrollIntoView({
@@ -81,7 +97,7 @@ export const FloatingNav = ({
           }}
         >
           Order Now
-        </Button>
+        </Button> */}
       </motion.div>
     </AnimatePresence>
   );

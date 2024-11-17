@@ -56,7 +56,7 @@
   width: auto;
   height: auto;
   max-width: 100%;
-  font-family: var(--font-universal-sans-display);
+  font-family: var(--font-neue-haas-grotesk);
   font-weight: 500;
   font-size: 36px;
   color: #000000;
@@ -73,7 +73,7 @@
   font-size: 14px;
   color: #53535399;
   text-align: center;
-  font-family: var(--font-universal-sans-text);
+  font-family: var(--font-neue-haas-grotesk);
   min-width: 0;
 }
 .jenisPintu {
@@ -108,7 +108,7 @@
 .text___0Na67 {
   position: relative;
   height: auto;
-  font-family: var(--font-universal-sans-text);
+  font-family: var(--font-neue-haas-grotesk);
   font-weight: 400;
   font-size: 20px;
   color: #000000;
@@ -154,7 +154,7 @@
 .text___1DgB {
   position: relative;
   height: auto;
-  font-family: var(--font-universal-sans-text);
+  font-family: var(--font-neue-haas-grotesk);
   font-weight: 400;
   font-size: 20px;
   color: #000000;
@@ -197,7 +197,7 @@
 }
 .text__tyLu4 {
   height: auto;
-  font-family: var(--font-universal-sans-text);
+  font-family: var(--font-neue-haas-grotesk);
   font-weight: 400;
   font-size: 20px;
   color: #000000;
@@ -241,7 +241,7 @@
 }
 .text__vbWtE {
   height: auto;
-  font-family: var(--font-universal-sans-text);
+  font-family: var(--font-neue-haas-grotesk);
   font-weight: 400;
   font-size: 20px;
   color: #000000;
@@ -286,7 +286,7 @@
 .text___0HCv {
   position: relative;
   height: auto;
-  font-family: var(--font-universal-sans-text);
+  font-family: var(--font-neue-haas-grotesk);
   font-weight: 400;
   font-size: 20px;
   color: #000000;
@@ -326,7 +326,7 @@
 }
 .text__aoB7O {
   height: auto;
-  font-family: var(--font-universal-sans-text);
+  font-family: var(--font-neue-haas-grotesk);
   font-weight: 400;
   font-size: 20px;
   color: #000000;
@@ -370,7 +370,7 @@
 }
 .text__dD9Rb {
   height: auto;
-  font-family: var(--font-universal-sans-text);
+  font-family: var(--font-neue-haas-grotesk);
   font-weight: 400;
   font-size: 20px;
   color: #000000;

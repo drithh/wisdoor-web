@@ -5,6 +5,7 @@ import { Card, CardContent } from '../ui/card';
 import { FloatingNav } from '../ui/floating-navbar';
 import { useRef } from 'react';
 import Link from 'next/link';
+import { ShimmerButton } from '../magicui/shimmer-button';
 
 interface DetailPriceProps {
   phone: string;
@@ -223,9 +224,16 @@ export const DetailPrice = (props: DetailPriceProps) => {
         </p>
       </div>
       <Link href={generateWhatsappLink()} target="_blank">
-        <Button variant="outline" className="h-12 my-4 w-full">
-          Pesan Sekarang
-        </Button>
+        <ShimmerButton
+          shimmerColor="#ffffff"
+          shimmerSize="0.05em"
+          shimmerDuration="3s"
+          borderRadius="100px"
+          background="#535353"
+          className="w-full h-12 my-4"
+        >
+          Order Now
+        </ShimmerButton>
       </Link>
       <FloatingNav targetRef={detailPrice} price={totalPrice} />
     </div>
