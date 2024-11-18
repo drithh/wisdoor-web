@@ -881,6 +881,7 @@
   max-width: 100%;
   min-width: 0;
   padding: 0px;
+  margin: 6rem 0rem;
 }
 .pvc:global(.__wab_instance) {
   max-width: 100%;
@@ -2079,7 +2080,7 @@
   max-width: 100%;
   min-width: 0;
   padding: 0px;
-  margin: 5rem 0rem 0rem;
+  margin: 0rem;
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .project {

@@ -337,7 +337,7 @@ function PlasmicHome__RenderFunc(props: {
                       )}
                     >
                       {
-                        "Leveraging our extensive experience in exporting door cores, we've recently entered the local door industry, supplying to residential homes and small businesses like cl\u00ednics. We are committed to expanding this portfolio as fast as possible to capture new opportunities in the market."
+                        "Leveraging our proven expertise in exporting door cores, we now focus on serving a diverse range of markets in the local door industry. From small residential homes to luxury hotels, we specialize in delivering tailored solutions to meet the needs of every space, emphasizing quality and versatility."
                       }
                     </div>
                   </div>
@@ -576,7 +576,7 @@ function PlasmicHome__RenderFunc(props: {
                       )}
                     >
                       {
-                        "Since 1994, Wijaya Door has been dedicated to craftsmanship and innovation. With roots in kiln drying and molding for timber furniture, we expanded into finger joint laminating for door cores, exporting to markets across China, Taiwan, Singapore, South Africa, the Netherlands, and Korea.\n\nOur R&D division drives continuous innovation, supported by advanced Italian-made technology, including CNC machines, edging and vacuum membrane machines, and CAD/CAM software. These high-investment tools enable precision, customization, and durability in every product. \n\nAt Wijaya Door, we uphold the highest standards in durability, timely delivery, and integrity\u2014creating doors that last, tailored to the unique needs of our clients. Through relentless pursuit of quality and on-time delivery, we\u2019re committed to remaining a trusted name in the industry."
+                        "Our R&D division drives continuous innovation, supported by advanced Italian-made technology, including CNC machines, edging and vacuum membrane machines, and CAD/CAM software. These high-investment tools enable precision, customization, and durability in every product. \n\nAt Wijaya Door, we uphold the highest standards in durability, timely delivery, and integrity\u2014creating doors that last, tailored to the unique needs of our clients. Through relentless pursuit of quality and on-time delivery, we\u2019re committed to remaining a trusted name in the industry."
                       }
                     </div>
                   </div>
@@ -632,10 +632,10 @@ function PlasmicHome__RenderFunc(props: {
                     { image: null, alt: null }
                   ];
                   __composite["0"]["image"] =
-                    "https://site-assets.plasmic.app/f45968fe35122b12a19d6ed639c22817.avif";
+                    "https://site-assets.plasmic.app/2b519c174f5ba731b50c6600722bcd8d.png";
                   __composite["0"]["alt"] = "Produk 1";
                   __composite["1"]["image"] =
-                    "https://site-assets.plasmic.app/f45968fe35122b12a19d6ed639c22817.avif";
+                    "https://site-assets.plasmic.app/5a5272ee297aa1013c98935f67b0a42e.png";
                   __composite["1"]["alt"] = "Product 2";
                   return __composite;
                 })()}
@@ -942,16 +942,10 @@ function PlasmicHome__RenderFunc(props: {
                 className={classNames("__wab_instance", sty.hpl)}
                 isBottom={false}
                 productImages={(() => {
-                  const __composite = [
-                    { image: null, alt: null },
-                    { image: null, alt: null }
-                  ];
+                  const __composite = [{ image: null, alt: null }];
                   __composite["0"]["image"] =
-                    "https://site-assets.plasmic.app/f45968fe35122b12a19d6ed639c22817.avif";
+                    "https://site-assets.plasmic.app/5c498b490a3917cccaa11ba3cdf97a60.png";
                   __composite["0"]["alt"] = "Produk 1";
-                  __composite["1"]["image"] =
-                    "https://site-assets.plasmic.app/f45968fe35122b12a19d6ed639c22817.avif";
-                  __composite["1"]["alt"] = "Product 2";
                   return __composite;
                 })()}
               >

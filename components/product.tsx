@@ -5,6 +5,8 @@ import { createRef, RefObject, useEffect, useRef, useState } from 'react';
 import { Icon, Link, LucideIcon, MoveLeft, MoveRight } from 'lucide-react';
 import { motion, useAnimation, useInView } from 'framer-motion';
 import { LineReveal } from './magicui/line-reveal';
+import Marquee from './ui/marquee';
+import { cn } from '@/lib/utils';
 
 interface ProductImage {
   image: string;
@@ -105,8 +107,8 @@ export function Product({
           <LineReveal mainControls={mainControls} />
         </div>
       </div>
-      <div ref={ref} className="flex w-full sm:flex-row flex-col">
-        <div className="w-screen p-4 sm:p-8 max-w-[32rem] flex flex-col sm:h-[48rem]">
+      <div ref={ref} className="relative flex w-full sm:flex-row flex-col">
+        <div className="w-screen p-4 sm:p-8 shrink-0 sm:w-[32rem] flex flex-col sm:h-[40rem]">
           {children}
           <div className="image flex-grow hidden sm:flex gap-4 flex-col justify-end">
             <p className="tracking-wider font-display">
@@ -140,37 +142,44 @@ export function Product({
           origin="top"
           mainControls={mainControls}
         />
+
         <div
-          className={`flex-grow overflow-y-hidden py-4 px-2 sm:py-8 sm:px-4 overflow-x-auto flex-row flex w-full ${className}`}
+          className={cn(
+            'group flex overflow-y-hidden scroll-smooth p-4 flex-row',
+            className
+          )}
         >
-          {productImages.map((product, index) => (
-            <span
-              ref={tabRefs.current[index]}
-              key={index}
-              className="relative mx-2 sm:mx-4 min-w-[24rem] sm:min-w-[44rem] h-[24rem] sm:h-full"
-            >
-              <motion.div
-                className="absolute insert-0 z-10 w-full h-full bg-white"
-                variants={{
-                  hidden: { y: '0' },
-                  visible: { y: '100%' },
-                }}
-                initial="hidden"
-                animate={mainControls}
-                transition={{
-                  duration: 0.6,
-                  delay: 0.4 + index * 0.5,
-                  ease: 'easeInOut',
-                }}
-              ></motion.div>
-              <ExportedImage
-                src={product.image}
-                className="object-cover z-0"
-                fill
-                alt={product.alt}
-              />
-            </span>
-          ))}
+          <div className={cn('flex shrink-0 h-full justify-around gap-4')}>
+            {productImages.map((project, index) => (
+              <span
+                ref={tabRefs.current[index]}
+                key={index}
+                className="relative h-[14rem] sm:h-[40rem]"
+              >
+                <motion.div
+                  className="absolute insert-0 z-10 w-full h-full bg-white"
+                  variants={{
+                    hidden: { y: '0' },
+                    visible: { y: '100%' },
+                  }}
+                  initial="hidden"
+                  animate={mainControls}
+                  transition={{
+                    duration: 0.6,
+                    delay: 0.4 + index * 0.5,
+                    ease: 'easeInOut',
+                  }}
+                ></motion.div>
+                <ExportedImage
+                  src={project.image}
+                  width={1000}
+                  height={1000}
+                  className="z-0 w-auto h-full"
+                  alt={project.alt}
+                />
+              </span>
+            ))}
+          </div>
         </div>
       </div>
 

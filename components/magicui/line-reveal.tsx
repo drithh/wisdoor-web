@@ -24,8 +24,8 @@ export function LineReveal({
   return (
     <motion.div
       className={cn(
-        'bg-[#535353]',
-        type === 'vertical' ? 'h-full w-[2px]' : 'w-full h-[1px]',
+        'bg-[#535353] shrink-0',
+        type === 'vertical' ? 'h-full w-[1px]' : 'w-full h-[1px]',
         origin === 'left' && 'origin-left',
         origin === 'right' && 'origin-right',
         origin === 'top' && 'origin-top',

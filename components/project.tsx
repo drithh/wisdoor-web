@@ -51,7 +51,7 @@ export function Project({ projectImages, className }: ProjectProps) {
             <span
               // ref={tabRefs.current[index]}
               key={index}
-              className="relative h-[14rem] sm:min-h-[26rem]"
+              className="relative h-[14rem] sm:h-[26rem]"
             >
               <motion.div
                 className="absolute insert-0 z-10 w-full h-full bg-white"
