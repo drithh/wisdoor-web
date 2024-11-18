@@ -227,7 +227,7 @@ function PlasmicHome__RenderFunc(props: {
                   data-plasmic-override={overrides.textReveal}
                   characterClass={
                     hasVariant(globalVariants, "screen", "mobileOnly")
-                      ? "text-[48px] font-semibold"
+                      ? "text-[40px] font-semibold"
                       : "text-[68px] font-semibold"
                   }
                   className={classNames("__wab_instance", sty.textReveal)}
