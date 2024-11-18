@@ -91,7 +91,9 @@ export type PlasmicAbout__OverridesType = {
   footer?: Flex__<typeof Footer>;
 };
 
-export interface DefaultAboutProps {}
+export interface DefaultAboutProps {
+  className?: string;
+}
 
 const $$ = {};
 
@@ -136,131 +138,119 @@ function PlasmicAbout__RenderFunc(props: {
   });
 
   return (
-    <React.Fragment>
-      <Head></Head>
+    <div
+      data-plasmic-name={"root"}
+      data-plasmic-override={overrides.root}
+      data-plasmic-root={true}
+      data-plasmic-for-node={forNode}
+      className={classNames(
+        projectcss.all,
+        projectcss.root_reset,
+        projectcss.plasmic_default_styles,
+        projectcss.plasmic_mixins,
+        projectcss.plasmic_tokens,
+        plasmic_antd_5_hostless_css.plasmic_tokens,
+        plasmic_plasmic_rich_components_css.plasmic_tokens,
+        sty.root
+      )}
+    >
+      <Navigation
+        data-plasmic-name={"navigation"}
+        data-plasmic-override={overrides.navigation}
+        alt={"Logo Wisdoor"}
+        black={false}
+        className={classNames("__wab_instance", sty.navigation)}
+        image={"/plasmic/wisdoor_web/images/image1Png.png"}
+      />
 
-      <style>{`
-        body {
-          margin: 0;
-        }
-      `}</style>
+      <div className={classNames(projectcss.all, sty.freeBox__kjvJl)}>
+        <CarouselWrapper
+          data-plasmic-name={"carouselWrapper"}
+          data-plasmic-override={overrides.carouselWrapper}
+          carousels={(() => {
+            const __composite = [
+              { image: null, alt: "Logo Wisdoor" },
+              { image: null, alt: "Logo Wisdoor" }
+            ];
+            __composite["0"]["image"] =
+              "https://site-assets.plasmic.app/c2dbfa00e97de14ceeeec669db7d41f1.png";
+            __composite["1"]["image"] =
+              "https://site-assets.plasmic.app/ac8b44f7fbf5a81c839a180920ea249c.png";
+            return __composite;
+          })()}
+          className={classNames("__wab_instance", sty.carouselWrapper)}
+        />
 
-      <div className={projectcss.plasmic_page_wrapper}>
-        <div
-          data-plasmic-name={"root"}
-          data-plasmic-override={overrides.root}
-          data-plasmic-root={true}
-          data-plasmic-for-node={forNode}
-          className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
-            projectcss.plasmic_tokens,
-            plasmic_antd_5_hostless_css.plasmic_tokens,
-            plasmic_plasmic_rich_components_css.plasmic_tokens,
-            sty.root
-          )}
+        <Stack__
+          as={"div"}
+          hasGap={true}
+          className={classNames(projectcss.all, sty.freeBox___3BhbE)}
         >
-          <Navigation
-            data-plasmic-name={"navigation"}
-            data-plasmic-override={overrides.navigation}
-            alt={"Logo Wisdoor"}
-            black={false}
-            className={classNames("__wab_instance", sty.navigation)}
-            image={"/plasmic/wisdoor_web/images/image1Png.png"}
-          />
-
-          <div className={classNames(projectcss.all, sty.freeBox__kjvJl)}>
-            <CarouselWrapper
-              data-plasmic-name={"carouselWrapper"}
-              data-plasmic-override={overrides.carouselWrapper}
-              carousels={(() => {
-                const __composite = [
-                  { image: null, alt: "Logo Wisdoor" },
-                  { image: null, alt: "Logo Wisdoor" }
-                ];
-                __composite["0"]["image"] =
-                  "https://site-assets.plasmic.app/c2dbfa00e97de14ceeeec669db7d41f1.png";
-                __composite["1"]["image"] =
-                  "https://site-assets.plasmic.app/ac8b44f7fbf5a81c839a180920ea249c.png";
-                return __composite;
-              })()}
-              className={classNames("__wab_instance", sty.carouselWrapper)}
-            />
-
-            <Stack__
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox___3BhbE)}
-            >
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__zXqk
+            )}
+          >
+            <React.Fragment>
+              <span
+                className={"plasmic_default__all plasmic_default__span"}
+                style={{ color: "#96838380" }}
+              >
+                {"ABOUT US >"}
+              </span>
+              <React.Fragment>{""}</React.Fragment>
+              <span
+                className={"plasmic_default__all plasmic_default__span"}
+                style={{ color: "#968383" }}
+              >
+                {" MANUFACTURING"}
+              </span>
+            </React.Fragment>
+          </div>
+          <Stack__
+            as={"div"}
+            data-plasmic-name={"columns"}
+            data-plasmic-override={overrides.columns}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.columns)}
+          >
+            <div className={classNames(projectcss.all, sty.column__y7Foh)}>
               <div
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text__zXqk
+                  sty.text__twCzR
                 )}
               >
-                <React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ color: "#96838380" }}
-                  >
-                    {"ABOUT US >"}
-                  </span>
-                  <React.Fragment>{""}</React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ color: "#968383" }}
-                  >
-                    {" MANUFACTURING"}
-                  </span>
-                </React.Fragment>
+                {hasVariant(globalVariants, "screen", "mobileOnly")
+                  ? "Wijaya Door: \nCrafted to Perfection, \nDelivered with Speed."
+                  : "Wijaya Door: \nCrafted to Perfection,\nDelivered with Speed."}
               </div>
-              <Stack__
-                as={"div"}
-                data-plasmic-name={"columns"}
-                data-plasmic-override={overrides.columns}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.columns)}
+            </div>
+            <div className={classNames(projectcss.all, sty.column__vb9Oe)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__v18SD
+                )}
               >
-                <div className={classNames(projectcss.all, sty.column__y7Foh)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__twCzR
-                    )}
-                  >
-                    {hasVariant(globalVariants, "screen", "mobileOnly")
-                      ? "Wijaya Door: \nCrafted to Perfection, \nDelivered with Speed."
-                      : "Wijaya Door: \nCrafted to Perfection,\nDelivered with Speed."}
-                  </div>
-                </div>
-                <div className={classNames(projectcss.all, sty.column__vb9Oe)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__v18SD
-                    )}
-                  >
-                    {
-                      "Since 1994, Wijaya Door has been dedicated to craftsmanship and innovation. With roots in kiln drying and molding for timber furniture, we expanded into finger joint laminating for door cores, exporting to markets across China, Taiwan, Singapore, South Africa, the Netherlands, and Korea.\n\nOur R&D division drives continuous innovation, supported by advanced Italian-made technology, including CNC machines, edging and vacuum membrane machines, and CAD/CAM software. These high-investment tools enable precision, customization, and durability in every product. \n\nAt Wijaya Door, we uphold the highest standards in durability, timely delivery, and integrity\u2014creating doors that last, tailored to the unique needs of our clients. Through relentless pursuit of quality and on-time delivery, we\u2019re committed to remaining a trusted name in the industry."
-                    }
-                  </div>
-                </div>
-              </Stack__>
-            </Stack__>
-            <Footer
-              data-plasmic-name={"footer"}
-              data-plasmic-override={overrides.footer}
-              className={classNames("__wab_instance", sty.footer)}
-            />
-          </div>
-        </div>
+                {
+                  "Since 1994, Wijaya Door has been dedicated to craftsmanship and innovation. With roots in kiln drying and molding for timber furniture, we expanded into finger joint laminating for door cores, exporting to markets across China, Taiwan, Singapore, South Africa, the Netherlands, and Korea.\n\nOur R&D division drives continuous innovation, supported by advanced Italian-made technology, including CNC machines, edging and vacuum membrane machines, and CAD/CAM software. These high-investment tools enable precision, customization, and durability in every product. \n\nAt Wijaya Door, we uphold the highest standards in durability, timely delivery, and integrity\u2014creating doors that last, tailored to the unique needs of our clients. Through relentless pursuit of quality and on-time delivery, we\u2019re committed to remaining a trusted name in the industry."
+                }
+              </div>
+            </div>
+          </Stack__>
+        </Stack__>
+        <Footer
+          data-plasmic-name={"footer"}
+          data-plasmic-override={overrides.footer}
+          className={classNames("__wab_instance", sty.footer)}
+        />
       </div>
-    </React.Fragment>
+    </div>
   ) as React.ReactElement | null;
 }
 
@@ -349,15 +339,7 @@ export const PlasmicAbout = Object.assign(
 
     // Metadata about props expected for PlasmicAbout
     internalVariantProps: PlasmicAbout__VariantProps,
-    internalArgProps: PlasmicAbout__ArgProps,
-
-    // Page metadata
-    pageMetadata: {
-      title: "",
-      description: "",
-      ogImageSrc: "",
-      canonical: ""
-    }
+    internalArgProps: PlasmicAbout__ArgProps
   }
 );
 

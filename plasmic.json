@@ -121,7 +121,7 @@
           },
           "cssFilePath": "plasmic/wisdoor_web/PlasmicAbout.module.css",
           "scheme": "blackbox",
-          "componentType": "page",
+          "componentType": "component",
           "path": "/about"
         }
       ],

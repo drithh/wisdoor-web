@@ -67,8 +67,8 @@ import { ImageGradient } from "../../image-gradient"; // plasmic-import: BYKZmpg
 import { IconReveal } from "../../magicui/icon-reveal"; // plasmic-import: C_a578vM2Lk3/codeComponent
 import { Reveal } from "../../magicui/reveal"; // plasmic-import: WZl_dCgRNxa8/codeComponent
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
-import { Product } from "../../product"; // plasmic-import: tUhKBdzelJtb/codeComponent
 import { Project } from "../../project"; // plasmic-import: gt5pPBjlLVzP/codeComponent
+import { Product } from "../../product"; // plasmic-import: tUhKBdzelJtb/codeComponent
 import Footer from "../../Footer"; // plasmic-import: jyVfSNkVX5DJ/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
@@ -107,6 +107,7 @@ export type PlasmicHome__OverridesType = {
   about?: Flex__<"section">;
   imageGradient?: Flex__<typeof ImageGradient>;
   embedHtml?: Flex__<typeof Embed>;
+  manufacturing?: Flex__<"div">;
   product?: Flex__<"div">;
   pvc?: Flex__<typeof Product>;
   hpl?: Flex__<typeof Product>;
@@ -517,6 +518,92 @@ function PlasmicHome__RenderFunc(props: {
                 </div>
               </Stack__>
             </section>
+            <div
+              data-plasmic-name={"manufacturing"}
+              data-plasmic-override={overrides.manufacturing}
+              className={classNames(projectcss.all, sty.manufacturing)}
+              id={"manufacturing"}
+            >
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox__dGqZ6)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__bWtga
+                  )}
+                >
+                  <React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ color: "#96838380" }}
+                    >
+                      {"ABOUT US >"}
+                    </span>
+                    <React.Fragment>{""}</React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ color: "#968383" }}
+                    >
+                      {" MANUFACTURING"}
+                    </span>
+                  </React.Fragment>
+                </div>
+                <Stack__
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.columns___2GVr)}
+                >
+                  <div
+                    className={classNames(projectcss.all, sty.column__lq3Ac)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__dei0
+                      )}
+                    >
+                      {hasVariant(globalVariants, "screen", "mobileOnly")
+                        ? "Wijaya Door: \nCrafted to Perfection, \nDelivered with Speed."
+                        : "Wijaya Door: \nCrafted to Perfection,\nDelivered with Speed."}
+                    </div>
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.column__eedTx)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__yuwdD
+                      )}
+                    >
+                      {
+                        "Since 1994, Wijaya Door has been dedicated to craftsmanship and innovation. With roots in kiln drying and molding for timber furniture, we expanded into finger joint laminating for door cores, exporting to markets across China, Taiwan, Singapore, South Africa, the Netherlands, and Korea.\n\nOur R&D division drives continuous innovation, supported by advanced Italian-made technology, including CNC machines, edging and vacuum membrane machines, and CAD/CAM software. These high-investment tools enable precision, customization, and durability in every product. \n\nAt Wijaya Door, we uphold the highest standards in durability, timely delivery, and integrity\u2014creating doors that last, tailored to the unique needs of our clients. Through relentless pursuit of quality and on-time delivery, we\u2019re committed to remaining a trusted name in the industry."
+                      }
+                    </div>
+                  </div>
+                </Stack__>
+              </Stack__>
+              <Project
+                className={classNames("__wab_instance", sty.project___3HcDv)}
+                projectImages={(() => {
+                  const __composite = [
+                    { image: null, alt: "Logo Wisdoor" },
+                    { image: null, alt: "Logo Wisdoor" }
+                  ];
+                  __composite["0"]["image"] =
+                    "https://site-assets.plasmic.app/a3a4656c9e4957a78b9e1ee960b16755.png";
+                  __composite["1"]["image"] =
+                    "https://site-assets.plasmic.app/7db7bfde388ea1b49cf1d5de4916dfa9.png";
+                  return __composite;
+                })()}
+              />
+            </div>
             <div
               data-plasmic-name={"product"}
               data-plasmic-override={overrides.product}
@@ -1556,6 +1643,7 @@ const PlasmicDescendants = {
     "about",
     "imageGradient",
     "embedHtml",
+    "manufacturing",
     "product",
     "pvc",
     "hpl",
@@ -1571,6 +1659,7 @@ const PlasmicDescendants = {
   about: ["about", "imageGradient", "embedHtml"],
   imageGradient: ["imageGradient"],
   embedHtml: ["embedHtml"],
+  manufacturing: ["manufacturing"],
   product: ["product", "pvc", "hpl", "veener"],
   pvc: ["pvc"],
   hpl: ["hpl"],
@@ -1591,6 +1680,7 @@ type NodeDefaultElementType = {
   about: "section";
   imageGradient: typeof ImageGradient;
   embedHtml: typeof Embed;
+  manufacturing: "div";
   product: "div";
   pvc: typeof Product;
   hpl: typeof Product;
@@ -1667,6 +1757,7 @@ export const PlasmicHome = Object.assign(
     about: makeNodeComponent("about"),
     imageGradient: makeNodeComponent("imageGradient"),
     embedHtml: makeNodeComponent("embedHtml"),
+    manufacturing: makeNodeComponent("manufacturing"),
     product: makeNodeComponent("product"),
     pvc: makeNodeComponent("pvc"),
     hpl: makeNodeComponent("hpl"),

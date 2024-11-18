@@ -12,12 +12,12 @@ interface HeroProps {
 export function Hero({ image, alt, className, children }: HeroProps) {
   const defaultImage = image || '/placeholder.svg';
   return (
-    <div id="hero" className="w-full h-dvh max-h-[1080px]">
-      <div className="relative h-[calc(100vh-70px)] max-h-[1080px] top-[70px] w-full">
+    <div id="hero" className="w-full  h-[50vh] sm:h-screen max-h-[1080px]">
+      <div className="relative h-[50vh] sm:h-[calc(100vh-70px)] max-h-[1080px] top-[70px] w-full">
         <ExportedImage
           src={defaultImage}
           fill
-          className={`object-cover  ${className}`}
+          className={`${className} object-scale-down`}
           alt={alt || 'Logo Wisdoor'}
           priority
         />
