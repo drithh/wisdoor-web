@@ -539,16 +539,9 @@ function PlasmicHome__RenderFunc(props: {
                   <React.Fragment>
                     <span
                       className={"plasmic_default__all plasmic_default__span"}
-                      style={{ color: "#96838380" }}
-                    >
-                      {"ABOUT US >"}
-                    </span>
-                    <React.Fragment>{""}</React.Fragment>
-                    <span
-                      className={"plasmic_default__all plasmic_default__span"}
                       style={{ color: "#968383" }}
                     >
-                      {" MANUFACTURING"}
+                      {"MANUFACTURING"}
                     </span>
                   </React.Fragment>
                 </div>
@@ -594,12 +587,30 @@ function PlasmicHome__RenderFunc(props: {
                 projectImages={(() => {
                   const __composite = [
                     { image: null, alt: "Logo Wisdoor" },
+                    { image: null, alt: "Logo Wisdoor" },
+                    { image: null, alt: "Logo Wisdoor" },
+                    { image: null, alt: "Logo Wisdoor" },
+                    { image: null, alt: "Logo Wisdoor" },
+                    { image: null, alt: "Logo Wisdoor" },
+                    { image: null, alt: "Logo Wisdoor" },
                     { image: null, alt: "Logo Wisdoor" }
                   ];
                   __composite["0"]["image"] =
-                    "https://site-assets.plasmic.app/a3a4656c9e4957a78b9e1ee960b16755.png";
+                    "https://site-assets.plasmic.app/d601bc492c210f9cd29a247d6d85ce89.png";
                   __composite["1"]["image"] =
-                    "https://site-assets.plasmic.app/7db7bfde388ea1b49cf1d5de4916dfa9.png";
+                    "https://site-assets.plasmic.app/6aad20d2afc3f09a14019ce396e9c717.png";
+                  __composite["2"]["image"] =
+                    "https://site-assets.plasmic.app/b048c13b5144bcee10742287a0b2cf04.png";
+                  __composite["3"]["image"] =
+                    "https://site-assets.plasmic.app/fcf84f69eb6d0550f27abe39f42853cf.png";
+                  __composite["4"]["image"] =
+                    "https://site-assets.plasmic.app/474cd10b2d4db1dcd81bd608fafbf2d9.png";
+                  __composite["5"]["image"] =
+                    "https://site-assets.plasmic.app/543632e0eaa7546e507949c6ec4bbc15.png";
+                  __composite["6"]["image"] =
+                    "https://site-assets.plasmic.app/1aeb938b83a8f92a13020a8d61cca036.png";
+                  __composite["7"]["image"] =
+                    "https://site-assets.plasmic.app/d235a0081ea762282820ad5e30b7b370.png";
                   return __composite;
                 })()}
               />

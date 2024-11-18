@@ -44,14 +44,14 @@ export function Project({ projectImages, className }: ProjectProps) {
     <div className="w-full flex flex-col" ref={ref}>
       <LineReveal mainControls={mainControls} />
       <div
-        className={`flex-grow overflow-y-hidden py-4 px-2 sm:py-8 sm:px-4 overflow-x-auto flex-row flex w-full ${className}`}
+        className={`flex-grow overflow-y-hidden py-2 px-1 sm:py-2 sm:px-1 overflow-x-auto flex-row flex w-full ${className}`}
       >
-        <Marquee slowOnHover={true} repeat={10}>
+        <Marquee pauseOnHover={true} repeat={3}>
           {projectImages.map((project, index) => (
             <span
               // ref={tabRefs.current[index]}
               key={index}
-              className="relative mx-2 sm:mx-4 min-w-[24rem] sm:min-w-[44rem] h-[24rem] sm:min-h-[44rem]"
+              className="relative h-[20rem] sm:min-h-[36rem]"
             >
               <motion.div
                 className="absolute insert-0 z-10 w-full h-full bg-white"
@@ -69,8 +69,9 @@ export function Project({ projectImages, className }: ProjectProps) {
               ></motion.div>
               <ExportedImage
                 src={project.image}
-                className="object-cover z-0"
-                fill
+                width={1000}
+                height={1000}
+                className="z-0 w-auto h-full"
                 alt={project.alt}
               />
             </span>
