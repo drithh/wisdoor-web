@@ -46,12 +46,12 @@ export function Project({ projectImages, className }: ProjectProps) {
       <div
         className={`flex-grow overflow-y-hidden py-2 px-1 sm:py-2 sm:px-1 overflow-x-auto flex-row flex w-full ${className}`}
       >
-        <Marquee pauseOnHover={true} repeat={3}>
+        <Marquee repeat={3}>
           {projectImages.map((project, index) => (
             <span
               // ref={tabRefs.current[index]}
               key={index}
-              className="relative h-[20rem] sm:min-h-[36rem]"
+              className="relative h-[14rem] sm:min-h-[26rem]"
             >
               <motion.div
                 className="absolute insert-0 z-10 w-full h-full bg-white"
