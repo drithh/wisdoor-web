@@ -178,9 +178,8 @@ function PlasmicOldAbout__RenderFunc(props: {
           data-plasmic-override={overrides.hero}
           alt={"Logo Wisdoor"}
           className={classNames("__wab_instance", sty.hero)}
-          image={
-            "/plasmic/wisdoor_web/images/sitemapWhiteboardInGreenPurpleBasicStyle1Png.png"
-          }
+          desktopImage={"/placeholder.svg"}
+          mobileImage={"/placeholder.svg"}
         />
 
         <section className={classNames(projectcss.all, sty.section__vl52G)}>

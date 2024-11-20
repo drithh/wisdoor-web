@@ -392,6 +392,16 @@
           "id": "J1VfUq33f4yo",
           "name": "IMG_5511.png",
           "filePath": "../public/plasmic/wisdoor_web/images/img5511Png.png"
+        },
+        {
+          "id": "DdfVT6CjRwty",
+          "name": "2x1.png",
+          "filePath": "../public/plasmic/wisdoor_web/images/_2X1Png.png"
+        },
+        {
+          "id": "M37s2o_rtO1r",
+          "name": "9x16.png",
+          "filePath": "../public/plasmic/wisdoor_web/images/_9X16Png.png"
         }
       ],
       "indirect": false,

@@ -191,7 +191,11 @@ registerComponent(Hero, {
     className: {
       type: 'string',
     },
-    image: {
+    mobileImage: {
+      type: 'imageUrl',
+      defaultValue: '/placeholder.svg',
+    },
+    desktopImage: {
       type: 'imageUrl',
       defaultValue: '/placeholder.svg',
     },

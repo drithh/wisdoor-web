@@ -215,7 +215,8 @@ function PlasmicHome__RenderFunc(props: {
               data-plasmic-override={overrides.hero}
               alt={"Logo Wisdoor"}
               className={classNames("__wab_instance", sty.hero)}
-              image={"/plasmic/wisdoor_web/images/pintu4RenderFinalPng.png"}
+              desktopImage={"/plasmic/wisdoor_web/images/_2X1Png.png"}
+              mobileImage={"/plasmic/wisdoor_web/images/_9X16Png.png"}
             >
               <Stack__
                 as={"div"}

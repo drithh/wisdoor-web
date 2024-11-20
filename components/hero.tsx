@@ -4,20 +4,36 @@ import Image from 'next/image';
 import ExportedImage from 'next-image-export-optimizer';
 interface HeroProps {
   className?: string;
-  image?: string;
+  mobileImage?: string;
+  desktopImage?: string;
   alt?: string;
   children?: React.ReactNode;
 }
 
-export function Hero({ image, alt, className, children }: HeroProps) {
-  const defaultImage = image || '/placeholder.svg';
+export function Hero({
+  mobileImage,
+  desktopImage,
+  alt,
+  className,
+  children,
+}: HeroProps) {
+  const firstImage = mobileImage || '/placeholder.svg';
+  const secondImage = desktopImage || '/placeholder.svg';
+
   return (
     <div id="hero" className="w-full  h-[100dvh] sm:h-screen max-h-[1080px]">
       <div className="relative h-[100dvh] sm:h-[calc(100vh-70px)] max-h-[1080px] top-[70px] w-full">
         <ExportedImage
-          src={defaultImage}
+          src={firstImage}
           fill
-          className={`${className} object-scale-down`}
+          className={`${className} object-scale-down sm:hidden`}
+          alt={alt || 'Logo Wisdoor'}
+          priority
+        />
+        <ExportedImage
+          src={secondImage}
+          fill
+          className={`${className} object-cover hidden sm:block`}
           alt={alt || 'Logo Wisdoor'}
           priority
         />
