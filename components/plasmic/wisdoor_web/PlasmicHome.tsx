@@ -629,9 +629,11 @@ function PlasmicHome__RenderFunc(props: {
                 isBottom={false}
                 productImages={(() => {
                   const __composite = [
-                    { image: "/placeholder.svg", alt: null },
+                    { image: null, alt: null },
                     { image: null, alt: null }
                   ];
+                  __composite["0"]["image"] =
+                    "https://site-assets.plasmic.app/2b519c174f5ba731b50c6600722bcd8d.png";
                   __composite["0"]["alt"] = "Produk 1";
                   __composite["1"]["image"] =
                     "https://site-assets.plasmic.app/5a5272ee297aa1013c98935f67b0a42e.png";
