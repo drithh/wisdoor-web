@@ -142,6 +142,7 @@ const config = {
     },
   },
   plugins: [
+    require('tailwind-scrollbar'),
     require('tailwindcss-animate'),
     require('@xpd/tailwind-3dtransforms'),
   ],
