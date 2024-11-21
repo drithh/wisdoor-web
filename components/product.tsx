@@ -111,7 +111,7 @@ export function Product({
       <div ref={ref} className="relative flex w-full sm:flex-row flex-col">
         <div className="w-screen p-4 sm:p-8 shrink-0 sm:w-[32rem] flex flex-col sm:h-[40rem]">
           {children}
-          <div className="image flex-grow hidden sm:flex gap-4 flex-col justify-end">
+          {/* <div className="image flex-grow hidden sm:flex gap-4 flex-col justify-end">
             <p className="tracking-wider font-display">
               PRODUCTS {imageIndex + 1} / {productImages.length}
             </p>
@@ -135,7 +135,7 @@ export function Product({
                 <MoveRight className="w-8 h-5" />
               </NavigateButton>
             </div>
-          </div>
+          </div> */}
         </div>
         <LineReveal
           className="hidden sm:block"
@@ -150,7 +150,8 @@ export function Product({
             className
           )}
         >
-          <div className={cn('flex shrink-0 h-full justify-around gap-4')}>
+          {/* <div className={cn('flex shrink-0 h-full justify-around gap-4')}> */}
+          <Marquee repeat={10}>
             {productImages.map((project, index) => (
               <span
                 ref={tabRefs.current[index]}
@@ -180,7 +181,8 @@ export function Product({
                 />
               </span>
             ))}
-          </div>
+          </Marquee>
+          {/* </div> */}
         </div>
       </div>
 
