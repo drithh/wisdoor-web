@@ -151,7 +151,7 @@ export function Product({
           )}
         >
           {/* <div className={cn('flex shrink-0 h-full justify-around gap-4')}> */}
-          <Marquee repeat={1}>
+          <Marquee repeat={3}>
             {productImages.map((project, index) => (
               <span
                 ref={tabRefs.current[index]}
