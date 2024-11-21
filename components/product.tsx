@@ -47,6 +47,7 @@ export function Product({
   );
 
   const handleTabClick = (index: number) => {
+    if (index < 0 || index >= productImages.length) return;
     const ref = tabRefs.current[index].current;
     if (ref) {
       ref.scrollIntoView({
@@ -112,7 +113,7 @@ export function Product({
           {children}
           <div className="image flex-grow hidden sm:flex gap-4 flex-col justify-end">
             <p className="tracking-wider font-display">
-              IMAGES {imageIndex + 1} / {productImages.length}
+              PRODUCTS {imageIndex + 1} / {productImages.length}
             </p>
             <div className="flex gap-4  ">
               <NavigateButton

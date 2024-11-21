@@ -402,6 +402,96 @@
           "id": "M37s2o_rtO1r",
           "name": "9x16.png",
           "filePath": "../public/plasmic/wisdoor_web/images/_9X16Png.png"
+        },
+        {
+          "id": "K564B-gNodgO",
+          "name": "veener-1.png",
+          "filePath": "../public/plasmic/wisdoor_web/images/veener1Png.png"
+        },
+        {
+          "id": "RXgrYbF-5FP_",
+          "name": "veener-crop-1.png",
+          "filePath": "../public/plasmic/wisdoor_web/images/veenerCrop1Png.png"
+        },
+        {
+          "id": "DvpQVwu_94yb",
+          "name": "veener-crop-2.png",
+          "filePath": "../public/plasmic/wisdoor_web/images/veenerCrop2Png.png"
+        },
+        {
+          "id": "OhaY9i_yVDND",
+          "name": "pvc-1.png",
+          "filePath": "../public/plasmic/wisdoor_web/images/pvc1Png.png"
+        },
+        {
+          "id": "uTKAs00rpwYK",
+          "name": "pvc-2.png",
+          "filePath": "../public/plasmic/wisdoor_web/images/pvc2Png.png"
+        },
+        {
+          "id": "qwnB7Rc7jJPN",
+          "name": "pvc-3.png",
+          "filePath": "../public/plasmic/wisdoor_web/images/pvc3Png.png"
+        },
+        {
+          "id": "JRRZNEGlvEgV",
+          "name": "pvc-4.png",
+          "filePath": "../public/plasmic/wisdoor_web/images/pvc4Png.png"
+        },
+        {
+          "id": "i_slZ-v52wC-",
+          "name": "pvc-5.png",
+          "filePath": "../public/plasmic/wisdoor_web/images/pvc5Png.png"
+        },
+        {
+          "id": "zGfzY_La_Ste",
+          "name": "pvc-6.png",
+          "filePath": "../public/plasmic/wisdoor_web/images/pvc6Png.png"
+        },
+        {
+          "id": "avMHgOWS5vQ7",
+          "name": "hpl-1.png",
+          "filePath": "../public/plasmic/wisdoor_web/images/hpl1Png.png"
+        },
+        {
+          "id": "nPBQLsLFN3L0",
+          "name": "hpl-2.png",
+          "filePath": "../public/plasmic/wisdoor_web/images/hpl2Png.png"
+        },
+        {
+          "id": "yM-91hJ5v_xr",
+          "name": "hpl-3.png",
+          "filePath": "../public/plasmic/wisdoor_web/images/hpl3Png.png"
+        },
+        {
+          "id": "BMoI0GVuAWFQ",
+          "name": "hpl-5.png",
+          "filePath": "../public/plasmic/wisdoor_web/images/hpl5Png.png"
+        },
+        {
+          "id": "7INhNWpLH2UT",
+          "name": "veneer-1.png",
+          "filePath": "../public/plasmic/wisdoor_web/images/veneer1Png.png"
+        },
+        {
+          "id": "uSEtgF7QOGOl",
+          "name": "veener-2.png",
+          "filePath": "../public/plasmic/wisdoor_web/images/veener2Png.png"
+        },
+        {
+          "id": "LoQLDJUgiEsb",
+          "name": "veener-3.png",
+          "filePath": "../public/plasmic/wisdoor_web/images/veener3Png.png"
+        },
+        {
+          "id": "hoy0GY2QLszA",
+          "name": "veener-5.png",
+          "filePath": "../public/plasmic/wisdoor_web/images/veener5Png.png"
+        },
+        {
+          "id": "jJ_bxT-YwSah",
+          "name": "hpl-6.png",
+          "filePath": "../public/plasmic/wisdoor_web/images/hpl6Png.png"
         }
       ],
       "indirect": false,

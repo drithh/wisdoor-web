@@ -630,14 +630,30 @@ function PlasmicHome__RenderFunc(props: {
                 productImages={(() => {
                   const __composite = [
                     { image: null, alt: null },
+                    { image: null, alt: null },
+                    { image: null, alt: null },
+                    { image: null, alt: null },
+                    { image: null, alt: null },
                     { image: null, alt: null }
                   ];
                   __composite["0"]["image"] =
-                    "https://site-assets.plasmic.app/2b519c174f5ba731b50c6600722bcd8d.png";
+                    "https://site-assets.plasmic.app/7d47bf8bcd0313dfe51b3f629ef46679.png";
                   __composite["0"]["alt"] = "Produk 1";
                   __composite["1"]["image"] =
-                    "https://site-assets.plasmic.app/5a5272ee297aa1013c98935f67b0a42e.png";
+                    "https://site-assets.plasmic.app/a93bfcc6ca60596a2456c36ac87c58a1.png";
                   __composite["1"]["alt"] = "Product 2";
+                  __composite["2"]["image"] =
+                    "https://site-assets.plasmic.app/2ac658dd86fa4ad6bbcbecc75b2fb21c.png";
+                  __composite["2"]["alt"] = "Produk 3";
+                  __composite["3"]["image"] =
+                    "https://site-assets.plasmic.app/e82845980f38e9633ab95a28ba02496a.png";
+                  __composite["3"]["alt"] = "Produk 4";
+                  __composite["4"]["image"] =
+                    "https://site-assets.plasmic.app/1b497f803822905fa78e2b9c84701dbe.png";
+                  __composite["4"]["alt"] = "Produk 5";
+                  __composite["5"]["image"] =
+                    "https://site-assets.plasmic.app/c14a511b316efd05986e38f4accfcac6.png";
+                  __composite["5"]["alt"] = "Produk 6";
                   return __composite;
                 })()}
               >
@@ -943,10 +959,28 @@ function PlasmicHome__RenderFunc(props: {
                 className={classNames("__wab_instance", sty.hpl)}
                 isBottom={false}
                 productImages={(() => {
-                  const __composite = [{ image: null, alt: null }];
+                  const __composite = [
+                    { image: null, alt: null },
+                    { image: null, alt: null },
+                    { image: null, alt: null },
+                    { image: null, alt: null },
+                    { image: null, alt: null }
+                  ];
                   __composite["0"]["image"] =
-                    "https://site-assets.plasmic.app/5c498b490a3917cccaa11ba3cdf97a60.png";
+                    "https://site-assets.plasmic.app/f7f5d262d59b98588b0f542edaf25b8e.png";
                   __composite["0"]["alt"] = "Produk 1";
+                  __composite["1"]["image"] =
+                    "https://site-assets.plasmic.app/7a148532cfabd78b9e299ebde12f41ef.png";
+                  __composite["1"]["alt"] = "Produk 2";
+                  __composite["2"]["image"] =
+                    "https://site-assets.plasmic.app/306cbea2b62c2db347d70f054897e06b.png";
+                  __composite["2"]["alt"] = "Produk 3";
+                  __composite["3"]["image"] =
+                    "https://site-assets.plasmic.app/a13399bc8f8d837a5ca3f6adf3723cca.png";
+                  __composite["3"]["alt"] = "Produk 5";
+                  __composite["4"]["image"] =
+                    "https://site-assets.plasmic.app/099d1055b91676be1566573fa252c015.png";
+                  __composite["4"]["alt"] = "Produk 6";
                   return __composite;
                 })()}
               >
@@ -1264,14 +1298,22 @@ function PlasmicHome__RenderFunc(props: {
                 productImages={(() => {
                   const __composite = [
                     { image: null, alt: null },
+                    { image: null, alt: null },
+                    { image: null, alt: null },
                     { image: null, alt: null }
                   ];
                   __composite["0"]["image"] =
-                    "https://site-assets.plasmic.app/f45968fe35122b12a19d6ed639c22817.avif";
+                    "https://site-assets.plasmic.app/bff7def339263965d40c07b5f0242714.png";
                   __composite["0"]["alt"] = "Produk 1";
                   __composite["1"]["image"] =
-                    "https://site-assets.plasmic.app/f45968fe35122b12a19d6ed639c22817.avif";
+                    "https://site-assets.plasmic.app/97f6beedf82547ee53de44f429399293.png";
                   __composite["1"]["alt"] = "Product 2";
+                  __composite["2"]["image"] =
+                    "https://site-assets.plasmic.app/f300560d6c9c49858f242991e1b86456.png";
+                  __composite["2"]["alt"] = "Produk 3";
+                  __composite["3"]["image"] =
+                    "https://site-assets.plasmic.app/40355bf6d87b09b48fc82e61a84af29c.png";
+                  __composite["3"]["alt"] = "Produk 5";
                   return __composite;
                 })()}
               >
@@ -1616,12 +1658,15 @@ function PlasmicHome__RenderFunc(props: {
                 projectImages={(() => {
                   const __composite = [
                     { image: null, alt: "Logo Wisdoor" },
+                    { image: null, alt: "Logo Wisdoor" },
                     { image: null, alt: "Logo Wisdoor" }
                   ];
                   __composite["0"]["image"] =
-                    "https://site-assets.plasmic.app/a3a4656c9e4957a78b9e1ee960b16755.png";
+                    "https://site-assets.plasmic.app/5c498b490a3917cccaa11ba3cdf97a60.png";
                   __composite["1"]["image"] =
-                    "https://site-assets.plasmic.app/7db7bfde388ea1b49cf1d5de4916dfa9.png";
+                    "https://site-assets.plasmic.app/2b519c174f5ba731b50c6600722bcd8d.png";
+                  __composite["2"]["image"] =
+                    "https://site-assets.plasmic.app/5a5272ee297aa1013c98935f67b0a42e.png";
                   return __composite;
                 })()}
               />

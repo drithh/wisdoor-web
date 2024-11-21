@@ -42,7 +42,7 @@ export function Project({ projectImages, className }: ProjectProps) {
 
   return (
     <div className="w-full flex flex-col" ref={ref}>
-      <LineReveal mainControls={mainControls} />
+      {/* <LineReveal mainControls={mainControls} /> */}
       <div
         className={`flex-grow overflow-y-hidden py-2 px-1 sm:py-2 sm:px-1 overflow-x-auto flex-row flex w-full ${className}`}
       >
