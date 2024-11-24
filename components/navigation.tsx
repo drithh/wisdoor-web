@@ -69,7 +69,7 @@ const links = [
       },
       {
         title: 'Manufacturing',
-        href: '/#manufacturing"',
+        href: '/#manufacturing',
       },
     ],
   },
