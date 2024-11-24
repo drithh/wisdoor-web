@@ -1485,7 +1485,7 @@
     ]
   },
   "wrapPagesWithGlobalContexts": true,
-  "packageManager": "pnpm",
+  "packageManager": "npm",
   "fontOpts": {
     "scheme": "none"
   },
