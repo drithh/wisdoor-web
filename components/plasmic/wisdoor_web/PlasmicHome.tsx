@@ -1303,7 +1303,7 @@ function PlasmicHome__RenderFunc(props: {
                     { image: null, alt: null }
                   ];
                   __composite["0"]["image"] =
-                    "https://site-assets.plasmic.app/bff7def339263965d40c07b5f0242714.png";
+                    "https://site-assets.plasmic.app/6f73bddae49504489eb6a2e69bc32357.png";
                   __composite["0"]["alt"] = "Produk 1";
                   __composite["1"]["image"] =
                     "https://site-assets.plasmic.app/97f6beedf82547ee53de44f429399293.png";

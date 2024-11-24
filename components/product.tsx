@@ -109,10 +109,10 @@ export function Product({
         </div>
       </div>
       <div ref={ref} className="relative flex w-full sm:flex-row flex-col">
-        <div className="w-screen p-4 sm:p-8 shrink-0 sm:w-[32rem] flex flex-col sm:h-[40rem]">
+        <div className="w-screen p-4 sm:p-8 shrink-0 sm:w-[32rem] flex flex-col sm:h-full">
           {children}
-          <div className="image flex-grow hidden sm:flex gap-4 flex-col justify-end">
-            <p className="tracking-wider font-display">
+          <div className="image flex-grow hidden sm:flex gap-2 flex-col justify-end">
+            <p className="tracking-wider text-sm font-display">
               PRODUCTS {imageIndex + 1} / {productImages.length}
             </p>
             <div className="flex gap-4  ">
@@ -122,7 +122,7 @@ export function Product({
                   handleTabClick(imageIndex - 1);
                 }}
               >
-                <MoveLeft className="w-8 h-5" />
+                <MoveLeft className="w-6 h-3" />
               </NavigateButton>
               <NavigateButton
                 onClick={() => {
@@ -132,7 +132,7 @@ export function Product({
                   handleTabClick(imageIndex + 1);
                 }}
               >
-                <MoveRight className="w-8 h-5" />
+                <MoveRight className="w-6 h-3" />
               </NavigateButton>
             </div>
           </div>
@@ -155,7 +155,7 @@ export function Product({
               <span
                 ref={tabRefs.current[index]}
                 key={index}
-                className="relative h-[14rem] sm:h-[40rem]"
+                className="relative h-[14rem] sm:h-[28rem]"
               >
                 <motion.div
                   className="absolute insert-0 z-10 w-full h-full bg-white"

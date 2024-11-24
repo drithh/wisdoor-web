@@ -46,7 +46,7 @@ export function Project({ projectImages, className }: ProjectProps) {
       <div
         className={`flex-grow overflow-y-hidden py-2 px-1 sm:py-2 sm:px-1 overflow-x-auto flex-row flex w-full ${className}`}
       >
-        <Marquee repeat={3}>
+        <Marquee repeat={5}>
           {projectImages.map((project, index) => (
             <span
               // ref={tabRefs.current[index]}
