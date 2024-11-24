@@ -310,6 +310,28 @@ function PlasmicFooter__RenderFunc(props: {
                 </div>
               </Stack__>
             </div>
+            <div className={classNames(projectcss.all, sty.freeBox__fdIDy)}>
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox__kmvc9)}
+              >
+                <PhoneSvgrepoComSvgIcon
+                  className={classNames(projectcss.all, sty.svg__xxEQn)}
+                  role={"img"}
+                />
+
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__zs6N
+                  )}
+                >
+                  {"(+62) 811 - 1000 - 1390"}
+                </div>
+              </Stack__>
+            </div>
           </div>
         </div>
         <div className={classNames(projectcss.all, sty.column__ki7On)}>
