@@ -1659,7 +1659,6 @@ function PlasmicHome__RenderFunc(props: {
                   const __composite = [
                     { image: null, alt: "Logo Wisdoor" },
                     { image: null, alt: "Logo Wisdoor" },
-                    { image: null, alt: "Logo Wisdoor" },
                     { image: null, alt: "Logo Wisdoor" }
                   ];
                   __composite["0"]["image"] =
@@ -1668,8 +1667,6 @@ function PlasmicHome__RenderFunc(props: {
                     "https://site-assets.plasmic.app/2b519c174f5ba731b50c6600722bcd8d.png";
                   __composite["2"]["image"] =
                     "https://site-assets.plasmic.app/5a5272ee297aa1013c98935f67b0a42e.png";
-                  __composite["3"]["image"] =
-                    "https://site-assets.plasmic.app/668022c0eb01c15b2152886ca50322e8.jpg";
                   return __composite;
                 })()}
               />
