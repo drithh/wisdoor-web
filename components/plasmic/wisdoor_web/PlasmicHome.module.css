@@ -219,7 +219,7 @@
   .text__icTrS {
     text-align: center;
     font-size: 48px;
-    padding: 4rem 1rem 0rem;
+    padding: 5rem 1rem 0rem;
   }
 }
 .imageGradient:global(.__wab_instance) {
