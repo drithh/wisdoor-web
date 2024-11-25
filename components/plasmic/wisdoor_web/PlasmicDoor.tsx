@@ -477,7 +477,7 @@ function PlasmicDoor__RenderFunc(props: {
                     __composite["0"]["name"] = "Tanpa Grooving";
                     __composite["0"]["price"] = 0;
                     __composite["1"]["name"] = "Simple";
-                    __composite["1"]["price"] = 50000;
+                    __composite["1"]["price"] = 25000;
                     __composite["1"]["modal"] =
                       "<p>Simple grooving adalah pola alur pada permukaan pintu yang hanya menggunakan garis lurus dan terdiri dari maksimal tiga garis.</p>";
                     __composite["2"]["name"] = "Intermediate";
