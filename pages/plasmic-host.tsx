@@ -536,12 +536,12 @@ registerComponent(DoorButton, {
       argTypes: [],
     },
   },
-  interactionVariants: {
-    hover: {
-      cssSelector: ':hover',
-      displayName: 'Hover',
-    },
-  },
+  // interactionVariants: {
+  //   hover: {
+  //     cssSelector: ':hover',
+  //     displayName: 'Hover',
+  //   },
+  // },
   importPath: './components/door/components/button',
 });
 
