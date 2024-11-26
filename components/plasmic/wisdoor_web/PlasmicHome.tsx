@@ -459,7 +459,7 @@ function PlasmicHome__RenderFunc(props: {
                           sty.text___03UCl
                         )}
                       >
-                        {"2000 Door"}
+                        {"2000 Doors"}
                       </div>
                       <div
                         className={classNames(
