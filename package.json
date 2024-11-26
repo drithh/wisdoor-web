@@ -15,7 +15,6 @@
     "variants:upload": "dotenv -- bun scripts/upload.js",
     "variants:get": "dotenv -- bun scripts/get-variants.ts"
   },
-  "packageManager": "npm@10.9.0",
   "dependencies": {
     "@ant-design/icons": "^5.5.1",
     "@ant-design/pro-components": "^2.6.4",
@@ -96,5 +95,6 @@
     "tailwindcss": "^3.4.10",
     "typescript": "^5",
     "wrangler": "^3.78.2"
-  }
+  },
+  "packageManager": "pnpm@9.12.3"
 }
