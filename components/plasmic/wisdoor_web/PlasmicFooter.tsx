@@ -201,136 +201,208 @@ function PlasmicFooter__RenderFunc(props: {
         <div className={classNames(projectcss.all, sty.column__f17Kz)}>
           <div className={classNames(projectcss.all, sty.freeBox__okdpf)}>
             <div className={classNames(projectcss.all, sty.freeBox__p4Dph)}>
-              <Stack__
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox__dlc8D)}
+              <PlasmicLink__
+                className={classNames(
+                  projectcss.all,
+                  projectcss.a,
+                  sty.link__sNobK
+                )}
+                component={Link}
+                href={"https://www.instagram.com/wijayadoor/"}
+                platform={"nextjs"}
+                target={"_blank"}
               >
-                <InstagramSvgrepoComSvgIcon
-                  className={classNames(projectcss.all, sty.svg__xTkJo)}
-                  role={"img"}
-                />
-
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__g9Fpp
-                  )}
+                <Stack__
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.freeBox__dlc8D)}
                 >
-                  {"@wijaya.door"}
-                </div>
-              </Stack__>
+                  <InstagramSvgrepoComSvgIcon
+                    className={classNames(projectcss.all, sty.svg__xTkJo)}
+                    role={"img"}
+                  />
+
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__g9Fpp
+                    )}
+                  >
+                    {"@wijayadoor"}
+                  </div>
+                </Stack__>
+              </PlasmicLink__>
             </div>
             <div className={classNames(projectcss.all, sty.freeBox___5VoNt)}>
-              <Stack__
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox__eQui)}
+              <PlasmicLink__
+                className={classNames(
+                  projectcss.all,
+                  projectcss.a,
+                  sty.link__oEcv2
+                )}
+                component={Link}
+                href={"https://wa.me/628119428777"}
+                platform={"nextjs"}
+                target={"_blank"}
               >
-                <PhoneSvgrepoComSvgIcon
-                  className={classNames(projectcss.all, sty.svg___6OoAg)}
-                  role={"img"}
-                />
-
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__pMoYo
-                  )}
+                <Stack__
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.freeBox__eQui)}
                 >
-                  {"(+62) 811 - 9428 - 777"}
-                </div>
-              </Stack__>
+                  <PhoneSvgrepoComSvgIcon
+                    className={classNames(projectcss.all, sty.svg___6OoAg)}
+                    role={"img"}
+                  />
+
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__pMoYo
+                    )}
+                  >
+                    {"(+62) 811 - 9428 - 777"}
+                  </div>
+                </Stack__>
+              </PlasmicLink__>
             </div>
             <div className={classNames(projectcss.all, sty.freeBox___7Lylc)}>
-              <Stack__
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox__xNbtf)}
+              <PlasmicLink__
+                className={classNames(
+                  projectcss.all,
+                  projectcss.a,
+                  sty.link__agoVk
+                )}
+                component={Link}
+                href={"mailto:wiratamawis@gmail.com"}
+                platform={"nextjs"}
+                target={"_blank"}
               >
-                <MailSvgrepoComSvgIcon
-                  className={classNames(projectcss.all, sty.svg__roKii)}
-                  role={"img"}
-                />
-
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___1WVd8
-                  )}
+                <Stack__
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.freeBox__xNbtf)}
                 >
-                  {"wiratamawis@gmail.com"}
-                </div>
-              </Stack__>
+                  <MailSvgrepoComSvgIcon
+                    className={classNames(projectcss.all, sty.svg__roKii)}
+                    role={"img"}
+                  />
+
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___1WVd8
+                    )}
+                  >
+                    {"wiratamawis@gmail.com"}
+                  </div>
+                </Stack__>
+              </PlasmicLink__>
             </div>
             <div className={classNames(projectcss.all, sty.freeBox__r7IfE)}>
-              <Stack__
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox__pvCxh)}
+              <PlasmicLink__
+                className={classNames(
+                  projectcss.all,
+                  projectcss.a,
+                  sty.link__j4ISr
+                )}
+                component={Link}
+                href={"https://wa.me/6281297315530"}
+                platform={"nextjs"}
+                target={"_blank"}
               >
-                <PhoneSvgrepoComSvgIcon
-                  className={classNames(projectcss.all, sty.svg__hfkCu)}
-                  role={"img"}
-                />
-
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__yVgdC
-                  )}
+                <Stack__
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.freeBox__pvCxh)}
                 >
-                  {"(+62) 812 - 9731 - 5530"}
-                </div>
-              </Stack__>
+                  <PhoneSvgrepoComSvgIcon
+                    className={classNames(projectcss.all, sty.svg__hfkCu)}
+                    role={"img"}
+                  />
+
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__yVgdC
+                    )}
+                  >
+                    {"(+62) 812 - 9731 - 5530"}
+                  </div>
+                </Stack__>
+              </PlasmicLink__>
             </div>
             <div className={classNames(projectcss.all, sty.freeBox__jvmmV)}>
-              <Stack__
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox__xokzh)}
+              <PlasmicLink__
+                className={classNames(
+                  projectcss.all,
+                  projectcss.a,
+                  sty.link__j85Lm
+                )}
+                component={Link}
+                href={`/`}
+                platform={"nextjs"}
+                target={undefined}
               >
-                <BrowserSvgrepoComSvgIcon
-                  className={classNames(projectcss.all, sty.svg__eX7Ba)}
-                  role={"img"}
-                />
-
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__y6FGv
-                  )}
+                <Stack__
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.freeBox__xokzh)}
                 >
-                  {"www.wijayadoor.com"}
-                </div>
-              </Stack__>
+                  <BrowserSvgrepoComSvgIcon
+                    className={classNames(projectcss.all, sty.svg__eX7Ba)}
+                    role={"img"}
+                  />
+
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__y6FGv
+                    )}
+                  >
+                    {"www.wijayadoor.com"}
+                  </div>
+                </Stack__>
+              </PlasmicLink__>
             </div>
             <div className={classNames(projectcss.all, sty.freeBox__fdIDy)}>
-              <Stack__
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox__kmvc9)}
+              <PlasmicLink__
+                className={classNames(
+                  projectcss.all,
+                  projectcss.a,
+                  sty.link___9JGZ
+                )}
+                component={Link}
+                href={"https://wa.me/6281110001390"}
+                platform={"nextjs"}
+                target={"_blank"}
               >
-                <PhoneSvgrepoComSvgIcon
-                  className={classNames(projectcss.all, sty.svg__xxEQn)}
-                  role={"img"}
-                />
-
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__zs6N
-                  )}
+                <Stack__
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.freeBox__kmvc9)}
                 >
-                  {"(+62) 811 - 1000 - 1390"}
-                </div>
-              </Stack__>
+                  <PhoneSvgrepoComSvgIcon
+                    className={classNames(projectcss.all, sty.svg__xxEQn)}
+                    role={"img"}
+                  />
+
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__zs6N
+                    )}
+                  >
+                    {"(+62) 811 - 1000 - 1390"}
+                  </div>
+                </Stack__>
+              </PlasmicLink__>
             </div>
           </div>
         </div>
