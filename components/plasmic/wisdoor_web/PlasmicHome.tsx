@@ -206,7 +206,7 @@ function PlasmicHome__RenderFunc(props: {
             alt={"Logo Wisdoor"}
             black={false}
             className={classNames("__wab_instance", sty.navigation)}
-            image={"/plasmic/wisdoor_web/images/image1Png.png"}
+            image={"/plasmic/wisdoor_web/images/wijayadoorLogoPutih1Jpg.jpg"}
           />
 
           <div className={classNames(projectcss.all, sty.freeBox__oPyea)}>
