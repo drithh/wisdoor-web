@@ -7,7 +7,6 @@ import Image from 'next/image';
 import { createRef, RefObject, useEffect, useRef, useState } from 'react';
 import { AspectRatio } from './ui/aspect-ratio';
 import { Button } from './ui/button';
-import { Icon, Link, LucideIcon, MoveLeft, MoveRight } from 'lucide-react';
 import { motion, useAnimation, useInView } from 'framer-motion';
 import { LineReveal } from './magicui/line-reveal';
 import Marquee from './ui/marquee';

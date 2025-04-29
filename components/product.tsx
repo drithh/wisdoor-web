@@ -2,7 +2,7 @@
 
 import ExportedImage from 'next-image-export-optimizer';
 import { createRef, RefObject, useEffect, useRef, useState } from 'react';
-import { Icon, Link, LucideIcon, MoveLeft, MoveRight } from 'lucide-react';
+import { MoveLeft, MoveRight } from 'lucide-react';
 import { motion, useAnimation, useInView } from 'framer-motion';
 import { LineReveal } from './magicui/line-reveal';
 import Marquee from './ui/marquee';

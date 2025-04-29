@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import ExportedImage from 'next-image-export-optimizer';
 import { ArrowLeft } from 'lucide-react';
 
 interface LogoProps {

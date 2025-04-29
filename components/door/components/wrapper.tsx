@@ -1,9 +1,6 @@
 'use client';
 
 import { cn } from '@/lib/utils';
-import { Label } from '@/components/ui/label';
-import { Check } from 'lucide-react';
-import { Checkbox as CheckboxPrimitive } from '@radix-ui/react-checkbox';
 import { useDoorStore } from '../store';
 interface WrapperProps {
   className?: string;

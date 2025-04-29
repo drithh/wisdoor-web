@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Html } from '@react-three/drei';
 import { Button } from '@/components/ui/button';
 import { Vector3 } from 'three';
-import { Icon, Maximize, Minimize } from 'lucide-react';
+import { Maximize, Minimize } from 'lucide-react';
 
 interface FullscreenDoorProps {
   wrapperRef: React.RefObject<HTMLDivElement>;
