@@ -22,8 +22,6 @@ import { FinishingDoor } from '@/components/door/configurator/finishing';
 import { AddonDoor } from '@/components/door/configurator/addon';
 import { FrameDoor } from '@/components/door/configurator/frame';
 import { Wrapper } from '@/components/door/components/wrapper';
-import { FinishingFrame } from '@/components/door/configurator/finishing-frame';
-import { HingeDoor } from '@/components/door/configurator/hinge';
 import { DetailPrice } from '@/components/door/detail-price';
 import { RootWrapper } from '@/components/door/components/root-wrapper';
 import { ConfiguratorWrapper } from '@/components/door/components/configurator-wrapper';
@@ -37,7 +35,7 @@ import { IconReveal } from '@/components/magicui/icon-reveal';
 import { Product } from '@/components/product';
 import { Project } from '@/components/project';
 import { CarouselWrapper } from '@/components/carousel-wrapper';
-
+import { Manufacturing } from '@/components/manufacturing';
 // You can register any code components that you want to use here; see
 // https://docs.plasmic.app/learn/code-components-ref/
 // And configure your Plasmic project to use the host url pointing at
@@ -117,6 +115,9 @@ registerComponent(Project, {
             type: 'string',
             defaultValue: 'Logo Wisdoor',
           },
+          title: {
+            type: 'richText',
+          },
         },
       },
     },
@@ -126,6 +127,33 @@ registerComponent(Project, {
   },
 
   importPath: './components/project',
+});
+
+registerComponent(Manufacturing, {
+  name: 'Manufacturing',
+  props: {
+    manufacturingImages: {
+      type: 'array',
+      itemType: {
+        type: 'object',
+        fields: {
+          image: {
+            type: 'imageUrl',
+            defaultValue: '/placeholder.svg',
+          },
+          alt: {
+            type: 'string',
+            defaultValue: 'Logo Wisdoor',
+          },
+        },
+      },
+    },
+    className: {
+      type: 'string',
+    },
+  },
+
+  importPath: './components/manufacturing',
 });
 
 registerComponent(CarouselWrapper, {

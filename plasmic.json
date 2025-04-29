@@ -512,6 +512,11 @@
           "id": "5xNpvYgybfwK",
           "name": "Wijayadoor logo Putih (1).jpg",
           "filePath": "../public/plasmic/wisdoor_web/images/wijayadoorLogoPutih1Jpg.jpg"
+        },
+        {
+          "id": "wfSdb9ikOHiZ",
+          "name": "jaksa-agung.png",
+          "filePath": "../public/plasmic/wisdoor_web/images/jaksaAgungPng.png"
         }
       ],
       "indirect": false,
@@ -721,6 +726,12 @@
           "name": "CarouselWrapper",
           "displayName": "CarouselWrapper",
           "componentImportPath": "./components/carousel-wrapper"
+        },
+        {
+          "id": "7UvcBG5vJL4q",
+          "name": "Manufacturing",
+          "displayName": "Manufacturing",
+          "componentImportPath": "./components/manufacturing"
         }
       ],
       "customFunctions": []
@@ -749,7 +760,8 @@
           }
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "q8iq2J191QypeBqVSHzb6M",
@@ -855,7 +867,8 @@
           "componentImportPath": "@plasmicpkgs/tiptap/skinny/registerToolbarUnderline"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "caTPwKxj5ZrD9LQ7DMdK4Z",
@@ -913,7 +926,8 @@
           "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "hjKYmYi6HMwK6TRyk7ew5R",
@@ -971,7 +985,8 @@
           "componentImportPath": "@plasmicpkgs/plasmic-cms"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "58GpZjZCWTaJ8AUhpCwt2K",
@@ -993,7 +1008,8 @@
           "componentImportPath": "@plasmicpkgs/react-awesome-reveal"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "jkU633o1Cz7HrJdwdxhVHk",
@@ -1047,7 +1063,8 @@
           }
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "ohDidvG9XsCeFumugENU3J",
@@ -1447,7 +1464,8 @@
           "componentImportPath": "@plasmicpkgs/antd5/skinny/registerBreadcrumb"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "r3ASNrnyvLLLAtDvzUioQ",
@@ -1473,7 +1491,8 @@
           }
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     }
   ],
   "globalVariants": {
@@ -1494,6 +1513,6 @@
   "nextjsConfig": {
     "pagesDir": "../pages"
   },
-  "cliVersion": "0.1.335",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.335/dist/plasmic.schema.json"
+  "cliVersion": "0.1.337",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.337/dist/plasmic.schema.json"
 }

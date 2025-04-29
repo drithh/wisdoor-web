@@ -1,6 +1,6 @@
-// @ts-nocheck
 /* eslint-disable */
 /* tslint:disable */
+// @ts-nocheck
 /* prettier-ignore-start */
 
 /** @jsxRuntime classic */
@@ -67,8 +67,9 @@ import { ImageGradient } from "../../image-gradient"; // plasmic-import: BYKZmpg
 import { IconReveal } from "../../magicui/icon-reveal"; // plasmic-import: C_a578vM2Lk3/codeComponent
 import { Reveal } from "../../magicui/reveal"; // plasmic-import: WZl_dCgRNxa8/codeComponent
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
-import { Project } from "../../project"; // plasmic-import: gt5pPBjlLVzP/codeComponent
+import { Manufacturing } from "../../manufacturing"; // plasmic-import: 7UvcBG5vJL4q/codeComponent
 import { Product } from "../../product"; // plasmic-import: tUhKBdzelJtb/codeComponent
+import { Project } from "../../project"; // plasmic-import: gt5pPBjlLVzP/codeComponent
 import Footer from "../../Footer"; // plasmic-import: jyVfSNkVX5DJ/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
@@ -583,9 +584,12 @@ function PlasmicHome__RenderFunc(props: {
                   </div>
                 </Stack__>
               </Stack__>
-              <Project
-                className={classNames("__wab_instance", sty.project___3HcDv)}
-                projectImages={(() => {
+              <Manufacturing
+                className={classNames(
+                  "__wab_instance",
+                  sty.manufacturing__tQ2Pa
+                )}
+                manufacturingImages={(() => {
                   const __composite = [
                     { image: null, alt: "Logo Wisdoor" },
                     { image: null, alt: "Logo Wisdoor" },
@@ -1656,17 +1660,13 @@ function PlasmicHome__RenderFunc(props: {
               <Project
                 className={classNames("__wab_instance", sty.project__mEwZz)}
                 projectImages={(() => {
-                  const __composite = [
-                    { image: null, alt: "Logo Wisdoor" },
-                    { image: null, alt: "Logo Wisdoor" },
-                    { image: null, alt: "Logo Wisdoor" }
-                  ];
+                  const __composite = [{ image: null, alt: null, title: null }];
                   __composite["0"]["image"] =
-                    "https://site-assets.plasmic.app/5c498b490a3917cccaa11ba3cdf97a60.png";
-                  __composite["1"]["image"] =
-                    "https://site-assets.plasmic.app/2b519c174f5ba731b50c6600722bcd8d.png";
-                  __composite["2"]["image"] =
-                    "https://site-assets.plasmic.app/5a5272ee297aa1013c98935f67b0a42e.png";
+                    "https://site-assets.plasmic.app/112ee7b3da9ceb79eaa527c2bcddb4bb.png";
+                  __composite["0"]["alt"] =
+                    "Jaksa Agung Muda Tindak Pidana Khusus;Credit: Alien Konsultan Design";
+                  __composite["0"]["title"] =
+                    '<p style="text-align: center;" data-pm-slice="1 1 []">Jaksa Agung Muda Tindak Pidana Khusus</p>\n<p style="text-align: center;">Alien Konsultan Design</p>';
                   return __composite;
                 })()}
               />
@@ -1752,15 +1752,15 @@ type NodeComponentProps<T extends NodeNameType> =
     args?: PlasmicHome__ArgsType;
     overrides?: NodeOverridesType<T>;
   } & Omit<PlasmicHome__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
-    /* Specify args directly as props*/ Omit<
-      PlasmicHome__ArgsType,
-      ReservedPropsType
-    > &
-    /* Specify overrides for each element directly as props*/ Omit<
+    // Specify args directly as props
+    Omit<PlasmicHome__ArgsType, ReservedPropsType> &
+    // Specify overrides for each element directly as props
+    Omit<
       NodeOverridesType<T>,
       ReservedPropsType | VariantPropType | ArgPropType
     > &
-    /* Specify props for the root element*/ Omit<
+    // Specify props for the root element
+    Omit<
       Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
       ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
     >;

@@ -11,20 +11,21 @@ import { Icon, Link, LucideIcon, MoveLeft, MoveRight } from 'lucide-react';
 import { motion, useAnimation, useInView } from 'framer-motion';
 import { LineReveal } from './magicui/line-reveal';
 import Marquee from './ui/marquee';
-import RichTextViewer from './rich-text-viewer';
 
-interface ProjectImage {
+interface ManufacturingImage {
   image: string;
   alt: string;
-  title: string;
 }
 
-interface ProjectProps {
-  projectImages: ProjectImage[];
+interface ManufacturingProps {
+  manufacturingImages: ManufacturingImage[];
   className?: string;
 }
 
-export function Project({ projectImages, className }: ProjectProps) {
+export function Manufacturing({
+  manufacturingImages,
+  className,
+}: ManufacturingProps) {
   const mainControls = useAnimation();
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, {
@@ -48,12 +49,12 @@ export function Project({ projectImages, className }: ProjectProps) {
       <div
         className={`flex-grow overflow-y-hidden py-2 px-1 sm:py-2 sm:px-1 overflow-x-auto flex-row flex w-full ${className}`}
       >
-        <Marquee repeat={60}>
-          {projectImages.map((project, index) => (
+        <Marquee repeat={20}>
+          {manufacturingImages.map((manufacturing, index) => (
             <span
               // ref={tabRefs.current[index]}
               key={index}
-              className="relative h-[14rem] sm:h-[26rem] flex flex-col"
+              className="relative h-[14rem] sm:h-[26rem]"
             >
               <motion.div
                 className="absolute insert-0 z-10 w-full h-full bg-white"
@@ -70,26 +71,12 @@ export function Project({ projectImages, className }: ProjectProps) {
                 }}
               ></motion.div>
               <ExportedImage
-                src={project.image}
+                src={manufacturing.image}
                 width={1000}
                 height={1000}
-                className="z-0 w-auto h-[86%]"
-                alt={project.alt}
+                className="z-0 w-auto h-full"
+                alt={manufacturing.alt}
               />
-              <div className="flex flex-col text-center my-auto text-white items-center justify-center w-full h-48 bg-black">
-                {/* <RichTextViewer value={project.title} /> */}
-
-                {project.alt.split(';').map((line, i) => (
-                  <h3
-                    key={i}
-                    className={`font-text leading-[20px] text-white text-center ${
-                      i === 1 ? 'text-[0.7rem]' : ''
-                    }`}
-                  >
-                    {line}
-                  </h3>
-                ))}
-              </div>
             </span>
           ))}
         </Marquee>
