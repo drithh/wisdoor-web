@@ -12,7 +12,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from './ui/navigation-menu';
-import { Menu } from 'lucide-react';
+import { MenuIcon } from '@/lib/icons';
 import { motion } from 'framer-motion';
 
 const handleSmoothScroll = (
@@ -127,7 +127,7 @@ export function Navigation({ image, alt, black }: NavigationProps) {
           onClick={(event) => handleSmoothScroll(event, '/#hero')}
           passHref
         >
-          <ExportedImage
+          {/* <ExportedImage
             src={defaultImage}
             width={96}
             height={42}
@@ -137,7 +137,7 @@ export function Navigation({ image, alt, black }: NavigationProps) {
             )}
             alt={alt || 'Logo Wisdoor'}
             priority
-          />
+          /> */}
         </Link>
       </div>
       <button
@@ -145,7 +145,7 @@ export function Navigation({ image, alt, black }: NavigationProps) {
         onClick={() => setIsMenuOpen(!isMenuOpen)}
       >
         <div className="space-y-2">
-          <Menu size={24} />
+          <MenuIcon />
         </div>
       </button>
 

@@ -2,7 +2,7 @@
 
 import ExportedImage from 'next-image-export-optimizer';
 import { createRef, RefObject, useEffect, useRef, useState } from 'react';
-import { MoveLeft, MoveRight } from 'lucide-react';
+import { MoveLeftIcon, MoveRightIcon } from '@/lib/icons';
 import { motion, useAnimation, useInView } from 'framer-motion';
 import { LineReveal } from './magicui/line-reveal';
 import Marquee from './ui/marquee';
@@ -122,7 +122,7 @@ export function Product({
                   handleTabClick(imageIndex - 1);
                 }}
               >
-                <MoveLeft className="w-6 h-3" />
+                <MoveLeftIcon />
               </NavigateButton>
               <NavigateButton
                 onClick={() => {
@@ -132,7 +132,7 @@ export function Product({
                   handleTabClick(imageIndex + 1);
                 }}
               >
-                <MoveRight className="w-6 h-3" />
+                <MoveRightIcon />
               </NavigateButton>
             </div>
           </div>

@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Html } from '@react-three/drei';
 import { Button } from '@/components/ui/button';
 import { Vector3 } from 'three';
-import { Maximize, Minimize } from 'lucide-react';
+import { MaximizeIcon, MinimizeIcon } from '@/lib/icons';
 
 interface FullscreenDoorProps {
   wrapperRef: React.RefObject<HTMLDivElement>;
@@ -43,7 +43,7 @@ export function FullscreenDoor({ wrapperRef }: FullscreenDoorProps) {
       className="absolute z-[10000] right-2 bottom-2"
       onClick={toggleFullscreen}
     >
-      {fullScreen ? <Minimize /> : <Maximize />}
+      {fullScreen ? <MinimizeIcon /> : <MaximizeIcon />}
     </Button>
   );
 }

@@ -10,7 +10,7 @@ import React, {
 import { Button } from './button';
 import { EmblaOptionsType } from 'embla-carousel';
 import useEmblaCarousel from 'embla-carousel-react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeftIcon, ChevronRightIcon } from '@/lib/icons';
 import { cn } from '@/lib/utils';
 import { createContext } from 'react';
 import Autoplay from 'embla-carousel-autoplay';
@@ -369,7 +369,7 @@ const CarouselPrevious = forwardRef<
       disabled={!canScroll}
       {...props}
     >
-      <ChevronLeft className="w-12 h-12 md:h-24 md:w-24 text-primary-foreground/50 hover:text-primary-foreground" />
+      <ChevronLeftIcon />
       <span className="sr-only">Previous slide</span>
     </Button>
   );
@@ -407,7 +407,7 @@ const CarouselNext = forwardRef<
       disabled={!canScroll}
       {...props}
     >
-      <ChevronRight className="w-12 md:h-24 h-12 md:w-24 text-primary-foreground/50 hover:text-primary-foreground" />
+      <ChevronRightIcon />
       <span className="sr-only">Next slide</span>
     </Button>
   );

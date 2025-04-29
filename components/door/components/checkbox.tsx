@@ -2,7 +2,7 @@
 
 import { cn } from '@/lib/utils';
 import { Label } from '@/components/ui/label';
-import { Check } from 'lucide-react';
+import { CheckIcon } from '@/lib/icons';
 import { Checkbox as CheckboxPrimitive } from '@radix-ui/react-checkbox';
 interface CheckboxProps {
   checked: boolean;
@@ -43,7 +43,7 @@ export function Checkbox({
             checked ? 'scale-100' : 'scale-0 '
           )}
         >
-          <Check size={18} className="text-gray-500" />
+          <CheckIcon />
         </div>
       </div>
       <div className="ml-3 text-sm w-full font-medium text-gray-700">

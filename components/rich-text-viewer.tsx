@@ -1,7 +1,7 @@
 'use client';
 import { useEditor, EditorContent, type Editor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
-import { Bold, Strikethrough, Italic, List, ListOrdered } from 'lucide-react';
+import { BoldIcon, StrikethroughIcon, ItalicIcon, ListIcon, ListOrderedIcon } from '@/lib/icons';
 import { cn } from '@/lib/utils';
 import TextStyle from '@tiptap/extension-text-style';
 
