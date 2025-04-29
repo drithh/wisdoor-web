@@ -73,17 +73,17 @@ export function Project({ projectImages, className }: ProjectProps) {
                 src={project.image}
                 width={1000}
                 height={1000}
-                className="z-0 w-auto h-[86%]"
+                className="z-0 w-auto h-4/5 sm:h-[86%]"
                 alt={project.alt}
               />
-              <div className="flex flex-col text-center my-auto text-white items-center justify-center w-full h-48 bg-black">
+              <div className="flex flex-col space-y-1 sm:space-y-0 text-center my-auto text-white items-center justify-center w-full h-48 bg-black">
                 {/* <RichTextViewer value={project.title} /> */}
 
                 {project.alt.split(';').map((line, i) => (
                   <h3
                     key={i}
-                    className={`font-text leading-[20px] text-white text-center ${
-                      i === 1 ? 'text-[0.7rem]' : ''
+                    className={`font-display leading-3 sm:leading-5 text-xs sm:text-base text-white text-center ${
+                      i === 1 ? 'text-[0.6rem] sm:text-xs' : ''
                     }`}
                   >
                     {line}
