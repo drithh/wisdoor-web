@@ -71,9 +71,9 @@ export function Manufacturing({
               ></motion.div>
               <ExportedImage
                 src={manufacturing.image}
-                width={1000}
-                height={1000}
-                className="z-0 w-auto h-full"
+                width={384}
+                height={384}
+                className="z-0 w-auto h-full object-cover"
                 alt={manufacturing.alt}
               />
             </span>

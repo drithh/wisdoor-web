@@ -45,19 +45,20 @@ function LoadMaterial({ variantCode, defaultMaterial }: LoadMaterialProps) {
   const variant = variants.find(
     (variant) => variant.data.code === variantCode
   )?.data;
+  const texture = useLoader(TextureLoader, variant?.file?.url || '');
 
   if (!variant) {
     return defaultMaterial;
   }
 
+  // Always call useLoader at the top level, even if we might not use the texture
+
   if (variant.file === undefined) {
-    const material = newMeshPhysicalMaterial({
+    return newMeshPhysicalMaterial({
       color: parseInt(variant.hex.replace('#', ''), 16),
     });
-    return material;
   }
 
-  const texture = useLoader(TextureLoader, variant.file.url);
   if (texture) {
     texture.flipY = false;
     texture.unpackAlignment = 4;
@@ -70,7 +71,7 @@ function LoadMaterial({ variantCode, defaultMaterial }: LoadMaterialProps) {
   }
 
   return newMeshPhysicalMaterial({
-    map: texture,
+    map: texture || undefined,
   });
 }
 

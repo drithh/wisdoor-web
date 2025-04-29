@@ -2,14 +2,14 @@ import { setupDevPlatform } from '@cloudflare/next-on-pages/next-dev';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: false,
   eslint: {
-    ignoreDuringBuilds: true,
+    // ignoreDuringBuilds: true,
   },
   images: {
     loader: 'custom',
-    imageSizes: [32, 96, 128, 256],
-    deviceSizes: [320, 640, 1080, 1920],
+    imageSizes: [10,32, 48, 64, 96, 128, 256, 384],
+    deviceSizes: [384, 640, 1080, 1920],
     remotePatterns: [
       {
         protocol: 'https',

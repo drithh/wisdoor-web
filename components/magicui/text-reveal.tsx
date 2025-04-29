@@ -39,7 +39,10 @@ export const TextReveal: React.FC<TextRevealProps> = ({
   return (
     <div ref={ref} className={cn('relative w-fit overflow-hidden', className)}>
       {lines.map((line, lineIndex) => (
-        <div key={lineIndex} className="leading-[1] overflow-hidden">
+        <div
+          key={lineIndex}
+          className="leading-[1] text-[40px] sm:text-[68px] font-semibold overflow-hidden"
+        >
           {line.split('').map((char, charIndex) => {
             return (
               <motion.span

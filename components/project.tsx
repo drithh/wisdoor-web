@@ -70,8 +70,8 @@ export function Project({ projectImages, className }: ProjectProps) {
               ></motion.div>
               <ExportedImage
                 src={project.image}
-                width={1000}
-                height={1000}
+                width={384}
+                height={384}
                 className="z-0 w-auto h-4/5 sm:h-[86%]"
                 alt={project.alt}
               />

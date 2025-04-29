@@ -228,9 +228,7 @@ function PlasmicHome__RenderFunc(props: {
                   data-plasmic-name={"textReveal"}
                   data-plasmic-override={overrides.textReveal}
                   characterClass={
-                    hasVariant(globalVariants, "screen", "mobileOnly")
-                      ? "text-[40px] font-semibold"
-                      : "text-[68px] font-semibold"
+                    hasVariant(globalVariants, "screen", "mobileOnly") ? `` : ``
                   }
                   className={classNames("__wab_instance", sty.textReveal)}
                   text={"ENGINEERING\\nWOODEN DOOR\\nSPECIALIST"}
@@ -591,31 +589,39 @@ function PlasmicHome__RenderFunc(props: {
                 )}
                 manufacturingImages={(() => {
                   const __composite = [
-                    { image: null, alt: "Logo Wisdoor" },
-                    { image: null, alt: "Logo Wisdoor" },
-                    { image: null, alt: "Logo Wisdoor" },
-                    { image: null, alt: "Logo Wisdoor" },
-                    { image: null, alt: "Logo Wisdoor" },
-                    { image: null, alt: "Logo Wisdoor" },
-                    { image: null, alt: "Logo Wisdoor" },
-                    { image: null, alt: "Logo Wisdoor" }
+                    { image: null, alt: null },
+                    { image: null, alt: null },
+                    { image: null, alt: null },
+                    { image: null, alt: null },
+                    { image: null, alt: null },
+                    { image: null, alt: null },
+                    { image: null, alt: null },
+                    { image: null, alt: null }
                   ];
                   __composite["0"]["image"] =
                     "https://site-assets.plasmic.app/d601bc492c210f9cd29a247d6d85ce89.png";
+                  __composite["0"]["alt"] = "Manufacturing 0";
                   __composite["1"]["image"] =
                     "https://site-assets.plasmic.app/6aad20d2afc3f09a14019ce396e9c717.png";
+                  __composite["1"]["alt"] = "Manufacturing 1";
                   __composite["2"]["image"] =
                     "https://site-assets.plasmic.app/b048c13b5144bcee10742287a0b2cf04.png";
+                  __composite["2"]["alt"] = "Manufacturing 2";
                   __composite["3"]["image"] =
                     "https://site-assets.plasmic.app/fcf84f69eb6d0550f27abe39f42853cf.png";
+                  __composite["3"]["alt"] = "Manufacturing 3";
                   __composite["4"]["image"] =
                     "https://site-assets.plasmic.app/474cd10b2d4db1dcd81bd608fafbf2d9.png";
+                  __composite["4"]["alt"] = "Manufacturing 4";
                   __composite["5"]["image"] =
                     "https://site-assets.plasmic.app/543632e0eaa7546e507949c6ec4bbc15.png";
+                  __composite["5"]["alt"] = "Manufacturing 5";
                   __composite["6"]["image"] =
                     "https://site-assets.plasmic.app/1aeb938b83a8f92a13020a8d61cca036.png";
+                  __composite["6"]["alt"] = "Manufacturing 6";
                   __composite["7"]["image"] =
                     "https://site-assets.plasmic.app/d235a0081ea762282820ad5e30b7b370.png";
+                  __composite["7"]["alt"] = "Manufacturing 7";
                   return __composite;
                 })()}
               />

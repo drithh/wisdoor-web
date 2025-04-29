@@ -174,9 +174,9 @@ export function Product({
                 ></motion.div>
                 <ExportedImage
                   src={project.image}
-                  width={1000}
-                  height={1000}
-                  className="z-0 w-auto h-full"
+                  width={384}
+                  height={384}
+                  className="z-0 w-auto h-full object-cover"
                   alt={project.alt}
                 />
               </span>

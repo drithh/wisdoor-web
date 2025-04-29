@@ -42,21 +42,21 @@ const links = [
       <NavigationMenuContent>
         <ul className="grid gap-1 p-2 sm:w-64 uppercase text-xs">
           <NavigationMenuLink asChild>
-            <a
+            <Link
               className="flex h-full w-full select-none flex-col justify-end rounded-md hover:bg-gradient-to-b from-muted/50 to-muted p-2 no-underline outline-none focus:shadow-md"
               href="/#about"
               onClick={(event) => handleSmoothScroll(event, '/#about')}
             >
               About
-            </a>
+            </Link>
           </NavigationMenuLink>
           <NavigationMenuLink asChild>
-            <a
+            <Link
               className="flex h-full w-full select-none flex-col justify-end rounded-md hover:bg-gradient-to-b from-muted/50 to-muted p-2 no-underline outline-none focus:shadow-md"
               href="/#manufacturing"
             >
               Manufacturing
-            </a>
+            </Link>
           </NavigationMenuLink>
         </ul>
       </NavigationMenuContent>
@@ -127,7 +127,7 @@ export function Navigation({ image, alt, black }: NavigationProps) {
           onClick={(event) => handleSmoothScroll(event, '/#hero')}
           passHref
         >
-          {/* <ExportedImage
+          <ExportedImage
             src={defaultImage}
             width={96}
             height={42}
@@ -137,7 +137,7 @@ export function Navigation({ image, alt, black }: NavigationProps) {
             )}
             alt={alt || 'Logo Wisdoor'}
             priority
-          /> */}
+          />
         </Link>
       </div>
       <button
